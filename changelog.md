@@ -1,5 +1,9 @@
 # Changelog
 
+## 9th May 2018 22:00 UTC
+
+[Channel](channels.md#channels) list extended. The latest Channel added has code `502`.
+
 ## 18th April 2018 21:00 UTC
 
 [Change Notification](channel-manager-api.md#change-notification) extened with a `type` property of [`Change Notification Type`](channel-manager-api.md#change-notification-type) type, that determines a type of change that happened in Mews.
