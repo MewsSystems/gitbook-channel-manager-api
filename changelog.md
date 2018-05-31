@@ -1,5 +1,9 @@
 # Changelog
 
+## 31th May 2018 22:00 UTC
+
+[Channel](channels.md#channels) list extended. The latest Channel added has code `510`.
+
 ## 9th May 2018 22:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `502`.
