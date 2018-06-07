@@ -148,7 +148,7 @@ Returns configuration of the enterprise and the client.
 
 #### Response
 
-This is example of a _successfull_ response. In case an error occurred, the response will contain only [`Error`](mews-api.md#error) object with details.
+This is example of a _successful_ response. In case an error occurred, the response will contain only [`Error`](mews-api.md#error) object with details.
 
 ```javascript
 {
@@ -540,6 +540,8 @@ There are certain rules that need to be followed in order for Mews to process th
     * A. If the `reservation`.`state` is set to [Reservation States](mews-api.md#reservation-states).`Cancelled`.
     * B. If the reservation is not included in the group definiton message.
 * When **cancelling** whole group, the `reservations` collection can be empty or all reservations provided as cancelled \(as per A case above\).
+
+#### Successful Request Example
 
 ```javascript
 {
