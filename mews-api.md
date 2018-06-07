@@ -111,7 +111,7 @@ This sample response shows that there are 2 properties where the employee with p
 | --- | --- | --- | --- |
 | `properties` | [`Property Info`](mews-api.md#property-info) collection | required | List of all properties to connect. |
 
-**Property Info**
+#### Property Info
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -119,7 +119,7 @@ This sample response shows that there are 2 properties where the employee with p
 | `id` | `string` | required | Unique id of the property. |
 | `connections` | [`Connection Info`](mews-api.md#connection-info) collection | optional | List of all existing connections. |
 
-**Connection Info**
+#### Connection Info
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -282,7 +282,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `spaceCategories` | [`Space Type`](mews-api.md#space-type) collection | required | Space types of the property. |
 | `inventoryMappings` | [`Inventory Mapping`](mews-api.md#inventory-mapping) collection | required | Defines relations between rate plans and space categories. |
 
-**Property**
+#### Property
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -297,7 +297,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `address` | [`Address`](mews-api.md#address) object | optional | Address of the property. |
 | `images` | [`Image`](mews-api.md#image) object | optional | Images of the property that may contain logo or property exterior photos. |
 
-**Address**
+#### Address
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -310,14 +310,14 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `latitude` | `decimal` | optional | Latitude - from range \[-90, 90\]. |
 | `longitude` | `decimal` | optional | Longitude - from range \[-180, 180\]. |
 
-**Image**
+#### Image
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `type` | `int` | required | [`Image Type`](mews-api.md#image-types) code. |
 | `url` | `string` | required | Public URL of the image. |
 
-**Image types**
+#### Image types
 
 | Code | Description |
 | --- | --- |
@@ -336,7 +336,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `paymentType` | `int` | required | [`Payment Type`](mews-api.md#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 
-**Payment types**
+#### Payment types
 
 | Code | Description |  |
 | --- | --- |
@@ -344,7 +344,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `2` | Preauthorized | _When the booking is covered by a guarantee \(preauthorization or a payment card\)._ |
 | `3` | OnSite | _When guest will pay on site._ |
 
-**Cancellation Policy**
+#### Cancellation Policy
 
 | Poperty | Type |  | Description |
 | --- | --- | --- | --- |
@@ -352,7 +352,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `offset` | `string` | optional | Offset specifying a "shift" from the moment given by `applicability` when the cancellation policy starts to apply. Format `"[days]DT[hours]H[minutes]M"` inspired by [ISO 8601 for durations](https://en.wikipedia.org/wiki/ISO_8601). E.g. `"-1DT2H0M"` means "-1 day and 2 hours before `applicability` moment", `"0DT2H0M"` means "2 hours after `applicability` moment". |
 | `penalty` | [`Cancellation Penalty`](mews-api.md#cancellation-penalty) object | required | Defines penalty that applies based on the cancellation policy. |
 
-**Cancellation Policy Applicability**
+#### Cancellation Policy Applicability
 
 | Code | Description |  |
 | --- | --- |
@@ -360,28 +360,28 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `2` | Start | _Cancellation policy applies from the moment the booking starts \(i.e. time included\)._ |
 | `3` | Start Date | _Cancellation policy applies from the 0:00 on the day when the booking starts \(i.e. time is not included\)._ |
 
-**Cancellation Penalty**
+#### Cancellation Penalty
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `absolute` | [`Absolute Cancellation Penalty`](mews-api.md#absolute-cancellation-penalty) object | required | Defines absolute fee penalty. |
 | `relative` | [`Relative Cancellation Penalty`](mews-api.md#relative-cancellation-penalty) object | required | Defines relative \(i.e. %\) fee penalty. |
 
-**Absolute Cancellation Penalty**
+#### Absolute Cancellation Penalty
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `amount` | `decimal` | required | Defines the amount of the absolute fee. |
 | `currencyCode` | `string` | required | 3 letter currency code of the absolute fee. |
 
-**Relative Cancellation Penalty**
+#### Relative Cancellation Penalty
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `value` | `decimal` | required | Defines the % value of the relative fee \(e.g `0.3` for "30%"\). |
 | `nights` | `decimal` | optional | Determines maximum number of nights included in the relative fee calculation, empty means "all nights". |
 
-**Space Type**
+#### Space Type
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -394,7 +394,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `classification` | `int` | required | [`Space classification`](mews-api.md#space-classifications) code. |
 | `bedType` | `int` | optional | [`Bed Type`](mews-api.md#bed-types) - required if the type describes some room type. |
 
-**Space Classifications**
+#### Space Classifications
 
 | Code | Description |
 | --- | --- |
@@ -415,7 +415,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `15` | Villa |
 | `16` | Dormitory |
 
-**Bed Types**
+#### Bed Types
 
 | Code | Description |
 | --- | --- |
@@ -426,7 +426,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `5` | King bed |
 | `6` | Sofa bed |
 
-**Inventory Mapping**
+#### Inventory Mapping
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -503,7 +503,7 @@ This is example of a _successfull_ response. In case an error occurred, the resp
 | `spaceTypeCodes` | `string` collection | optional | ~~Space types to be updated. _Blank means all, empty _~~`[]`~~_ means none._~~ _Currently not supported, always updates all._ |
 | `ratePlanCodes` | `string` collection | optional | ~~Rate plans to be updated. _Blank means all, empty _~~`[]`~~_ means none._~~ _Currently not supported, always updates all._. |
 
-**ARI Types**
+#### ARI Types
 
 | Code | Description |
 | --- | --- |
@@ -667,7 +667,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `reservations` | [`Reservation`](mews-api.md#reservation) collection | optional | Each reservation within the bookings. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
 | `comments` | `string` collection | optional | Represents any comment related to the booking. |
 
-**Customer**
+#### Customer
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -678,7 +678,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Represents address. |
 
-**Payment card**
+#### Payment card
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -688,7 +688,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `cvv` | `string` | optional | The card CVV code. |
 | `holderName` | `string` | optional | Card holder name. |
 
-**Payment Card Types**
+#### Payment Card Types
 
 | Code | Description |
 | --- | --- |
@@ -706,14 +706,14 @@ There are certain rules that need to be followed in order for Mews to process th
 | `12` | China Unionpay |
 | `13` | Maestro |
 
-**Channel**
+#### Channel
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `code` | `int` | required | [Channel](channels.md#channels) code. |
 | `name` | `string` | required | Name of the Channel |
 
-**Reservation**
+#### Reservation
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -732,7 +732,7 @@ There are certain rules that need to be followed in order for Mews to process th
 
 _¹ It is required that the code remains the same within each booking modification message and partial modification message. If it can't be achieved because Channel doesn't provide it, simple generation of "01", "02", ... codes will suffice as long as those codes are generated in same way for each message regarding that one booking._
 
-**Reservation States**
+#### Reservation States
 
 | Code | Description |
 | --- | --- |
@@ -740,7 +740,7 @@ _¹ It is required that the code remains the same within each booking modificati
 | `2` | Modified |
 | `3` | Cancelled |
 
-**Extra**
+#### Extra
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -749,7 +749,7 @@ _¹ It is required that the code remains the same within each booking modificati
 | `count` | `int` | required | Count of extra products ordered. |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
 
-**Extra Pricing Types**
+#### Extra Pricing Types
 
 | Code | Description |
 | --- | --- |
