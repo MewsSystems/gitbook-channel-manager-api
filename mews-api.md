@@ -541,7 +541,7 @@ There are certain rules that need to be followed in order for Mews to process th
     * B. If the reservation is not included in the group definiton message.
 * When **cancelling** whole group, the `reservations` collection can be empty or all reservations provided as cancelled \(as per A case above\).
 
-#### Successful Request Example
+##### Successful Request Example
 
 ```javascript
 {
