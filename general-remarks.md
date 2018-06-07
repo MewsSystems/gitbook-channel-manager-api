@@ -101,7 +101,7 @@ Or
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `code` | `int` | required | [ErrorCode](general-remarks.md#error-code) code - determines type of the error. |
+| `code` | `int` | required | [ErrorCode](general-remarks.md#error-codes) code - determines type of the error. |
 | `message` | `string` | required | Error message with more details of the error. |
 
 #### Error codes
