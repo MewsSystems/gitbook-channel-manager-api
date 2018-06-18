@@ -4,6 +4,7 @@
 
 * [Requests](general-remarks.md#requests)
   * [Mews API side](general-remarks.md#mews-api-side)
+    * [Security](general-remarks.md#security)
   * [Channel Manager API side](general-remarks.md#channel-manager-api-side)
 * [Responses](general-remarks.md#responses)
   * [Plain response](general-remarks.md#plain-response)
@@ -38,6 +39,10 @@ All operations follow this address pattern:
 * **Operation** - Name of the operation to be performed.
 
 In each environment, the `clientToken` will be provided to you by Mews. For development purposes, use the [Test Environment](mews-api.md#test-environment).
+
+#### Security
+
+For security reasons, Mews API endpoints support TLS security protocol of version 1.2 or higher.
 
 ### Channel Manager API side
 
