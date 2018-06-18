@@ -1,5 +1,9 @@
 # Changelog
 
+## 18th Jun 2018 15:00 UTC
+
+Mimimal required TLS version updated to `TLS 1.2`.
+
 ## 31th May 2018 22:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `510`.
