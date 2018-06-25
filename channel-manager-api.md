@@ -67,7 +67,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `ratePrices` | [`Rate Price`](channel-manager-api.md#rate-price) collection | required | Collection of prices for all rate plan - space type - date - person count combinations. |
 
-**Rate Price**
+##### Rate Price
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -77,7 +77,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `to` | `string` | required | End date \(included\) of the updated interval in `"yyyy-MM-dd"` format. |
 | `prices` | [`Price`](channel-manager-api.md#price) collection | required | Collection of prices for each person count for certain rate plan - space type - date combination. |
 
-**Price**
+##### Price
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -122,7 +122,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `availabilities` | [`Availability`](channel-manager-api.md#availability) collection | required | Collection of availability of space types. |
 
-**Availability**
+##### Availability
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -184,7 +184,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `restrictions` | [`Restriction`](channel-manager-api.md#restriction) collection | required | Collection of restrictions. |
 
-**Restriction**
+##### Restriction
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -196,7 +196,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `maxLos` | `int` | optional | Maximal LOS during the interval. _Has to be at least _`minLos`_._ |
 | `state` | `int` collection | required | [Restriction State](channel-manager-api.md#restriction-state) code. |
 
-**Restriction State**
+##### Restriction State
 
 | Code | Description |
 | --- | --- |
@@ -255,7 +255,7 @@ or
 | `error` | [`Error`](https://github.com/mews-systems/channel-manager-api/tree/da74c52f29ad04bf712acb397e311d8e5e8ba90b/general-api.md#error) | optional | If booking processing failed, holds the explanation. |
 | `reservations` | [`Reservation Confirmation`](channel-manager-api.md#reservation-confirmation) collection | optional | Confirmation of each reservation. |
 
-**Reservation Confirmation**
+##### Reservation Confirmation
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -286,7 +286,7 @@ or
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `type` | `int` | required | [`Change Notification Type`](channel-manager-api.md#change-notification-type) code |
 
-**Change Notification Type**
+##### Change Notification Type
 
 | Code | Description |
 | --- | --- |
