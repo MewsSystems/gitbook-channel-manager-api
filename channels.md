@@ -456,3 +456,59 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `508` | BookLogic Booking Engine |
 | `509` | BookLogic GDS/IDS |
 | `510` | BookLogic B2C/B2B Channel |
+| `511` | American Express Travel |
+| `512` | Amex - Fine hotel and resorts |
+| `513` | Amex - The hotel collection |
+| `514` | Atel |
+| `515` | Autobahn Guide |
+| `516` | Bookbedder |
+| `517` | BookOnlineNow |
+| `518` | BookYourHotel |
+| `519` | CheapTickets |
+| `520` | Corporate Rates Club |
+| `521` | Cultuzz |
+| `522` | Dirs21 |
+| `523` | EasyConsulting |
+| `524` | ebookers |
+| `525` | eCommerce |
+| `526` | Egencia |
+| `527` | eHotel |
+| `528` | Ennit Bookline |
+| `529` | Expedia Affiliate Network |
+| `530` | HolidayInsider |
+| `531` | Hot!Booking |
+| `532` | Hotel Bonanza |
+| `533` | Hotel In Grindelwald |
+| `534` | Hotel-Spider WBE |
+| `535` | Hoteladvisor |
+| `536` | HotelCard |
+| `537` | Hotels.com |
+| `538` | Hotelscorse.com |
+| `539` | Hotelschart |
+| `540` | HRS Destination Solutions |
+| `541` | Idyltrip |
+| `542` | Initalia |
+| `543` | Intobis |
+| `544` | Kurzurlaub |
+| `546` | Myhotelshop |
+| `547` | Nethotels |
+| `548` | Odigeo |
+| `549` | ParityRate |
+| `550` | Profitroom |
+| `551` | RedX |
+| `552` | Rezonline |
+| `553` | Schleicher-farm |
+| `554` | Schmetterling |
+| `555` | SimpleBooking |
+| `556` | Spider-Booking |
+| `557` | Superbooking |
+| `558` | Supranational |
+| `559` | Swisstours |
+| `560` | UltimeWeb |
+| `561` | Verwoehnwochenende.de |
+| `562` | weekend4two |
+| `563` | WinnRewards |
+| `564` | Gowaii |
+| `565` | Jet2Holidays |
+| `566` | On The Beach Beds |
+| `567` | Open Travel Services |
