@@ -23,7 +23,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `13` | Alpharooms |
 | `14` | AOT Sunlover |
 | `15` | Asia Travel |
-| `16` | ATE Hotels |
+| ~~`16`~~ | ~~ATE Hotels~~ use `102` |
 | `17` | Atrapalo |
 | `18` | Aura Travel |
 | `19` | Availpro Booking Engine |
@@ -75,8 +75,8 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `72` | Egypt Express Travel |
 | `73` | eLong |
 | `74` | Emviagem |
-| `75` | Engrande |
-| `76` | Engrande/BudgetPlaces |
+| ~~`75`~~ | ~~Engrande~~ use `46` |
+| ~~`76`~~ | ~~Engrande/BudgetPlaces~~ use `46` |
 | `77` | Entertainment |
 | `78` | Epoque Hotels |
 | `80` | Escapio |
@@ -405,7 +405,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `457` | Dormis |
 | `458` | Edomizil |
 | `459` | EHoliday |
-| `460` | EnGrandeBudgetPlaces |
+| ~~`460`~~ | ~~EnGrandeBudgetPlaces~~ use `46` |
 | `461` | Flat4Day |
 | `462` | GoHolidayLets |
 | `463` | Handiscover |
