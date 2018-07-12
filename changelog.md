@@ -1,5 +1,10 @@
 # Changelog
 
+## 9th May 2018 22:00 UTC
+
+[Channel](channels.md#channels) list extended. The latest Channel added has code `567`. Some channels were merged, because they were duplicate. All merged channels are ~~crossed~~ and the proper code is mentioned.
+
+
 ## 18th Jun 2018 15:00 UTC
 
 Mimimal required TLS version updated to `TLS 1.2`.
