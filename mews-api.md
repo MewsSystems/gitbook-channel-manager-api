@@ -653,7 +653,7 @@ There are certain rules that need to be followed in order for Mews to process th
    "totalCost":600
 }
 ```
-
+#### Main Body
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required \(always\) | Client token of the channel manager. |
