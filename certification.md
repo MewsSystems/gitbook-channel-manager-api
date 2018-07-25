@@ -21,7 +21,7 @@
 6. Pull hotel information, space mapping and rate mapping information using the [Get Configuration](mews-api.md#get-configuration) call.
 7. Map the [Test Hotel](mews-api.md#test-environment) in the UI of the channel manager backend using the data received in the [Get Configuration](mews-api.md#get-configuration) call.
 
-**Note: Multi-property Mews customers (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces of one Mews property.  E.g. Property is the Mews Customer and Spaces are the rental properties.  These spaces (properties) can be sent to the channel manager as multiple connections, 1 connection token per space (property).**
+**Note:** Multi-property Mews customers (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces of one Mews property.  E.g. Property is the Mews Customer and Spaces are the rental properties.  These spaces (properties) can be sent to the channel manager as multiple connections, 1 connection token per space (property) or as a single connection for the entire property manager.
 
 ## Certification Tests
 
