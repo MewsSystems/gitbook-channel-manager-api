@@ -2,8 +2,6 @@
 
 ## Contents
 
-- [Certification](#certification)
-  - [Contents](#contents)
   - [Pre-Certification](#pre-certification)
   - [Certification Tests](#certification-tests)
   - [Evaluation](#evaluation)
@@ -22,6 +20,8 @@
 5. Use the [Get Properties](mews-api.md#get-properties) call to receive the `connectionToken` for the [Test Hotel](mews-api.md#test-environment).
 6. Pull hotel information, space mapping and rate mapping information using the [Get Configuration](mews-api.md#get-configuration) call.
 7. Map the [Test Hotel](mews-api.md#test-environment) in the UI of the channel manager backend using the data received in the [Get Configuration](mews-api.md#get-configuration) call.
+
+**Note: Multi-property Mews customers (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces of one Mews property.  E.g. Property is the Mews Customer and Spaces are the rental properties.  These spaces (properties) can be sent to the channel manager as multiple connections, 1 connection token per space (property).**
 
 ## Certification Tests
 
@@ -52,9 +52,9 @@ These tests will be done during a 60-minute call with the Mews Integrations team
 
 ## Evaluation
 
-* If the required tests cannot be completed, Mews will not allow the Channel Manager to advance to production environment.
+* If the required tests cannot be completed, Mews will not allow the Channel Manager to advance to the production environment.
   * Once issues are resolved, certification will start over.
-* If there are no critical issues discovered during certification, the Channel Manager will be advanced to the production environment
-  * Mews will require unique production endpoint URLs for the [Channel Manager API](certification.md#channel-manager-api)
-  * Mews will issue a live production token for the Channel manager
-  * Channel Manager will issue documenation of their setup process for the Mews Support team.
+* If there are no critical issues discovered during certification, the Channel Manager will be advanced to the production environment.
+  * Mews will require unique https production endpoint URLs for the [Channel Manager API](certification.md#channel-manager-api).
+  * Mews will issue a live production token for the Channel manager.
+  * The Channel Manager will issue documenation of their setup process for approval.
