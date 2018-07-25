@@ -1,11 +1,5 @@
 # Certification
 
-## Contents
-
-  - [Pre-Certification](#pre-certification)
-  - [Certification Tests](#certification-tests)
-  - [Evaluation](#evaluation)
-
 ## Pre-Certification
 
 1. Email integrations@mewssystems.com to request a Client token to be set up in the Mews [Test Environment](mews-api.md#test-environment).
@@ -32,13 +26,13 @@ These tests will be done during a 60-minute call with the Mews Integrations team
 | **Receive multi-space, multi-rate availability push** | 5+ Spaces (3 Rooms, 1 Dorm and 1 Bed) and 2 Rates are mapped from the [Test Hotel](mews-api.md#test-environment) and the [Update Availability](channel-manager-api.md#update-availability) endpoint is functional. |
 | **Receive multi-space, multi-rate rate push** | 5+ Spaces (3 Rooms, 1 Dorm and 1 Bed) and 2 Rates are mapped and the [Update Prices](channel-manager-api.md#update-prices) endpoint is functional. | 
 | **Receive multi-space, multi-rate restriction push** | 5+ Spaces (3 Rooms, 1 Dorm and 1 Bed) and 2 Rates are mapped and the [Update Restrictions](channel-manager-api.md#update-restrictions) endpoint is functional. | 
-| **Incorrect Space code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the incorrect space code and channel manager support email address. |
-| **Unmapped Space code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the unmapped space code and channel manager support email address. |
-| **Incorrect Rate code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the incorrect rate code and channel manager support email address. |
-| **Unmapped Rate code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the unmapped rate code and channel manager support email address. |
-| **Connection inactive or not set up error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that states the channel manager's connection is inactive and includes the channel manager support email address. |
+| **Incorrect Space code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the incorrect space code. |
+| **Unmapped Space code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the unmapped space code. |
+| **Incorrect Rate code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the incorrect rate code. |
+| **Unmapped Rate code error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the unmapped rate code. |
+| **Connection inactive or not set up error** | Connection returns an error in [plain response](general-remarks.md#plain-response) that states the channel manager's connection is inactive. |
 | **Receive product (package) rates - optional** | Package Rate and Breakfast product are mapped from the [Test Hotel](mews-api.md#test-environment). |
-| **Product code error - optional** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the product code and channel manager support email address |
+| **Product code error - optional** | Connection returns an error in [plain response](general-remarks.md#plain-response) that includes the product code. |
 | **Send a single reservation** | Reservation push must include [test credit card](mews-api.md#test-credit-cards) information in the [`paymentCard`](mews-api.md#payment-card) object, an [`adultCount`](mews-api.md#reservation) of 1 and a [`childCount`](mews-api.md#reservation) of 2. |
 | **Modify a single reservation** | Modification push must have the same [`channelManagerId`](mews-api.md#main-body) and Reservation [`code`](mews-api.md#reservation) for each booking and at least 1 change to the [`reservations`](mews-api.md#reservation) collection. |
 | **Cancel a single reservation** | Cancellation push must have the same [`channelManagerId`](mews-api.md#main-body) as the original reservation. |
