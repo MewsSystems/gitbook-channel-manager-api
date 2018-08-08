@@ -182,7 +182,6 @@ This is example of a _successful_ response. In case an error occurred, the respo
    },
    "ratePlans":[
       {
-         "breakfast":false,
          "cancellationPolicies":[
             {
                "applicability": 2,
@@ -201,7 +200,6 @@ This is example of a _successful_ response. In case an error occurred, the respo
          "paymentType":1
       },
       {
-         "breakfast":true,
          "cancellationPolicies":[
             {
                "applicability": 1,
@@ -332,7 +330,6 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `name` | `string` | required | Name of the rate plan. |
 | `currencyCode` | `string` | required | 3 letter currency code of the rate plan price. |
 | `description` | `string` | optional | Description of the rate plan. |
-| `breakfast` | `bool` | required | Determines whether the rate plan includes breakfast. |
 | `paymentType` | `int` | required | [`Payment Type`](mews-api.md#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 
