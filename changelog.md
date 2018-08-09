@@ -1,5 +1,9 @@
 # Changelog
 
+## 8th August 2018 22:00 UTC
+
+New endpoint [Get Channels](mews-api.md#get-channels) added to Mews API side to obtain all [Channel](channels.md#channels)s.
+
 ## 11th July 2018 22:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `567`. Some channels were merged, because they were duplicate. All merged channels are ~~crossed~~ and the proper code is mentioned.

@@ -14,6 +14,7 @@ This part defines the API on Mews side.
   * [Set Inventory](mews-api.md#set-inventory)
   * [Request ARI Update](mews-api.md#request-ari-update)
   * [Process Group](mews-api.md#process-group)
+  * [Get Channels](mews-api.md#get-channels)
 
 ## Environments
 
@@ -761,3 +762,36 @@ _¹ It is required that the code remains the same within each booking modificati
 
 [Plain response](general-remarks.md#plain-response) will determine whether the booking was accepted for processing or not.
 
+### Get Channels
+
+\[`sync`\] This operation allows the channel manager to obtain all [Channel](channels.md#channels)s with assigned mapping codes.
+
+#### Request `[PlatformAddress]/api/channelManager/v1/getChannels`
+
+```javascript
+{
+   "clientToken":"[Channel manager client token]",
+}
+```
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `clientToken` | `string` | required \(always\) | Client token of the channel manager. |
+
+#### Response
+
+```javascript
+{
+   "channels": [
+      {
+         "code": 1,
+         "name": "Booking.com"
+      },
+      ...
+   ]
+}
+```
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `channels` | [`Channel`](mews-api.md#channel) collection | required | All mapped channels. |
