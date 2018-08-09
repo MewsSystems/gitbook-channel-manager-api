@@ -782,13 +782,13 @@ _¹ It is required that the code remains the same within each booking modificati
 
 ```javascript
 {
-	"channels": [
-    	{
-            "code": 1,
-            "name": "Booking.com"
-        },
-		...
-	]
+   "channels": [
+      {
+         "code": 1,
+         "name": "Booking.com"
+      },
+      ...
+   ]
 }
 ```
 
