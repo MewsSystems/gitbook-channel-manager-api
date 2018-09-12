@@ -333,7 +333,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `382` | Veturis |
 | `383` | vHotel |
 | `384` | Viajes Olympia |
-| `385` | Viajes Urbis |
+| `385` | ~~Viajes Urbis~~ use `384` |
 | `386` | VIP Backpackers |
 | `387` | Visit Bath |
 | `388` | Visit Bristol |
