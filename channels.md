@@ -512,4 +512,172 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `565` | Jet2Holidays |
 | `566` | On The Beach Beds |
 | `567` | Open Travel Services |
+| `568` | Kurz mal weg |
+| `569` | begodi |
+| `570` | BookingDirect |
+| `571` | BookingEye (eMarketingEye) |
+| `572` | BookNPay Retire |
+| `576` | eglobe |
+| `577` | Explore (TikiTour) |
 | `578` | Flight Centre Travel Group |
+| `579` | goibibo |
+| `580` | goomo |
+| `581` | Grabrooms |
+| `582` | graysescape |
+| `583` | HappyHoliday |
+| `584` | Hoojoozat |
+| `585` | Hotel.de |
+| `586` | hotelproxy |
+| `587` | HotelQuickly |
+| `588` | hotelspaihia |
+| `589` | hreservations |
+| `590` | IBCHotels |
+| `591` | Info Rotorua |
+| `592` | Istaynow |
+| `593` | optimum |
+| `594` | pitchup |
+| `595` | ReservHotel |
+| `596` | SafariNow |
+| `597` | Serviced Apartments Worldwide |
+| `598` | STAAH |
+| `599` | Straitreservations |
+| `600` | Travelio |
+| `601` | Travelport |
+| `602` | Traviate |
+| `603` | yourspainhostel |
+| `604` | Acomodeo |
+| `605` | Alturabeds |
+| `606` | Andalucia Autentica |
+| `607` | Asian Overland Services |
+| `608` | Apartool |
+| `609` | AroSuite |
+| `610` | British Airways Holidays |
+| `611` | BestDay Travel|
+| `612` | Bonotel Exclusive Travel|
+| `613` | Buffalo Tours|
+| `614` | Bali Hotel Guide |
+| `615` | Bidroom |
+| `616` | BookingCore |
+| `617` | Bookings.lk |
+| `618` | Booking2Hotels |
+| `619` | Book That Place |
+| `620` | bedswithease |
+| `621` | Best Western CRS |
+| `622` | CBS Travel Asia |
+| `623` | Condor Travel|
+| `624` | Charming Italy |
+| `625` | Choice CRS |
+| `626` | Cisalpina Tours |
+| `627` | CloudHotelier |
+| `628` | CNTravel |
+| `629` | Clearing Station(Vioma) |
+| `630` | DayBreakHotels |
+| `631` | Dida Travel Technology |
+| `632` | Djoca Travel |
+| `633` | Darmawisata Indonesia |
+| `634` | Easybooking by Webconnection |
+| `635` | EC Travel |
+| `636` | Exclusively Hotels(Total Stay) |
+| `637` | EasyTravel |
+| `638` | eztravel |
+| `639` | Fusion Holidays |
+| `640` | Fliggy |
+| `641` | FastPayHotels |
+| `642` | Guest Incoming |
+| `643` | Go2Africa |
+| `644` | Grupo Opentours |
+| `645` | GoQuo |
+| `646` | Habicus Group(SilverDoor) |
+| `647` | Hana Tour |
+| `648` | HotelExchange |
+| `649` | Hutchgo |
+| `650` | HiHostels |
+| `651` | HotelsInOne |
+| `652` | Hong Kong Convergent |
+| `653` | HotelPro IBE |
+| `654` | H - Resa(MisterFly) |
+| `655` | Hero Travel |
+| `656` | HS Travel |
+| `657` | hotelthailland |
+| `658` | HTI / eRes |
+| `659` | Hotetec |
+| `660` | Hutchgo.com |
+| `661` | HotelPartner YM |
+| `662` | GHS iBooking |
+| `663` | ImperaTours |
+| `664` | Infinite Hotel |
+| `665` | Instant Bookings(e - Travel Marketing) |
+| `666` | Inovtravel |
+| `667` | Jumia Travel |
+| `668` | JTB Group |
+| `669` | Lusanova |
+| `670` | loveholidays |
+| `671` | LUXOS Select |
+| `672` | Luxury Escapes |
+| `673` | misteraladin.com |
+| `674` | Macdonald Resorts |
+| `675` | MG Holiday |
+| `676` | Miki Travel |
+| `677` | Meeting Point Global |
+| `678` | MTC Group SA |
+| `679` | NewBook Express |
+| `680` | Niu Viatge |
+| `681` | Nomads and Base |
+| `682` | Nites Travel|
+| `683` | Nextel.travel |
+| `684` | Rusticae |
+| `685` | Off Peak Luxury |
+| `686` | otelz.com |
+| `687` | PriceTravel |
+| `688` | Portimar |
+| `689` | PetsPyjamas |
+| `690` | ResortsandLodges.com |
+| `691` | Roomex |
+| `692` | Rapibo |
+| `693` | Reserve Direct |
+| `694` | Resortime |
+| `695` | Rezserve |
+| `696` | RezViewNG |
+| `697` | roomsXML.com |
+| `698` | Ryanair Rooms |
+| `699` | RezLive.com |
+| `700` | ScottDunn |
+| `701` | Setours |
+| `702` | Surfholidays.com |
+| `703` | Stash Hotel Rewards |
+| `704` | Sembo |
+| `705` | Simple Booking |
+| `706` | SilverNeedle Hotels |
+| `707` | Solferias |
+| `708` | Sun Series Travel |
+| `709` | Southall Travel |
+| `710` | Staylists |
+| `711` | Thompsons Africa |
+| `712` | TA Network |
+| `713` | TravelBullz |
+| `714` | Travelbook.ph |
+| `715` | Tour10 |
+| `716` | Tumlare |
+| `717` | Tuniu |
+| `718` | Trend OperaDora |
+| `719` | Trepic |
+| `720` | Traveliko.com |
+| `721` | Travelanium |
+| `722` | Travelsens |
+| `723` | Travel Tripper |
+| `724` | Tradewinds Tours & Travel |
+| `725` | Trav Travel |
+| `726` | Travco Corporation |
+| `727` | TravelStay Network Services |
+| `728` | Vacatia |
+| `729` | VacayHome Connect |
+| `730` | Veturis Travel |
+| `731` | VeryChic |
+| `732` | Waka |
+| `733` | WeKnowLondon |
+| `734` | Wanup |
+| `735` | Website Travel |
+| `736` | Wel - Travel Australia |
+| `737` | Leisure Connector(X - Adapt) |
+| `738` | YHA |
+| `739` | Zumata |
