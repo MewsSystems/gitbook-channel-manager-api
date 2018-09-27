@@ -2,7 +2,7 @@
 
 There is a list of all Channels \(i.e. OTAs\) with their mapping codes. Please check this list regularly.
 
-_Note that the _`Code`_ line is not a continuous sequence of numbers, there are some blank spaces. New Channels will be added at the bottom of the list, so you can easily keep track._
+_Note that the _`Code`_ line is not a continuous sequence of numbers, there are some blank spaces. New Channels will be added at the bottom of the list, so you can easily keep track. Some channels gets merged through the time. All merged channels are ~~crossed~~ and the new code is mentioned._
 
 ## Channels
 
