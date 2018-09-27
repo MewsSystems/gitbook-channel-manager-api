@@ -577,8 +577,8 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `633` | Darmawisata Indonesia |
 | `634` | Easybooking by Webconnection |
 | `635` | EC Travel |
-| `636` | EC Travel |
-| `637` | Exclusively Hotels(Total Stay) |
+| `636` | Exclusively Hotels(Total Stay) |
+| `637` | EasyTravel |
 | `638` | eztravel |
 | `639` | Fusion Holidays |
 | `640` | Fliggy |
@@ -681,6 +681,3 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `737` | Leisure Connector(X - Adapt) |
 | `738` | YHA |
 | `739` | Zumata |
-
-
-
