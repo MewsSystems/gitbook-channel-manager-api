@@ -523,11 +523,11 @@ The example shows a valid group definition with 2 space reservations + cancellat
 
 There are certain rules that need to be followed in order for Mews to process the group correctly:
 
-* It is recommended to send multiple related reservations in one group as part of one message.
+* It is required to send multiple related reservations in one group as part of one message.
   * The whole group is uniquely identified by `channelManagerId` in Mews and in the channel manager extranet.
   * Each reservation should have a unique code within the group. The same code for the reservation should be provided in any following modification message.
   * Each reservation in the group can have different `start`, `end`, `spaceTypeCode`, `ratePlanCode`.
-  * If it is not possible to merge related reservations into groups on the channel manager side, each reservation should be sent as an individual group, each group with a different `channelManagerId`.
+  * If it is not possible to merge related reservations into groups on the channel manager side, each reservations should be sent as an individual group with a single `channelManagerId`.
 * Group total cost `group`.`totalCost` is the sum of each `reservation`.`totalCost`, which is the sum of all night costs and total costs of all `extras` of the `reservation`.
   * All costs in the message are inclusive of VAT.
   * If for any reason the `group`.`totalCost` is be different, Mews will automatically distribute the missing/additional cost to the nights, so the `group`.`totalCost` is achieved.
