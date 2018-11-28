@@ -1,5 +1,9 @@
 # Changelog
 
+## 28th November 2018 22:00 UTC
+
+[Restriction](channel-manager-api.md#restriction) list supports now ClosedTo* restrictions.
+
 ## 26th September 2018 22:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `739`.
