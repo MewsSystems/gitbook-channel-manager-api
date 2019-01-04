@@ -9,7 +9,7 @@ So both sides need to have an open API which the other side has to connect to.
 Channel manager side accepts Inventory updates \(prices, availability, restrictions\) and booking confirmations.  
 PMS side accepts bookings.
 
-If you encounter any issue with the API, feel free to report it on our [GitHub](https://github.com/MewsSystems/developers). For other types of requests, please contact [integrations@mewssystems.com](mailto://integrations@mewssystems.com).
+If you encounter any issue with the API, have a question or any other other request, please contact [integrations@mewssystems.com](mailto://integrations@mewssystems.com).
 
 ## Contents
 
