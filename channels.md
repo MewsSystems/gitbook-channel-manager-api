@@ -526,7 +526,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `582` | graysescape |
 | `583` | HappyHoliday |
 | `584` | Hoojoozat |
-| `585` | Hotel.de |
+| `585` | ~~Hotel.de~~ use `140` |
 | `586` | hotelproxy |
 | `587` | HotelQuickly |
 | `588` | hotelspaihia |
