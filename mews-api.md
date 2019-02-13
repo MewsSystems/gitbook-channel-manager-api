@@ -138,7 +138,10 @@ Returns configuration of the enterprise and the client.
 ```javascript
 {
    "clientToken":"[Channel manager client token]",
-   "connectionToken":"[Token of a concrete connection]"
+   "connectionToken":"[Token of a concrete connection]",
+   "extent": {
+      "includeUnsynchronizedRates": true
+   }
 }
 ```
 
@@ -146,6 +149,13 @@ Returns configuration of the enterprise and the client.
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
+| `extent` | [`Configuration extent`](mews-api.md#configuration-extent) object | optional | Allows to specify certain data to be included in the response. |
+
+#### Configuration Extent
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices for that rate plan, but when reservation comes with the rate plan code, Mews will link correct rate plan with the reservation. |
 
 #### Response
 
@@ -333,6 +343,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `description` | `string` | optional | Description of the rate plan. |
 | `paymentType` | `int` | required | [`Payment Type`](mews-api.md#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
+| `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incomming reservations (as well as sychronized rate plan). |
 
 #### Payment types
 
