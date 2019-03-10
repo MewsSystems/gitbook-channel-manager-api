@@ -151,7 +151,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `165` | Hotelsworld |
 | `166` | HotelTonight |
 | `167` | HotelTools |
-| `168` | HotelTravel |
+| `168` | ~~HotelTravel~~ use `139` |
 | `169` | Hotusa |
 | `170` | Hotwire |
 | `171` | House Of Travel |
@@ -294,7 +294,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `324` | SynXis |
 | `325` | SynXis Web |
 | `326` | Tablet Hotels |
-| `327` | TabletHotels |
+| `327` | ~~TabletHotels~~ use `326` |
 | `328` | TARS |
 | `329` | TBOHolidays |
 | `330` | TemptingPlaces |
@@ -411,7 +411,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `463` | Handiscover |
 | `464` | HeyBnb |
 | `465` | HolidayLettings |
-| `466` | HolidayVelvet |
+| `466` | ~~HolidayVelvet~~ use `130` |
 | `467` | Holidu |
 | `468` | HomeAway |
 | `469` | HomeToGo |
@@ -425,7 +425,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `477` | Locasun |
 | `478` | Logitravel |
 | `479` | Look4Homes |
-| `480` | LovingApartments |
+| `480` | ~~LovingApartments~~ use `213` |
 | `481` | Maeva |
 | `482` | MagicStay |
 | `483` | MisterBnB |
@@ -463,7 +463,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `515` | Autobahn Guide |
 | `516` | Bookbedder |
 | `517` | BookOnlineNow |
-| `518` | BookYourHotel |
+| `518` | ~~BookYourHotel~~ use `45` |
 | `519` | CheapTickets |
 | `520` | Corporate Rates Club |
 | `521` | Cultuzz |
@@ -526,7 +526,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `582` | graysescape |
 | `583` | HappyHoliday |
 | `584` | Hoojoozat |
-| `585` | Hotel.de |
+| `585` | ~~Hotel.de~~ use `140` |
 | `586` | hotelproxy |
 | `587` | HotelQuickly |
 | `588` | hotelspaihia |
@@ -602,7 +602,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `658` | HTI / eRes |
 | `659` | Hotetec |
 | `660` | Hutchgo.com |
-| `661` | HotelPartner YM |
+| `661` | ~~HotelPartner YM~~ use `437` |
 | `662` | GHS iBooking |
 | `663` | ImperaTours |
 | `664` | Infinite Hotel |
@@ -646,7 +646,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `702` | Surfholidays.com |
 | `703` | Stash Hotel Rewards |
 | `704` | Sembo |
-| `705` | Simple Booking |
+| `705` | ~~Simple Booking~~ use `555` |
 | `706` | SilverNeedle Hotels |
 | `707` | Solferias |
 | `708` | Sun Series Travel |
@@ -681,3 +681,4 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `737` | Leisure Connector(X - Adapt) |
 | `738` | YHA |
 | `739` | Zumata |
+| `740` | Parsec |

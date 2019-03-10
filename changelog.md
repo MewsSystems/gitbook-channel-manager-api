@@ -1,5 +1,13 @@
 # Changelog
 
+## 15th January 2019 22:00 UTC
+
+[Channel](channels.md#channels) list extended. The latest Channel added has code `740`. Some channels were merged, because they were duplicate. All merged channels are ~~crossed~~ and the proper code is mentioned.
+
+## 28th November 2018 22:00 UTC
+
+[Restriction](channel-manager-api.md#restriction) list supports now ClosedTo* restrictions.
+
 ## 26th September 2018 22:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `739`.

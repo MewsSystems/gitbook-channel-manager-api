@@ -202,12 +202,12 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | --- | --- |
 | `1` | Open |
 | `2` | Closed |
-| `3` | ~~Open to arrival~~ _Not supported yet._ |
-| `4` | ~~Open to departure~~ _Not supported yet._ |
-| `5` | ~~Open to stay~~ _Not supported yet._ |
-| `6` | ~~Closed to arrival~~ _Not supported yet._ |
-| `7` | ~~Closed to departure~~ _Not supported yet._ |
-| `8` | ~~Closed to stay~~ _Not supported yet._ |
+| `3` | ~~Open to arrival~~ _Not supported._ |
+| `4` | ~~Open to departure~~ _Not supported._ |
+| `5` | ~~Open to stay~~ _Not supported._ |
+| `6` | Closed to arrival |
+| `7` | Closed to departure |
+| `8` | Closed to stay |
 
 #### Response
 
