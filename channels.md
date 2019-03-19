@@ -682,3 +682,82 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `738` | YHA |
 | `739` | Zumata |
 | `740` | Parsec |
+| `741` | 2PVentures |
+| `742` | AddaJet | 
+| `743` | Al Tayyar | 
+| `744` | Alisos Tours |
+| `745` | Alitrip | 
+| `746` | Alkamilbooking | 
+| `747` | Almundo | 
+| `748` | Bauer Hotel system | 
+| `749` | BestRez | 
+| `750` | Blastness | 
+| `751` | Bookanova | 
+| `752` | BookingForce |
+| `753` | BookingPiemonte |
+| `754` | Bookohotel |
+| `755` | Bookolo | 
+| `756` | ByHours | 
+| `757` | ChannelPro |
+| `758` | CityBreak | 
+| `759` | ClassicWebBooking |
+| `760` | ClearTrip | 
+| `761` | Consolid Travel |
+| `762` | CVC |
+| `763` | Daniel Reyes |
+| `764` | Decolar | 
+| `765` | Disabled Friendly |
+| `766` | DIVIT |
+| `767` | DSI |
+| `768` | eBay | 
+| `769` | EHBox |
+| `770` | ElementRes |
+| `771` | EMIGUSA | 
+| `772` | EMOS | 
+| `773` | Euromundo | 
+| `774` | Fjordtours |
+| `775` | Flexibookings |
+| `776` | Gekko |
+| `777` | GoGlobal |
+| `778` | Haoqiao | 
+| `779` | HotelConnect |
+| `780` | HotelReservation | 
+| `781` | HotelRez |
+| `782` | Hotelsbyday | 
+| `783` | Hotelzon |
+| `784` | iCronoz | 
+| `785` | Igloorooms |
+| `786` | Innlink | 
+| `787` | Ital Camel |
+| `788` | ItalyHotels | 
+| `789` | JDB |
+| `790` | LoyaltyBuild |
+| `791` | Malapronta |
+| `792` | MyBookings |
+| `793` | Netmedia |
+| `794` | NTIThailand | 
+| `795` | NuStay |
+| `796` | Olotels | 
+| `797` | Otel Tomas |
+| `798` | QrHotels |
+| `799` | Qunar |
+| `800` | Rehomex | 
+| `801` | ResAvenue | 
+| `802` | ResMaster | 
+| `803` | Royal Arabian |
+| `804` | Sentinel |
+| `805` | SETT | 
+| `806` | Smartmember | 
+| `807` | Tatil |
+| `808` | Touristonline |
+| `809` | Travalco |
+| `810` | Travelguru |
+| `811` | Unitravel | 
+| `812` | Via.com | 
+| `813` | Visitbrussels |
+| `814` | Weekendjeweg |
+| `815` | WikHotel |
+| `816` | WinWinBooking |
+| `817` | Wonderbox | 
+| `818` | Xenia |
+| `819` | Yatra |
