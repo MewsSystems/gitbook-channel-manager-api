@@ -1,5 +1,9 @@
 # Changelog
 
+## 19th Match 2019 22:00 UTC
+
+[Channel](channels.md#channels) list extended. The latest Channel added has code `819`.
+
 ## 15th January 2019 22:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `740`. Some channels were merged, because they were duplicate. All merged channels are ~~crossed~~ and the proper code is mentioned.
