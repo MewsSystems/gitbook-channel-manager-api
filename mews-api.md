@@ -25,6 +25,7 @@ This environment is meant to be used during implementation of the client applica
 * **Platform Address** - `https://demo.mews.li`
 * **Client Token** - will be provided to you by Mews upon request.
 * **Connection Token** - will be provided to you by Mews upon request.
+* **Reservation Push Endpoint** - unique to the environment and list under [Process Group](mews-api.md#process-group)
 
 The property is based in Czech Republic, it accepts `CZK`, `EUR` and `GBP` currencies \(any of them may be used\).
 
@@ -54,12 +55,14 @@ The property is configured to accept following test credit cards:
 * **Platform Address** - `https://www.mews.li`
 * **Client Token** - will be provided to you by Mews upon request \(e.g. `C66EF7B239D24632943D115EDE9CB810`\)
 * **Connection Token** - will be provided to you by Mews or property on request or via [Get Properties](mews-api.md#get-properties) API call \(e.g. `C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D`\)
+* **Reservation Push Endpoint** - unique to the environment and list under [Process Group](mews-api.md#process-group)
+
 
 ## Operations
 
 ### Get Properties
 
-\[`sync`\] This method is used to obtain properties based on the `email` of a Mews employee. It is required that the `email` is verified to belong to an employee on whose behalf the API call is made. Response returns list of all properties, where employee works.
+\[`sync`\] This method is used to obtain properties based on the `email` of an employee of the Mews enterprise (hotel, hostel or apartment group). It is required that the `email` is verified to belong to an employee on whose behalf the API call is made. Response returns list of all enterprises, where employee has access in Mews.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/getProperties`
 
@@ -348,7 +351,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 #### Payment types
 
 | Code | Description |  |
-| --- | --- |
+| --- | --- | --- |
 | `1` | Prepaid | _When guest has already paid to the Channel \(i.e. OTA\)._ |
 | `2` | Preauthorized | _When the booking is covered by a guarantee \(preauthorization or a payment card\)._ |
 | `3` | OnSite | _When guest will pay on site._ |
@@ -528,7 +531,10 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 \[`async`\] This operation allows the channel manager to push a reservation group \(i.e. _booking_\) to Mews. This option allows creations, modifications and \(partial\) cancellations. Mews will process and confirm the booking asynchronously.
 
-#### Request `[PlatformAddress]/api/channelManager/v1/processGroup`
+#### Request 
+
+* **Demo Environment:** `https://sandbox.pci-proxy.com/v1/push/0426f19b66715a93`
+* **Production Environment:** `https://api.pci-proxy.com/v1/push/b2721c9a0351d553`
 
 The example shows a valid group definition with 2 space reservations + cancellation of the 3rd space reservation. First `reservation` definition shows all details, second `reservation` definition shows the minimal required details for creation / modification of a `reservation`. The 3rd `reservation` definition shows the partial cancellation - cancelling the 3rd space reservation.
 
