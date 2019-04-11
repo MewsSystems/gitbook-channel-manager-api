@@ -1,6 +1,6 @@
 # Mews API
 
-This part defines the API on Mews side.
+This part defines the API on the Mews side.
 
 ## Content
 
@@ -53,9 +53,9 @@ The property is configured to accept following test credit cards:
 ### Production Environment
 
 * **Platform Address** - `https://www.mews.li`
-* **Client Token** - will be provided to you by Mews upon request \(e.g. `C66EF7B239D24632943D115EDE9CB810`\)
-* **Connection Token** - will be provided to you by Mews or property on request or via [Get Properties](mews-api.md#get-properties) API call \(e.g. `C66EF7B239D24632943D115EDE9CB810-EA00F8FD8294692C940F6B5A8F9453D`\)
-* **Reservation Push Endpoint** - unique to the environment and list under [Process Group](mews-api.md#process-group)
+* **Client Token** - will be provided to you by Mews upon request \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
+* **Connection Token** - will be provided to you by Mews or property on request or via [Get Properties](mews-api.md#get-properties) API call \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)
+* **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 
 
 ## Operations
@@ -158,7 +158,7 @@ Returns configuration of the enterprise and the client.
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices for that rate plan, but when reservation comes with the rate plan code, Mews will link correct rate plan with the reservation. |
+| `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
 
 #### Response
 
@@ -166,9 +166,16 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ```javascript
 {
-   "success":true,
    "connectionToken":"[Token of the connection]",
    "property":{
+      "name":"White House Hotel",
+      "description":"A 5* hotel with a White House view.",
+      "languageCode":"en-US",
+      "timeZoneIdentifier":"America/New_York",
+      "websiteUrl":"http://www.whh.com",
+      "email":"reception@whh.com",
+      "telephone":"+1 202-456-1111",
+      "spaceCount": 21,
       "address":{
          "addressLine1":"White House Hotel",
          "addressLine2":"Pennsylvania Ave",
@@ -179,20 +186,12 @@ This is example of a _successful_ response. In case an error occurred, the respo
          "region":"DC",
          "zip":"20500"
       },
-      "description":"A 5* hotel with a White House view.",
-      "email":"reception@whh.com",
       "images":[
          {
             "type":1,
             "url":"http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
          }
       ],
-      "languageCode":"en-US",
-      "name":"White House Hotel",
-      "spaceCount":21,
-      "telephone":"+1 202-456-1111",
-      "timeZoneIdentifier":"America/New_York",
-      "websiteUrl":"http://www.whh.com"
    },
    "ratePlans":[
       {
@@ -211,7 +210,9 @@ This is example of a _successful_ response. In case an error occurred, the respo
          "code":"FF",
          "currencyCode":"EUR",
          "name":"Fully Flexible",
-         "paymentType":1
+         "description": null,
+         "paymentType":3,
+         "isSynchronized": true
       },
       {
          "cancellationPolicies":[
@@ -228,16 +229,28 @@ This is example of a _successful_ response. In case an error occurred, the respo
          "code":"NR",
          "currencyCode":"EUR",
          "name":"Non-refundable",
-         "paymentType":1
-      }
+         "description": "Pre-paid rate",
+         "paymentType":1,
+         "isSynchronized": true
+      },
+      {
+          "code": "ROM",
+          "name": "Romance Rate",
+          "description": "Romantic weekend away",
+          "currencyCode": "EUR",
+          "breakfast": false,
+          "cancellationPolicies": [],
+          "paymentType": 3,
+          "isSynchronized": false
+        }
    ],
-   "spaceCategories":[
+      "spaceCategories":[
       {
          "bedCount":2,
          "bedType":5,
          "classification":9,
          "code":"KD",
-         "description":"tr",
+         "description":"A room with 1 king or 2 double beds.",
          "images":[
             {
                "type":2,
@@ -281,8 +294,13 @@ This is example of a _successful_ response. In case an error occurred, the respo
       {
          "ratePlanCode":"NR",
          "spaceTypeCode":"QD"
+      },
+      {
+         "ratePlanCode":"ROM",
+         "spaceTypeCode":"KD"
       }
-   ]
+   ],
+   "success":true
 }
 ```
 
@@ -301,10 +319,10 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `name` | `string` | required | Name of the property. |
 | `description` | `string` | optional | Description of the property. |
 | `languageCode` | `string` | required | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the default language of the property. All names and descriptions are in this language. |
+| `timeZoneIdentifier` | `string` | required | [Identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) of the property time zone. |
+| `websiteUrl` | `string` | optional | Website of the property. |
 | `email` | `string` | optional | Email contact of the property. |
 | `telephone` | `string` | optional | Phone contact of the property. |
-| `websiteUrl` | `string` | optional | Website of the property. |
-| `timeZoneIdentifier` | `string` | required | [Identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) of the property time zone. |
 | `spaceCount` | `int` | required | Total count of spaces sold/offered by the property. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Address of the property. |
 | `images` | [`Image`](mews-api.md#image) object | optional | Images of the property that may contain logo or property exterior photos. |
@@ -367,7 +385,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 #### Cancellation Policy Applicability
 
 | Code | Description |  |
-| --- | --- |
+| --- | --- | -- |
 | `1` | Creation | _Cancellation policy applies from the moment the booking is created._ |
 | `2` | Start | _Cancellation policy applies from the moment the booking starts \(i.e. time included\)._ |
 | `3` | Start Date | _Cancellation policy applies from the 0:00 on the day when the booking starts \(i.e. time is not included\)._ |
@@ -393,7 +411,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `value` | `decimal` | required | Defines the % value of the relative fee \(e.g `0.3` for "30%"\). |
 | `nights` | `decimal` | optional | Determines maximum number of nights included in the relative fee calculation, empty means "all nights". |
 
-#### Space Type
+#### Space Categories
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -405,6 +423,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `extraBedCount` | `int` | optional | Number of extra beds of the space type. |
 | `classification` | `int` | required | [`Space classification`](mews-api.md#space-classifications) code. |
 | `bedType` | `int` | optional | [`Bed Type`](mews-api.md#bed-types) - required if the type describes some room type. |
+| `images` | [`Image`](mews-api.md#image) object | optional | Images of the space type.  These are always image [`type`](mews-api.md#image-types) 2 because they are photos, not logos. |
 
 #### Space Classifications
 
@@ -438,7 +457,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `5` | King bed |
 | `6` | Sofa bed |
 
-#### Inventory Mapping
+#### Inventory Mappings
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
@@ -447,7 +466,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ### Set Inventory
 
-\[`sync`\] This method can be used to update the rate plan - space type mapping relations in the connection. Always all mapping relations need to be sent. Mapping relations that are in defined in Mews for the connection, but missing in the call, are deleted; and vice-versa.
+\[`sync`\] This method can be used to update the rate plan - space type mapping relations in the connection. Always, all mapping relations need to be sent. Mapping relations that are in defined in Mews for the connection, but missing in the call, are deleted; and vice-versa.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/setInventory`
 
@@ -472,7 +491,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `inventoryMappings` | [`Inventory Mapping`](mews-api.md#inventory-mapping) collection | required | Defines new rate plan - space type mapping relations. |
+| `inventoryMappings` | [`Inventory Mapping`](mews-api.md#inventory-mapping) collection | required | Defines all rate plan - space type mapping relations. |
 
 #### Response
 
@@ -480,7 +499,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ### Request ARI update
 
-\[`async`\] This method allows channel manager to request ARI data update for certain space types and rate plans. The requested data will be sent by Mews asynchronously via push operations of channel manager API.
+\[`async`\] This method allows channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the next Delta update. The requested data will be sent by Mews asynchronously via push operations of channel manager API.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/requestAriUpdate`
 
@@ -584,6 +603,7 @@ There are certain rules that need to be followed in order for Mews to process th
       "firstName":"John",
       "lastName":"Smith",
       "nationalityCode":"US",
+      "languageCode":"en-US",
       "telephone":"1-3526-88918"
    },
    "channel":{
@@ -628,6 +648,7 @@ There are certain rules that need to be followed in order for Mews to process th
                "firstName":"Jane",
                "lastName":"Smith",
                "nationalityCode":"US",
+               "languageCode":"en-US",
                "telephone":"1-369-81891"
             }
          ],
@@ -693,6 +714,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `firstName` | `string` | optional | First name. |
 | `telephone` | `string` | optional | Telephone. |
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code. |
+| `languageCode`| `string`| optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Represents address. |
 
 #### Payment card
