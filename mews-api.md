@@ -244,7 +244,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
           "isSynchronized": false
         }
    ],
-      "spaceCategories":[
+   "spaceCategories":[
       {
          "bedCount":2,
          "bedType":5,
