@@ -610,6 +610,22 @@ There are certain rules that need to be followed in order for Mews to process th
       "code":1,
       "name":"Expedia"
    },
+   "company":{
+      "id":"MEWS",
+      "iata":"65893",
+      "name":"Mews Systems, s.r.o.",
+      "contact":{
+         "email":"mews@mews.li",
+         "phone":"+420 775 684 983",
+         "address":{
+            "zip":"110 00",
+            "city":"Prague",
+            "country":"Czech Republic",
+            "addressLine1":"586 Ulice Test",
+            "addressLine2":"Patro 2",
+         }
+      }
+   },
    "paymentCard":{
       "cvv":"666",
       "expireDate":"0818",
@@ -709,13 +725,30 @@ There are certain rules that need to be followed in order for Mews to process th
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `email` | `string` | _recommended_ | Email. |
+|`email` | `string` | _recommended_ | Email. |
 | `lastName` | `string` | required | Last name. |
 | `firstName` | `string` | optional | First name. |
 | `telephone` | `string` | optional | Telephone. |
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code. |
 | `languageCode`| `string`| optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Represents address. |
+
+#### Company
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+|`id` | `string` | optional | Identifier of a company. |
+|`iata` | `string` | optional | IATA number of a travel agency. |
+|`name` | `string` | optional | Name of a company or travel agency. |
+| `contact` | [`Contact`](mews-api.md#contact) object | optional | Company or travel agency contact information. |
+
+#### Contact
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `email` | `string` | _recommended_ | Company email address. |
+| `telephone` | `string` | optional | Company telephone number. |
+| `address` | [`Address`](mews-api.md#address) object | optional | Company address. |
 
 #### Payment card
 
