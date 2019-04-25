@@ -674,7 +674,7 @@ There are certain rules that need to be followed in order for Mews to process th
       ],
       "ratePlanCode": "FF",
       "spaceTypeCode": "SGL",
-      "state": 2,
+      "state": 1,
       "to": "2017-05-07",
       "totalCost": 260
     },
@@ -689,6 +689,7 @@ There are certain rules that need to be followed in order for Mews to process th
       ],
       "ratePlanCode": "NR",
       "spaceTypeCode": "DBL",
+      "state": 2,
       "to": "2017-05-09",
       "totalCost": 340
     },
