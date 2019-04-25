@@ -730,7 +730,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `firstName` | `string` | optional | First name. |
 | `telephone` | `string` | optional | Telephone. |
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code. |
-| `languageCode`| `string`| optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
+| `languageCode` | `string` | optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Represents address. |
 
 #### Company
