@@ -68,8 +68,8 @@ The property is configured to accept following test credit cards:
 
 ```javascript
 {
-   "clientToken":"[Channel manager client token]",
-   "email":"chm-api@mews.li"
+  "clientToken": "[Channel manager client token]",
+  "email": "chm-api@mews.li"
 }
 ```
 
@@ -84,30 +84,30 @@ This sample response shows that there are 2 properties where the employee with p
 
 ```javascript
 {
-   "success":true,
-   "properties":[
-      {
-         "id":"sample-hostel",
-         "name":"Sample Hostel",
-         "connections":[
-            {
-               "token":"[1st connectionToken]",
-               "name":"Connection for dorms"
-            },
-            {
-               "token":"[2nd connectionToken]",
-               "name":"Connection for beds"
-            },
-            {
-               "token":"[3rd connectionToken]"
-            }
-         ]
-      },
-      {
-         "id":"whh",
-         "name":"White House Hotel"
-      }
-   ]
+  "success": true,
+  "properties": [
+    {
+      "id": "sample-hostel",
+      "name": "Sample Hostel",
+      "connections": [
+        {
+          "token": "[1st connectionToken]",
+          "name": "Connection for dorms"
+        },
+        {
+          "token": "[2nd connectionToken]",
+          "name": "Connection for beds"
+        },
+        {
+          "token": "[3rd connectionToken]"
+        }
+      ]
+    },
+    {
+      "id": "whh",
+      "name": "White House Hotel"
+    }
+  ]
 }
 ```
 
@@ -140,11 +140,11 @@ Returns configuration of the enterprise and the client.
 
 ```javascript
 {
-   "clientToken":"[Channel manager client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "extent": {
-      "includeUnsynchronizedRates": true
-   }
+  "clientToken": "[Channel manager client token]",
+  "connectionToken": "[Token of a concrete connection]",
+  "extent": {
+    "includeUnsynchronizedRates": true
+  }
 }
 ```
 
@@ -166,141 +166,141 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ```javascript
 {
-   "connectionToken":"[Token of the connection]",
-   "property":{
-      "name":"White House Hotel",
-      "description":"A 5* hotel with a White House view.",
-      "languageCode":"en-US",
-      "timeZoneIdentifier":"America/New_York",
-      "websiteUrl":"http://www.whh.com",
-      "email":"reception@whh.com",
-      "telephone":"+1 202-456-1111",
-      "spaceCount": 21,
-      "address":{
-         "addressLine1":"White House Hotel",
-         "addressLine2":"Pennsylvania Ave",
-         "city":"Washington, DC",
-         "country":"US",
-         "latitude":38.8976763,
-         "longitude":-77.0365298,
-         "region":"DC",
-         "zip":"20500"
-      },
-      "images":[
-         {
-            "type":1,
-            "url":"http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
-         }
-      ],
-   },
-   "ratePlans":[
+  "connectionToken": "[Token of the connection]",
+  "property": {
+    "name": "White House Hotel",
+    "description": "A 5* hotel with a White House view.",
+    "languageCode": "en-US",
+    "timeZoneIdentifier": "America/New_York",
+    "websiteUrl": "http://www.whh.com",
+    "email": "reception@whh.com",
+    "telephone": "+1 202-456-1111",
+    "spaceCount": 21,
+    "address": {
+      "addressLine1": "White House Hotel",
+      "addressLine2": "Pennsylvania Ave",
+      "city": "Washington, DC",
+      "country": "US",
+      "latitude": 38.8976763,
+      "longitude": -77.0365298,
+      "region": "DC",
+      "zip": "20500"
+    },
+    "images": [
       {
-         "cancellationPolicies":[
-            {
-               "applicability": 2,
-               "offset":"-1DT2H0M",
-               "penalty":{
-                  "absolute":{
-                     "amount":40,
-                     "currencyCode":"EUR"
-                  }
-               }
+        "type": 1,
+        "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
+      }
+    ]
+  },
+  "ratePlans": [
+    {
+      "cancellationPolicies": [
+        {
+          "applicability": 2,
+          "offset": "-1DT2H0M",
+          "penalty": {
+            "absolute": {
+              "amount": 40,
+              "currencyCode": "EUR"
             }
-         ],
-         "code":"FF",
-         "currencyCode":"EUR",
-         "name":"Fully Flexible",
-         "description": null,
-         "paymentType":3,
-         "isSynchronized": true
-      },
-      {
-         "cancellationPolicies":[
-            {
-               "applicability": 1,
-               "penalty":{
-                  "relative":{
-                     "value":1,
-                     "nights":2
-                  }
-               }
-            }
-         ],
-         "code":"NR",
-         "currencyCode":"EUR",
-         "name":"Non-refundable",
-         "description": "Pre-paid rate",
-         "paymentType":1,
-         "isSynchronized": true
-      },
-      {
-          "code": "ROM",
-          "name": "Romance Rate",
-          "description": "Romantic weekend away",
-          "currencyCode": "EUR",
-          "breakfast": false,
-          "cancellationPolicies": [],
-          "paymentType": 3,
-          "isSynchronized": false
+          }
         }
-   ],
-   "spaceCategories":[
-      {
-         "bedCount":2,
-         "bedType":5,
-         "classification":9,
-         "code":"KD",
-         "description":"A room with 1 king or 2 double beds.",
-         "images":[
-            {
-               "type":2,
-               "url":"http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
+      ],
+      "code": "FF",
+      "currencyCode": "EUR",
+      "name": "Fully Flexible",
+      "description": null,
+      "paymentType": 3,
+      "isSynchronized": true
+    },
+    {
+      "cancellationPolicies": [
+        {
+          "applicability": 1,
+          "penalty": {
+            "relative": {
+              "value": 1,
+              "nights": 2
             }
-         ],
-         "extraBedCount":1,
-         "name":"King Double Room",
-         "spaceCount":6
-      },
-      {
-         "bedCount":2,
-         "bedType":4,
-         "classification":9,
-         "code":"QD",
-         "description":"tr",
-         "images":[
-            {
-               "type":2,
-               "url":"http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
-            }
-         ],
-         "extraBedCount":0,
-         "name":"Queen Double Rooms",
-         "spaceCount":6
-      }
-   ],
-   "inventoryMappings":[
-      {
-         "ratePlanCode":"FF",
-         "spaceTypeCode":"KD"
-      },
-      {
-         "ratePlanCode":"FF",
-         "spaceTypeCode":"QD"
-      },
-      {
-         "ratePlanCode":"NR",
-         "spaceTypeCode":"KD"
-      },
-      {
-         "ratePlanCode":"NR",
-         "spaceTypeCode":"QD"
-      },
-      {
-         "ratePlanCode":"ROM",
-         "spaceTypeCode":"KD"
-      }
-   ],
-   "success":true
+          }
+        }
+      ],
+      "code": "NR",
+      "currencyCode": "EUR",
+      "name": "Non-refundable",
+      "description": "Pre-paid rate",
+      "paymentType": 1,
+      "isSynchronized": true
+    },
+    {
+      "code": "ROM",
+      "name": "Romance Rate",
+      "description": "Romantic weekend away",
+      "currencyCode": "EUR",
+      "breakfast": false,
+      "cancellationPolicies": [],
+      "paymentType": 3,
+      "isSynchronized": false
+    }
+  ],
+  "spaceCategories": [
+    {
+      "bedCount": 2,
+      "bedType": 5,
+      "classification": 9,
+      "code": "KD",
+      "description": "A room with 1 king or 2 double beds.",
+      "images": [
+        {
+          "type": 2,
+          "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
+        }
+      ],
+      "extraBedCount": 1,
+      "name": "King Double Room",
+      "spaceCount": 6
+    },
+    {
+      "bedCount": 2,
+      "bedType": 4,
+      "classification": 9,
+      "code": "QD",
+      "description": "tr",
+      "images": [
+        {
+          "type": 2,
+          "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
+        }
+      ],
+      "extraBedCount": 0,
+      "name": "Queen Double Rooms",
+      "spaceCount": 6
+    }
+  ],
+  "inventoryMappings": [
+    {
+      "ratePlanCode": "FF",
+      "spaceTypeCode": "KD"
+    },
+    {
+      "ratePlanCode": "FF",
+      "spaceTypeCode": "QD"
+    },
+    {
+      "ratePlanCode": "NR",
+      "spaceTypeCode": "KD"
+    },
+    {
+      "ratePlanCode": "NR",
+      "spaceTypeCode": "QD"
+    },
+    {
+      "ratePlanCode": "ROM",
+      "spaceTypeCode": "KD"
+    }
+  ],
+  "success": true
 }
 ```
 
@@ -472,18 +472,18 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ```javascript
 {
-   "clientToken":"[Channel manager client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "inventoryMappings":[
-      {
-         "ratePlanCode":"FF",
-         "spaceTypeCode":"KD"
-      },
-      {
-         "ratePlanCode":"FF",
-         "spaceTypeCode":"QD"
-      }
-   ]
+  "clientToken": "[Channel manager client token]",
+  "connectionToken": "[Token of a concrete connection]",
+  "inventoryMappings": [
+    {
+      "ratePlanCode": "FF",
+      "spaceTypeCode": "KD"
+    },
+    {
+      "ratePlanCode": "FF",
+      "spaceTypeCode": "QD"
+    }
+  ]
 }
 ```
 
@@ -505,22 +505,22 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ```javascript
 {
-   "clientToken":"[Channel manager client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "from":"2018-01-01",
-   "to":"2018-02-01",
-   "ariType":[
-      1,
-      2,
-      3
-   ],
-   "spaceTypeCodes":[
-      "KD",
-      "QD"
-   ],
-   "ratePlanCodes":[
-      "FF"
-   ]
+  "clientToken": "[Channel manager client token]",
+  "connectionToken": "[Token of a concrete connection]",
+  "from": "2018-01-01",
+  "to": "2018-02-01",
+  "ariType": [
+    1,
+    2,
+    3
+  ],
+  "spaceTypeCodes": [
+    "KD",
+    "QD"
+  ],
+  "ratePlanCodes": [
+    "FF"
+  ]
 }
 ```
 
@@ -579,130 +579,130 @@ There are certain rules that need to be followed in order for Mews to process th
 
 ```javascript
 {
-   "clientToken":"[Channel manager client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "channelId":"EXP-123456",
-   "channelManagerId":"123456",
-   "comments":[
-      "Approximate arrival: 16:30.",
-      "Guest request a room with ocean view."
-   ],
-   "currencyCode":"EUR",
-   "customer":{
-      "address":{
-         "addressLine1":"Some street 123",
-         "addressLine2":"Some other detail",
-         "city":"Some city",
-         "country":"US",
-         "latitude":30,
-         "longitude":20,
-         "region":"Some region",
-         "zip":"123 45"
-      },
-      "email":"john@smith.com",
-      "firstName":"John",
-      "lastName":"Smith",
-      "nationalityCode":"US",
-      "languageCode":"en-US",
-      "telephone":"1-3526-88918"
-   },
-   "channel":{
-      "code":1,
-      "name":"Expedia"
-   },
-   "company":{
-      "id":"MEWS",
-      "iata":"65893",
-      "name":"Mews Systems, s.r.o.",
-      "contact":{
-         "email":"mews@mews.li",
-         "phone":"+420 775 684 983",
-         "address":{
-            "zip":"110 00",
-            "city":"Prague",
-            "country":"Czech Republic",
-            "addressLine1":"586 Ulice Test",
-            "addressLine2":"Patro 2",
-         }
+  "clientToken": "[Channel manager client token]",
+  "connectionToken": "[Token of a concrete connection]",
+  "channelId": "EXP-123456",
+  "channelManagerId": "123456",
+  "comments": [
+    "Approximate arrival: 16:30.",
+    "Guest request a room with ocean view."
+  ],
+  "currencyCode": "EUR",
+  "customer": {
+    "address": {
+      "addressLine1": "Some street 123",
+      "addressLine2": "Some other detail",
+      "city": "Some city",
+      "country": "US",
+      "latitude": 30,
+      "longitude": 20,
+      "region": "Some region",
+      "zip": "123 45"
+    },
+    "email": "john@smith.com",
+    "firstName": "John",
+    "lastName": "Smith",
+    "nationalityCode": "US",
+    "languageCode": "en-US",
+    "telephone": "1-3526-88918"
+  },
+  "channel": {
+    "code": 1,
+    "name": "Expedia"
+  },
+  "company": {
+    "id": "MEWS",
+    "iata": "65893",
+    "name": "Mews Systems, s.r.o.",
+    "contact": {
+      "email": "mews@mews.li",
+      "phone": "+420 775 684 983",
+      "address": {
+        "zip": "110 00",
+        "city": "Prague",
+        "country": "Czech Republic",
+        "addressLine1": "586 Ulice Test",
+        "addressLine2": "Patro 2"
       }
-   },
-   "paymentCard":{
-      "cvv":"666",
-      "expireDate":"0818",
-      "holderName":"John Smith",
-      "number":"4111111111111111",
-      "type":2
-   },
-   "paymentType":1,
-   "reservations":[
-      {
-         "adultCount":1,
-         "childCount":0,
-         "code":"01",
-         "extras":[
-            {
-               "code":"1",
-               "cost":20,
-               "count":1,
-               "pricing":3
-            }
-         ],
-         "from":"2017-05-05",
-         "guests":[
-            {
-               "address":{
-                  "addressLine1":"Some other street 123",
-                  "addressLine2":"Some other detail",
-                  "city":"Some other city",
-                  "country":"US",
-                  "latitude":30,
-                  "longitude":20,
-                  "region":"Some other region",
-                  "zip":"123 45"
-               },
-               "email":"jane@smith.com",
-               "firstName":"Jane",
-               "lastName":"Smith",
-               "nationalityCode":"US",
-               "languageCode":"en-US",
-               "telephone":"1-369-81891"
-            }
-         ],
-         "prices":[
-            100,
-            120
-         ],
-         "ratePlanCode":"FF",
-         "spaceTypeCode":"SGL",
-         "state":2,
-         "to":"2017-05-07",
-         "totalCost":260
-      },
-      {
-         "adultCount":2,
-         "code":"02",
-         "from":"2017-05-06",
-         "prices":[
-            100,
-            120,
-            120
-         ],
-         "ratePlanCode":"NR",
-         "spaceTypeCode":"DBL",
-         "to":"2017-05-09",
-         "totalCost":340
-      },
-      {
-         "adultCount":2,
-         "code":"03",
-         "from":"2017-05-06",
-         "ratePlanCode":"FF",
-         "spaceTypeCode":"DBL",
-         "state":3,
-         "to":"2017-05-09"
-      }
-   ],
-   "totalCost":600
+    }
+  },
+  "paymentCard": {
+    "cvv": "666",
+    "expireDate": "0818",
+    "holderName": "John Smith",
+    "number": "4111111111111111",
+    "type": 2
+  },
+  "paymentType": 1,
+  "reservations": [
+    {
+      "adultCount": 1,
+      "childCount": 0,
+      "code": "01",
+      "extras": [
+        {
+          "code": "1",
+          "cost": 20,
+          "count": 1,
+          "pricing": 3
+        }
+      ],
+      "from": "2017-05-05",
+      "guests": [
+        {
+          "address": {
+            "addressLine1": "Some other street 123",
+            "addressLine2": "Some other detail",
+            "city": "Some other city",
+            "country": "US",
+            "latitude": 30,
+            "longitude": 20,
+            "region": "Some other region",
+            "zip": "123 45"
+          },
+          "email": "jane@smith.com",
+          "firstName": "Jane",
+          "lastName": "Smith",
+          "nationalityCode": "US",
+          "languageCode": "en-US",
+          "telephone": "1-369-81891"
+        }
+      ],
+      "prices": [
+        100,
+        120
+      ],
+      "ratePlanCode": "FF",
+      "spaceTypeCode": "SGL",
+      "state": 2,
+      "to": "2017-05-07",
+      "totalCost": 260
+    },
+    {
+      "adultCount": 2,
+      "code": "02",
+      "from": "2017-05-06",
+      "prices": [
+        100,
+        120,
+        120
+      ],
+      "ratePlanCode": "NR",
+      "spaceTypeCode": "DBL",
+      "to": "2017-05-09",
+      "totalCost": 340
+    },
+    {
+      "adultCount": 2,
+      "code": "03",
+      "from": "2017-05-06",
+      "ratePlanCode": "FF",
+      "spaceTypeCode": "DBL",
+      "state": 3,
+      "to": "2017-05-09"
+    }
+  ],
+  "totalCost": 600
 }
 ```
 
@@ -725,7 +725,7 @@ There are certain rules that need to be followed in order for Mews to process th
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-|`email` | `string` | _recommended_ | Email. |
+| `email` | `string` | _recommended_ | Email. |
 | `lastName` | `string` | required | Last name. |
 | `firstName` | `string` | optional | First name. |
 | `telephone` | `string` | optional | Telephone. |
@@ -737,18 +737,18 @@ There are certain rules that need to be followed in order for Mews to process th
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-|`id` | `string` | optional | Identifier of a company. |
-|`iata` | `string` | optional | IATA number of a travel agency. |
-|`name` | `string` | optional | Name of a company or travel agency. |
+| `id` | `string` | optional | Identifier of company. |
+| `iata` | `string` | optional | IATA number of travel agency. |
+| `name` | `string` | optional | Name of company or travel agency. |
 | `contact` | [`Contact`](mews-api.md#contact) object | optional | Company or travel agency contact information. |
 
 #### Contact
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `email` | `string` | _recommended_ | Company email address. |
-| `telephone` | `string` | optional | Company telephone number. |
-| `address` | [`Address`](mews-api.md#address) object | optional | Company address. |
+| `email` | `string` | _recommended_ | Contact email address. |
+| `telephone` | `string` | optional | Contaact telephone number. |
+| `address` | [`Address`](mews-api.md#address) object | optional | Contact address. |
 
 #### Payment card
 
@@ -842,7 +842,7 @@ _¹ It is required that the code remains the same within each booking modificati
 
 ```javascript
 {
-   "clientToken":"[Channel manager client token]",
+  "clientToken": "[Channel manager client token]"
 }
 ```
 
@@ -854,13 +854,13 @@ _¹ It is required that the code remains the same within each booking modificati
 
 ```javascript
 {
-   "channels": [
-      {
-         "code": 1,
-         "name": "Booking.com"
-      },
-      ...
-   ]
+  "channels": [
+    {
+      "code": 1,
+      "name": "Booking.com"
+    },
+    ...
+  ]
 }
 ```
 
