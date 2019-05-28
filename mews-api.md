@@ -336,7 +336,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `city` | `string` | optional | City. |
 | `region` | `string` | optional | Region. |
 | `zip` | `string` | optional | Zip code. |
-| `country` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code. |
+| `country` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code or [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) - three letter country code. |
 | `latitude` | `decimal` | optional | Latitude - from range \[-90, 90\]. |
 | `longitude` | `decimal` | optional | Longitude - from range \[-180, 180\]. |
 
@@ -730,7 +730,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `lastName` | `string` | required | Last name. |
 | `firstName` | `string` | optional | First name. |
 | `telephone` | `string` | optional | Telephone. |
-| `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code. |
+| `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code or [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) - three letter country code. |
 | `languageCode` | `string` | optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Represents address. |
 
