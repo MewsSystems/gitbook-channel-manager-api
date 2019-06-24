@@ -631,7 +631,7 @@ There are certain rules that need to be followed in order for Mews to process th
     "expireDate": "0818",
     "holderName": "John Smith",
     "number": "4111111111111111",
-    "type": 2
+    "type": 1
   },
   "paymentType": 1,
   "reservations": [
