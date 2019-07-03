@@ -563,12 +563,10 @@ There are certain rules that need to be followed in order for Mews to process th
   * The whole group is uniquely identified by `channelManagerId` in Mews and in the channel manager extranet.
   * Each reservation should have a unique code within the group. The same code for the reservation should be provided in any following modification message.
   * Each reservation in the group can have different `start`, `end`, `spaceTypeCode`, `ratePlanCode`.
-  * If it is not possible to merge related reservations into groups on the channel manager side, each reservations should be sent as an individual group with a single `channelManagerId`.
 * Group total cost `group`.`totalCost` is the sum of each `reservation`.`totalCost`, which is the sum of all night costs and total costs of all `extras` of the `reservation`.
   * All costs in the message are inclusive of VAT.
   * If for any reason the `group`.`totalCost` is be different, Mews will automatically distribute the missing/additional cost to the nights, so the `group`.`totalCost` is achieved.
 * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent \(i.e. Mews doesn't process diffs\).
-  * Ideally all reservation `code`s should correspond with the codes provided in the initial creation message.
 * When **cancelling** a reservation from a multi-reservation group, all remaining reservations need to be present in the group definition as well.
   * There are 2 ways to cancel a reservation from a multi-reservation group.
     * A. If the `reservation`.`state` is set to [Reservation States](mews-api.md#reservation-states).`Cancelled`.
@@ -628,7 +626,7 @@ There are certain rules that need to be followed in order for Mews to process th
   },
   "paymentCard": {
     "cvv": "666",
-    "expireDate": "0818",
+    "expireDate": "1222",
     "holderName": "John Smith",
     "number": "4111111111111111",
     "type": 1
@@ -647,7 +645,7 @@ There are certain rules that need to be followed in order for Mews to process th
           "pricing": 3
         }
       ],
-      "from": "2017-05-05",
+      "from": "2020-05-05",
       "guests": [
         {
           "address": {
@@ -675,13 +673,13 @@ There are certain rules that need to be followed in order for Mews to process th
       "ratePlanCode": "FF",
       "spaceTypeCode": "SGL",
       "state": 1,
-      "to": "2017-05-07",
+      "to": "2020-05-07",
       "totalCost": 260
     },
     {
       "adultCount": 2,
       "code": "02",
-      "from": "2017-05-06",
+      "from": "2020-05-06",
       "prices": [
         100,
         120,
@@ -690,17 +688,17 @@ There are certain rules that need to be followed in order for Mews to process th
       "ratePlanCode": "NR",
       "spaceTypeCode": "DBL",
       "state": 2,
-      "to": "2017-05-09",
+      "to": "2020-05-09",
       "totalCost": 340
     },
     {
       "adultCount": 2,
       "code": "03",
-      "from": "2017-05-06",
+      "from": "2020-05-06",
       "ratePlanCode": "FF",
       "spaceTypeCode": "DBL",
       "state": 3,
-      "to": "2017-05-09"
+      "to": "2020-05-09"
     }
   ],
   "totalCost": 600
