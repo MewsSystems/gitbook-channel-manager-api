@@ -42,8 +42,8 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"QD",
          "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "prices":[
             {
                "guestCount":1,
@@ -102,14 +102,14 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
    "availabilities":[
       {
          "spaceTypeCode":"QD",
-         "from":"2018-01-01",
-         "to":"22018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "availability":10
       },
       {
          "spaceTypeCode":"KD",
-         "from":"2018-01-01",
-         "to":"2018-01-30",
+         "from":"2020-01-01",
+         "to":"2020-01-30",
          "availability":5
       }
    ]
@@ -139,7 +139,11 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 \[`sync`\] This method is used when Mews updates restrictions.
 
-#### Request `[ChannelManagerApiAddress]/updateRestrictions`
+#### Request Examples `[ChannelManagerApiAddress]/updateRestrictions`
+
+**Stop Sell Restrictions**
+
+- Stop Sell with no exceptions
 
 ```javascript
 {
@@ -149,30 +153,230 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"QD",
          "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "state":[
-            1
-         ],
-         "minLos":1,
-         "maxLos":7
-      },
-      {
-         "spaceTypeCode":"KD",
-         "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-30",
-         "minLos":2,
-         "maxLos":7
+            2,
+            8
+         ]
       },
       {
          "spaceTypeCode":"KD",
          "ratePlanCode":"NR",
-         "from":"2018-01-01",
-         "to":"2018-01-01",
+         "from":"2020-02-05",
+         "to":"2020-02-10",
          "state":[
-            2
+            2,
+            8
          ]
+      }
+   ]
+}
+```
+
+- Stop Sell for reservations of 3 nights or less
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"QD",
+         "ratePlanCode":"FF",
+         "from":"2020-03-01",
+         "to":"2020-03-31",
+         "state":[
+            2,
+            8
+         ],
+         "minLos":3
+      }
+   ]
+}
+```
+
+- Stop Sell for reservations of 7 nights or more
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"KD",
+         "ratePlanCode":"NR",
+         "from":"2020-03-01",
+         "to":"2020-03-31",
+         "state":[
+            2,
+            8
+         ],
+         "maxLos":14
+      }
+   ]
+}
+```
+
+**Closed to Arrival Restrictions**
+
+-Closed to Arrival with no exceptions
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"QD",
+         "ratePlanCode":"FF",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
+         "state":[
+            2,
+            6
+         ]
+      },
+      {
+         "spaceTypeCode":"KD",
+         "ratePlanCode":"NR",
+         "from":"2020-02-05",
+         "to":"2020-02-10",
+         "state":[
+            2,
+            6
+         ]
+      }
+   ]
+}
+```
+
+- Closed to Arrival for reservations of 2 nights or less
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"QD",
+         "ratePlanCode":"FF",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
+         "state":[
+            2,
+            6
+         ],
+         minLos: 2
+      },
+   ]
+}
+```
+
+- Closed to Arrival for reservations of 7 nights or more
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"KD",
+         "ratePlanCode":"NR",
+         "from":"2020-02-05",
+         "to":"2020-02-10",
+         "state":[
+            2,
+            6
+         ],
+         maxLos: 7
+      }
+   ]
+}
+```
+
+**Closed to Departure Restrictions
+
+- Closed to Departure with no exceptions
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"QD",
+         "ratePlanCode":"FF",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
+         "state":[
+            2,
+            7
+         ]
+      },
+      {
+         "spaceTypeCode":"KD",
+         "ratePlanCode":"NR",
+         "from":"2020-02-05",
+         "to":"2020-02-10",
+         "state":[
+            2,
+            7
+         ]
+      }
+   ]
+}
+```
+
+- Closed to Departure for reservations of 5 nights or less
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"QD",
+         "ratePlanCode":"FF",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
+         "state":[
+            2,
+            7
+         ],
+         minLos: 5
+      },
+      {
+         "spaceTypeCode":"KD",
+         "ratePlanCode":"NR",
+         "from":"2020-02-05",
+         "to":"2020-02-10",
+         "state":[
+            2,
+            7
+         ]
+      }
+   ]
+}
+```
+
+- Closed to Departure for reservations of 2 nights or more
+
+```javascript
+{
+   "clientToken":"[Mews Client token]",
+   "connectionToken":"[Token of a concrete connection]",
+   "restrictions":[
+      {
+         "spaceTypeCode":"KD",
+         "ratePlanCode":"NR",
+         "from":"2020-02-05",
+         "to":"2020-02-10",
+         "state":[
+            2,
+            7
+         ],
+         maxLos: 2res
       }
    ]
 }
