@@ -159,14 +159,6 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       },
       {
          "spaceTypeCode":"KD",
-         "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-30",
-         "minLos":2,
-         "maxLos":7
-      },
-      {
-         "spaceTypeCode":"KD",
          "ratePlanCode":"NR",
          "from":"2018-01-01",
          "to":"2018-01-01",
@@ -208,6 +200,111 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `6` | Closed to arrival |
 | `7` | Closed to departure |
 | `8` | Closed to stay |
+
+When all restrictions removed, state |`1`| is sent.
+
+```javascript
+       {
+           "ratePlanCode": "r",
+           "spaceTypeCode": "JST",
+           "state": [
+               1
+           ],
+           "minLos": null,
+           "maxLos": null,
+           "from": "2019-09-24",
+           "to": "2019-10-31"
+       }
+```
+
+New restrictions override old restrictions. State |`1`| is not sent to remove old restrictions, if they were replaced.
+
+State |`2`| is always sent in combination with state |`6`|, |`7`|, or |`8`|, or all together.
+
+```javascript
+        {
+            "ratePlanCode": "Ff",
+            "spaceTypeCode": "DEL",
+            "state": [
+                2,
+                8,
+                6,
+                7
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2019-09-24",
+            "to": "2019-10-31"
+        }
+```
+Closed to Stay
+
+```javascript
+{
+            "ratePlanCode": "Ff",
+            "spaceTypeCode": "4BD",
+            "state": [
+                2,
+                8
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2019-09-30",
+            "to": "2019-10-06"
+        }
+```
+Closed to Arrival
+
+```javascript
+            "ratePlanCode": "Ff",
+            "spaceTypeCode": "STA",
+            "state": [
+                2,
+                6
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2019-09-30",
+            "to": "2019-10-06"
+        }
+```
+
+Closed to Departure
+
+```javascript
+        {
+            "ratePlanCode": "Ff",
+            "spaceTypeCode": "DEL",
+            "state": [
+                2,
+                7
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2019-09-30",
+            "to": "2019-10-06"
+        }
+```
+
+
+When |`minLos`| is not specified, |`null`| value is sent.
+
+```javascript        
+{
+            "ratePlanCode": "Ff",
+            "spaceTypeCode": "4BD",
+            "state": [
+                2,
+                8
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2019-09-30",
+            "to": "2019-10-06"
+        }
+```
+
+
 
 #### Response
 
