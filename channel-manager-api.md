@@ -42,8 +42,8 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"QD",
          "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "prices":[
             {
                "guestCount":1,
@@ -102,14 +102,14 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
    "availabilities":[
       {
          "spaceTypeCode":"QD",
-         "from":"2018-01-01",
-         "to":"22018-01-31",
+         "from":"2020-01-01",
+         "to":"22020-01-31",
          "availability":10
       },
       {
          "spaceTypeCode":"KD",
-         "from":"2018-01-01",
-         "to":"2018-01-30",
+         "from":"2020-01-01",
+         "to":"2020-01-30",
          "availability":5
       }
    ]
@@ -149,8 +149,8 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"QD",
          "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "state":[
             1
          ],
@@ -160,8 +160,8 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"KD",
          "ratePlanCode":"NR",
-         "from":"2018-01-01",
-         "to":"2018-01-01",
+         "from":"2020-01-01",
+         "to":"2020-01-01",
          "state":[
             2
          ]
@@ -212,8 +212,8 @@ When all restrictions removed, state |`1`| is sent.
            ],
            "minLos": null,
            "maxLos": null,
-           "from": "2019-09-24",
-           "to": "2019-10-31"
+           "from": "2020-09-24",
+           "to": "2020-10-31"
        }
 ```
 
@@ -233,8 +233,8 @@ State |`2`| is always sent in combination with state |`6`|, |`7`|, or |`8`|, or 
             ],
             "minLos": null,
             "maxLos": null,
-            "from": "2019-09-24",
-            "to": "2019-10-31"
+            "from": "2020-09-24",
+            "to": "2020-10-31"
         }
 ```
 Closed to Stay
@@ -249,8 +249,8 @@ Closed to Stay
             ],
             "minLos": null,
             "maxLos": null,
-            "from": "2019-09-30",
-            "to": "2019-10-06"
+            "from": "2020-09-30",
+            "to": "2020-10-06"
         }
 ```
 Closed to Arrival
@@ -264,8 +264,8 @@ Closed to Arrival
             ],
             "minLos": null,
             "maxLos": null,
-            "from": "2019-09-30",
-            "to": "2019-10-06"
+            "from": "2020-09-30",
+            "to": "2020-10-06"
         }
 ```
 
@@ -281,8 +281,8 @@ Closed to Departure
             ],
             "minLos": null,
             "maxLos": null,
-            "from": "2019-09-30",
-            "to": "2019-10-06"
+            "from": "2020-09-30",
+            "to": "2020-10-06"
         }
 ```
 
@@ -299,8 +299,8 @@ When |`minLos`| is not specified, |`null`| value is sent.
             ],
             "minLos": null,
             "maxLos": null,
-            "from": "2019-09-30",
-            "to": "2019-10-06"
+            "from": "2020-09-30",
+            "to": "2020-10-06"
         }
 ```
 
