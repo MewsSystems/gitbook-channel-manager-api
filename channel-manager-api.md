@@ -203,6 +203,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 When all restrictions removed, state |`1`| is sent.
 
+
 ```javascript
        {
            "ratePlanCode": "r",
@@ -217,7 +218,7 @@ When all restrictions removed, state |`1`| is sent.
        }
 ```
 
-New restrictions override old restrictions. State |`1`| is not sent to remove old restrictions, if they were replaced.
+New restrictions always override old restrictions. State |`1`| is not sent to remove old restrictions, if they were modified.
 
 State |`2`| is always sent in combination with state |`6`|, |`7`|, or |`8`|, or all together.
 
@@ -253,6 +254,21 @@ Closed to Stay
             "to": "2020-10-06"
         }
 ```
+Closed to Stay witn MinLos. State |`1`| is sent with specified minLos. If |`minLos`| is not met, then should be treated as closed.
+
+```javascript
+{
+    "ratePlanCode": "Ff",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2020-10-01",
+    "to": "2020-10-14"
+}
+
 Closed to Arrival
 
 ```javascript
@@ -268,6 +284,21 @@ Closed to Arrival
             "to": "2020-10-06"
         }
 ```
+
+Closed to Arrival with MinLos. State |`1`| is sent with specified minLos. If |`minLos`| is not met, then should be treated as closed to arrival.
+
+```javascript
+{
+    "ratePlanCode": "Ff",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2019-10-01",
+    "to": "2019-10-04"
+}
 
 Closed to Departure
 
@@ -286,6 +317,21 @@ Closed to Departure
         }
 ```
 
+Closed to Departure with MinLos. State |`1`| is sent with specified minLos. If |`minLos`| is not met, then should be treated as closed to departure.
+
+```javascript
+{
+    "ratePlanCode": "Ff",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2019-10-01",
+    "to": "2019-10-04"
+}
+```
 
 When |`minLos`| is not specified, |`null`| value is sent.
 
