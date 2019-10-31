@@ -201,7 +201,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `7` | Closed to departure |
 | `8` | Closed to stay |
 
-When all restrictions removed, state |`1`| is sent.
+When all restrictions are removed, state `1` is sent.
 
 
 ```javascript
