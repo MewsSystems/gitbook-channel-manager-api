@@ -203,7 +203,6 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 When all restrictions are removed, state `1` is sent.
 
-
 ```javascript
        {
            "ratePlanCode": "r",
