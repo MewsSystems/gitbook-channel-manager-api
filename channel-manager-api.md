@@ -103,7 +103,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"QD",
          "from":"2020-01-01",
-         "to":"22020-01-31",
+         "to":"2020-01-31",
          "availability":10
       },
       {
