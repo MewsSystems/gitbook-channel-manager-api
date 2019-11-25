@@ -816,7 +816,7 @@ _¹ It is required that the code remains the same within each booking modificati
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `code` | `string` | required | Mapping code of the extra product. |
-| `cost` | `decimal` | required | Unit cost of the extra product. |
+| `cost` | `decimal` | required | Total cost of the extra product. |
 | `count` | `int` | required | Count of extra products ordered. |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
 
