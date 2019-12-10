@@ -252,7 +252,7 @@ or
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `channelManagerId` | `string` | required | Booking code. |
-| `error` | [`Error`](https://github.com/mews-systems/channel-manager-api/tree/da74c52f29ad04bf712acb397e311d8e5e8ba90b/general-api.md#error) | optional | If booking processing failed, holds the explanation. |
+| `error` | [`Error`](general-remarks.md#error) | optional | If booking processing failed, holds the explanation. |
 | `reservations` | [`Reservation Confirmation`](channel-manager-api.md#reservation-confirmation) collection | optional | Confirmation of each reservation. |
 
 ##### Reservation Confirmation
