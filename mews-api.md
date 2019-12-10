@@ -162,7 +162,8 @@ Returns configuration of the enterprise and the client.
 
 #### Response
 
-This is example of a _successful_ response. In case an error occurred, the response will contain only [`Error`](mews-api.md#error) object with details.
+This is example of a _successful_ response. In case an 
+occurred, the response will contain only [`Error`](general-remarks.md#error) object with details.
 
 ```javascript
 {
