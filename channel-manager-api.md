@@ -219,7 +219,7 @@ When all restrictions are removed, state `1` is sent.
 
 New restrictions always override old restrictions. State |`1`| is not sent to remove old restrictions, if they were modified.
 
-State |`2`| is always sent in combination with state |`6`|, |`7`|, or |`8`|, or all together.
+State `2` is always sent in combination with state `6`, `7`, or `8`, or all together.
 
 ```javascript
         {
@@ -237,7 +237,7 @@ State |`2`| is always sent in combination with state |`6`|, |`7`|, or |`8`|, or 
             "to": "2020-10-31"
         }
 ```
-Closed to Stay
+##### Closed to Stay
 
 ```javascript
 {
@@ -253,7 +253,7 @@ Closed to Stay
             "to": "2020-10-06"
         }
 ```
-Closed to Stay witn MinLos. State |`1`| is sent with specified minLos. If |`minLos`| is not met, then should be treated as closed.
+Closed to Stay witn MinLos. State `1` is sent with specified minLos. If `minLos` is not met, then should be treated as closed.
 
 ```javascript
 {
@@ -267,8 +267,9 @@ Closed to Stay witn MinLos. State |`1`| is sent with specified minLos. If |`minL
     "from": "2020-10-01",
     "to": "2020-10-14"
 }
+```
 
-Closed to Arrival
+##### Closed to Arrival
 
 ```javascript
             "ratePlanCode": "Ff",
@@ -284,7 +285,7 @@ Closed to Arrival
         }
 ```
 
-Closed to Arrival with MinLos. State |`1`| is sent with specified minLos. If |`minLos`| is not met, then should be treated as closed to arrival.
+Closed to Arrival with MinLos. State `1` is sent with specified minLos. If `minLos` is not met, then should be treated as closed to arrival.
 
 ```javascript
 {
@@ -298,8 +299,9 @@ Closed to Arrival with MinLos. State |`1`| is sent with specified minLos. If |`m
     "from": "2019-10-01",
     "to": "2019-10-04"
 }
+```
 
-Closed to Departure
+##### Closed to Departure
 
 ```javascript
         {
@@ -316,7 +318,7 @@ Closed to Departure
         }
 ```
 
-Closed to Departure with MinLos. State |`1`| is sent with specified minLos. If |`minLos`| is not met, then should be treated as closed to departure.
+Closed to Departure with MinLos. State `1` is sent with specified minLos. If `minLos` is not met, then should be treated as closed to departure.
 
 ```javascript
 {
@@ -332,7 +334,7 @@ Closed to Departure with MinLos. State |`1`| is sent with specified minLos. If |
 }
 ```
 
-When |`minLos`| is not specified, |`null`| value is sent.
+When `minLos` is not specified, `null` value is sent.
 
 ```javascript        
 {
