@@ -201,8 +201,12 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `7` | Closed to departure |
 | `8` | Closed to stay |
 
-When all restrictions are removed, state `1` is sent.
+#### Restriction Examples
 
+#### No Restriction (Open)
+
+When all restrictions are removed, state `1` is sent. New restrictions always override old restrictions. State `1` is not sent to remove old restrictions, if they were modified.
+ 
 ```javascript
        {
            "ratePlanCode": "r",
@@ -217,7 +221,7 @@ When all restrictions are removed, state `1` is sent.
        }
 ```
 
-New restrictions always override old restrictions. State |`1`| is not sent to remove old restrictions, if they were modified.
+##### Closed Restrictions
 
 State `2` is always sent in combination with state `6`, `7`, or `8`, or all together.
 
@@ -253,7 +257,10 @@ State `2` is always sent in combination with state `6`, `7`, or `8`, or all toge
             "to": "2020-10-06"
         }
 ```
-Closed to Stay witn MinLos. State `1` is sent with specified minLos. If `minLos` is not met, then should be treated as closed.
+
+##### Closed to Stay with minLos and maxLos
+
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as closed to stay.
 
 ```javascript
 {
@@ -285,7 +292,9 @@ Closed to Stay witn MinLos. State `1` is sent with specified minLos. If `minLos`
         }
 ```
 
-Closed to Arrival with MinLos. State `1` is sent with specified minLos. If `minLos` is not met, then should be treated as closed to arrival.
+##### Closed to Arrival with minLos and maxLos
+
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as closed to arrival.
 
 ```javascript
 {
@@ -318,7 +327,9 @@ Closed to Arrival with MinLos. State `1` is sent with specified minLos. If `minL
         }
 ```
 
-Closed to Departure with MinLos. State `1` is sent with specified minLos. If `minLos` is not met, then should be treated as closed to departure.
+##### Closed to Departure with minLos and maxLos 
+
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as closed to departure.
 
 ```javascript
 {
@@ -333,6 +344,7 @@ Closed to Departure with MinLos. State `1` is sent with specified minLos. If `mi
     "to": "2019-10-04"
 }
 ```
+##### No minLos or maxLos
 
 When `minLos` is not specified, `null` value is sent.
 
@@ -350,8 +362,6 @@ When `minLos` is not specified, `null` value is sent.
             "to": "2020-10-06"
         }
 ```
-
-
 
 #### Response
 
