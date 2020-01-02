@@ -203,7 +203,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 #### Restriction Examples
 
-#### No Restriction (Open)
+##### No Restriction (Open)
 
 When all restrictions are removed, state `1` is sent. New restrictions always override old restrictions. State `1` is not sent to remove old restrictions, if they were modified.
  
