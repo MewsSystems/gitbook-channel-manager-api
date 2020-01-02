@@ -209,7 +209,7 @@ When all restrictions are removed, state `1` is sent. New restrictions always ov
  
 ```javascript
        {
-           "ratePlanCode": "r",
+           "ratePlanCode": "NR",
            "spaceTypeCode": "JST",
            "state": [
                1
@@ -227,7 +227,7 @@ State `2` is always sent in combination with state `6`, `7`, or `8`, or all toge
 
 ```javascript
         {
-            "ratePlanCode": "Ff",
+            "ratePlanCode": "FF",
             "spaceTypeCode": "DEL",
             "state": [
                 2,
@@ -245,7 +245,7 @@ State `2` is always sent in combination with state `6`, `7`, or `8`, or all toge
 
 ```javascript
 {
-            "ratePlanCode": "Ff",
+            "ratePlanCode": "FF",
             "spaceTypeCode": "4BD",
             "state": [
                 2,
@@ -264,7 +264,7 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-    "ratePlanCode": "Ff",
+    "ratePlanCode": "FF",
     "spaceTypeCode": "JST",
     "state": [
         1
@@ -279,7 +279,7 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 ##### Closed to Arrival
 
 ```javascript
-            "ratePlanCode": "Ff",
+            "ratePlanCode": "FF",
             "spaceTypeCode": "STA",
             "state": [
                 2,
@@ -298,7 +298,7 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-    "ratePlanCode": "Ff",
+    "ratePlanCode": "FF",
     "spaceTypeCode": "JST",
     "state": [
         1
@@ -314,7 +314,7 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
         {
-            "ratePlanCode": "Ff",
+            "ratePlanCode": "FF",
             "spaceTypeCode": "DEL",
             "state": [
                 2,
@@ -333,7 +333,7 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-    "ratePlanCode": "Ff",
+    "ratePlanCode": "FF",
     "spaceTypeCode": "JST",
     "state": [
         1
@@ -350,7 +350,7 @@ When `minLos` is not specified, `null` value is sent.
 
 ```javascript        
 {
-            "ratePlanCode": "Ff",
+            "ratePlanCode": "FF",
             "spaceTypeCode": "4BD",
             "state": [
                 2,
