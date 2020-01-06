@@ -42,8 +42,8 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"QD",
          "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "prices":[
             {
                "guestCount":1,
@@ -102,14 +102,14 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
    "availabilities":[
       {
          "spaceTypeCode":"QD",
-         "from":"2018-01-01",
-         "to":"22018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "availability":10
       },
       {
          "spaceTypeCode":"KD",
-         "from":"2018-01-01",
-         "to":"2018-01-30",
+         "from":"2020-01-01",
+         "to":"2020-01-30",
          "availability":5
       }
    ]
@@ -149,8 +149,8 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       {
          "spaceTypeCode":"QD",
          "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-31",
+         "from":"2020-01-01",
+         "to":"2020-01-31",
          "state":[
             1
          ],
@@ -159,17 +159,9 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
       },
       {
          "spaceTypeCode":"KD",
-         "ratePlanCode":"FF",
-         "from":"2018-01-01",
-         "to":"2018-01-30",
-         "minLos":2,
-         "maxLos":7
-      },
-      {
-         "spaceTypeCode":"KD",
          "ratePlanCode":"NR",
-         "from":"2018-01-01",
-         "to":"2018-01-01",
+         "from":"2020-01-01",
+         "to":"2020-01-01",
          "state":[
             2
          ]
@@ -208,6 +200,168 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `6` | Closed to arrival |
 | `7` | Closed to departure |
 | `8` | Closed to stay |
+
+#### Restriction Examples
+
+##### No Restriction (Open)
+
+When all restrictions are removed, state `1` is sent. New restrictions always override old restrictions. State `1` is not sent to remove old restrictions, if they were modified.
+ 
+```javascript
+       {
+           "ratePlanCode": "NR",
+           "spaceTypeCode": "JST",
+           "state": [
+               1
+           ],
+           "minLos": null,
+           "maxLos": null,
+           "from": "2020-09-24",
+           "to": "2020-10-31"
+       }
+```
+
+##### Closed Restrictions
+
+State `2` is always sent in combination with state `6`, `7`, or `8`, or all together.
+
+```javascript
+        {
+            "ratePlanCode": "FF",
+            "spaceTypeCode": "DEL",
+            "state": [
+                2,
+                8,
+                6,
+                7
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2020-09-24",
+            "to": "2020-10-31"
+        }
+```
+##### Closed to Stay
+
+```javascript
+{
+            "ratePlanCode": "FF",
+            "spaceTypeCode": "4BD",
+            "state": [
+                2,
+                8
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2020-09-30",
+            "to": "2020-10-06"
+        }
+```
+
+##### Closed to Stay with minLos and maxLos
+
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as closed to stay.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2020-10-01",
+    "to": "2020-10-14"
+}
+```
+
+##### Closed to Arrival
+
+```javascript
+            "ratePlanCode": "FF",
+            "spaceTypeCode": "STA",
+            "state": [
+                2,
+                6
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2020-09-30",
+            "to": "2020-10-06"
+        }
+```
+
+##### Closed to Arrival with minLos and maxLos
+
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as closed to arrival.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2019-10-01",
+    "to": "2019-10-04"
+}
+```
+
+##### Closed to Departure
+
+```javascript
+        {
+            "ratePlanCode": "FF",
+            "spaceTypeCode": "DEL",
+            "state": [
+                2,
+                7
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2020-09-30",
+            "to": "2020-10-06"
+        }
+```
+
+##### Closed to Departure with minLos and maxLos 
+
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as closed to departure.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2019-10-01",
+    "to": "2019-10-04"
+}
+```
+##### No minLos or maxLos
+
+When `minLos` is not specified, `null` value is sent.
+
+```javascript        
+{
+            "ratePlanCode": "FF",
+            "spaceTypeCode": "4BD",
+            "state": [
+                2,
+                8
+            ],
+            "minLos": null,
+            "maxLos": null,
+            "from": "2020-09-30",
+            "to": "2020-10-06"
+        }
+```
 
 #### Response
 
