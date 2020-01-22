@@ -2,24 +2,15 @@
 
 This is the API to be implemented on channel manager side.
 
-* [Mews Inventory Update Modes
-](channel-manager-api.md#mews-inventory-update-modes)
-  * [Full Inventory Update Mode
-](channel-manager-api.md#full-inventory-update-mode)
-  * [Delta Inventory Update Mode
-](channel-manager-api.md#delta-inventory-update-mode)
-* [Expected Operations
-](channel-manager-api.md#expected-operations)
-  * [Update Prices
-](channel-manager-api.md#update-prices) \(required\)
-  * [Update Availability
-](channel-manager-api.md#update-availability) \(required\)
-  * [Update Restrictions
-](channel-manager-api.md#update-restrictions) \(required\)
-  * [Confirm Booking
-](channel-manager-api.md#confirm-booking) \(required\)
-  * [Change Notification
-](channel-manager-api.md#change-notification) \(optional\)
+* [Mews Inventory Update Modes](channel-manager-api.md#mews-inventory-update-modes)
+  * [Full Inventory Update Mode](channel-manager-api.md#full-inventory-update-mode)
+  * [Delta Inventory Update Mode](channel-manager-api.md#delta-inventory-update-mode)
+* [Expected Operations](channel-manager-api.md#expected-operations)
+  * [Update Prices](channel-manager-api.md#update-prices) \(required\)
+  * [Update Availability](channel-manager-api.md#update-availability) \(required\)
+  * [Update Restrictions](channel-manager-api.md#update-restrictions) \(required\)
+  * [Confirm Booking](channel-manager-api.md#confirm-booking) \(required\)
+  * [Change Notification](channel-manager-api.md#change-notification) \(optional\)
 
 The channel manager side accepts Inventory updates \(i.e. prices / availability / restrictions\) and booking confirmations. Similarly to Mews side, there should be 2 environments with different `clientToken`s from each other. The test \(or development\) environment will be used to verify the implemented connection by Mews before connecting the live environment.
 
