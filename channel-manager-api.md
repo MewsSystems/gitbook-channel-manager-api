@@ -20,8 +20,7 @@ Mews sends Inventory in 2 modes, both modes use the same API messages.
 
 ### Full Inventory Update Mode
 
-It is possible to request the Inventory to be updated for some period via API call - [Request ARI Update
-](mews-api.md#request-ari-update). Or it is possible that property employee uses this mode to push latest data manually. Data sent in this mode is always data for **all** connected rate plans and space types combinations.
+It is possible to request the Inventory to be updated for some period via API call - [Request ARI Update](mews-api.md#request-ari-update). Or it is possible that property employee uses this mode to push latest data manually. Data sent in this mode is always data for **all** connected rate plans and space types combinations.
 
 ### Delta Inventory Update Mode
 
@@ -31,11 +30,9 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 ### Update Prices
 
-\[`sync`\
-] This method is used when Mews updates prices of rate plans.
+\[`sync`\] This method is used when Mews updates prices of rate plans.
 
-#### Request `[ChannelManagerApiAddress
-]/updatePrices`
+#### Request `[ChannelManagerApiAddress]/updatePrices`
 
 ```javascript
 {
@@ -68,8 +65,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `ratePrices` | [`Rate Price`
-](channel-manager-api.md#rate-price) collection | required | Collection of prices for all rate plan - space type - date - person count combinations. |
+| `ratePrices` | [`Rate Price`](channel-manager-api.md#rate-price) collection | required | Collection of prices for all rate plan - space type - date - person count combinations. |
 
 ##### Rate Price
 
@@ -79,8 +75,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `ratePlanCode` | `string` | required | Mapping code of the rate plan. |
 | `from` | `string` | required | Start date of the updated interval in `"yyyy-MM-dd"` format. |
 | `to` | `string` | required | End date \(included\) of the updated interval in `"yyyy-MM-dd"` format. |
-| `prices` | [`Price`
-](channel-manager-api.md#price) collection | required | Collection of prices for each person count for certain rate plan - space type - date combination. |
+| `prices` | [`Price`](channel-manager-api.md#price) collection | required | Collection of prices for each person count for certain rate plan - space type - date combination. |
 
 ##### Price
 
@@ -92,16 +87,13 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 #### Response
 
-[Plain response
-](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
+[Plain response](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
 
 ### Update Availability
 
-\[`sync`\
-] This method is used when Mews updates availability of space types.
+\[`sync`\] This method is used when Mews updates availability of space types.
 
-#### Request `[ChannelManagerApiAddress
-]/updateAvailability`
+#### Request `[ChannelManagerApiAddress]/updateAvailability`
 
 ```javascript
 {
@@ -128,8 +120,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `availabilities` | [`Availability`
-](channel-manager-api.md#availability) collection | required | Collection of availability of space types. |
+| `availabilities` | [`Availability`](channel-manager-api.md#availability) collection | required | Collection of availability of space types. |
 
 ##### Availability
 
@@ -142,16 +133,13 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 #### Response
 
-[Plain response
-](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
+[Plain response](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
 
 ### Update Restrictions
 
-\[`sync`\
-] This method is used when Mews updates restrictions.
+\[`sync`\] This method is used when Mews updates restrictions.
 
-#### Request `[ChannelManagerApiAddress
-]/updateRestrictions`
+#### Request `[ChannelManagerApiAddress]/updateRestrictions`
 
 ```javascript
 {
@@ -186,8 +174,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `restrictions` | [`Restriction`
-](channel-manager-api.md#restriction) collection | required | Collection of restrictions. |
+| `restrictions` | [`Restriction`](channel-manager-api.md#restriction) collection | required | Collection of restrictions. |
 
 ##### Restriction
 
@@ -199,8 +186,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | `to` | `string` | required | End date \(included\) of the updated interval in `"yyyy-MM-dd"` format. |
 | `minLos` | `int` | optional | Minimal LOS during the interval. _Has to be at least 1._ |
 | `maxLos` | `int` | optional | Maximal LOS during the interval. _Has to be at least _`minLos`_._ |
-| `state` | `int` collection | required | [Restriction State
-](channel-manager-api.md#restriction-state) code. |
+| `state` | `int` collection | required | [Restriction State](channel-manager-api.md#restriction-state) code. |
 
 ##### Restriction State
 
@@ -380,17 +366,13 @@ When `minLos` is not specified, `null` value is sent.
 
 #### Response
 
-[Plain response
-](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
+[Plain response](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
 
 ### Confirm Booking
 
-\[`sync`\
-] This method is used when Mews confirms a booking sent via [Process Group
-](mews-api.md#process-group). It is used for both successful confirmation or notification that processing failed.
+\[`sync`\] This method is used when Mews confirms a booking sent via [Process Group](mews-api.md#process-group). It is used for both successful confirmation or notification that processing failed.
 
-#### Request `[ChannelManagerApiAddress
-]/confirmGroup`
+#### Request `[ChannelManagerApiAddress]/confirmGroup`
 
 ```javascript
 {
@@ -425,10 +407,8 @@ or
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `channelManagerId` | `string` | required | Booking code. |
-| `error` | [`Error`
-](https: //github.com/mews-systems/channel-manager-api/tree/da74c52f29ad04bf712acb397e311d8e5e8ba90b/general-api.md#error) | optional | If booking processing failed, holds the explanation. |
-| `reservations` | [`Reservation Confirmation`
-](channel-manager-api.md#reservation-confirmation) collection | optional | Confirmation of each reservation. |
+| `error` | [`Error`](https: //github.com/mews-systems/channel-manager-api/tree/da74c52f29ad04bf712acb397e311d8e5e8ba90b/general-api.md#error) | optional | If booking processing failed, holds the explanation. |
+| `reservations` | [`Reservation Confirmation`](channel-manager-api.md#reservation-confirmation) collection | optional | Confirmation of each reservation. |
 
 ##### Reservation Confirmation
 
@@ -439,16 +419,13 @@ or
 
 #### Response
 
-[Plain response
-](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
+[Plain response](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
 
 ### Change Notification
 
-\[`sync`\
-] This method is used when Mews informs channel manager that there was change in Mews that affects the connection configuration. This API call is optional to implement, it is used in case of fully-automated connection.
+\[`sync`\] This method is used when Mews informs channel manager that there was change in Mews that affects the connection configuration. This API call is optional to implement, it is used in case of fully-automated connection.
 
-#### Request `[ChannelManagerApiAddress
-]/changeNotificaton`
+#### Request `[ChannelManagerApiAddress]/changeNotificaton`
 
 ```javascript
 {
@@ -462,8 +439,7 @@ or
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `type` | `int` | required | [`Change Notification Type`
-](channel-manager-api.md#change-notification-type) code |
+| `type` | `int` | required | [`Change Notification Type`](channel-manager-api.md#change-notification-type) code |
 
 ##### Change Notification Type
 
@@ -479,5 +455,4 @@ or
 
 Response
 
-[Plain response
-](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
+[Plain response](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
