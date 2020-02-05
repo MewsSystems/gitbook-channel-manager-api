@@ -563,9 +563,8 @@ There are certain rules that need to be followed in order for Mews to process th
   * The whole group is uniquely identified by `channelManagerId` in Mews and in the channel manager extranet.
   * Each reservation should have a unique code within the group. The same code for the reservation should be provided in any following modification message.
   * Each reservation in the group can have different `start`, `end`, `spaceTypeCode`, `ratePlanCode`.
-* Group total cost `group`.`totalCost` is the sum of each `reservation`.`totalCost`, which is the sum of all night costs and total costs of all `extras` of the `reservation`.
-  * All costs in the message are inclusive of VAT.
-  * If for any reason the `group`.`totalCost` is be different, Mews will automatically distribute the missing/additional cost to the nights, so the `group`.`totalCost` is achieved.
+* Group total cost `group`.`totalAmount` is the sum of each `reservation`.`totalAmount`, which is the sum of all night amounts and total amounts of all `extras` of the `reservation`.
+  * If for any reason the `group`.`totalAmount` is be different, Mews will automatically distribute the missing/additional amount to the nights, so the `group`.`totalAmount` is achieved.
 * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent \(i.e. Mews doesn't process diffs\).
 * When **cancelling** a reservation from a multi-reservation group, all remaining reservations need to be present in the group definition as well.
   * There are 2 ways to cancel a reservation from a multi-reservation group.
@@ -641,6 +640,11 @@ There are certain rules that need to be followed in order for Mews to process th
         {
           "code": "1",
           "cost": 20,
+          "amount": 
+          {
+              "net": 16.2,
+              "gross": 20
+          },
           "count": 1,
           "pricing": 3
         }
@@ -670,6 +674,16 @@ There are certain rules that need to be followed in order for Mews to process th
         100,
         120
       ],
+      "amounts" [
+          {
+              "net": 81,
+              "gross": 100
+          },
+          {
+              "net": 97.2,
+              "gross": 120
+          },
+      ],
       "ratePlanCode": "FF",
       "spaceTypeCode": "SGL",
       "state": 1,
@@ -685,11 +699,30 @@ There are certain rules that need to be followed in order for Mews to process th
         120,
         120
       ],
+      "amounts": [
+          {
+              "net": 81,
+              "gross": 100
+          },
+          {
+              "net": 97.2,
+              "gross": 120
+          },
+          {
+              "net": 97.2,
+              "gross": 120
+          }
+          
+      ],
       "ratePlanCode": "NR",
       "spaceTypeCode": "DBL",
       "state": 2,
       "to": "2020-05-09",
-      "totalCost": 340
+      "totalCost": 340,
+      "totalAmount": {
+          "net": 275.4,
+          "gross": 340
+      }
     },
     {
       "adultCount": 2,
@@ -701,7 +734,12 @@ There are certain rules that need to be followed in order for Mews to process th
       "to": "2020-05-09"
     }
   ],
-  "totalCost": 600
+  "totalCost": 600,
+  "totalAmount": 
+  {
+      "net": 486,
+      "gross": 600
+  }
 }
 ```
 
@@ -819,6 +857,14 @@ _¹ It is required that the code remains the same within each booking modificati
 | `cost` | `decimal` | required | Total cost of the extra product. |
 | `count` | `int` | required | Count of extra products ordered. |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
+
+#### Amount
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `net` | `decimal` | optional | Price with taxes excluded. |
+| `gross` | `decimal` | optional | Price with taxes included. |
+
 
 #### Extra Pricing Types
 
