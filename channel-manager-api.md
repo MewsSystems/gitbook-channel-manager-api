@@ -453,6 +453,5 @@ or
 
 #### Response
 
-Response
 
 [Plain response](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
