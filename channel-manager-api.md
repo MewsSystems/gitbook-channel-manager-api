@@ -36,24 +36,24 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 ```javascript
 {
-   "clientToken":"[Mews Client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "ratePrices":[
+   "clientToken": "[Mews Client token]",
+   "connectionToken": "[Token of a concrete connection]",
+   "ratePrices": [
       {
-         "spaceTypeCode":"QD",
-         "ratePlanCode":"FF",
-         "from":"2020-01-01",
-         "to":"2020-01-31",
-         "prices":[
+         "spaceTypeCode": "QD",
+         "ratePlanCode": "FF",
+         "from": "2020-01-01",
+         "to": "2020-01-31",
+         "prices": [
             {
-               "guestCount":1,
-               "amount":95,
-               "currencyCode":"USD"
+               "guestCount": 1,
+               "amount": 95,
+               "currencyCode": "USD"
             },
             {
-               "guestCount":2,
-               "amount":100,
-               "currencyCode":"USD"
+               "guestCount": 2,
+               "amount": 100,
+               "currencyCode": "USD"
             }
          ]
       }
@@ -97,20 +97,20 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 ```javascript
 {
-   "clientToken":"[Mews Client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "availabilities":[
+   "clientToken": "[Mews Client token]",
+   "connectionToken": "[Token of a concrete connection]",
+   "availabilities": [
       {
-         "spaceTypeCode":"QD",
-         "from":"2020-01-01",
-         "to":"2020-01-31",
-         "availability":10
+         "spaceTypeCode": "QD",
+         "from": "2020-01-01",
+         "to": "2020-01-31",
+         "availability": 10
       },
       {
-         "spaceTypeCode":"KD",
-         "from":"2020-01-01",
-         "to":"2020-01-30",
-         "availability":5
+         "spaceTypeCode": "KD",
+         "from": "2020-01-01",
+         "to": "2020-01-30",
+         "availability": 5
       }
    ]
 }
@@ -143,26 +143,26 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 ```javascript
 {
-   "clientToken":"[Mews Client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "restrictions":[
+   "clientToken": "[Mews Client token]",
+   "connectionToken": "[Token of a concrete connection]",
+   "restrictions": [
       {
-         "spaceTypeCode":"QD",
-         "ratePlanCode":"FF",
-         "from":"2020-01-01",
-         "to":"2020-01-31",
-         "state":[
+         "spaceTypeCode": "QD",
+         "ratePlanCode": "FF",
+         "from": "2020-01-01",
+         "to": "2020-01-31",
+         "state": [
             1
          ],
-         "minLos":1,
-         "maxLos":7
+         "minLos": 1,
+         "maxLos": 7
       },
       {
-         "spaceTypeCode":"KD",
-         "ratePlanCode":"NR",
-         "from":"2020-01-01",
-         "to":"2020-01-01",
-         "state":[
+         "spaceTypeCode": "KD",
+         "ratePlanCode": "NR",
+         "from": "2020-01-01",
+         "to": "2020-01-01",
+         "state": [
             2
          ]
       }
@@ -208,17 +208,17 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 When all restrictions are removed, state `1` is sent. New restrictions always override old restrictions. State `1` is not sent to remove old restrictions, if they were modified.
  
 ```javascript
-       {
-           "ratePlanCode": "NR",
-           "spaceTypeCode": "JST",
-           "state": [
-               1
-           ],
-           "minLos": null,
-           "maxLos": null,
-           "from": "2020-09-24",
-           "to": "2020-10-31"
-       }
+{
+   "ratePlanCode": "NR",
+   "spaceTypeCode": "JST",
+   "state": [
+      1
+   ],
+   "minLos": null,
+   "maxLos": null,
+   "from": "2020-09-24",
+   "to": "2020-10-31"
+}
 ```
 
 ##### Closed Restrictions
@@ -226,36 +226,36 @@ When all restrictions are removed, state `1` is sent. New restrictions always ov
 State `2` is always sent in combination with state `6`, `7`, or `8`, or all together.
 
 ```javascript
-        {
-            "ratePlanCode": "FF",
-            "spaceTypeCode": "DEL",
-            "state": [
-                2,
-                8,
-                6,
-                7
-            ],
-            "minLos": null,
-            "maxLos": null,
-            "from": "2020-09-24",
-            "to": "2020-10-31"
-        }
+{
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "DEL",
+   "state": [
+      2,
+      8,
+      6,
+      7
+   ],
+   "minLos": null,
+   "maxLos": null,
+   "from": "2020-09-24",
+   "to": "2020-10-31"
+}
 ```
 ##### Closed to Stay
 
 ```javascript
 {
-            "ratePlanCode": "FF",
-            "spaceTypeCode": "4BD",
-            "state": [
-                2,
-                8
-            ],
-            "minLos": null,
-            "maxLos": null,
-            "from": "2020-09-30",
-            "to": "2020-10-06"
-        }
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "4BD",
+   "state": [
+      2,
+      8
+   ],
+   "minLos": null,
+   "maxLos": null,
+   "from": "2020-09-30",
+   "to": "2020-10-06"
+}
 ```
 
 ##### Closed to Stay with minLos and maxLos
@@ -264,32 +264,33 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "JST",
-    "state": [
-        1
-    ],
-    "minLos": 2,
-    "maxLos": 10,
-    "from": "2020-10-01",
-    "to": "2020-10-14"
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "JST",
+   "state": [
+      1
+   ],
+   "minLos": 2,
+   "maxLos": 10,
+   "from": "2020-10-01",
+   "to": "2020-10-14"
 }
 ```
 
 ##### Closed to Arrival
 
 ```javascript
-            "ratePlanCode": "FF",
-            "spaceTypeCode": "STA",
-            "state": [
-                2,
-                6
-            ],
-            "minLos": null,
-            "maxLos": null,
-            "from": "2020-09-30",
-            "to": "2020-10-06"
-        }
+{         
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "STA",
+   "state": [
+      2,
+      6
+   ],
+   "minLos": null,
+   "maxLos": null,
+   "from": "2020-09-30",
+   "to": "2020-10-06"
+}
 ```
 
 ##### Closed to Arrival with minLos and maxLos
@@ -298,33 +299,33 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "JST",
-    "state": [
-        1
-    ],
-    "minLos": 2,
-    "maxLos": 10,
-    "from": "2019-10-01",
-    "to": "2019-10-04"
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "JST",
+   "state": [
+      1
+   ],
+   "minLos": 2,
+   "maxLos": 10,
+   "from": "2019-10-01",
+   "to": "2019-10-04"
 }
 ```
 
 ##### Closed to Departure
 
 ```javascript
-        {
-            "ratePlanCode": "FF",
-            "spaceTypeCode": "DEL",
-            "state": [
-                2,
-                7
-            ],
-            "minLos": null,
-            "maxLos": null,
-            "from": "2020-09-30",
-            "to": "2020-10-06"
-        }
+{
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "DEL",
+   "state": [
+      2,
+      7
+   ],
+   "minLos": null,
+   "maxLos": null,
+   "from": "2020-09-30",
+   "to": "2020-10-06"
+}
 ```
 
 ##### Closed to Departure with minLos and maxLos 
@@ -333,15 +334,15 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "JST",
-    "state": [
-        1
-    ],
-    "minLos": 2,
-    "maxLos": 10,
-    "from": "2019-10-01",
-    "to": "2019-10-04"
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "JST",
+   "state": [
+      1
+   ],
+   "minLos": 2,
+   "maxLos": 10,
+   "from": "2019-10-01",
+   "to": "2019-10-04"
 }
 ```
 ##### No minLos or maxLos
@@ -350,17 +351,17 @@ When `minLos` is not specified, `null` value is sent.
 
 ```javascript        
 {
-            "ratePlanCode": "FF",
-            "spaceTypeCode": "4BD",
-            "state": [
-                2,
-                8
-            ],
-            "minLos": null,
-            "maxLos": null,
-            "from": "2020-09-30",
-            "to": "2020-10-06"
-        }
+   "ratePlanCode": "FF",
+   "spaceTypeCode": "4BD",
+   "state": [
+      2,
+      8
+   ],
+   "minLos": null,
+   "maxLos": null,
+   "from": "2020-09-30",
+   "to": "2020-10-06"
+}
 ```
 
 #### Response
@@ -375,14 +376,14 @@ When `minLos` is not specified, `null` value is sent.
 
 ```javascript
 {
-   "clientToken":"[Mews Client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "channelManagerId":"123456",
-   "reservations":[
+   "clientToken": "[Mews Client token]",
+   "connectionToken": "[Token of a concrete connection]",
+   "channelManagerId": "123456",
+   "reservations": [
       {
-         "code":"01",
-         "confirmationNumber":"PMS-001"
-      }
+         "code": "01",
+         "confirmationNumber": "PMS-001"
+    }
    ]
 }
 ```
@@ -391,12 +392,12 @@ or
 
 ```javascript
 {
-   "clientToken":"[Mews Client token]",
-   "connectionToken":"[Token of a concrete connection]",
-   "channelManagerId":"123456",
-   "error":{
-      "code":4,
-      "message":"There is no space type with mapping code 'ST'."
+   "clientToken": "[Mews Client token]",
+   "connectionToken": "[Token of a concrete connection]",
+   "channelManagerId": "123456",
+   "error": {
+      "code": 4,
+      "message": "There is no space type with mapping code 'ST'."
    }
 }
 ```
@@ -428,8 +429,8 @@ or
 
 ```javascript
 {
-   "clientToken":"[Mews Client token]",
-   "connectionToken":"[Token of a concrete connection]",
+   "clientToken": "[Mews Client token]",
+   "connectionToken": "[Token of a concrete connection]",
    "type": 0
 }
 ```
@@ -453,4 +454,3 @@ or
 #### Response
 
 [Plain response](general-remarks.md#plain-response) is expected to determine whether the update was accepted or not.
-
