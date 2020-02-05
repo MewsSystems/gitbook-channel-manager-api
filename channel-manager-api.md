@@ -451,7 +451,7 @@ or
 | `3` | Deactivated _In Mews, whole connection can be disabled._ |
 | `4` | Deleted |
 
-#### 
+#### Response
 
 Response
 
