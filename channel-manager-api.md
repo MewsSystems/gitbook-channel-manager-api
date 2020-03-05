@@ -35,7 +35,6 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 #### Request `[ChannelManagerApiAddress]/updatePrices`
 
 *Mews always pushes both `gross` and `net` prices. Correct value needs to be picked up by a channel manager. 
-*`amount`to be deprecated in May 2020.
 
 ```javascript
 {
@@ -46,28 +45,28 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
     "ratePlanCode": "FF",
     "prices": [
         {
-         ~~"amount": 100.00,~~
+            "amount": 100.00,
             "grossAmount": 100.00,
             "netAmount": 93.46,
             "currencyCode": "EUR",
             "guestCount": 1
         },
         {
-           ~~"amount": 100.00,~~
+            "amount": 100.00,
             "grossAmount": 100.00,
             "netAmount": 93.46,
             "currencyCode": "EUR",
             "guestCount": 2
         },
         {
-            ~~"amount": 100.00,~~
+            "amount": 100.00,
             "grossAmount": 100.00,
             "netAmount": 93.46,
             "currencyCode": "EUR",
             "guestCount": 3
         },
         {
-           ~~"amount": 100.00,~~
+            "amount": 100.00,
             "grossAmount": 100.00,
             "netAmount": 93.46,
             "currencyCode": "EUR",
@@ -105,7 +104,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `guestCount` | `int` | required | The person count for the rate price. |
-| `amount` | `decimal` | required | The price amount. |
+| ~~`amount` | `decimal` | required | The price amount.~~ To be deprecated in May 2020.|
 | `currencyCode` | `string` | required | The 3 letter code of the rate price currency. |
 
 #### Response
