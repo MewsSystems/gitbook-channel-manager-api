@@ -401,7 +401,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `amount` | `decimal` | required | Defines the amount of the absolute fee. |
+| `amount` | `decimal` | required | Defines the amount of the absolute fee. Sent in `gross` |
 | `currencyCode` | `string` | required | 3 letter currency code of the absolute fee. |
 
 #### Relative Cancellation Penalty
