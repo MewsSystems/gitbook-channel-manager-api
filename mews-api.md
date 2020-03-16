@@ -841,7 +841,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `state` | `int` | optional | [Reservation State](mews-api.md#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as _`Created`_ or _`Modified`_._ |
 | ~~`prices`~~ | ~~`decimal` collection~~ | ~~required \(exc. Cancellation\)~~ | ~~Collection of prices for each night of the reservation.~~ _~~The count of prices in this collection has to correspond with number of nights in the reservation.~~_ |
 | `amounts` | [`Amount`](mews-api.md#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
-| `extras` | [`Extra`](mews-api.md#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total price is included in the _`totalCost`_ of the reservation._ |
+| `extras` | [`Extra`](mews-api.md#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](mews-api.md#customer) collection | optional | Collection of guests that will arrive to the property. |
 
 _¹ It is required that the code remains the same within each booking modification message and partial modification message. If it can't be achieved because Channel doesn't provide it, simple generation of "01", "02", ... codes will suffice as long as those codes are generated in same way for each message regarding that one booking._
