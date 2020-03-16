@@ -563,7 +563,7 @@ There are certain rules that need to be followed in order for Mews to process th
   * The whole group is uniquely identified by `channelManagerId` in Mews and in the channel manager extranet.
   * Each reservation should have a unique code within the group. The same code for the reservation should be provided in any following modification message.
   * Each reservation in the group can have different `start`, `end`, `spaceTypeCode`, `ratePlanCode`.
-* Group total cost `group`.`totalAmount` is the sum of each `reservation`.`totalAmount`, which is the sum of all night amounts and total amounts of all `extras` of the `reservation`.
+* Group total cost `group`.`totalAmount` is the sum of all `reservation`.`totalAmount` objects in the group, which is the sum of all night amounts and total amounts of all `extras` of the `reservation`.
   * If for any reason the `group`.`totalAmount` is different, Mews will automatically distribute the missing/additional amount to the nights, so the `group`.`totalAmount` is achieved.
   * A reservation `group` amounts should be either `gross` or `net`. At least one value has to be sent. 
 * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent \(i.e. Mews doesn't process diffs\).
