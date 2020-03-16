@@ -866,7 +866,6 @@ _¹ It is required that the code remains the same within each booking modificati
 | `net` | `decimal` | optional | Price with taxes excluded. |
 | `gross` | `decimal` | optional | Price with taxes included. |
 
-
 #### Extra Pricing Types
 
 | Code | Description |
