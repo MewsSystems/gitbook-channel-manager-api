@@ -749,7 +749,8 @@ There are certain rules that need to be followed in order for Mews to process th
 | `channelId` | `string` | required \(always\) | Unique identification of the booking in the Channel \(i.e. OTA\). |
 | `channelManagerId` | `string` | required \(always\) | Unique identification of the booking in the channel manager. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of any price within the booking. |
-| `totalCost` | `decimal` | required \(exc. Cancellation\) | Total cost of the whole booking. |
+| ~~`totalCost`~~ | ~~`decimal`~~ | ~~required \(exc. Cancellation\)~~ | ~~Total cost of the whole booking.~~ |
+| `totalAmount` | [`Amount`](mews-api.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](mews-api.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](mews-api.md#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](mews-api.md#payment-card) object | optional | Represents the payment card of the [`Customer`](mews-api.md#customer) to cover for the booking. |
@@ -830,7 +831,8 @@ There are certain rules that need to be followed in order for Mews to process th
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2017-12-24"` for Christmas Eve\). |
 | `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2017-12-31"` for New Years Eve\). |
-| `totalCost` | `decimal` | required \(exc. Cancellation\) | Total cost of the reservation. |
+| ~~`totalCost`~~ | ~~`decimal`~~ | ~~required \(exc. Cancellation\)~~ | ~~Total cost of the reservation.~~ |
+| `totalAmount` | [`Amount`](mews-api.md#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
 | `adultCount` | `int` | required \(exc. Cancellation\) | Number of adults per the reservation. |
 | `childCount` | `int` | optional \(exc. Cancellation\) | Number of children per the reservation. |
 | `state` | `int` | optional | [Reservation State](mews-api.md#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as _`Created`_ or _`Modified`_._ |
@@ -855,7 +857,8 @@ _¹ It is required that the code remains the same within each booking modificati
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `code` | `string` | required | Mapping code of the extra product. |
-| `cost` | `decimal` | required | Total cost of the extra product. |
+| ~~`cost`~~ | ~~`decimal`~~ | ~~required~~ | ~~Total cost of the extra product.~~ |
+| `amount` | [`Amount`](mews-api.md#amount) object | required | Total amount of the extra product. |
 | `count` | `int` | required | Count of extra products ordered. |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
 
