@@ -735,8 +735,7 @@ There are certain rules that need to be followed in order for Mews to process th
     }
   ],
   "totalCost": 600,
-  "totalAmount": 
-  {
+  "totalAmount": {
       "net": 486,
       "gross": 600
   }
