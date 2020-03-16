@@ -104,7 +104,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `guestCount` | `int` | required | The person count for the rate price. |
-~~| `amount` | `decimal` | required | The price amount.~~ To be deprecated in May 2020.|
+| ~~`amount`~~ | ~~`decimal`~~ | ~~required~~ | ~~The price amount.~~ To be deprecated in May 2020.|
 | `currencyCode` | `string` | required | The 3 letter code of the rate price currency. |
 
 #### Response
