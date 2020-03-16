@@ -34,27 +34,49 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 #### Request `[ChannelManagerApiAddress]/updatePrices`
 
+*Mews always pushes both `gross` and `net` prices. Correct value needs to be picked up by a channel manager. 
+
 ```javascript
 {
    "clientToken": "[Mews Client token]",
    "connectionToken": "[Token of a concrete connection]",
-   "ratePrices": [
-      {
-         "spaceTypeCode": "QD",
-         "ratePlanCode": "FF",
-         "from": "2020-01-01",
-         "to": "2020-01-31",
-         "prices": [
-            {
-               "guestCount": 1,
-               "amount": 95,
-               "currencyCode": "USD"
-            },
-            {
-               "guestCount": 2,
-               "amount": 100,
-               "currencyCode": "USD"
-            }
+   {
+    "spaceTypeCode": "D1",
+    "ratePlanCode": "FF",
+    "prices": [
+        {
+            "amount": 100.00,
+            "grossAmount": 100.00,
+            "netAmount": 93.46,
+            "currencyCode": "EUR",
+            "guestCount": 1
+        },
+        {
+            "amount": 100.00,
+            "grossAmount": 100.00,
+            "netAmount": 93.46,
+            "currencyCode": "EUR",
+            "guestCount": 2
+        },
+        {
+            "amount": 100.00,
+            "grossAmount": 100.00,
+            "netAmount": 93.46,
+            "currencyCode": "EUR",
+            "guestCount": 3
+        },
+        {
+            "amount": 100.00,
+            "grossAmount": 100.00,
+            "netAmount": 93.46,
+            "currencyCode": "EUR",
+            "guestCount": 4
+        }
+
+            ],
+            "from": "2020-02-05",
+            "to": "2020-02-07"
+        },
          ]
       }
    ]
@@ -82,7 +104,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `guestCount` | `int` | required | The person count for the rate price. |
-| `amount` | `decimal` | required | The price amount. |
+| ~~`amount`~~ | ~~`decimal`~~ | ~~required~~ | ~~The price amount.~~ Deprecated.|
 | `currencyCode` | `string` | required | The 3 letter code of the rate price currency. |
 
 #### Response
