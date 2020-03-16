@@ -641,8 +641,7 @@ There are certain rules that need to be followed in order for Mews to process th
         {
           "code": "1",
           "cost": 20,
-          "amount": 
-          {
+          "amount": {
               "net": 16.2,
               "gross": 20
           },
