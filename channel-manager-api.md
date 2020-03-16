@@ -34,7 +34,7 @@ Mews automatically sends changes in Inventory \(once connection is set up\). Dat
 
 #### Request `[ChannelManagerApiAddress]/updatePrices`
 
-Mews always pushes both `gross` and `net` prices. Correct value needs to be picked up by a channel manager. 
+Mews always pushes both `gross` and `net` prices. Correct value needs to be picked up by the channel manager. 
 
 ```javascript
 {
