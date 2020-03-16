@@ -839,7 +839,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `adultCount` | `int` | required \(exc. Cancellation\) | Number of adults per the reservation. |
 | `childCount` | `int` | optional \(exc. Cancellation\) | Number of children per the reservation. |
 | `state` | `int` | optional | [Reservation State](mews-api.md#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as _`Created`_ or _`Modified`_._ |
-| ~~`prices`~~ | ~~`decimal` collection~~ | ~~required \(exc. Cancellation\)~~ | ~~Collection of prices for each night of the reservation. _The count of prices in this collection has to correspond with number of nights in the reservation._ ~~|
+| ~~`prices`~~ | ~~`decimal` collection~~ | ~~required \(exc. Cancellation\)~~ | ~~Collection of prices for each night of the reservation.~~ ~~_The count of prices in this collection has to correspond with number of nights in the reservation._ ~~|
 | `amounts` | [`Amount`](mews-api.md#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
 | `extras` | [`Extra`](mews-api.md#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total price is included in the _`totalCost`_ of the reservation._ |
 | `guests` | [`Customer`](mews-api.md#customer) collection | optional | Collection of guests that will arrive to the property. |
