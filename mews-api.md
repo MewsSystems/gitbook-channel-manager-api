@@ -642,8 +642,8 @@ There are certain rules that need to be followed in order for Mews to process th
           "code": "1",
           "cost": 20,
           "amount": {
-              "net": 16.2,
-              "gross": 20
+            "net": 16.2,
+            "gross": 20
           },
           "count": 1,
           "pricing": 3
@@ -675,20 +675,24 @@ There are certain rules that need to be followed in order for Mews to process th
         120
       ],
       "amounts" [
-          {
-              "net": 81,
-              "gross": 100
-          },
-          {
-              "net": 97.2,
-              "gross": 120
-          },
+        {
+          "net": 81,
+          "gross": 100
+        },
+        {
+          "net": 97.2,
+          "gross": 120
+        },
       ],
       "ratePlanCode": "FF",
       "spaceTypeCode": "SGL",
       "state": 1,
       "to": "2020-05-07",
-      "totalCost": 260
+      "totalCost": 260,
+      "totalAmount": {
+        "gross": 260,
+        "net": 208
+      }
     },
     {
       "adultCount": 2,
@@ -700,19 +704,18 @@ There are certain rules that need to be followed in order for Mews to process th
         120
       ],
       "amounts": [
-          {
-              "net": 81,
-              "gross": 100
-          },
-          {
-              "net": 97.2,
-              "gross": 120
-          },
-          {
-              "net": 97.2,
-              "gross": 120
-          }
-          
+        {
+          "net": 81,
+          "gross": 100
+        },
+        {
+          "net": 97.2,
+          "gross": 120
+        },
+        {
+          "net": 97.2,
+          "gross": 120
+        }
       ],
       "ratePlanCode": "NR",
       "spaceTypeCode": "DBL",
@@ -720,8 +723,8 @@ There are certain rules that need to be followed in order for Mews to process th
       "to": "2020-05-09",
       "totalCost": 340,
       "totalAmount": {
-          "net": 275.4,
-          "gross": 340
+        "net": 275.4,
+        "gross": 340
       }
     },
     {
@@ -736,8 +739,8 @@ There are certain rules that need to be followed in order for Mews to process th
   ],
   "totalCost": 600,
   "totalAmount": {
-      "net": 486,
-      "gross": 600
+    "net": 486,
+    "gross": 600
   }
 }
 ```
