@@ -101,9 +101,11 @@ Mews always pushes both `gross` and `net` prices. Correct value needs to be pick
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `guestCount` | `int` | required | The person count for the rate price. |
 | ~~`amount`~~ | ~~`decimal`~~ | ~~required~~ | ~~The price amount.~~ Deprecated.|
+| `grossAmount` | `decimal` | required | Price with taxes included. |
+| `netAmount` | `decimal` | required | Price with taxes excuded. |
 | `currencyCode` | `string` | required | The 3 letter code of the rate price currency. |
+| `guestCount` | `int` | required | The person count for the rate price. |
 
 #### Response
 
@@ -427,7 +429,7 @@ or
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `channelManagerId` | `string` | required | Booking code. |
-| `error` | [`Error`](https://github.com/mews-systems/channel-manager-api/tree/da74c52f29ad04bf712acb397e311d8e5e8ba90b/general-api.md#error) | optional | If booking processing failed, holds the explanation. |
+| `error` | [`Error`](https://github.com/mews-systems/channel-manager-api/tree/da74c52f29ad04bf712acb397e311d8e5e8ba90b/general-api.md#error) | optional | If booking processing failed, this holds the explanation. |
 | `reservations` | [`Reservation Confirmation`](channel-manager-api.md#reservation-confirmation) collection | optional | Confirmation of each reservation. |
 
 ##### Reservation Confirmation
@@ -459,7 +461,7 @@ or
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `type` | `int` | required | [`Change Notification Type`](channel-manager-api.md#change-notification-type) code |
+| `type` | `int` | required | [`Change Notification Type`](channel-manager-api.md#change-notification-type) code. |
 
 ##### Change Notification Type
 
