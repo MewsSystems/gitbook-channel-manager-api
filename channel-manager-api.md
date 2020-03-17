@@ -38,44 +38,46 @@ Mews always pushes both `gross` and `net` prices. Correct value needs to be pick
 
 ```javascript
 {
-   "clientToken": "[Mews Client token]",
-   "connectionToken": "[Token of a concrete connection]",
-   {
-       "spaceTypeCode": "D1",
-       "ratePlanCode": "FF",
-       "prices": [
-           {
-               "amount": 100.00,
-               "grossAmount": 100.00,
-               "netAmount": 93.46,
-               "currencyCode": "EUR",
-               "guestCount": 1
-           },
-           {
-               "amount": 100.00,
-               "grossAmount": 100.00,
-               "netAmount": 93.46,
-               "currencyCode": "EUR",
-               "guestCount": 2
-            },
-            {
-               "amount": 100.00,
-               "grossAmount": 100.00,
-               "netAmount": 93.46,
-               "currencyCode": "EUR",
-               "guestCount": 3
-            },
-            {
-               "amount": 100.00,
-               "grossAmount": 100.00,
-               "netAmount": 93.46,
-               "currencyCode": "EUR",
-               "guestCount": 4
-            }
-        ],
-        "from": "2020-02-05",
-        "to": "2020-02-07"
-    }
+    "clientToken": "[Mews Client token]",
+    "connectionToken": "[Token of a concrete connection]",
+    "ratePrices": [
+        {
+            "spaceTypeCode": "D1",
+            "ratePlanCode": "FF",
+            "prices": [
+                {
+                    "amount": 100.00,
+                    "grossAmount": 100.00,
+                    "netAmount": 93.46,
+                    "currencyCode": "EUR",
+                    "guestCount": 1
+                },
+                {
+                    "amount": 100.00,
+                    "grossAmount": 100.00,
+                    "netAmount": 93.46,
+                    "currencyCode": "EUR",
+                    "guestCount": 2
+                },
+                {
+                    "amount": 100.00,
+                    "grossAmount": 100.00,
+                    "netAmount": 93.46,
+                    "currencyCode": "EUR",
+                    "guestCount": 3
+                },
+                {
+                    "amount": 100.00,
+                    "grossAmount": 100.00,
+                    "netAmount": 93.46,
+                    "currencyCode": "EUR",
+                    "guestCount": 4
+                }
+            ],
+            "from": "2020-02-05",
+            "to": "2020-02-07"
+        }
+    ]
 }
 ```
 
@@ -115,22 +117,22 @@ Mews always pushes both `gross` and `net` prices. Correct value needs to be pick
 
 ```javascript
 {
-   "clientToken": "[Mews Client token]",
-   "connectionToken": "[Token of a concrete connection]",
-   "availabilities": [
-      {
-         "spaceTypeCode": "QD",
-         "from": "2020-01-01",
-         "to": "2020-01-31",
-         "availability": 10
-      },
-      {
-         "spaceTypeCode": "KD",
-         "from": "2020-01-01",
-         "to": "2020-01-30",
-         "availability": 5
-      }
-   ]
+    "clientToken": "[Mews Client token]",
+    "connectionToken": "[Token of a concrete connection]",
+    "availabilities": [
+        {
+            "spaceTypeCode": "QD",
+            "from": "2020-01-01",
+            "to": "2020-01-31",
+            "availability": 10
+        },
+        {
+            "spaceTypeCode": "KD",
+            "from": "2020-01-01",
+            "to": "2020-01-30",
+            "availability": 5
+        }
+    ]
 }
 ```
 
@@ -161,30 +163,30 @@ Mews always pushes both `gross` and `net` prices. Correct value needs to be pick
 
 ```javascript
 {
-   "clientToken": "[Mews Client token]",
-   "connectionToken": "[Token of a concrete connection]",
-   "restrictions": [
-      {
-         "spaceTypeCode": "QD",
-         "ratePlanCode": "FF",
-         "from": "2020-01-01",
-         "to": "2020-01-31",
-         "state": [
-            1
-         ],
-         "minLos": 1,
-         "maxLos": 7
-      },
-      {
-         "spaceTypeCode": "KD",
-         "ratePlanCode": "NR",
-         "from": "2020-01-01",
-         "to": "2020-01-01",
-         "state": [
-            2
-         ]
-      }
-   ]
+    "clientToken": "[Mews Client token]",
+    "connectionToken": "[Token of a concrete connection]",
+    "restrictions": [
+        {
+            "spaceTypeCode": "QD",
+            "ratePlanCode": "FF",
+            "from": "2020-01-01",
+            "to": "2020-01-31",
+            "state": [
+                1
+            ],
+            "minLos": 1,
+            "maxLos": 7
+        },
+        {
+            "spaceTypeCode": "KD",
+            "ratePlanCode": "NR",
+            "from": "2020-01-01",
+            "to": "2020-01-01",
+            "state": [
+                2
+            ]
+        }
+    ]
 }
 ```
 
@@ -227,15 +229,15 @@ When all restrictions are removed, state `1` is sent. New restrictions always ov
  
 ```javascript
 {
-   "ratePlanCode": "NR",
-   "spaceTypeCode": "JST",
-   "state": [
-      1
-   ],
-   "minLos": null,
-   "maxLos": null,
-   "from": "2020-09-24",
-   "to": "2020-10-31"
+    "ratePlanCode": "NR",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-24",
+    "to": "2020-10-31"
 }
 ```
 
@@ -245,34 +247,34 @@ State `2` is always sent in combination with state `6`, `7`, or `8`, or all toge
 
 ```javascript
 {
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "DEL",
-   "state": [
-      2,
-      8,
-      6,
-      7
-   ],
-   "minLos": null,
-   "maxLos": null,
-   "from": "2020-09-24",
-   "to": "2020-10-31"
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        8,
+        6,
+        7
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-24",
+    "to": "2020-10-31"
 }
 ```
 ##### Closed to Stay
 
 ```javascript
 {
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "4BD",
-   "state": [
-      2,
-      8
-   ],
-   "minLos": null,
-   "maxLos": null,
-   "from": "2020-09-30",
-   "to": "2020-10-06"
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "4BD",
+    "state": [
+        2,
+        8
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
 }
 ```
 
@@ -282,32 +284,32 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "JST",
-   "state": [
-      1
-   ],
-   "minLos": 2,
-   "maxLos": 10,
-   "from": "2020-10-01",
-   "to": "2020-10-14"
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2020-10-01",
+    "to": "2020-10-14"
 }
 ```
 
 ##### Closed to Arrival
 
 ```javascript
-{         
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "STA",
-   "state": [
-      2,
-      6
-   ],
-   "minLos": null,
-   "maxLos": null,
-   "from": "2020-09-30",
-   "to": "2020-10-06"
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "STA",
+    "state": [
+        2,
+        6
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
 }
 ```
 
@@ -317,15 +319,15 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "JST",
-   "state": [
-      1
-   ],
-   "minLos": 2,
-   "maxLos": 10,
-   "from": "2019-10-01",
-   "to": "2019-10-04"
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2019-10-01",
+    "to": "2019-10-04"
 }
 ```
 
@@ -333,16 +335,16 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "DEL",
-   "state": [
-      2,
-      7
-   ],
-   "minLos": null,
-   "maxLos": null,
-   "from": "2020-09-30",
-   "to": "2020-10-06"
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        7
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
 }
 ```
 
@@ -352,15 +354,15 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
 
 ```javascript
 {
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "JST",
-   "state": [
-      1
-   ],
-   "minLos": 2,
-   "maxLos": 10,
-   "from": "2019-10-01",
-   "to": "2019-10-04"
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "JST",
+    "state": [
+        1
+    ],
+    "minLos": 2,
+    "maxLos": 10,
+    "from": "2019-10-01",
+    "to": "2019-10-04"
 }
 ```
 ##### No minLos or maxLos
@@ -369,16 +371,16 @@ When `minLos` is not specified, `null` value is sent.
 
 ```javascript        
 {
-   "ratePlanCode": "FF",
-   "spaceTypeCode": "4BD",
-   "state": [
-      2,
-      8
-   ],
-   "minLos": null,
-   "maxLos": null,
-   "from": "2020-09-30",
-   "to": "2020-10-06"
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "4BD",
+    "state": [
+        2,
+        8
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
 }
 ```
 
@@ -394,15 +396,15 @@ When `minLos` is not specified, `null` value is sent.
 
 ```javascript
 {
-   "clientToken": "[Mews Client token]",
-   "connectionToken": "[Token of a concrete connection]",
-   "channelManagerId": "123456",
-   "reservations": [
-      {
-         "code": "01",
-         "confirmationNumber": "PMS-001"
-    }
-   ]
+    "clientToken": "[Mews Client token]",
+    "connectionToken": "[Token of a concrete connection]",
+    "channelManagerId": "123456",
+    "reservations": [
+        {
+            "code": "01",
+            "confirmationNumber": "PMS-001"
+        }
+    ]
 }
 ```
 
@@ -410,13 +412,13 @@ or
 
 ```javascript
 {
-   "clientToken": "[Mews Client token]",
-   "connectionToken": "[Token of a concrete connection]",
-   "channelManagerId": "123456",
-   "error": {
-      "code": 4,
-      "message": "There is no space type with mapping code 'ST'."
-   }
+    "clientToken": "[Mews Client token]",
+    "connectionToken": "[Token of a concrete connection]",
+    "channelManagerId": "123456",
+    "error": {
+        "code": 4,
+        "message": "There is no space type with mapping code 'ST'."
+    }
 }
 ```
 
@@ -447,9 +449,9 @@ or
 
 ```javascript
 {
-   "clientToken": "[Mews Client token]",
-   "connectionToken": "[Token of a concrete connection]",
-   "type": 0
+    "clientToken": "[Mews Client token]",
+    "connectionToken": "[Token of a concrete connection]",
+    "type": 0
 }
 ```
 
