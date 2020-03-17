@@ -62,7 +62,7 @@ The property is configured to accept following test credit cards:
 
 ### Get Properties
 
-\[`sync`\] This method is used to obtain properties based on the `email` of an employee of the Mews enterprise (hotel, hostel or apartment group). It is required that the `email` is verified to belong to an employee on whose behalf the API call is made. Response returns list of all enterprises, where employee has access in Mews.
+\[`sync`\] This method is used to obtain properties based on the `email` of an employee of the Mews enterprise (hotel, hostel or apartment group). It is required that the `email` is verified to belong to an employee on whose behalf the API call is made. Response returns list of all enterprises, where employee has access in Mews, and the `connectionToken`s of all connections for the requesting `clientToken`.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/getProperties`
 
