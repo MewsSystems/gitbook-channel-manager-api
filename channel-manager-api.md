@@ -103,7 +103,7 @@ Mews always pushes both `gross` and `net` prices. Correct value needs to be pick
 | --- | --- | --- | --- |
 | ~~`amount`~~ | ~~`decimal`~~ | ~~required~~ | ~~The price amount.~~ Deprecated.|
 | `grossAmount` | `decimal` | required | Price with taxes included. |
-| `netAmount` | `decimal` | required | Price with taxes excuded. |
+| `netAmount` | `decimal` | required | Price with taxes excluded. |
 | `currencyCode` | `string` | required | The 3 letter code of the rate price currency. |
 | `guestCount` | `int` | required | The person count for the rate price. |
 
