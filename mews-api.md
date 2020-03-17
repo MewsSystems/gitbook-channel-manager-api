@@ -158,7 +158,7 @@ Returns configuration of the enterprise and the client.
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
+| `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices and restrictions for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
 
 #### Response
 
@@ -307,7 +307,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `connectionToken` | `string` | required | Token of the connection. |
-| `property` | [`Property`](mews-api.md#property) object | required | Details of the proerty. |
+| `property` | [`Property`](mews-api.md#property) object | required | Details of the property. |
 | `ratePlans` | [`RatePlan`](mews-api.md#rate-plan) collection | required | Rate plans of the property. |
 | `spaceCategories` | [`Space Type`](mews-api.md#space-type) collection | required | Space types of the property. |
 | `inventoryMappings` | [`Inventory Mapping`](mews-api.md#inventory-mapping) collection | required | Defines relations between rate plans and space categories. |
@@ -364,7 +364,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `description` | `string` | optional | Description of the rate plan. |
 | `paymentType` | `int` | required | [`Payment Type`](mews-api.md#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
-| `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incomming reservations (as well as sychronized rate plan). |
+| `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices and restrictions for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incoming reservations (as well as sychronized rate plan). |
 
 #### Payment types
 
@@ -401,7 +401,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `amount` | `decimal` | required | Defines the amount of the absolute fee. Sent in `gross.` |
+| `amount` | `decimal` | required | Defines the amount of the absolute fee. Sent in `gross`. |
 | `currencyCode` | `string` | required | 3 letter currency code of the absolute fee. |
 
 #### Relative Cancellation Penalty
@@ -499,7 +499,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ### Request ARI update
 
-\[`async`\] This method allows channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the next Delta update. The requested data will be sent by Mews asynchronously via push operations of channel manager API.
+\[`async`\] This method allows channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the next [Delta](channel-manager-api.md#delta-inventory-update-mode) update. The requested data will be sent by Mews asynchronously via push operations of channel manager API.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/requestAriUpdate`
 
@@ -530,9 +530,9 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `connectionToken` | `string` | required | Token of a concrete connection. |
 | `from` | `string` | required | Start of requested update in format `"yyyy-MM-dd"`. |
 | `to` | `string` | required | End of requested update in format `"yyyy-MM-dd"` \(included\). |
-| `ariType` | `int` collection | optional | [`ARI Types`](mews-api.md#ari-types)~~ to be updated. _Blank means all, empty _~~`[]`~~_ means none._~~ _Currently not supported, always updates all._ |
-| `spaceTypeCodes` | `string` collection | optional | ~~Space types to be updated. _Blank means all, empty _~~`[]`~~_ means none._~~ _Currently not supported, always updates all._ |
-| `ratePlanCodes` | `string` collection | optional | ~~Rate plans to be updated. _Blank means all, empty _~~`[]`~~_ means none._~~ _Currently not supported, always updates all._. |
+| `ariType` | `int` collection | optional | [`ARI Types`](mews-api.md#ari-types) ~~to be updated. _Blank means all, empty _`[]`_ means none._~~ _Currently not supported, always requests updates for all._ |
+| `spaceTypeCodes` | `string` collection | optional | ~~Space types to be updated. _Blank means all, empty _`[]`_ means none._~~ _Currently not supported, always requests updates for all._ |
+| `ratePlanCodes` | `string` collection | optional | ~~Rate plans to be updated. _Blank means all, empty _`[]`_ means none._~~ _Currently not supported, always requests updates for all._. |
 
 #### ARI Types
 
@@ -548,7 +548,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ### Process Group
 
-\[`async`\] This operation allows the channel manager to push a reservation group \(i.e. _booking_\) to Mews. This option allows creations, modifications and \(partial\) cancellations. Mews will process and confirm the booking asynchronously.
+\[`async`\] This operation allows the channel manager to push a reservation group \(i.e. _booking_\) to Mews. This option allows creations, modifications, and partial or complete cancellations. Mews will process and confirm the booking asynchronously.
 
 #### Request 
 
@@ -736,16 +736,16 @@ There are certain rules that need to be followed in order for Mews to process th
 | --- | --- | --- | --- |
 | `clientToken` | `string` | required \(always\) | Client token of the channel manager. |
 | `connectionToken` | `string` | required \(always\) | Token of a concrete connection. |
-| `channelId` | `string` | required \(always\) | Unique identification of the booking in the Channel \(i.e. OTA\). |
+| `channelId` | `string` | required \(always\) | Unique identification of the booking in the channel \(i.e. OTA\). |
 | `channelManagerId` | `string` | required \(always\) | Unique identification of the booking in the channel manager. |
-| `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of any price within the booking. |
+| `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](mews-api.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](mews-api.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](mews-api.md#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](mews-api.md#payment-card) object | optional | Represents the payment card of the [`Customer`](mews-api.md#customer) to cover for the booking. |
-| `channel` | [`Channel`](mews-api.md#channel) object | optional | Represents the Channel \(i.e. Travel Agency\). |
-| `reservations` | [`Reservation`](mews-api.md#reservation) collection | optional | Each reservation within the bookings. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
-| `comments` | `string` collection | optional | Represents any comment related to the booking. |
+| `channel` | [`Channel`](mews-api.md#channel) object | optional | Represents the channel \(i.e. Travel Agency\). |
+| `reservations` | [`Reservation`](mews-api.md#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
+| `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
 #### Customer
 
@@ -781,9 +781,9 @@ There are certain rules that need to be followed in order for Mews to process th
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `type` | `int` | required | [Payment Card Type](mews-api.md#payment-card-types) code. |
-| `number` | `string` | required | Payment card number. _Only numbers allowed_ |
-| `expireDate` | `string` | required | Expiration date of card in `"MMyy"` format \(e.g `"0220"` for February 2020 expiration\). |
-| `cvv` | `string` | optional | The card CVV code. |
+| `number` | `string` | required | Payment card number. _Only numbers allowed._ |
+| `expireDate` | `string` | required | Expiration date of card in `"MMyy"` format \(e.g `"0222"` for February 2022 expiration\). |
+| `cvv` | `string` | optional | Card CVV code. |
 | `holderName` | `string` | optional | Card holder name. |
 
 #### Payment Card Types
@@ -809,21 +809,21 @@ There are certain rules that need to be followed in order for Mews to process th
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `code` | `int` | required | [Channel](channels.md#channels) code. |
-| `name` | `string` | required | Name of the Channel |
+| `name` | `string` | required | Name of the Channel. |
 
 #### Reservation
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking.¹ |
+| `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking. |
 | `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. |
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
-| `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2017-12-24"` for Christmas Eve\). |
-| `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2017-12-31"` for New Years Eve\). |
+| `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
+| `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
 | `totalAmount` | [`Amount`](mews-api.md#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
-| `adultCount` | `int` | required \(exc. Cancellation\) | Number of adults per the reservation. |
-| `childCount` | `int` | optional \(exc. Cancellation\) | Number of children per the reservation. |
-| `state` | `int` | optional | [Reservation State](mews-api.md#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as _`Created`_ or _`Modified`_._ |
+| `adultCount` | `int` | required \(exc. Cancellation\) | Number of adults in the reservation. |
+| `childCount` | `int` | optional \(exc. Cancellation\) | Number of children in the reservation. |
+| `state` | `int` | optional | [Reservation State](mews-api.md#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
 | `amounts` | [`Amount`](mews-api.md#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
 | `extras` | [`Extra`](mews-api.md#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](mews-api.md#customer) collection | optional | Collection of guests that will arrive to the property. |
@@ -860,7 +860,7 @@ _¹ It is required that the code remains the same within each booking modificati
 
 | Code | Description |
 | --- | --- |
-| `1` | Once per reservation |
+| `1` | Once per reservation. |
 | `2` | Per person - for each guest of reservation. |
 | `3` | Per night - for each night of reservation. |
 | `4` | ~~Per person night - for each guest for each night of reservaion.~~ _Not supported yet._ |
