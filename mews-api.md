@@ -25,7 +25,7 @@ This environment is meant to be used during implementation of the client applica
 * **Platform Address** - `https://demo.mews.li`
 * **Client Token** - will be provided to you by Mews upon request.
 * **Connection Token** - will be provided to you by Mews upon request.
-* **Reservation Push Endpoint** - unique to the environment and list under [Process Group](mews-api.md#process-group)
+* **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 
 The property is based in Czech Republic, it accepts `CZK`, `EUR` and `GBP` currencies \(any of them may be used\).
 
@@ -40,7 +40,7 @@ To sign into the system, use the following credentials:
 The property is configured to accept following test credit cards:
 
 * **Accepted Test Credit Cards:**
-  * _Expiration date_: 08/2018 or 10/2020
+  * _Expiration date_: 08/2020 or 10/2022
   * _Card holder name_: any value is accepted
   * _CVV_: any value is accepted
   * _Types and Numbers_:
@@ -53,7 +53,7 @@ The property is configured to accept following test credit cards:
 ### Production Environment
 
 * **Platform Address** - `https://www.mews.li`
-* **Client Token** - will be provided to you by Mews upon request \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
+* **Client Token** - will be provided to you by Mews following certification in the demo environment \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
 * **Connection Token** - will be provided to you by Mews or property on request or via [Get Properties](mews-api.md#get-properties) API call \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 
