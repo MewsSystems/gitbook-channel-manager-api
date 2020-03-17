@@ -24,7 +24,7 @@ It is possible to request the Inventory to be updated for some period via API ca
 
 ### Delta Inventory Update Mode
 
-Mews automatically sends changes in Inventory \(once connection is set up\). Data sent in this mode is just the changed data from the last update. This is a completely automated process and there is no way to trigger just the delta update to be sent. Delta Inventory updates are sent repeatedly until they are successfully accepted by channel manager.
+Mews automatically sends changes in Inventory \(once connection is set up\). Data sent in this mode is just the changed data from the last update. This is a completely automated process and there is no way to trigger just the delta update to be sent. Delta inventory updates are sent repeatedly until they are successfully accepted by channel manager.
 
 ## Expected Operations
 
