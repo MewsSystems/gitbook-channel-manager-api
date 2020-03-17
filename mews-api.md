@@ -499,7 +499,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ### Request ARI update
 
-\[`async`\] This method allows channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the next [Delta](channel-manager-api.md#delta-inventory-update-mode) update. The requested data will be sent by Mews asynchronously via push operations of channel manager API.
+\[`async`\] This method allows channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the next [delta](channel-manager-api.md#delta-inventory-update-mode) update. The requested data will be sent by Mews asynchronously via push operations of channel manager API in the next delta update.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/requestAriUpdate`
 
