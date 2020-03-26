@@ -27,20 +27,16 @@ This environment is meant to be used during implementation of the client applica
 * **Connection Token** - will be provided to you by Mews upon request.
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 
-The property is based in Czech Republic, it accepts `CZK`, `EUR` and `GBP` currencies \(any of them may be used\).
+The property is based in the Netherlands, it accepts`EUR` currency.
 
-To sign into the system, use the following credentials:
-
-* **Sign in URL** - `https://demo.mews.li`
-* **Email** - `chm-api@mews.li`
-* **Password** - `chm-api`
+Credentials will be provided to sign into the system.
 
 #### Test Credit Cards
 
 The property is configured to accept following test credit cards:
 
 * **Accepted Test Credit Cards:**
-  * _Expiration date_: 08/2020 or 10/2022
+  * _Expiration date_: 08/2021 or 10/2022
   * _Card holder name_: any value is accepted
   * _CVV_: any value is accepted
   * _Types and Numbers_:
@@ -143,7 +139,9 @@ Returns configuration of the enterprise and the client.
     "clientToken": "[Channel manager client token]",
     "connectionToken": "[Token of a concrete connection]",
     "extent": {
-        "includeUnsynchronizedRates": true
+        "includeUnsynchronizedRates": true,
+        "includeProducts": true,
+        "includeCompanies": true
     }
 }
 ```
@@ -159,6 +157,9 @@ Returns configuration of the enterprise and the client.
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices and restrictions for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
+| `includeProducts` | `bool` | optional | If `true`, products mapped to a channel manager rate plan will be returned. Products mapped to a channel manager rate plan means that Mews sends a total price combined of night and product price in [`updatePrices`](https://mews-systems.gitbook.io/channel-manager-api/channel-manager-api#update-prices) request. |
+| `includeCompanies` | `bool` | optional | If `true`, mapped company profiles will be returned. A company profile needs to be mapped with a [`Channel Code`](https://mews-systems.gitbook.io/channel-manager-api/channels). 
+
 
 #### Response
 
@@ -419,7 +420,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `name` | `string` | required | Name of the space type. |
 | `description` | `string` | optional | Description of the space type. |
 | `spaceCount` | `int` | required | Number of sold/offered spaces of the type. |
-| `bedCount` | `int` | optional | Number of beds of the space type - required if the type describes some room type. |
+| `bedCount` | `int` | optional | Number of beds of the space type - required if the type describes some room type. Represents default occupancy.|
 | `extraBedCount` | `int` | optional | Number of extra beds of the space type. |
 | `classification` | `int` | required | [`Space classification`](mews-api.md#space-classifications) code. |
 | `bedType` | `int` | optional | [`Bed Type`](mews-api.md#bed-types) - required if the type describes some room type. |
@@ -466,7 +467,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ### Set Inventory
 
-\[`sync`\] This method can be used to update the rate plan - space type mapping relations in the connection. Always, all mapping relations need to be sent. Mapping relations that are in defined in Mews for the connection, but missing in the call, are deleted; and vice-versa.
+\[`sync`\] This method can be used to **update** the rate plan - space type mapping relations in the connection. It is not possible to add a new rate or space category. Always, all mapping relations need to be sent. Mapping relations that are defined in Mews for the connection, but missing in the call, are deleted; and vice-versa.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/setInventory`
 
