@@ -141,7 +141,8 @@ Returns configuration of the enterprise and the client.
     "extent": {
         "includeUnsynchronizedRates": true,
         "includeProducts": true,
-        "includeCompanies": true
+        "includeCompanies": true,
+        "includeUnsynchronizedCategories": true
     }
 }
 ```
@@ -158,7 +159,9 @@ Returns configuration of the enterprise and the client.
 | --- | --- | --- | --- |
 | `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices and restrictions for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
 | `includeProducts` | `bool` | optional | If `true`, products mapped to a channel manager rate plan will be returned. Products mapped to a channel manager rate plan means that Mews sends a total price combined of night and product price in [`updatePrices`](https://mews-systems.gitbook.io/channel-manager-api/channel-manager-api#update-prices) request. |
-| `includeCompanies` | `bool` | optional | If `true`, mapped company profiles will be returned. A company profile needs to be mapped with a [`Channel Code`](https://mews-systems.gitbook.io/channel-manager-api/channels). 
+| `includeCompanies` | `bool` | optional | If `true`, mapped company profiles will be returned. A company profile needs to be mapped with a [`Channel Code`](https://mews-systems.gitbook.io/channel-manager-api/channels). |
+| `includeUnsynchronizedCategories` | `bool` | optional | If `true`, unsynchronized Space Categories will be returned as well. Unsynchronized space category plan means that Mews will not push availability for that space category, but when a reservation comes with the space category code, Mews will link the correct space category with the reservation. |
+
 
 
 #### Response
