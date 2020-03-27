@@ -2,7 +2,7 @@
 
 ## 26th March 2020 12:00 UTC
 
-[Amount](mews-api.md#amount) extended in [Process Group](mews-api.md#process-group). So net pricing is supported in reservations also in inventory.
+[Amount](mews-api.md#amount) extended in [Process Group](mews-api.md#process-group) and [Price](channel-manager-api.md#price) extended in [Update Prices](channel-manager-api.md#update-prices). Net pricing is now supported for inventory upload and reservation delivery.
 
 ## 19th March 2019 22:00 UTC
 
