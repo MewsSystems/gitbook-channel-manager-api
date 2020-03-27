@@ -1,6 +1,6 @@
 # Changelog
 
-## 19th Match 2019 22:00 UTC
+## 26th March 2020 12:00 UTC
 
 [Amount](mews-api.md#amount) extended in [Process Group](mews-api.md#process-group). So net pricing is supported in reservations also in inventory.
 
@@ -100,4 +100,3 @@ Following changes are done in a way that the previous fields still exist in both
 ## 15th October 2017 22:00 UTC
 
 Initial version released.
-
