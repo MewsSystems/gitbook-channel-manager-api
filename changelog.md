@@ -1,6 +1,10 @@
 # Changelog
 
-## 19th Match 2019 22:00 UTC
+## 26th March 2020 12:00 UTC
+
+[Amount](mews-api.md#amount) extended in [Process Group](mews-api.md#process-group) and [Price](channel-manager-api.md#price) extended in [Update Prices](channel-manager-api.md#update-prices). Net pricing is now supported for inventory upload and reservation delivery.
+
+## 19th March 2019 22:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `819`.
 
@@ -96,4 +100,3 @@ Following changes are done in a way that the previous fields still exist in both
 ## 15th October 2017 22:00 UTC
 
 Initial version released.
-
