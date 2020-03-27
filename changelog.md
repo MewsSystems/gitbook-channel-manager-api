@@ -2,6 +2,10 @@
 
 ## 19th Match 2019 22:00 UTC
 
+[Amount](mews-api.md#amount) extended in [Process Group](mews-api.md#process-group). So net pricing is supported in reservations also in inventory.
+
+## 19th Match 2019 22:00 UTC
+
 [Channel](channels.md#channels) list extended. The latest Channel added has code `819`.
 
 ## 15th January 2019 22:00 UTC
