@@ -27,7 +27,7 @@ This environment is meant to be used during implementation of the client applica
 * **Connection Token** - will be provided to you by Mews upon request.
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 
-The property is based in the Netherlands, it accepts`EUR` currency.
+The property is based in the Netherlands, it accepts `EUR` currency.
 
 Credentials will be provided to sign into the system.
 
