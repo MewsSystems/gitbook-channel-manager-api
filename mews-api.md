@@ -20,16 +20,13 @@ This part defines the API on the Mews side.
 
 ### Test Environment
 
-This environment is meant to be used during implementation of the client applications.
+This environment is meant to be used during building, testing, and certification of the client applications. Test properties are based in the Netherlands and accept `EUR` currency.
 
 * **Platform Address** - `https://demo.mews.li`
-* **Client Token** - will be provided to you by Mews upon request.
-* **Connection Token** - will be provided to you by Mews upon request.
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
-
-The property is based in the Netherlands, it accepts `EUR` currency.
-
-Credentials will be provided to sign into the system.
+* **Client Token** - will be provided by Mews upon request.
+* **Connection Token** - will be provided by Mews upon request.
+* **Test Property** - user credentials will be provided by Mews upon request.
 
 #### Test Credit Cards
 
