@@ -192,91 +192,95 @@ This is example of a _successful_ response. In case an error occurred, the respo
                 "type": 1,
                 "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
             }
-        ]
-    },
+        ],
+    "spaceCategories": [
+        {
+            "code": "DEL",
+            "name": "Deluxe Room",
+            "isSynchronized": false,
+            "description": "Our deluxe rooms with a mountain view.",
+            "classification": 9,
+            "bedType": 5,
+            "bedCount": 2,
+            "extraBedCount": 1,
+            "spaceCount": 4,
+            "images": [
+                {
+                    "url": "https://cdn.demo.mews.li/Media/Image/78e5d3db-7af6-46b7-96ed-b598c447be19",
+                    "type": 2
+                }
+            ]
+        },
+        {
+            "code": "STA",
+            "name": "Standard Room",
+            "isSynchronized": true,
+            "description": "Standard Room with Shared Facilities.",
+            "classification": 9,
+            "bedType": 4,
+            "bedCount": 2,
+            "extraBedCount": 0,
+            "spaceCount": 7,
+            "images": [
+                {
+                    "url": "https://cdn.demo.mews.li/Media/Image/bffcb480-32d5-4784-9c71-aec792b3ef89",
+                    "type": 2
+                }
+            ]
+        }
+    ],
     "ratePlans": [
         {
+            "code": "NR",
+            "name": "Non Refundable",
+            "description": "This is our lowest price available. However full payment is required at the time of booking. ",
+            "currencyCode": "EUR",
+            "breakfast": false,
             "cancellationPolicies": [
                 {
+                    "offset": "-100DT0H0M",
                     "applicability": 2,
-                    "offset": "-1DT2H0M",
                     "penalty": {
+                        "relative": {
+                            "value": 1.00000000,
+                            "nights": null
+                        },
                         "absolute": {
-                            "amount": 40,
+                            "amount": 0.00,
                             "currencyCode": "EUR"
                         }
                     }
                 }
             ],
-            "code": "FF",
-            "currencyCode": "EUR",
-            "name": "Fully Flexible",
-            "description": null,
-            "paymentType": 3,
-            "isSynchronized": true
+            "paymentType": 1,
+            "isSynchronized": true,
+            "rateType": 1
         },
         {
+            "code": "FF",
+            "name": "Fully Flexible",
+            "description": "This rate is the most flexible rate we offer. Bookings can be cancelled up to 48 hours  in advance of your arrival date by 2.30 pm (and 7 days before the arrival dates of the 29th, 30th and 31st of December), without charge. The total price of the reservation will be charged 48 hours before arrival. ",
+            "currencyCode": "EUR",
+            "breakfast": false,
             "cancellationPolicies": [
                 {
-                    "applicability": 1,
+                    "offset": "-1DT0H0M",
+                    "applicability": 2,
                     "penalty": {
                         "relative": {
-                            "value": 1,
-                            "nights": 2
+                            "value": 1.00000000,
+                            "nights": null
+                        },
+                        "absolute": {
+                            "amount": 0.00,
+                            "currencyCode": "EUR"
                         }
                     }
                 }
             ],
-            "code": "NR",
-            "currencyCode": "EUR",
-            "name": "Non-refundable",
-            "description": "Pre-paid rate",
-            "paymentType": 1,
-            "isSynchronized": true
-        },
-        {
-            "code": "ROM",
-            "name": "Romance Rate",
-            "description": "Romantic weekend away",
-            "currencyCode": "EUR",
-            "breakfast": false,
-            "cancellationPolicies": [],
             "paymentType": 3,
-            "isSynchronized": false
-        }
-    ],
-    "spaceCategories": [
-        {
-            "bedCount": 2,
-            "bedType": 5,
-            "classification": 9,
-            "code": "KD",
-            "description": "A room with 1 king or 2 double beds.",
-            "images": [
-                {
-                    "type": 2,
-                    "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
-                }
-            ],
-            "extraBedCount": 1,
-            "name": "King Double Room",
-            "spaceCount": 6
-        },
-        {
-            "bedCount": 2,
-            "bedType": 4,
-            "classification": 9,
-            "code": "QD",
-            "description": "tr",
-            "images": [
-                {
-                    "type": 2,
-                    "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
-                }
-            ],
-            "extraBedCount": 0,
-            "name": "Queen Double Rooms",
-            "spaceCount": 6
+            "isSynchronized": false,
+            "rateType": 1
         }
     ],
     "inventoryMappings": [
@@ -299,6 +303,110 @@ This is example of a _successful_ response. In case an error occurred, the respo
         {
             "ratePlanCode": "ROM",
             "spaceTypeCode": "KD"
+        }
+    ],
+    "products": [
+        {
+            "code": "AUR",
+            "name": "Aurora watch",
+            "description": "",
+            "unitAmount": {
+                "currencyCode": "EUR",
+                "netValue": 16.53,
+                "grossValue": 20.0,
+                "taxValues": [
+                    {
+                        "code": "CZ-S",
+                        "value": 3.47
+                    }
+                ]
+            },
+            "pricing": 3
+        }
+    ],
+    "productMappings": [
+        {
+            "ratePlanCode": "NR",
+            "productCode": "AUR"
+        },
+        {
+            "ratePlanCode": "FF",
+            "productCode": "L"
+        }
+    ],
+    "taxations": [
+        {
+            "name": "VAT",
+            "taxRates": [
+                {
+                    "code": "CZ-Z",
+                    "value": 0.0
+                },
+                {
+                    "code": "CZ-L",
+                    "value": 0.10
+                },
+                {
+                    "code": "CZ-R",
+                    "value": 0.15
+                },
+                {
+                    "code": "CZ-S",
+                    "value": 0.21
+                }
+            ]
+        }
+    ],
+    "companies": [
+        {
+            "id": "",
+            "iata": "",
+            "name": "Some corporation",
+            "email": null,
+            "contact": "Some contact",
+            "phone": "",
+            "addresses": [
+                {
+                    "addressLine1": "Some street",
+                    "addressLine2": "",
+                    "city": "Some city",
+                    "zip": "111111",
+                    "region": null,
+                    "country": null,
+                    "longitude": null,
+                    "latitude": null
+                }
+            ],
+            "channel": {
+                "code": 438,
+                "name": "Some Channel Name"
+            }
+        }
+    ],
+    "travelAgencies": [
+        {
+            "id": "",
+            "iata": "11111111",
+            "name": "Expedia",
+            "email": null,
+            "contact": "Some contact",
+            "phone": "",
+            "addresses": [
+                {
+                    "addressLine1": "Some street",
+                    "addressLine2": "",
+                    "city": "Some city",
+                    "zip": "1111111",
+                    "region": null,
+                    "country": null,
+                    "longitude": null,
+                    "latitude": null
+                }
+            ],
+            "channel": {
+                "code": 2,
+                "name": "Expedia"
+            }
         }
     ],
     "success": true
