@@ -606,7 +606,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `name` | `string` | required | Company name. |
 | `contact` | `string` | optional | Company contact. |
 | `phone` | `string` | optional | Company phone number. |
-| `addresses` | `[`Address object`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address)` | optional | Company address. |
+| `addresses` | `[`Address`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address) object` | optional | Company address. |
 | `channel` | ` [`Channel`] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#channel) collection` | optional | Mapping code of the company. |
 
 #### Travel Agencies
