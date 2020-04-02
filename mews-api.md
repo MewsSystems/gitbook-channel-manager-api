@@ -235,7 +235,6 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "name": "Non Refundable",
             "description": "This is our lowest price available. However full payment is required at the time of booking. ",
             "currencyCode": "EUR",
-            "breakfast": false,
             "cancellationPolicies": [
                 {
                     "offset": "-100DT0H0M",
@@ -261,7 +260,6 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "name": "Fully Flexible",
             "description": "This rate is the most flexible rate we offer. Bookings can be cancelled up to 48 hours  in advance of your arrival date by 2.30 pm (and 7 days before the arrival dates of the 29th, 30th and 31st of December), without charge. The total price of the reservation will be charged 48 hours before arrival. ",
             "currencyCode": "EUR",
-            "breakfast": false,
             "cancellationPolicies": [
                 {
                     "offset": "-1DT0H0M",
@@ -572,6 +570,57 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | --- | --- | --- | --- |
 | `ratePlanCode` | `string` | required | Mapping code of the rate plan |
 | `spaceTypeCode` | `string` | required | Mapping code of the space type related to the rate plan. |
+
+#### Products
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `code` | `string` | required | Mapping code of the product. |
+| `name` | `string` | required | Name of the product. |
+| `description` | `string` | optional | Description of the product. |
+| `unitAmount` | `[`Amount object`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#amount)` | required | A product cost. |
+| `currencyCode` | `string` | required | 3 letter currency code of the product. |
+| `netValue` | `decimal` | required | Tax exclusive product cost. |
+| `grossValue` | `decimal` | required | Tax inclusive product cost. |
+| `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
+| `taxValues` | `object` | required | Identifies legal environment specific taxes. |
+| `code` | `string` | required | Tax code corresponding to legal environment. |
+| `value` | `decimal` | required | Tax amount. |
+| `pricing` | `string` | required | Identified in [`pricing type`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#extra-pricing-types). |
+
+#### Product Mapping
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `ratePlanCode` | `string` | required | Mapping code of the rate plan. |
+| `productCode` | `string` | required | Mapping code of the product related to the rate plan. |
+
+#### Taxations
+
+#### Companies
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | optional | ~~Company identifier.~~ *Not supported yet.*  |
+| `iata` | `string` | optional | Related to Travel Agencies only. |
+| `name` | `string` | required | Company name. |
+| `contact` | `string` | optional | Company contact. |
+| `phone` | `string` | optional | Company phone number. |
+| `addresses` | `[`Address object`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address)` | optional | Company address. |
+| `channel` | ` [`Channel`] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#channel) collection` | optional | Mapping code of the company. |
+
+#### Travel Agencies
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | optional | ~~Company identifier.~~ *Not supported yet.*  |
+| `iata` | `string` | optional | IATA code. |
+| `name` | `string` | required | Travel Agency name. |
+| `contact` | `string` | optional | Travel Agency contact. |
+| `phone` | `string` | optional | Travel Agency phone number. |
+| `addresses` | `[`Address`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address) object` | optional | Travel Agency address. |
+| `channel` | ` [`Channel`] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#channel) collection` | optional | Mapping code of the company. |
+
 
 ### Set Inventory
 
