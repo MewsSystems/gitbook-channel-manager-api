@@ -235,6 +235,9 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "name": "Non Refundable",
             "description": "This is our lowest price available. However full payment is required at the time of booking. ",
             "currencyCode": "EUR",
+            "paymentType": 1,
+            "isSynchronized": true,
+            "rateType": 1,
             "cancellationPolicies": [
                 {
                     "offset": "-100DT0H0M",
@@ -250,16 +253,16 @@ This is example of a _successful_ response. In case an error occurred, the respo
                         }
                     }
                 }
-            ],
-            "paymentType": 1,
-            "isSynchronized": true,
-            "rateType": 1
+            ]
         },
         {
             "code": "FF",
             "name": "Fully Flexible",
             "description": "This rate is the most flexible rate we offer. Bookings can be cancelled up to 48 hours  in advance of your arrival date by 2.30 pm (and 7 days before the arrival dates of the 29th, 30th and 31st of December), without charge. The total price of the reservation will be charged 48 hours before arrival. ",
             "currencyCode": "EUR",
+            "paymentType": 3,
+            "isSynchronized": false,
+            "rateType": 1,
             "cancellationPolicies": [
                 {
                     "offset": "-1DT0H0M",
@@ -275,10 +278,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
                         }
                     }
                 }
-            ],
-            "paymentType": 3,
-            "isSynchronized": false,
-            "rateType": 1
+            ]
         }
     ],
     "inventoryMappings": [
@@ -308,6 +308,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "code": "AUR",
             "name": "Aurora watch",
             "description": "",
+            "pricing": 3,
             "unitAmount": {
                 "currencyCode": "EUR",
                 "netValue": 16.53,
@@ -318,8 +319,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
                         "value": 3.47
                     }
                 ]
-            },
-            "pricing": 3
+            }
         }
     ],
     "productMappings": [
