@@ -472,6 +472,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `paymentType` | `int` | required | [`Payment Type`](mews-api.md#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 | `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices and restrictions for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incoming reservations (as well as sychronized rate plan). |
+| `rateType` | `bool` | required | Determines whether rate plan is private (available for channel reservations onluy) or public (bookable via Mews Distributor as well). |
 
 #### Payment types
 
