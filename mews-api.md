@@ -669,7 +669,7 @@ There are certain rules that need to be followed in order for Mews to process th
                     "telephone": "1-369-81891"
                 }
             ],
-            "amounts" [
+            "amounts": [
                 {
                     "net": 81,
                     "gross": 100
