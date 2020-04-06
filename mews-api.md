@@ -471,7 +471,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `paymentType` | `int` | required | [`Payment Type`](mews-api.md#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 | `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices and restrictions for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incoming reservations (as well as sychronized rate plan). |
-| `rateType` | `bool` | required | Determines whether rate plan is private (available for channel reservations onluy) or public (bookable via Mews Distributor as well). |
+| `rateType` | `int` | required | Determines whether rate plan is private (available for channel reservations onluy) or public (bookable via Mews Distributor as well). |
 
 #### Payment types
 
@@ -480,6 +480,13 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `1` | Prepaid | _When guest has already paid to the Channel \(i.e. OTA\)._ |
 | `2` | Preauthorized | _When the booking is covered by a guarantee \(preauthorization or a payment card\)._ |
 | `3` | OnSite | _When guest will pay on site._ |
+
+### Rate types
+
+| Code | Description |
+| --- | --- |
+| `0` | Private |
+| `1` | Public |
 
 #### Cancellation Policy
 
