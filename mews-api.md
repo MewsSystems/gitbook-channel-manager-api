@@ -160,7 +160,6 @@ Returns configuration of the enterprise and the client.
 | `includeUnsynchronizedCategories` | `bool` | optional | If `true`, unsynchronized space categories will be returned as well. Unsynchronized space category means that Mews will not push availability for that space category, but when a reservation comes with the space category code, Mews will link the correct space category with the reservation. |
 
 
-
 #### Response
 
 This is example of a _successful_ response. In case an error occurred, the response will contain only [`Error`](mews-api.md#error) object with details.
