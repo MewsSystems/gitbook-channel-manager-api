@@ -191,7 +191,8 @@ This is example of a _successful_ response. In case an error occurred, the respo
                 "type": 1,
                 "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
             }
-        ],
+        ]
+    },
     "spaceCategories": [
         {
             "code": "DEL",
