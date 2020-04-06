@@ -137,9 +137,9 @@ Returns configuration of the enterprise and the client.
     "connectionToken": "[Token of a concrete connection]",
     "extent": {
         "includeUnsynchronizedRates": true,
+        "includeUnsynchronizedCategories": true,
         "includeProducts": true,
-        "includeCompanies": true,
-        "includeUnsynchronizedCategories": true
+        "includeCompanies": true
     }
 }
 ```
