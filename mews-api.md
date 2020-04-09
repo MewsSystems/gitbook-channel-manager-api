@@ -605,6 +605,26 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 #### Taxations
 
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `name` | `string` | required | Tax name. |
+| `taxRates` | `string` | required | Defines legally required tax level. |
+| `code` | `string` | required | [`Two`](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or [`three`](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) letter code and a tax subcode. |
+| `value` | `string` | required | Tax value defined by legal environment. |
+
+### Tax subcodes
+
+| Code | Description |
+| --- | --- |
+| `T` | LowestReduced |
+| `L` | LowerReduced |
+| `R` | Reduced |
+| `S` | Standard |
+| `I` | Increased |
+| `H` | HigherIncreased |
+| `G` | HighestIncreased |
+| `M` | Maximum |
+
 #### Companies
 
 | Property | Type |  | Description |
