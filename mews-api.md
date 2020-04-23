@@ -20,27 +20,20 @@ This part defines the API on the Mews side.
 
 ### Test Environment
 
-This environment is meant to be used during implementation of the client applications.
+This environment is meant to be used during building, testing, and certification of the client applications. Test properties are based in the Netherlands and accept `EUR` currency.
 
 * **Platform Address** - `https://demo.mews.li`
-* **Client Token** - will be provided to you by Mews upon request.
-* **Connection Token** - will be provided to you by Mews upon request.
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
-
-The property is based in Czech Republic, it accepts `CZK`, `EUR` and `GBP` currencies \(any of them may be used\).
-
-To sign into the system, use the following credentials:
-
-* **Sign in URL** - `https://demo.mews.li`
-* **Email** - `chm-api@mews.li`
-* **Password** - `chm-api`
+* **Client Token** - will be provided by Mews upon request.
+* **Connection Token** - will be provided by Mews upon request.
+* **Test Property** - user credentials will be provided by Mews upon request.
 
 #### Test Credit Cards
 
 The property is configured to accept following test credit cards:
 
 * **Accepted Test Credit Cards:**
-  * _Expiration date_: 08/2020 or 10/2022
+  * _Expiration date_: 08/2021 or 10/2022
   * _Card holder name_: any value is accepted
   * _CVV_: any value is accepted
   * _Types and Numbers_:
@@ -53,9 +46,9 @@ The property is configured to accept following test credit cards:
 ### Production Environment
 
 * **Platform Address** - `https://www.mews.li`
-* **Client Token** - will be provided to you by Mews following certification in the demo environment \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
-* **Connection Token** - will be provided to you by Mews or property on request or via [Get Properties](mews-api.md#get-properties) API call \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
+* **Client Token** - will be provided to you by Mews following certification in the test environment \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
+* **Connection Token** - will be provided to you by Mews or property on request or via [Get Properties](mews-api.md#get-properties) API call \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)
 
 
 ## Operations
@@ -143,7 +136,10 @@ Returns configuration of the enterprise and the client.
     "clientToken": "[Channel manager client token]",
     "connectionToken": "[Token of a concrete connection]",
     "extent": {
-        "includeUnsynchronizedRates": true
+        "includeUnsynchronizedRates": true,
+        "includeUnsynchronizedCategories": true,
+        "includeProducts": true,
+        "includeCompanies": true
     }
 }
 ```
@@ -159,6 +155,10 @@ Returns configuration of the enterprise and the client.
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plan`](mews-api.md#rate-plan)s will be returned as well. Unsynchronized rate plan means that Mews will not push prices and restrictions for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
+| `includeProducts` | `bool` | optional | If `true`, products mapped to a channel manager rate plan will be returned. Products mapped to a channel manager rate plan means that Mews sends a total price combined of night and product price in [`updatePrices`](https://mews-systems.gitbook.io/channel-manager-api/channel-manager-api#update-prices) request. |
+| `includeCompanies` | `bool` | optional | If `true`, mapped company (i.e., Microsoft) and/or travel agency (i.e., Expedia) profiles will be returned. A company profile needs to be mapped with a [`Channel Code`](https://mews-systems.gitbook.io/channel-manager-api/channels). To map a travel agency follow [`this guide`](https://help.mews.com/hc/en-us/articles/360001849358-Set-up-travel-agencies). |
+| `includeUnsynchronizedCategories` | `bool` | optional | If `true`, unsynchronized space categories will be returned as well. Unsynchronized space category means that Mews will not push availability for that space category, but when a reservation comes with the space category code, Mews will link the correct space category with the reservation. |
+
 
 #### Response
 
@@ -193,89 +193,92 @@ This is example of a _successful_ response. In case an error occurred, the respo
             }
         ]
     },
+    "spaceCategories": [
+        {
+            "code": "DEL",
+            "name": "Deluxe Room",
+            "isSynchronized": false,
+            "description": "Our deluxe rooms with a mountain view.",
+            "classification": 9,
+            "bedType": 5,
+            "bedCount": 2,
+            "extraBedCount": 1,
+            "spaceCount": 4,
+            "images": [
+                {
+                    "url": "https://cdn.demo.mews.li/Media/Image/78e5d3db-7af6-46b7-96ed-b598c447be19",
+                    "type": 2
+                }
+            ]
+        },
+        {
+            "code": "STA",
+            "name": "Standard Room",
+            "isSynchronized": true,
+            "description": "Standard Room with Shared Facilities.",
+            "classification": 9,
+            "bedType": 4,
+            "bedCount": 2,
+            "extraBedCount": 0,
+            "spaceCount": 7,
+            "images": [
+                {
+                    "url": "https://cdn.demo.mews.li/Media/Image/bffcb480-32d5-4784-9c71-aec792b3ef89",
+                    "type": 2
+                }
+            ]
+        }
+    ],
     "ratePlans": [
         {
+            "code": "NR",
+            "name": "Non Refundable",
+            "description": "This is our lowest price available. However full payment is required at the time of booking. ",
+            "currencyCode": "EUR",
+            "paymentType": 1,
+            "isSynchronized": true,
+            "rateType": 1,
             "cancellationPolicies": [
                 {
+                    "offset": "-100DT0H0M",
                     "applicability": 2,
-                    "offset": "-1DT2H0M",
                     "penalty": {
+                        "relative": {
+                            "value": 1.00000000,
+                            "nights": null
+                        },
                         "absolute": {
-                            "amount": 40,
+                            "amount": 0.00,
                             "currencyCode": "EUR"
                         }
                     }
                 }
-            ],
-            "code": "FF",
-            "currencyCode": "EUR",
-            "name": "Fully Flexible",
-            "description": null,
-            "paymentType": 3,
-            "isSynchronized": true
+            ]
         },
         {
+            "code": "FF",
+            "name": "Fully Flexible",
+            "description": "This rate is the most flexible rate we offer. Bookings can be cancelled up to 48 hours  in advance of your arrival date by 2.30 pm (and 7 days before the arrival dates of the 29th, 30th and 31st of December), without charge. The total price of the reservation will be charged 48 hours before arrival. ",
+            "currencyCode": "EUR",
+            "paymentType": 3,
+            "isSynchronized": false,
+            "rateType": 1,
             "cancellationPolicies": [
                 {
-                    "applicability": 1,
+                    "offset": "-1DT0H0M",
+                    "applicability": 2,
                     "penalty": {
                         "relative": {
-                            "value": 1,
-                            "nights": 2
+                            "value": 1.00000000,
+                            "nights": null
+                        },
+                        "absolute": {
+                            "amount": 0.00,
+                            "currencyCode": "EUR"
                         }
                     }
                 }
-            ],
-            "code": "NR",
-            "currencyCode": "EUR",
-            "name": "Non-refundable",
-            "description": "Pre-paid rate",
-            "paymentType": 1,
-            "isSynchronized": true
-        },
-        {
-            "code": "ROM",
-            "name": "Romance Rate",
-            "description": "Romantic weekend away",
-            "currencyCode": "EUR",
-            "breakfast": false,
-            "cancellationPolicies": [],
-            "paymentType": 3,
-            "isSynchronized": false
-        }
-    ],
-    "spaceCategories": [
-        {
-            "bedCount": 2,
-            "bedType": 5,
-            "classification": 9,
-            "code": "KD",
-            "description": "A room with 1 king or 2 double beds.",
-            "images": [
-                {
-                    "type": 2,
-                    "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
-                }
-            ],
-            "extraBedCount": 1,
-            "name": "King Double Room",
-            "spaceCount": 6
-        },
-        {
-            "bedCount": 2,
-            "bedType": 4,
-            "classification": 9,
-            "code": "QD",
-            "description": "tr",
-            "images": [
-                {
-                    "type": 2,
-                    "url": "http://images2.onionstatic.com/onion/5239/1/16x9/600.jpg"
-                }
-            ],
-            "extraBedCount": 0,
-            "name": "Queen Double Rooms",
-            "spaceCount": 6
+            ]
         }
     ],
     "inventoryMappings": [
@@ -298,6 +301,87 @@ This is example of a _successful_ response. In case an error occurred, the respo
         {
             "ratePlanCode": "ROM",
             "spaceTypeCode": "KD"
+        }
+    ],
+    "products": [
+        {
+            "code": "AUR",
+            "name": "Aurora watch",
+            "description": "",
+            "pricing": 3,
+            "unitAmount": {
+                "currencyCode": "EUR",
+                "netValue": 16.53,
+                "grossValue": 20.0,
+                "taxValues": [
+                    {
+                        "code": "CZ-S",
+                        "value": 3.47
+                    }
+                ]
+            }
+        }
+    ],
+    "productMappings": [
+        {
+            "ratePlanCode": "NR",
+            "productCode": "AUR"
+        },
+        {
+            "ratePlanCode": "FF",
+            "productCode": "L"
+        }
+    ],
+    "companies": [
+        {
+            "id": "",
+            "iata": "",
+            "name": "Some corporation",
+            "email": null,
+            "contact": "Some contact",
+            "phone": "",
+            "addresses": [
+                {
+                    "addressLine1": "Some street",
+                    "addressLine2": "",
+                    "city": "Some city",
+                    "zip": "111111",
+                    "region": null,
+                    "country": null,
+                    "longitude": null,
+                    "latitude": null
+                }
+            ],
+            "channel": {
+                "code": 438,
+                "name": "Some Channel Name"
+            }
+        }
+    ],
+    "travelAgencies": [
+        {
+            "id": "",
+            "iata": "11111111",
+            "name": "Expedia",
+            "email": null,
+            "contact": "Some contact",
+            "phone": "",
+            "addresses": [
+                {
+                    "addressLine1": "Some street",
+                    "addressLine2": "",
+                    "city": "Some city",
+                    "zip": "1111111",
+                    "region": null,
+                    "country": null,
+                    "longitude": null,
+                    "latitude": null
+                }
+            ],
+            "channel": {
+                "code": 2,
+                "name": "Expedia"
+            }
         }
     ],
     "success": true
@@ -365,6 +449,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `paymentType` | `int` | required | [`Payment Type`](mews-api.md#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 | `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices and restrictions for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incoming reservations (as well as sychronized rate plan). |
+| `rateType` | `int` | required | Determines whether rate plan is private (available for channel reservations only) or public (bookable via Mews Distributor as well). |
 
 #### Payment types
 
@@ -373,6 +458,13 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `1` | Prepaid | _When guest has already paid to the Channel \(i.e. OTA\)._ |
 | `2` | Preauthorized | _When the booking is covered by a guarantee \(preauthorization or a payment card\)._ |
 | `3` | OnSite | _When guest will pay on site._ |
+
+### Rate types
+
+| Code | Description |
+| --- | --- |
+| `0` | Private |
+| `1` | Public |
 
 #### Cancellation Policy
 
@@ -419,7 +511,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `name` | `string` | required | Name of the space type. |
 | `description` | `string` | optional | Description of the space type. |
 | `spaceCount` | `int` | required | Number of sold/offered spaces of the type. |
-| `bedCount` | `int` | optional | Number of beds of the space type - required if the type describes some room type. |
+| `bedCount` | `int` | optional | Number of beds of the space type - required if the type describes some room type. Represents default occupancy.|
 | `extraBedCount` | `int` | optional | Number of extra beds of the space type. |
 | `classification` | `int` | required | [`Space classification`](mews-api.md#space-classifications) code. |
 | `bedType` | `int` | optional | [`Bed Type`](mews-api.md#bed-types) - required if the type describes some room type. |
@@ -464,9 +556,58 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `ratePlanCode` | `string` | required | Mapping code of the rate plan |
 | `spaceTypeCode` | `string` | required | Mapping code of the space type related to the rate plan. |
 
+#### Products
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `code` | `string` | required | Mapping code of the product. |
+| `name` | `string` | required | Name of the product. |
+| `description` | `string` | optional | Description of the product. |
+| `unitAmount` | `[`Amount object`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#amount)` | required | A product cost. |
+| `currencyCode` | `string` | required | 3 letter currency code of the product. |
+| `netValue` | `decimal` | required | Tax exclusive product cost. |
+| `grossValue` | `decimal` | required | Tax inclusive product cost. |
+| `cancellationPolicies` | [`Cancellation Policy`](mews-api.md#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
+| `taxValues` | `object` | required | Identifies legal environment specific taxes. |
+| `code` | `string` | required | Tax code corresponding to legal environment. |
+| `value` | `decimal` | required | Tax amount. |
+| `pricing` | `string` | required | Identified in [`pricing type`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#extra-pricing-types). |
+
+#### Product Mapping
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `ratePlanCode` | `string` | required | Mapping code of the rate plan. |
+| `productCode` | `string` | required | Mapping code of the product related to the rate plan. |
+
+#### Companies
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | optional | ~~Company identifier.~~ *Not supported yet.*  |
+| `iata` | `string` | optional | Related to Travel Agencies only. |
+| `name` | `string` | required | Company name. |
+| `contact` | `string` | optional | Company contact. |
+| `phone` | `string` | optional | Company phone number. |
+| `addresses` | `[`Address`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address) object` | optional | Company address. |
+| `channel` | ` [`Channel`] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#channel)` | optional | Mapping code of the company. |
+
+#### Travel Agencies
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | optional | ~~Company identifier.~~ *Not supported yet.*  |
+| `iata` | `string` | optional | IATA code. |
+| `name` | `string` | required | Travel Agency name. |
+| `contact` | `string` | optional | Travel Agency contact. |
+| `phone` | `string` | optional | Travel Agency phone number. |
+| `addresses` | `[`Address`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address) object` | optional | Travel Agency address. |
+| `channel` | ` [`Channel`] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#channel)` | optional | Mapping code of the company. |
+
+
 ### Set Inventory
 
-\[`sync`\] This method can be used to update the rate plan - space type mapping relations in the connection. Always, all mapping relations need to be sent. Mapping relations that are in defined in Mews for the connection, but missing in the call, are deleted; and vice-versa.
+\[`sync`\] This method can be used to **update** the rate plan - space type mapping relations in the connection. It is not possible to add a new rate or space category. Always, all mapping relations need to be sent. Mapping relations that are defined in Mews for the connection, but missing in the call, are deleted; and vice-versa.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/setInventory`
 
