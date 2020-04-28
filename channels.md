@@ -761,3 +761,17 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `817` | Wonderbox | 
 | `818` | Xenia |
 | `819` | Yatra |
+| `820` | RoomCloud BE |
+| `821` | GDS by Siteminder |
+| `822` | GreenLine |
+| `823` | Regensburg |
+| `824` | Wellnesshotel24 |
+| `825` | Secra |
+| `826` | Entee |
+| `827` | Rostock |
+| `828` | Idealo |
+| `829` | CapCorn |
+| `830` | BioHotels |
+| `831` | BahnHit |
+| `832` | eDream Hotels |
+| `833` | SHR Windsurfer |
