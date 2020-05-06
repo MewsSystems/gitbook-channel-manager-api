@@ -176,6 +176,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
         "email": "reception@whh.com",
         "telephone": "+1 202-456-1111",
         "spaceCount": 21,
+        "pricingMode": 0,
         "address": {
             "addressLine1": "White House Hotel",
             "addressLine2": "Pennsylvania Ave",
@@ -408,8 +409,16 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `email` | `string` | optional | Email contact of the property. |
 | `telephone` | `string` | optional | Phone contact of the property. |
 | `spaceCount` | `int` | required | Total count of spaces sold/offered by the property. |
+| `pricingMode` | `string` | optional | Property pricing environment. Determines whether `net` or `gross` prices sent to a Channel Manger. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Address of the property. |
 | `images` | [`Image`](mews-api.md#image) object | optional | Images of the property that may contain logo or property exterior photos. |
+
+#### Pricing Mode types
+
+| Code | Description |
+| --- | --- |
+| `0` | Gross |
+| `1` | Net |
 
 #### Address
 
