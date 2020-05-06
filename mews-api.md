@@ -965,7 +965,7 @@ There are certain rules that need to be followed in order for Mews to process th
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking. |
+| `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking. Any value but `_` accepted. No characters limit. |
 | `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. |
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
