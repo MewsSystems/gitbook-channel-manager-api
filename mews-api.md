@@ -176,6 +176,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
         "email": "reception@whh.com",
         "telephone": "+1 202-456-1111",
         "spaceCount": 21,
+        "pricingMode": 0,
         "address": {
             "addressLine1": "White House Hotel",
             "addressLine2": "Pennsylvania Ave",
@@ -408,8 +409,16 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `email` | `string` | optional | Email contact of the property. |
 | `telephone` | `string` | optional | Phone contact of the property. |
 | `spaceCount` | `int` | required | Total count of spaces sold/offered by the property. |
+| `pricingMode` | `int` | required | Property pricing environment. Determines whether `net` or `gross` prices is sent to a Channel Manger. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Address of the property. |
 | `images` | [`Image`](mews-api.md#image) object | optional | Images of the property that may contain logo or property exterior photos. |
+
+#### Pricing Mode types
+
+| Code | Description |
+| --- | --- |
+| `0` | Gross |
+| `1` | Net |
 
 #### Address
 
@@ -956,7 +965,7 @@ There are certain rules that need to be followed in order for Mews to process th
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking. |
+| `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking. Any value but `_` accepted. No characters limit. |
 | `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. |
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
