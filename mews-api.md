@@ -990,12 +990,12 @@ _¹ It is required that the code remains the same within each booking modificati
 
 #### Extra
 
-* Total cost of the extra product should be sent in `net` or `gross` amounts. Either both `gross` and `net` amounts, or one of them should be sent.
+* Total cost of the extra product should be sent in `net` or `gross` amounts. Either both `gross` and `net` amounts, or one of them should be sent. 
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `code` | `string` | required | Mapping code of the extra product. |
-| `amount` | [`Amount`](mews-api.md#amount) object | required | Total amount of the extra product. |
+| `amount` | [`Amount`](mews-api.md#amount) object | required | Total amount of the extra product. It cannot be `null`. |
 | `count` | `int` | required | Count of extra products ordered. |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
 
