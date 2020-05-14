@@ -468,7 +468,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `2` | Preauthorized | _When the booking is covered by a guarantee \(preauthorization or a payment card\)._ |
 | `3` | OnSite | _When guest will pay on site._ |
 
-### Rate types
+#### Rate types
 
 | Code | Description |
 | --- | --- |
@@ -790,11 +790,13 @@ There are certain rules that need to be followed in order for Mews to process th
             "extras": [
                 {
                     "code": "1",
+                    "count": 1,                    
                     "amount": {
                         "net": 16.2,
                         "gross": 20
                     },
-                    "count": 1,
+                    "from": "2021-05-06",
+                    "to": "2021-05-07",
                     "pricing": 3
                 }
             ],
@@ -997,7 +999,10 @@ _¹ It is required that the code remains the same within each booking modificati
 | `code` | `string` | required | Mapping code of the extra product. |
 | `amount` | [`Amount`](mews-api.md#amount) object | required | Total amount of the extra product. It cannot be `null`. |
 | `count` | `int` | required | Count of extra products ordered. |
+| `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
+| `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
+
 
 #### Amount
 
