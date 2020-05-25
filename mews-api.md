@@ -999,7 +999,7 @@ _¹ It is required that the code remains the same within each booking modificati
 | `code` | `string` | required | Mapping code of the extra product. |
 | `amount` | [`Amount`](mews-api.md#amount) object | required | Total amount of the extra product. |
 | `count` | `int` | required | Count of extra products ordered. |
-| `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
+| `from` | `string` | optional \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | optional \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
 
