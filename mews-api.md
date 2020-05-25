@@ -992,7 +992,7 @@ _¹ It is required that the code remains the same within each booking modificati
 
 #### Extra
 
-* Total cost of the extra product should be sent in `net` or `gross` amounts. Either both `gross` and `net` amounts, or one of them should be sent. 
+* Total cost of the extra product should be sent in `net` or `gross` amounts. Either both `gross` and `net` amounts, or one of them should be sent.
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
