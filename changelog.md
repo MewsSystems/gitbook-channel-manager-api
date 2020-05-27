@@ -1,5 +1,11 @@
 # Changelog
 
+## 27th May 2020 12:00 UTC
+
+[Get Configuration] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#get-configuration) extended. Now pricing mode, which shows whether a property is built in net or gross pricing environment, can be retrieved from Mews.
+
+[Extra](https://mews-systems.gitbook.io/channel-manager-api/mews-api#extra) extended in [Process Group] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#process-group). Consumption date can be posted for each extra sent in a reservation. 
+
 ## 28th April 2020 12:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `833`.
