@@ -1,5 +1,9 @@
 # Changelog
 
+## 1st July 2020 12:00 UTC
+
+[Channel](channels.md#channels) list extended. The latest Channel added has code `834`.
+
 ## 27th May 2020 12:00 UTC
 
 [Get Configuration](https://mews-systems.gitbook.io/channel-manager-api/mews-api#get-configuration) extended with pricing mode, which shows whether a property is built in net or gross pricing environment.
