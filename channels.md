@@ -775,5 +775,4 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `831` | BahnHit |
 | `832` | eDream Hotels |
 | `833` | SHR Windsurfer |
-| `834` | INNsight BE |
-
+| `834` | INNsight |
