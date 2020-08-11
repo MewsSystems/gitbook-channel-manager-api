@@ -35,7 +35,7 @@ The property is configured to accept following test credit cards:
 * **Accepted Test Credit Cards:**
   * _Expiration date_: 08/2021 or 10/2022
   * _Card holder name_: any value is accepted
-  * _CVV_: any value is accepted
+  * _CVV_: any value, except for ```000``` is accepted
   * _Types and Numbers_:
     * Visa: 4111111111111111
     * MasterCard: 5555444433331111
@@ -616,7 +616,11 @@ This is example of a _successful_ response. In case an error occurred, the respo
 
 ### Set Inventory
 
-\[`sync`\] This method can be used to **update** the rate plan - space type mapping relations in the connection. It is not possible to add a new rate or space category. Always, all mapping relations need to be sent. Mapping relations that are defined in Mews for the connection, but missing in the call, are deleted; and vice-versa.
+\[`sync`\] This method can be used to **update** the rate plan - space type mapping relations in the connection.
+* All mapping relations need to be sent.
+* Mapping relations that are defined in Mews for the connection, but missing in the call, are deleted.
+* It is possible to create a new rate-space category combination for the rates and space categories that are already in Mews.
+* It is impossible to add a new rate or space category.
 
 #### Request `[PlatformAddress]/api/channelManager/v1/setInventory`
 
@@ -935,7 +939,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `type` | `int` | required | [Payment Card Type](mews-api.md#payment-card-types) code. |
 | `number` | `string` | required | Payment card number. _Only numbers allowed._ |
 | `expireDate` | `string` | required | Expiration date of card in `"MMyy"` format \(e.g `"0222"` for February 2022 expiration\). |
-| `cvv` | `string` | optional | Card CVV code. |
+| `cvv` | `string` | optional | Card CVV code. The value cannot be ```000```.|
 | `holderName` | `string` | optional | Card holder name. |
 
 #### Payment Card Types
