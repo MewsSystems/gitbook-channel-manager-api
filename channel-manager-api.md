@@ -447,6 +447,14 @@ or
 
 \[`sync`\] This method is used when Mews informs channel manager that there was change in Mews that affects the connection configuration. This API call is optional to implement, it is used in case of fully-automated connection.
 
+The following changes trigger notification:
+
+* A new space was added to a mapped space category.
+* A space category was unmapped or unsynchronized.
+* A new rate was mapped.
+* A rate was unmapped or unsyncronized.
+* A new rate-space category combination was created.
+
 #### Request `[ChannelManagerApiAddress]/changeNotificaton`
 
 ```javascript
