@@ -531,17 +531,17 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | Code | Description |
 | --- | --- |
 | `1` | Apartment |
-| `2` | Bungalow |
-| `3` | Chalet |
+~~| `2` | Bungalow |~~ Not supported. |
+~~| `3` | Chalet |~~ Not supported. |
 | `4` | Double Room |
-| `5` | Holiday Home |
-| `6` | Mobile Home |
-| `7` | Quadruple Room |
+~~| `5` | Holiday Home |~~ Not supported. |
+~~| `6` | Mobile Home |~~ Not supported. |
+~~| `7` | Quadruple Room |~~ Not supported. |
 | `8` | Dormitory Bed |
 | `9` | Single Room |
 | `10` | Studio |
 | `11` | Suite |
-| `12` | Tent |
+~~| `12` | Tent |~~ Not supported. |
 | `13` | Triple Room |
 | `14` | Twin Room |
 | `15` | Villa |
