@@ -776,3 +776,12 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `832` | eDream Hotels |
 | `833` | SHR Windsurfer |
 | `834` | INNsight |
+| `835` | Zasypiam.pl |
+| `836` | Zakopane Apartamenty|
+| `837` | Yalago (Dnata) |
+| `838` | Wyndham Worldwide |
+| `839` | Wonder Weekend |
+| `840` | Wizztours |
+| `841` | WIMDU |
+| `842` | Welcomebeds |
+| `843` | Wakalife |
