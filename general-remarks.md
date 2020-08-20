@@ -114,7 +114,7 @@ Or
 | Code | Description |
 | --- | --- |
 | `1` | System error |
-| `2` | Reservation does not exist |
+| `2` | Reservation does not exist. - e.g When this error code returned, it should be acknowledged and reservation should not be re-tried. |
 | `3` | Property does not exist |
 | `4` | Space type does not exist |
 | `5` | Rate plan does not exist |
@@ -155,4 +155,3 @@ During [Certification](certification.md) process, a series of tests will be perf
 #### Examples
 
 _Comming soon._
-
