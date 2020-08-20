@@ -1,6 +1,6 @@
 # Changelog
 
-## 19th August 2020 12:00 UTC
+## 20th August 2020 12:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `843`.
 
