@@ -531,7 +531,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | Code | Description |
 | --- | --- |
 | `1` | Apartment |
-|~~`2`~~ | ~~Bungalow~~ | Not supported. |
+|~~`2`~~ | ~~Bungalow~~ Not supported. |
 ~~| `3` | Chalet |~~ Not supported. |
 | `4` | Double Room |
 ~~| `5` | Holiday Home |~~ Not supported. |
