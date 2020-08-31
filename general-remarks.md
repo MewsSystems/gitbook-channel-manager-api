@@ -126,8 +126,8 @@ Or
 
 ### Integration setup
 
-1. Obtain **Access Token** from Mews, which will identify the channel manager as a Mews client in the requests to the Mews API. The token is same for all connected hotels via the channel manager.
-2. Setup **Access Token** for Mews, which will identify Mews as a client of the channel manager in the request to the Channel Manager API. It can be same token \(recommended, simpler\) or it can be different one.
+1. Obtain **Client Token** from Mews, which will identify the channel manager as a Mews client in the requests to the Mews API. The token is same for all connected hotels via the channel manager.
+2. Setup **Client Token** for Mews, which will identify Mews as a client of the channel manager in the request to the Channel Manager API. It can be same token \(recommended, simpler\) or it can be different one.
 3. Provide URL addresses of the Channel Manager API operations.
    * When implemening the Channel Manager API side, you can provide the endpoint URLs one by one.
    * Production URLs can be provided after certification is completed. Ideally production environment should differ from test evironment.
