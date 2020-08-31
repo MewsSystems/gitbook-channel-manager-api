@@ -531,17 +531,17 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | Code | Description |
 | --- | --- |
 | `1` | Apartment |
-| `2` | Bungalow |
-| `3` | Chalet |
+|~~`2`~~ | ~~Bungalow~~  |
+|~~`3`~~ | ~~Chalet~~  |
 | `4` | Double Room |
-| `5` | Holiday Home |
-| `6` | Mobile Home |
-| `7` | Quadruple Room |
+|~~`5`~~ |~~Holiday Home~~ |
+| ~~`6`~~ | ~~Mobile Home~~ |
+| ~~`7`~~ | ~~Quadruple Room~~ |
 | `8` | Dormitory Bed |
 | `9` | Single Room |
 | `10` | Studio |
 | `11` | Suite |
-| `12` | Tent |
+| ~~`12`~~ | ~~Tent~~ |
 | `13` | Triple Room |
 | `14` | Twin Room |
 | `15` | Villa |
@@ -972,8 +972,8 @@ There are certain rules that need to be followed in order for Mews to process th
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking. Any value but `_` accepted. No characters limit. |
-| `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. |
-| `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
+| `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. In case ```spaceTypeCode``` missing, a channel manager is expected to add a fallback code to replace it, e.g. ```NOCODE```. Then reservation will be created for a suitable space category in Mews.|
+| `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. In case ```ratePlanCode``` missing, a channel manager is expected to add a fallback code to replace it, e.g. ```NOCODE```. Then reservation will be created with a default rate plan in Mews.|
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
 | `totalAmount` | [`Amount`](mews-api.md#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
