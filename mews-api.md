@@ -998,7 +998,7 @@ _¹ It is required that the code remains the same within each booking modificati
 
 * Total cost of the extra product should be sent in `net` or `gross` amounts.
 * Either both `gross` and `net` amounts, or one of them should be sent.
-* `from` and `to` dates cannot be the same, but it can be any other interval within the reservation dates. (e.g.,reservation is from 2025-10-12 to 2025-10-15, extra `from` and `to` cannot be 2025-10-12 to 2025-10-12).
+* `from` and `to` dates cannot be the same, but it can be any other interval within the reservation dates. (e.g., reservation is from 2025-10-12 to 2025-10-15, extra `from` and `to` cannot be 2025-10-12 to 2025-10-12).
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
