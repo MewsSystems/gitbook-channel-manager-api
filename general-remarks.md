@@ -100,7 +100,8 @@ Or
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `success` | `bool` | required | `true` or `false` determining result of operation. |
-| `error` | [`Error`](general-remarks.md#error) | optional | In case of `"success": false`, this property holds information of the error that happened. |
+| ~~`error`~~ | ~~[`Error`](general-remarks.md#error)~~ | ~~optional~~ | ~~In case of `"success": false`, this property holds information of the error that happened.~~ |
+| `errors` | array of [`Errors`](general-remarks.md#error) | optional | In case of `"success": false`, this property holds information of the errors that happened. |
 
 #### Error
 
@@ -108,6 +109,9 @@ Or
 | --- | --- | --- | --- |
 | `code` | `int` | required | [ErrorCode](general-remarks.md#error-codes) code - determines type of the error. |
 | `message` | `string` | required | Error message with more details of the error. |
+| `categoryCode` | `string` | optional | Category code which caused an error. Required with category error and rate category error. Category will be automatically unsynchronized in Mews |
+| `rateCode` | `string`  | optional | Rate code which caused an error. Required with rate error and rate category error. Rate will be automatically unsynchronized in Mews. |
+
 
 #### Error codes
 
