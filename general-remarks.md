@@ -126,7 +126,7 @@ Or
 | `7` | Processing error - e.g. Processing of the booking would violate some internal PMS limitation. |
 | `8` | Invalid authorization |
 | `9` | Rate error - e.g. Rate is editable only from CHM extranet. |
-| `10` | Category error - e.g. 
+| `10` | Category error - e.g. Category availability is editable only in CHM extranet. | 
 | `11` | Rate category error - e.g. Restrictions for category in rate cannot is readonly. |
 | `12` | Availability configuration error - e.g. operation is disabled in CHM extranet. |
 | `13` | Prices configuration error - e.g. operation is disabled in CHM extranet. |
