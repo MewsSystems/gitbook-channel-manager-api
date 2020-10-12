@@ -130,7 +130,7 @@ Or
 | `11` | Rate category error - e.g. category was removed from the rate plan in channel manager extranet. |
 | `12` | Availability configuration error - e.g., availability updates blocked from the channel manager extranet. |
 | `13` | Prices configuration error - e.g., price updates blocked from the channel manager extranet. |
-| `14` | Restrictions configuration error - e.g. operation is disabled in channel manager extranet. |
+| `14` | Restrictions configuration error - e.g., restriction updates blocked from the channel manager extranet. |
 
 ## Setup Process
 
