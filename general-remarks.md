@@ -127,7 +127,7 @@ Or
 | `8` | Invalid authorization |
 | `9` | Rate error - e.g., rate plan XX prices updates cannot be accepted due to the settings in the channel manager extranet. |
 | `10` | Category error - e.g., space category XX availability updates cannot be accepted due to the settings in the channel manager. | 
-| `11` | Rate category error - e.g. Restrictions for category in rate cannot is readonly. |
+| `11` | Rate category error - e.g. category was removed from the rate plan in channel manager extranet. |
 | `12` | Availability configuration error - e.g., availability updates blocked from the channel manager extranet. |
 | `13` | Prices configuration error - e.g., price updates blocked from the channel manager extranet. |
 | `14` | Restrictions configuration error - e.g. operation is disabled in channel manager extranet. |
