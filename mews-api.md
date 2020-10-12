@@ -996,15 +996,17 @@ _¹ It is required that the code remains the same within each booking modificati
 
 #### Extra
 
-* Total cost of the extra product should be sent in `net` or `gross` amounts. Either both `gross` and `net` amounts, or one of them should be sent.
+* Total cost of the extra product should be sent in `net` or `gross` amounts.
+* Either both `gross` and `net` amounts, or one of them should be sent.
+* `from` and `to` dates cannot be the same, but it can be any other interval within the reservation dates. (e.g., reservation is from 2025-10-12 to 2025-10-15, extra `from` and `to` cannot be 2025-10-12 to 2025-10-12).
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
 | `code` | `string` | required | Mapping code of the extra product. |
 | `amount` | [`Amount`](mews-api.md#amount) object | required | Total amount of the extra product. |
 | `count` | `int` | required | Count of extra products ordered. |
-| `from` | `string` | optional \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
-| `to` | `string` | optional \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
+| `from` | `string` | optional \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"` for Christmas Eve\). |
+| `to` | `string` | optional \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"` for New Year's Eve\). |
 | `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
 
 
