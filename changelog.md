@@ -1,5 +1,10 @@
 # Changelog
 
+## 20th October 2020 12:00 UTC
+[Error codes](https://mews-systems.gitbook.io/channel-manager-api/general-remarks#error) list extended. New error codes are from 9 to 14.
+
+Customer array extended in [processGroup](https://mews-systems.gitbook.io/channel-manager-api/mews-api#process-group) to loyalty code.
+
 ## 20th August 2020 12:00 UTC
 
 [Channel](channels.md#channels) list extended. The latest Channel added has code `843`.
