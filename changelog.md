@@ -1,9 +1,9 @@
 # Changelog
 
 ## 20th October 2020 12:00 UTC
-[Error codes](https://mews-systems.gitbook.io/channel-manager-api/general-remarks#error) list extended. New error codes are from 9 to 14.
+[Error codes](general-remarks#error) list extended. New error codes are from 9 to 14.
 
-Customer array extended in [processGroup](https://mews-systems.gitbook.io/channel-manager-api/mews-api#process-group) with loyalty code.
+[Customer](mews-api#customer) extended with loyalty code.
 
 ## 20th August 2020 12:00 UTC
 
@@ -16,9 +16,9 @@ Customer array extended in [processGroup](https://mews-systems.gitbook.io/channe
 
 ## 27th May 2020 12:00 UTC
 
-[Get Configuration](https://mews-systems.gitbook.io/channel-manager-api/mews-api#get-configuration) extended with pricing mode, which shows whether a property is built in net or gross pricing environment.
+[Get Configuration](mews-api#get-configuration) extended with pricing mode, which shows whether a property is built in net or gross pricing environment.
 
-[Extra](https://mews-systems.gitbook.io/channel-manager-api/mews-api#extra) extended in [Process Group](https://mews-systems.gitbook.io/channel-manager-api/mews-api#process-group). Consumption date can be posted for each extra sent in a reservation. 
+[Extra](https://mews-systems.gitbook.io/channel-manager-api/mews-api#extra) extended in [Process Group](mews-api#process-group). Consumption date can be posted for each extra sent in a reservation. 
 
 ## 28th April 2020 12:00 UTC
 
