@@ -28,7 +28,7 @@
 
 ## 19th March 2019 22:00 UTC
 
-[Channel](channels.md#channels) list extended. The latest Channel added has code `819`.
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `819`.
 
 ## 15th January 2019 22:00 UTC
 
@@ -49,7 +49,6 @@
 ## 11th July 2018 22:00 UTC
 
 * [Channel](channels.md#channels) list extended. The latest Channel added has code `567`. Some channels were merged, because they were duplicate. All merged channels are ~~crossed~~ and the proper code is mentioned.
-
 
 ## 18th Jun 2018 15:00 UTC
 
@@ -73,9 +72,7 @@
 
 ## 8th March 2018 22:00 UTC
 
-* [Process Group](mews-api.md#process-group) API call:
-
-Following changes are done in a way that the previous fields still exist in both API and are still supported and the new fields are added next to it and used the same way as their previous versions:
+* [Process Group](mews-api.md#process-group) API call: following changes are done in a way that the previous fields still exist in both API and are still supported and the new fields are added next to it and used the same way as their previous versions:
 
 * `cvv` field added to [`Payment card`](mews-api.md#payment-card) object.
 * ~~code~~ was removed and replaced with `type` in [`Payment card`](mews-api.md#payment-card) object.
@@ -96,10 +93,7 @@ Following changes are done in a way that the previous fields still exist in both
 
 ## 10th January 2018 22:00 UTC
 
-[Get Configuration](mews-api.md#get-configuration) API call:
-
-* `applicability` field added to [`Cancellation Policy`](mews-api.md#cancellation-policy) object.
-
+* [Get Configuration](mews-api.md#get-configuration) API call: `applicability` field added to [`Cancellation Policy`](mews-api.md#cancellation-policy) object.
 Following changes are done in a way that the previous fields still exist in both API and are still supported and the new fields are added next to it and used the same way as their previous versions:
 
 * ~~accessToken~~ renamed to `clientToken` in all API calls in **both** API sides.
