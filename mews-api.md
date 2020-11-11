@@ -1026,7 +1026,7 @@ _¹ It is required that the code remains the same within each booking modificati
 | `1` | Once per reservation. |
 | `2` | Per person - for each guest of reservation. |
 | `3` | Per night - for each night of reservation. |
-| `4` | ~~Per person night - for each guest for each night of reservaion.~~ _Not supported yet._ |
+| `4` | Per person per night - for each guest for each night of reservaion.|
 
 #### Response
 
