@@ -2,7 +2,7 @@
 
 ## 10th November 2020 12:00 UTC
 
-* [Extra pricing type](mews-api#extra-pricing-types): pricing type `per person per night` added.
+* [Extra pricing type](/mews-api#extra-pricing-types): pricing type `per person per night` added.
 
 ## 20th October 2020 12:00 UTC
 
