@@ -1,5 +1,9 @@
 # Changelog
 
+## 10th November 2020 12:00 UTC
+
+* [Extra pricing type](mews-api.md#extra-pricing-types): pricing type `per person per night` added.
+
 ## 20th October 2020 12:00 UTC
 
 * [Error codes](general-remarks.md#error) list extended. New error codes are from 9 to 14.
