@@ -17,11 +17,11 @@
 
 The documentation uses term **Property** to describe a client of channel manager or PMS and **Space Type** to refer to a space sold/offered by the **Property**. In hospitality world, a **Property** is a hotel \(hostel, etc.\) and **Space Type** is a room \(bed, etc.\). But **Property** could also \(for example\) be some sport facility and then the **Space Type** would refer to a squash court, that is why those unusual, yet general, terms.
 
-There can be multiple connections between one property and one channel manager. All operations of both API sides require `clientToken` to be present in the request, On Mews API side, the `clientToken` determines a concrete channel manager, so it is same for all connections. The `clientToken` on the [Channel Manager API](channel-manager-api.md) side can be same or different, it is up to an agreement, as long as the `clientToken` is unique for Mews and same for all Mews connections. All operations regarding an established connection with property require `connectionToken` as well, `connectionToken` determines a concrete connection between the channel manager and a Mews hotel, it is unique for each connection.
+There can be multiple connections between one property and one channel manager. All operations of both API sides require `clientToken` to be present in the request, On Mews API side, the `clientToken` determines a concrete channel manager, so it is same for all connections. The `clientToken` on the [Channel Manager API](channel-manager-api.md) side can be same or different, it is up to an agreement, as long as the `clientToken` is unique for Mews and same for all Mews connections. All operations regarding an established connection with property require `connectionToken` as well, `connectionToken` determines a concrete connection between the channel manager and a Mews property, it is unique for each connection.
 
 If you are interested in changes and updates of this API, check [Changelog](changelog.md#changelog).
 
-If you are interested in the list of Channels \(i.e. OTAs\), check [Channels](channels.md#channels). If you are connected to some Channels that are not in the list, please provide them to us, we will add them with some code.
+If you are interested in the list of Channels \(i.e. OTAs\), check [Channels](channels.md#channels). If you are connected to some Channels that are not in the list, please email them to channel-api@mews.com, we will add them with some code.
 
 ## Requests
 
@@ -62,14 +62,12 @@ The required operations to be implemented are
 * [Update prices](channel-manager-api.md#update-prices)
 * [Update availability](channel-manager-api.md#update-availability)
 * [Update restrictions](channel-manager-api.md#update-restrictions)
-
-The recommended operation to be implemented is
-
 * [Confirm booking](channel-manager-api.md#confirm-booking)
 
-The optional operation is
+The optional operation are
 
 * [Change notification](channel-manager-api.md#change-notification)
+* [Get configuration](channel-manager-api.md#get-configuration)
 
 ## Responses
 
@@ -136,11 +134,11 @@ Or
 
 ### Integration setup
 
-1. Obtain **Client Token** from Mews, which will identify the channel manager as a Mews client in the requests to the Mews API. The token is same for all connected hotels via the channel manager.
+1. Obtain **Client Token** from Mews, which will identify the channel manager as a Mews client in the requests to the Mews API. The token is same for all connected hotels via the channel manager per environment.
 2. Setup **Client Token** for Mews, which will identify Mews as a client of the channel manager in the request to the Channel Manager API. It can be same token \(recommended, simpler\) or it can be different one.
 3. Provide URL addresses of the Channel Manager API operations.
    * When implemening the Channel Manager API side, you can provide the endpoint URLs one by one.
-   * Production URLs can be provided after certification is completed. Ideally production environment should differ from test evironment.
+   * Production URLs can be provided after certification is completed. Ideally production environment should differ from test evironment because same URLs cannot be used across different environements. A separate set of URLs allows to keep demo environment for tests and enhancements.
 
 ### Connect new property
 
@@ -161,7 +159,3 @@ _Note: On _[_Test Environment_](mews-api.md#test-environment)_ our Integration s
 Once the Channel manager API is developed, Mews needs to be sure it is developed correctly before the integration can be moved to production environment.
 
 During [Certification](certification.md) process, a series of tests will be performed to check that all requests contain all required elements, requests are not unnecesarily, errors are handled properly, etc.
-
-#### Examples
-
-_Comming soon._
