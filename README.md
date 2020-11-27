@@ -2,14 +2,14 @@
 
 The connection between Mews \(as a PMS\) and a channel manager is a 2-way connection.   
 The following document defines both the Mews \(as PMS\) side, and also defines the API on the channel manager side.   
-The Mews side mainly accepts bookings from the channel manager, while the channel manager side accepts inventory updates from the PMS and then distributes them to connected OTAs.
+The Mews side mainly accepts bookings from the channel manager, while the channel manager side accepts inventory updates from the PMS and then distributes them to connected channels.
 
-2-way connection means that both sides of the connection - channel manager and PMS - are required to accept data from the other side in order to correctly connect a PMS through channel manager to all the OTAs.  
+2-way connection means that both sides of the connection - channel manager and PMS - are required to accept data from the other side in order to correctly connect a PMS through channel manager to all the channels.  
 So both sides need to have an open API which the other side has to connect to.  
-Channel manager side accepts Inventory updates \(prices, availability, restrictions\) and booking confirmations.  
+Channel manager side accepts Inventory updates \(prices, availability, restrictions\), booking confirmations and property content \(property description, images, rate policy, etc.\).  
 PMS side accepts bookings.
 
-If you encounter any issue with the API, have a question or any other other request, please contact [integrations@mewssystems.com](mailto://integrations@mewssystems.com).
+If you encounter any issue with the API, have a question or any other other request, please contact [channel-api@mews.com](mailto://channel-api@mews.com).
 
 ## Contents
 
