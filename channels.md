@@ -785,3 +785,4 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `841` | WIMDU |
 | `842` | Welcomebeds |
 | `843` | Wakalife |
+| `844` | Private Selection Hotels |
