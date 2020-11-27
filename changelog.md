@@ -1,5 +1,9 @@
 # Changelog
 
+## 27th November 2020 12:00 UTC
+
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `844`.
+
 ## 10th November 2020 12:00 UTC
 
 * [Extra pricing type](mews-api.md#extra-pricing-types): pricing type `per person per night` added.
