@@ -138,7 +138,7 @@ Or
 2. Setup **Client Token** for Mews, which will identify Mews as a client of the channel manager in the request to the Channel Manager API. It can be same token \(recommended, simpler\) or it can be different one.
 3. Provide URL addresses of the Channel Manager API operations.
    * When implemening the Channel Manager API side, you can provide the endpoint URLs one by one.
-   * Production URLs can be provided after certification is completed. Ideally production environment should differ from test evironment because same URLs cannot be used across different environements. A separate set of URLs allows to keep demo environment for tests and enhancements.
+   * Production URLs can be provided after certification is completed.
 
 ### Connect new property
 
