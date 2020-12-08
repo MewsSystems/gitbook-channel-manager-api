@@ -1,5 +1,8 @@
 # Changelog
 
+## 8th December 2020 12:00 UTC
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `845`.
+
 ## 27th November 2020 12:00 UTC
 
 * [Channel](channels.md#channels) list extended. The latest Channel added has code `844`.
