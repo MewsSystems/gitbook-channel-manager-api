@@ -46,28 +46,24 @@ Mews always pushes both `gross` and `net` prices. Correct value needs to be pick
             "ratePlanCode": "FF",
             "prices": [
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
                     "guestCount": 1
                 },
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
                     "guestCount": 2
                 },
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
                     "guestCount": 3
                 },
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
