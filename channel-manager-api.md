@@ -386,7 +386,7 @@ Both states should be applied by a partner.
 
 ##### Closed to Stay and Closed to Departure
 
-This is not an industry standard and should be disregarded by a partner.
+This combination should be treated as Closed to stay.
 
 ```javascript
 {
@@ -424,7 +424,7 @@ This should be applied as no arrivals are possible and reservation minLos is 3 n
 ```
 ##### Closed to Stay and Closed to Arrival with Mlos
 
-This is not an industry standard and should be disregarded by a partner.
+This combination should be treated as Closed to stay.
 
 ```javascript
 {
@@ -442,7 +442,7 @@ This is not an industry standard and should be disregarded by a partner.
 ```
 ##### Closed to Departure and Closed to Arrival with Mlos
 
-This is not an industry standard and should be disregarded by a partner.
+This combination should be treated as Closed to stay.
 
 ```javascript
 {
