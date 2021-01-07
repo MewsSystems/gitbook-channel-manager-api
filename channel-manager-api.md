@@ -46,28 +46,24 @@ Mews always pushes both `gross` and `net` prices. Correct value needs to be pick
             "ratePlanCode": "FF",
             "prices": [
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
                     "guestCount": 1
                 },
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
                     "guestCount": 2
                 },
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
                     "guestCount": 3
                 },
                 {
-                    "amount": 100.00,
                     "grossAmount": 100.00,
                     "netAmount": 93.46,
                     "currencyCode": "EUR",
@@ -367,6 +363,102 @@ State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLo
     "to": "2019-10-04"
 }
 ```
+
+##### Closed to Stay and Closed to Arrival 
+
+Both states should be applied by a partner.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        8,
+        6
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
+##### Closed to Stay and Closed to Departure
+
+This combination should be treated as Closed to stay.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        8,
+        7
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
+##### Closed to Stay with MLos and CLosed to Arrival
+
+This should be applied as no arrivals are possible and reservation minLos is 3 nights and maxLos is 7 nights.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        6
+    ],
+    "minLos": 3,
+    "maxLos": 7,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+##### Closed to Stay and Closed to Arrival with Mlos
+
+This combination should be treated as Closed to stay.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        8
+    ],
+    "minLos": 3,
+    "maxLos": 7,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+##### Closed to Departure and Closed to Arrival with Mlos
+
+This combination should be treated as Closed to stay.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        7
+    ],
+    "minLos": 3,
+    "maxLos": 7,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
 ##### No minLos or maxLos
 
 When `minLos` is not specified, `null` value is sent.
