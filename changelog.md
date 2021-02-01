@@ -2,7 +2,7 @@
 
 ## 25th January 2021 12:00 UTC
 
-* Added more restriction [use cases] (channel-manager-api.md#restriction-examples).
+* Added more restriction [use cases](channel-manager-api.md#restriction-examples).
 
 ## 8th December 2020 12:00 UTC
 
