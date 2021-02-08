@@ -1,5 +1,10 @@
 # Changelog
 
+## 8th February 2021 12:00 UTC
+
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `846`.
+
+
 ## 25th January 2021 12:00 UTC
 
 * Added more restriction [use cases](channel-manager-api.md#restriction-examples).
