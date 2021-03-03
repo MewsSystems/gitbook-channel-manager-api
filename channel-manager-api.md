@@ -461,7 +461,7 @@ This combination should be treated as Closed to stay.
 
 #### Closed to Departure and Closed to Stay with Mlos
 
-This combination should be treated as Closed to check-out. Reservation can be made if Mstay requirements are met.
+This combination should be treated as Closed to check-out. Reservation can be made if Mlos requirements are met.
 
 ```javascript
 {
