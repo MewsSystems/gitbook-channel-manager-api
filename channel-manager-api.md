@@ -560,10 +560,10 @@ or
 
 The following changes trigger notification:
 
-* A new connection has been created.
-* Connection has been disabled.
-* Connection has been enabled.
-* Connection has been deleted.
+* A new connection was created.
+* Connection was disabled.
+* Connection was enabled.
+* Connection was deleted.
 * A new space was added to a mapped space category.
 * A space category was unmapped or unsynchronized.
 * A new rate was mapped.
