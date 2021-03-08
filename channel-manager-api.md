@@ -459,6 +459,25 @@ This combination should be treated as Closed to stay.
 }
 ```
 
+#### Closed to Departure and Closed to Stay with Mlos
+
+This combination should be treated as Closed to check-out. Reservation can be made if Mlos requirements are met.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "4BD",
+    "state": [
+        2,
+        7
+    ],
+    "minLos": 2,
+    "maxLos": 6,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
 ##### No minLos or maxLos
 
 When `minLos` is not specified, `null` value is sent.
