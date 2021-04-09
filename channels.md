@@ -787,3 +787,5 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `843` | Wakalife |
 | `844` | Private Selection Hotels |
 | `845` | Time To Momo |
+| `846` | Re:Guest |
+| `847` | Opera |
