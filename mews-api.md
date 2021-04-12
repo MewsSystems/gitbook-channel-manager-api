@@ -207,7 +207,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "spaceCount": 4,
             "images": [
                 {
-                    "url": "https://cdn.app.mews-demo.com/Media/Image/78e5d3db-7af6-46b7-96ed-b598c447be19",
+                    "url": "https://cdn.mews-demo.com/Media/Image/78e5d3db-7af6-46b7-96ed-b598c447be19",
                     "type": 2
                 }
             ]
@@ -224,7 +224,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "spaceCount": 7,
             "images": [
                 {
-                    "url": "https://cdn.app.mews-demo.com/Media/Image/bffcb480-32d5-4784-9c71-aec792b3ef89",
+                    "url": "https://cdn.mews-demo.com/Media/Image/bffcb480-32d5-4784-9c71-aec792b3ef89",
                     "type": 2
                 }
             ]
