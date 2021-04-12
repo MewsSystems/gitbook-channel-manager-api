@@ -22,7 +22,7 @@ This part defines the API on the Mews side.
 
 This environment is meant to be used during building, testing, and certification of the client applications. Test properties are based in the Netherlands and accept `EUR` currency.
 
-* **Platform Address** - `https://demo.mews.li`
+* **Platform Address** - `https://app.mews-demo.com/`
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 * **Client Token** - will be provided by Mews upon request.
 * **Connection Token** - will be provided by Mews upon request.
@@ -207,7 +207,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "spaceCount": 4,
             "images": [
                 {
-                    "url": "https://cdn.demo.mews.li/Media/Image/78e5d3db-7af6-46b7-96ed-b598c447be19",
+                    "url": "https://cdn.app.mews-demo.com/Media/Image/78e5d3db-7af6-46b7-96ed-b598c447be19",
                     "type": 2
                 }
             ]
@@ -224,7 +224,7 @@ This is example of a _successful_ response. In case an error occurred, the respo
             "spaceCount": 7,
             "images": [
                 {
-                    "url": "https://cdn.demo.mews.li/Media/Image/bffcb480-32d5-4784-9c71-aec792b3ef89",
+                    "url": "https://cdn.app.mews-demo.com/Media/Image/bffcb480-32d5-4784-9c71-aec792b3ef89",
                     "type": 2
                 }
             ]
