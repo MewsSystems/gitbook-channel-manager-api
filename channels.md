@@ -795,3 +795,18 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `851` | Vacancselect |
 | `852` | Allyourz |
 | `853` | Booking Expert BeGain |
+| `854` | ANA Sky Holiday |
+| `856` | JAL |
+| `857` | HIS |
+| `858` | Jambo Tours |
+| `859` | Rurubu Travel |
+| `860` | Ikkyu |
+| `861` | Rakuda Club |
+| `862` | ANA Travlers |
+| `863` | Churatoku |
+| `864` | JALPAK |
+| `865` | Relux |
+| `866` | Relo Club |
+| `867` | Tour builder |
+| `868` | One Two Smile Hotel |
+| `869` | Sky Ticket |
