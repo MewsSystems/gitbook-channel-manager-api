@@ -1,5 +1,9 @@
 # Changelog
 
+## 15 June 2021 12:00 UTC
+
+* [Channel](channels.md#channels) list extended. The latest Channels added have codes `854`, `856`, `857`, `858`, `859`, `860`, `861`, `862`, `863`, `864`, `864`, `865`, `866`, `867`, `868`, `869`.
+
 ## 11 May 2021 12:00 UTC
 
 * [Channel](channels.md#channels) list extended. The latest Channel added has code `853`.
