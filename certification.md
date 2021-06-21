@@ -2,14 +2,14 @@
 
 ## Pre-Certification
 
-1. Email marketplace@mewssystems.com to request a Client token and testing property be created in the Mews [Test Environment](mews-api.md#test-environment).
+1. Email partnersuccess@mews.com to request a Client token and testing property be created in the Mews [Test Environment](mews-api.md#test-environment).
 2. Create the following HTTPS endpoint URLs for the Mews [Test Environment](mews-api.md#test-environment)
     * [Update Availability](channel-manager-api.md#update-availability) 
     * [Update Prices](channel-manager-api.md#update-prices)
     * [Update Restrictions](channel-manager-api.md#update-restrictions)
     * [Confirm Booking](channel-manager-api.md#confirm-booking) 
     * [Change Notification](channel-manager-api.md#change-notification) \(optional\)
-3. Email the endpoints to marketplace@mewssystems.com.
+3. Email the endpoints to partnersuccess@mews.com.
 4. Use your test property username and [Get Properties](mews-api.md#get-properties) call to receive the `connectionToken` for the [Test Hotel](mews-api.md#test-environment).
 5. Pull hotel information, space mapping, and rate mapping information using the [Get Configuration](mews-api.md#get-configuration) call.
 6. Map the all rate plan and space category combinations in the UI of the channel manager backend using the data received in the [Get Configuration](mews-api.md#get-configuration) call.
