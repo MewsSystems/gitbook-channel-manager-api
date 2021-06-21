@@ -796,6 +796,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `852` | Allyourz |
 | `853` | Booking Expert BeGain |
 | `854` | ANA Sky Holiday |
+| `855` | JTB |
 | `856` | JAL |
 | `857` | HIS |
 | `858` | Jambo Tours |
