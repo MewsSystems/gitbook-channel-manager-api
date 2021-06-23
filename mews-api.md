@@ -899,7 +899,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `totalAmount` | [`Amount`](mews-api.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](mews-api.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](mews-api.md#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
-| `paymentCard` | [`Payment Card`](mews-api.md#payment-card) object | optional | Represents the payment card of the [`Customer`](mews-api.md#customer) to cover for the booking. |
+| `paymentCard` | [`Payment Card`](mews-api.md#payment-card) object | required | Represents the payment card of the [`Customer`](mews-api.md#customer) to cover for the booking. |
 | `channel` | [`Channel`](mews-api.md#channel) object | optional | Represents the channel \(i.e. Travel Agency\). |
 | `reservations` | [`Reservation`](mews-api.md#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
