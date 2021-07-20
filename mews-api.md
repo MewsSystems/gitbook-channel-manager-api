@@ -546,6 +546,12 @@ This is example of a _successful_ response. In case an error occurred, the respo
 | `14` | Twin Room |
 | `15` | Villa |
 | `16` | Dormitory |
+| `17` | Site |
+| `18` | Office |
+| `19` | MeetingRoom |
+| `20` | ParkingSpot |
+| `21` | Desk |
+| `22` | TeamArea |
 
 #### Bed Types
 
