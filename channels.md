@@ -811,3 +811,4 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `867` | Tour builder |
 | `868` | One Two Smile Hotel |
 | `869` | Sky Ticket |
+| `870` | WIN Hotels |
