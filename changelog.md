@@ -1,5 +1,9 @@
 # Changelog
 
+## 12 August 2021 12:00 UTC
+
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `870`.
+
 ## 30 July 2021 12:00 UTC
 
 * [Space Classifications](mews-api.md#space-classifications) extended to support additional types with `Site`, `Office`, `MeetingRoom`, `ParkingSpot`, `Desk` and `TeamArea`.
