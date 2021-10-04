@@ -21,7 +21,7 @@ There can be multiple connections between one property and one channel manager. 
 
 If you are interested in changes and updates of this API, check [Changelog](changelog.md#changelog).
 
-If you are interested in the list of Channels \(i.e. OTAs\), check [Channels](channels.md#channels). If you are connected to some Channels that are not in the list, please email them to channel-api@mews.com, we will add them with some code.
+If you are interested in the list of Channels \(i.e. OTAs\), check [Channels](channels.md#channels). If you are connected to some Channels that are not in the list, please email them to partnersuccess@mews.com, we will add them with some code.
 
 ## Requests
 
