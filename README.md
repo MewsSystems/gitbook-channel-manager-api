@@ -9,7 +9,7 @@ So both sides need to have an open API which the other side has to connect to.
 Channel manager side accepts Inventory updates \(prices, availability, restrictions\), booking confirmations and property content \(property description, images, rate policy, etc.\).  
 PMS side accepts bookings.
 
-If you encounter any issue with the API, have a question or any other other request, please contact [channel-api@mews.com](mailto://channel-api@mews.com).
+If you encounter any issue with the API, have a question or any other other request, please contact [partnersuccess@mews.com](mailto://partnersuccess@mews.com).
 
 ## Contents
 
