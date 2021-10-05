@@ -25,7 +25,7 @@ If you are interested in the list of Channels \(i.e. OTAs\), check [Channels](ch
 
 ## Requests
 
-Both sides of the API accept only `HTTP POST` requests with `Content-Type` set to `application/json` and JSON content depending on the operation to be performed.
+Both sides of the API accept only `HTTPS POST` requests with `Content-Type` set to `application/json` and JSON content depending on the operation to be performed.
 
 ### Mews API side
 
