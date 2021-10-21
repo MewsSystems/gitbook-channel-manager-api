@@ -1,5 +1,9 @@
 # Changelog
 
+## 20 October 2021 12:00 UTC
+
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `871`.
+* 
 ## 12 August 2021 12:00 UTC
 
 * [Channel](channels.md#channels) list extended. The latest Channel added has code `870`.
