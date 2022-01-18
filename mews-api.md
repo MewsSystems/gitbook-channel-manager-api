@@ -22,7 +22,7 @@ This part defines the API on the Mews side.
 
 This environment is meant to be used during building, testing, and certification of the client applications. Test properties are based in the Netherlands and accept `EUR` currency.
 
-* **Platform Address** - `https://app.mews-demo.com/`
+* **Platform Address** - `https://api.mews-demo.com/`
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 * **Client Token** - will be provided by Mews upon request.
 * **Connection Token** - will be provided by Mews upon request.
@@ -45,7 +45,7 @@ The property is configured to accept following test credit cards:
 
 ### Production Environment
 
-* **Platform Address** - `https://app.mews.com`
+* **Platform Address** - `https://api.mews.com`
 * **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](mews-api.md#process-group)
 * **Client Token** - will be provided to you by Mews following certification in the test environment \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
 * **Connection Token** - will be provided to you by Mews or property on request or via [Get Properties](mews-api.md#get-properties) API call \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)
