@@ -1,5 +1,9 @@
 # Changelog
 
+## 1 March 2022 12:00 UTC
+
+* [Customer](mews-api.md#Customer) object extended. The field `title` was added.
+
 ## 21 February 2022 12:00 UTC
 
 * [Channel](channels.md#channels) list extended. The latest Channel added has code `876`.

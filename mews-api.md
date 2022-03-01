@@ -760,6 +760,7 @@ There are certain rules that need to be followed in order for Mews to process th
         "email": "john@smith.com",
         "firstName": "John",
         "lastName": "Smith",
+        "title": "mister",
         "nationalityCode": "US",
         "languageCode": "en-US",
         "telephone": "1-3526-88918"
@@ -826,6 +827,7 @@ There are certain rules that need to be followed in order for Mews to process th
                     "email": "jane@smith.com",
                     "firstName": "Jane",
                     "lastName": "Smith",
+                    "title": "misses",
                     "nationalityCode": "US",
                     "languageCode": "en-US",
                     "telephone": "1-369-81891",
@@ -917,6 +919,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `email` | `string` | _recommended_ | Email. |
 | `lastName` | `string` | required | Last name. |
 | `firstName` | `string` | optional | First name. |
+| `title` | `string` | optional | Accepted values: `mister`, `misses`, `miss` |
 | `telephone` | `string` | optional | Telephone. |
 | `loyaltyCode` | `string` | optional | Loyalty code of the customer. |
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code or [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) - three letter country code. |
