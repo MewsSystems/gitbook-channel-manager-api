@@ -2,7 +2,7 @@
 
 ## 1 March 2022 12:00 UTC
 
-* [Customer](mews-api.md#Customer) object extended. The field `title` was added.
+* [Customer](mews-api.md#Customer) extended. The `title` is now supported.
 
 ## 21 February 2022 12:00 UTC
 
