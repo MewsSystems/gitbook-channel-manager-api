@@ -827,7 +827,7 @@ There are certain rules that need to be followed in order for Mews to process th
                     "email": "jane@smith.com",
                     "firstName": "Jane",
                     "lastName": "Smith",
-                    "title": "misses",
+                    "title": "Misses",
                     "nationalityCode": "US",
                     "languageCode": "en-US",
                     "telephone": "1-369-81891",
