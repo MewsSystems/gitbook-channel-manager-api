@@ -926,7 +926,7 @@ There are certain rules that need to be followed in order for Mews to process th
 | `languageCode` | `string` | optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Represents address. |
 
-#### Titles
+#### Customer title
 
 - `Mister`
 - `Misses`
