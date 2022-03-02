@@ -928,9 +928,9 @@ There are certain rules that need to be followed in order for Mews to process th
 
 #### Customer title
 
-- `Mister`
-- `Misses`
-- `Miss`
+* `Mister`
+* `Misses`
+* `Miss`
 
 #### Company
 
