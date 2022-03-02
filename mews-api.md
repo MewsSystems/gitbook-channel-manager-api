@@ -760,7 +760,7 @@ There are certain rules that need to be followed in order for Mews to process th
         "email": "john@smith.com",
         "firstName": "John",
         "lastName": "Smith",
-        "title": "mister",
+        "title": "Mister",
         "nationalityCode": "US",
         "languageCode": "en-US",
         "telephone": "1-3526-88918"
