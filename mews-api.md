@@ -760,6 +760,7 @@ There are certain rules that need to be followed in order for Mews to process th
         "email": "john@smith.com",
         "firstName": "John",
         "lastName": "Smith",
+        "title": "Mister",
         "nationalityCode": "US",
         "languageCode": "en-US",
         "telephone": "1-3526-88918"
@@ -826,6 +827,7 @@ There are certain rules that need to be followed in order for Mews to process th
                     "email": "jane@smith.com",
                     "firstName": "Jane",
                     "lastName": "Smith",
+                    "title": "Misses",
                     "nationalityCode": "US",
                     "languageCode": "en-US",
                     "telephone": "1-369-81891",
@@ -917,11 +919,18 @@ There are certain rules that need to be followed in order for Mews to process th
 | `email` | `string` | _recommended_ | Email. |
 | `lastName` | `string` | required | Last name. |
 | `firstName` | `string` | optional | First name. |
+| `title` | `string` [Title](mews-api.md#customer-title) | optional | Title. |
 | `telephone` | `string` | optional | Telephone. |
 | `loyaltyCode` | `string` | optional | Loyalty code of the customer. |
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code or [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) - three letter country code. |
 | `languageCode` | `string` | optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
 | `address` | [`Address`](mews-api.md#address) object | optional | Represents address. |
+
+#### Customer title
+
+* `Mister`
+* `Misses`
+* `Miss`
 
 #### Company
 
