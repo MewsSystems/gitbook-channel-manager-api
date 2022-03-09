@@ -1,48 +1,21 @@
 # Introduction
 
-The connection between Mews \(as a PMS\) and a channel manager is a 2-way connection.   
-The following document defines both the Mews \(as PMS\) side, and also defines the API on the channel manager side.   
-The Mews side mainly accepts bookings from the channel manager, while the channel manager side accepts inventory updates from the PMS and then distributes them to connected channels.
+Welcome to the __Mews Channel Manager API__. This is the Mews API for channels and distribution, supporting two main use cases:
+distributing availability, rates and inventory data to sales channels; and accepting reservations from sales channels.
+Typically, the users of this API are Channel Managers, which act as hubs for managing the various sales channels that a property may be connected to.
+The API connects these Channel Managers with __Mews Operations__.
 
-2-way connection means that both sides of the connection - channel manager and PMS - are required to accept data from the other side in order to correctly connect a PMS through channel manager to all the channels.  
-So both sides need to have an open API which the other side has to connect to.  
-Channel manager side accepts Inventory updates \(prices, availability, restrictions\), booking confirmations and property content \(property description, images, rate policy, etc.\).  
-PMS side accepts bookings.
+As the integration functionality is two-way, the API is implemented in two parts:
 
-If you encounter any issue with the API, have a question or any other other request, please contact [partnersuccess@mews.com](mailto://partnersuccess@mews.com).
+* The [Mews side](mews-operations/README.md) receives requests from external Channel Managers, including new reservations
+* The [Channel Manager side](channel-manager-operations/README.md) receives requests from Mews, including availability updates
 
-## Contents
+This means that to fully implement the functionality, you will need to not only make requests to Mews through defined endpoints on the Mews side,
+but also create your own endpoints to accept data from Mews on the Channel Manager side.
 
-* [General remarks](general-remarks.md)
-  * [Requests](general-remarks.md#requests)
-  * [Responses](general-remarks.md#responses)   
-  * [Setup process](general-remarks.md#setup-process)
-    * [Integration setup](general-remarks.md#integration-setup)
-    * [Connect new property](general-remarks.md#connect-new-property)
-    * [Certification](general-remarks.md#certification)
-* [Mews API](mews-api.md#mews-api)
-  * [Environments](mews-api.md#environments)
-    * [Test Environment](mews-api.md#test-environment)
-      * [Test Credit Cards](mews-api.md#test-credit-cards)
-    * [Production environment](mews-api.md#production-environment)
-  * [Operations](mews-api.md#operations)
-    * [Get Properties](mews-api.md#get-properties)
-    * [Get Configuration](mews-api.md#get-configuration)
-    * [Set Inventory](mews-api.md#set-inventory)
-    * [Request ARI Update](mews-api.md#request-ari-update)
-    * [Process Group](mews-api.md#process-group)
-* [Channel Manager API](channel-manager-api.md)
-  * [Mews Inventory Update Modes](channel-manager-api.md#mews-inventory-update-modes)
-    * [Full Inventory Update Mode](channel-manager-api.md#full-inventory-update-mode)
-    * [Delta Inventory Update Mode](channel-manager-api.md#delta-inventory-update-mode)
-  * [Expected Operations](channel-manager-api.md#expected-operations)
-    * [Update Prices](channel-manager-api.md#update-prices)
-    * [Update Availability](channel-manager-api.md#update-availability)
-    * [Update Restrictions](channel-manager-api.md#update-restrictions)
-    * [Confirm Booking](channel-manager-api.md#confirm-booking)
-    * [Change Notification](channel-manager-api.md#change-notification)
-* [Certification](certification.md)
-  * [Prerequisites](certification.md#prerequisites)
-  * [Testing scenario](certification.md#testing-scenario)
-  * [Evaluation](certification.md#evaluation)
+To get started, see our [Guidelines](general/README.md) for information on how to connect, what authentication tokens you need, Mews terminology, and more besides.
+If you encounter any issues using the API, or you have a question or special request, please get in touch via [partnersuccess@mews.com](mailto://partnersuccess@mews.com).
 
+> ### Changes to this API
+> * For the history of changes to the API, see the [Changelog](changelog/README.md)
+> * To track changes and updates, you can follow the [GitHub repository](https://github.com/MewsSystems/gitbook-channel-manager-api/tree/master)

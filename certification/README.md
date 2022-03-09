@@ -1,30 +1,36 @@
 # Certification
 
+Here you can find information about the certification process for new partners using the __Mews Channel Manager API__, including the list of standard tests.
+
 ## Pre-Certification
 
-1. Email partnersuccess@mews.com to request a Client token and testing property be created in the Mews [Test Environment](mews-api.md#test-environment).
-2. Create the following HTTPS endpoint URLs for the Mews [Test Environment](mews-api.md#test-environment)
-    * [Update Availability](channel-manager-api.md#update-availability) 
-    * [Update Prices](channel-manager-api.md#update-prices)
-    * [Update Restrictions](channel-manager-api.md#update-restrictions)
-    * [Confirm Booking](channel-manager-api.md#confirm-booking) 
-    * [Change Notification](channel-manager-api.md#change-notification) \(optional\)
-3. Email the endpoints to partnersuccess@mews.com.
-4. Use your test property username and [Get Properties](mews-api.md#get-properties) call to receive the `connectionToken` for the [Test Hotel](mews-api.md#test-environment).
-5. Pull hotel information, space mapping, and rate mapping information using the [Get Configuration](mews-api.md#get-configuration) call.
-6. Map the all rate plan and space category combinations in the UI of the channel manager backend using the data received in the [Get Configuration](mews-api.md#get-configuration) call.
-7. Manually map products from the test hotel in the channel manager backend using the mapping codes received from marketplace@mewssystems.com. \(optional\)
+The process is as follows:
 
-**Note:** Multi-property Mews customers (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces of one Mews property.  E.g. Property is the Mews Enterprise and Spaces are the rental properties.  These spaces (properties) can be sent to the channel manager as multiple connections, 1 connection token per space (property), or as a single connection for the entire property manager.
+1. Email partnersuccess@mews.com to request a `Client Token` and for a test property to be created in the Mews [Test Environment](../mews-operations/README.md#test-environment).
+2. Create the following HTTPS endpoint URLs on the Channel Manager side [Test Environment](../channel-manager-operations/README.md#environments)
+    * [Update Availability](../channel-manager-operations/operations.md#update-availability) 
+    * [Update Prices](../channel-manager-operations/operations.md#update-prices)
+    * [Update Restrictions](../channel-manager-operations/operations.md#update-restrictions)
+    * [Confirm Booking](../channel-manager-operations/operations.md#confirm-booking) 
+    * [Change Notification](../channel-manager-operations/operations.md#change-notification) \(optional\)
+3. Email the endpoint details to partnersuccess@mews.com.
+4. Use your test property username and [Get Properties](../mews-operations/configuration.md#get-properties) API operation to fetch the `connectionToken` for the [Test Property](../mews-operations/README.md#test-environment).
+5. Pull property information, space type mapping and rate mapping information using the [Get Configuration](../mews-operations/configuration.md#get-configuration) API operation.
+6. Map all the rate plan and space category combinations in the user interface of the channel manager system using the data received from the [Get Configuration](../mews-operations/configuration.md#get-configuration) request.
+7. Manually map products from the test property in the channel manager using the mapping codes received from marketplace@mewssystems.com. \(optional\)
+
+> **Note:** Multi-property Mews customers (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces of one Mews property
+> i.e. the 'property' is the Mews enterprise customer and the 'spaces' are the individual rental properties.
+> These spaces (i.e. properties) can be sent to the channel manager as multiple connections, with one `Connection Token` per space (i.e. property), or as a single connection for the entire enterprise.
 
 ## Certification Tests
 
-These tests will be done during a 90-minute call with the Mews Marketplace team and the channel manager.  
+These tests will be conducted during a 90-minute call between the Mews Marketplace team and a representative of the channel manager.  
 
 ### Inventory Push Tests
 
 | Test | Requirement | Scenario | Expected Result | Notes |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | **Receive multi-space, multi-rate availability push** | Required | 5+ Spaces (3 Rooms, 1 Dorm and 1 Bed) and 5+ Rates are mapped from the [Get Configuration](mews-api.md#get-configuration) response and data is pushed to the [Update Availability](channel-manager-api.md#update-availability) endpoint. | The channel manager returns ```{ "success": true}``` and data is updated in the channel manager extranet. | Mapping bed and dorm space types is recommended, not required. |
 | **Receive multi-space, multi-rate gross rate push** | Required | 5+ Spaces (3 Rooms, 1 Dorm and 1 Bed) and 5+ Rates are mapped and pushed to the [Update Prices](channel-manager-api.md#update-prices) endpoint. | The channel manager returns ```{ "success": true}``` and data is updated in the channel manager extranet. | Mapping bed and dorm space types is recommended, not required. |
 | **Receive multi-space, multi-rate net rate push** | Required | 5+ Spaces (3 Rooms, 1 Dorm and 1 Bed) and 5+ Rates are mapped and pushed to the [Update Prices](channel-manager-api.md#update-prices) endpoint. | The channel manager returns ```{ "success": true}``` and data is updated in the channel manager extranet. | Mapping bed and dorm space types is recommended, not required. |
@@ -35,7 +41,7 @@ These tests will be done during a 90-minute call with the Mews Marketplace team 
 ### Reservation Tests
 
 | Test | Requirement | Scenario | Expected Result | Notes |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | **Send a single gross priced reservation** | Required | A reservation push with [test credit card](mews-api.md#test-credit-cards) information in the [`paymentCard`](mews-api.md#payment-card) object, an [`adultCount`](mews-api.md#reservation) of 2, a [`childCount`](mews-api.md#reservation) of 1, and a companion in the `guests` property of the booking and a booked [`channel`](https://mews-systems.gitbook.io/channel-manager-api/channels) code is sent to the [Process Group](mews-api.md#process-group) endpoint. | The channel manager receives a ```{ "clientToken":"[Mews Client Token]", "connectionToken":"[Token of a concrete connection]", "channelManagerId":"[Id sent in the reservation push]", "reservations":[ {"code":"[Code sent in the reservation push]", "confirmationNumber":"[Mews confirmation number]"}]}``` push to the [Confirm Booking](channel-manager-api.md#confirm-booking) endpoint. | The [`paymentCard`](mews-api.md#payment-card) object is required for all reservation pushes in the live environment. |
 | **Modify the single gross priced reservation** | Required | A modification push with the same [`channelManagerId`](mews-api.md#main-body), the same Reservation [`code`](mews-api.md#reservation) for each booking and at least 1 change to the [`reservations`](mews-api.md#reservation) collection is sent to the [Process Group](mews-api.md#process-group) endpoint. | The channel manager receives a ```{ "clientToken":"[Mews Client Token]", "connectionToken":"[Token of a concrete connection]", "channelManagerId":"[Same id as the original push]", "reservations":[ {"code":"[Same code as the original push]", "confirmationNumber":"[Same confirmation number as the original push]"}]}``` push to the [Confirm Booking](channel-manager-api.md#confirm-booking) endpoint. |     |
 | **Cancel the single gross priced reservation** | Required | An cancellation push with the same [`channelManagerId`](mews-api.md#main-body) as the original reservation and no additional data is sent to the [Process Group](mews-api.md#process-group) endpoint. | The channel manager receives a ```{ "clientToken":"[Mews Client Token]", "connectionToken":"[Token of a concrete connection]", "channelManagerId":"[Same id as the original push]", "reservations":[ {"code":"[Same code as the original push]", "confirmationNumber":"[Same confirmation number as the original push]"}]}``` push to the [Confirm Booking](channel-manager-api.md#confirm-booking) endpoint. |    |
@@ -65,9 +71,10 @@ All error messages from the channel manager to Mews must use the error codes lis
 
 ## Evaluation
 
-* If the required tests cannot be completed, Mews will not allow the channel manager to advance to the production environment.
-  * Once issues are resolved, certification will start over.
-* If there are no critical issues discovered during certification, the channel manager will be advanced to the production environment.
-  * Mews will require unique https production endpoint URLs for the [Channel Manager API](certification.md#channel-manager-api).
-  * Mews will issue a new Client token for the channel manager to use in the live environment.
-  * The channel manager will issue documenation of their setup process for approval.
+If the required tests cannot be completed successfully, Mews will not allow the channel manager to advance to the production environment.
+Once any issues are resolved, certification will start over.
+
+If there are no critical issues discovered during certification, the channel manager will be advanced to the production environment.
+  * Mews will require unique HTTPS production endpoint URLs for the Channel Manager side
+  * Mews will issue a new `Client Token` for the channel manager to use in the live environment
+  * The channel manager will issue documentation of their set-up process for approval
