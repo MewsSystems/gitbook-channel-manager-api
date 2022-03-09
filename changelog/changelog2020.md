@@ -38,6 +38,3 @@
 
 * [Amount](../mews-operations/reservations.md#amount) extended in [Process Group](../mews-operations/reservations.md#process-group) and [Price](../channel-manager-operations/operations.md#price) extended in [Update Prices](../channel-manager-operations/operations.md#update-prices). Net pricing is now supported for inventory upload and reservation delivery.
 
-| Next |
-| :-- |
-| [Changelog 2019](changelog2019.md) |
