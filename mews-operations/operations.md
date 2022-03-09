@@ -6,9 +6,9 @@ This section describes all operations supported by the Mews side API, organised 
 
 | <div style="width:200px">Operation or Endpoint</div> | Description |
 | :-- | :-- |
-| [Get Properties](configuration.md#get-properties) | Get the list of available properties and their connection details |
-| [Get Configuration](configuration.md#get-configuration) | Get the configuration of the given property connection |
-| [Get Channels](configuration.md#get-channels) | Get the list of all channels with assigned mapping codes |
+| [Get Properties](../mews-operations/configuration.md#get-properties) | Get the list of available properties and their connection details |
+| [Get Configuration](configuration.md) | Get the configuration of the given property connection |
+| [Get Channels](../mews-operations/configuration.md) | Get the list of all channels with assigned mapping codes |
 
 ## Inventory
 

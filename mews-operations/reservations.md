@@ -23,7 +23,7 @@ The example shows a valid group definition with 2 space reservations + cancellat
 > * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent \(i.e. Mews doesn't process diffs\).
 > * When **cancelling** a reservation from a multi-reservation group, all remaining reservations need to be present in the group definition as well.
 >   * There are 2 ways to cancel a reservation from a multi-reservation group.
->     * A. If the `reservation.state` is set to [Reservation States](mews-api.md#reservation-states).`Cancelled`.
+>     * A. If the `reservation.state` is set to [Reservation States](#reservation-states).`Cancelled`.
 >     * B. If the reservation is not included in the group definiton message.
 > * When **cancelling** a whole group, the `reservations` collection can be empty of all reservations provided as cancelled \(as per case A above\).
 
@@ -276,13 +276,13 @@ The example shows a valid group definition with 2 space reservations + cancellat
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
-| `totalAmount` | [`Amount`](mews-api.md#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
+| `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
 | `adultCount` | `int` | required \(exc. Cancellation\) | Number of adults in the reservation. |
 | `childCount` | `int` | optional \(exc. Cancellation\) | Number of children in the reservation. |
-| `state` | `int` | optional | [Reservation State](mews-api.md#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
-| `amounts` | [`Amount`](mews-api.md#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
-| `extras` | [`Extra`](mews-api.md#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
-| `guests` | [`Customer`](mews-api.md#customer) collection | optional | Collection of guests that will arrive to the property. |
+| `state` | `int` | optional | [Reservation State](#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
+| `amounts` | [`Amount`](#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
+| `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
+| `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
 
 _¹ It is required that the code remains the same within each booking modification message and partial modification message. If it can't be achieved because Channel doesn't provide it, simple generation of "01", "02", ... codes will suffice as long as those codes are generated in same way for each message regarding that one booking._
 
@@ -303,11 +303,11 @@ _¹ It is required that the code remains the same within each booking modificati
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `code` | `string` | required | Mapping code of the extra product. |
-| `amount` | [`Amount`](mews-api.md#amount) object | required | Total amount of the extra product. |
+| `amount` | [`Amount`](#amount) object | required | Total amount of the extra product. |
 | `count` | `int` | required | Count of extra products ordered. |
 | `from` | `string` | optional \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | optional \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"` for New Year's Eve\). |
-| `pricing` | `int` | required | [`Extra pricing Type`](mews-api.md#extra-pricing-types) code of the extra product pricing. |
+| `pricing` | `int` | required | [`Extra pricing Type`](#extra-pricing-types) code of the extra product pricing. |
 
 
 #### Amount
@@ -328,4 +328,4 @@ _¹ It is required that the code remains the same within each booking modificati
 
 ### Response
 
-[Plain response](general-remarks.md#plain-response) will determine whether the booking was accepted for processing or not.
+[Simple response](../general/README.md#simple-response) will determine whether the booking was accepted for processing or not.
