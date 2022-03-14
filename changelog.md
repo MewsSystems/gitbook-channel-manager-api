@@ -1,5 +1,9 @@
 # Changelog
 
+## 11 MArch 2022 12:00 UTC
+
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `877`.
+
 ## 1 March 2022 12:00 UTC
 
 * [Customer](mews-api.md#Customer) extended. The `title` is now supported.
