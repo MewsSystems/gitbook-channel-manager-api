@@ -1,8 +1,10 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Guidelines](general/README.md)
-  * [Integration Process](general/process.md)
+* [Guidelines](guidelines/README.md)
+  * [Requests](guidelines/requests.md)
+  * [Responses](guidelines/responses.md)
+  * [Integration Process](guidelines/process.md)
 * [Mews side](mews-operations/README.md)
 	* [Operations](mews-operations/operations.md)
 	  * [Configuration](mews-operations/configuration.md)
@@ -10,6 +12,9 @@
 	  * [Reservations](mews-operations/reservations.md)
 * [Channel Manager side](channel-manager-operations/README.md)
   * [Operations](channel-manager-operations/operations.md)
+	  * [Inventory](channel-manager-operations/inventory.md)
+	  * [Reservations](channel-manager-operations/reservations.md)
+	  * [Notifications](channel-manager-operations/notifications.md)
 * [Channels](channels/README.md)
 * [Certification](certification/README.md)
 * [Changelog](changelog/README.md)

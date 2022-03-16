@@ -107,13 +107,13 @@ _Sample Hostel_ has two connections to this channel manager, whilst _White House
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plans`](#rate-plan) will be returned as well. Unsynchronized rate plan means that Mews will not push prices and restrictions for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
-| `includeProducts` | `bool` | optional | If `true`, products mapped to a channel manager rate plan will be returned. Products mapped to a channel manager rate plan means that Mews sends a total price combining nightly price and product price in [`Update Prices`](../channel-manager-operations/operations.md#update-prices) requests. |
+| `includeProducts` | `bool` | optional | If `true`, products mapped to a channel manager rate plan will be returned. Products mapped to a channel manager rate plan means that Mews sends a total price combining nightly price and product price in [`Update Prices`](../channel-manager-operations/inventory.md#update-prices) requests. |
 | `includeCompanies` | `bool` | optional | If `true`, mapped profiles for companies (e.g. Microsoft) and travel agencies (e.g. Expedia) will be returned. A company profile needs to be mapped with a [`Channel Code`](../channels/README.md). To map a travel agency, follow the guide [Setting up travel agencies](https://help.mews.com/s/article/set-up-travel-agencies?language=en_US). |
 | `includeUnsynchronizedCategories` | `bool` | optional | If `true`, unsynchronized space categories will be returned as well. Unsynchronized space category means that Mews will not push availability for that space category, but when a reservation comes with the space category code, Mews will link the correct space category with the reservation. |
 
 ### Response
 
-This is an example of a _successful_ response. In case an error occurred, the response will contain only the [`Error`](../general/README.md#error) object.
+This is an example of a _successful_ response. In case an error occurred, the response will contain only the [`Error`](../guidelines/responses.md#error) object.
 
 ```javascript
 {

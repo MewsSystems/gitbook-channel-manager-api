@@ -41,3 +41,6 @@
 
 * Added more [Restriction Examples](../channel-manager-operations/operations.md#restriction-examples).
 
+| Next |
+| :-- |
+| [Changelog 2020](changelog2020.md) |

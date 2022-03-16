@@ -71,3 +71,6 @@ Following changes are done in a way that the previous fields still exist in both
 
 **The support is temporarily and will end approximately by end of March 2018. Make sure you migrate to use the new fields, as the previous fields will be removed.**
 
+| Next |
+| :-- |
+| [Changelog 2017](changelog2017.md) |

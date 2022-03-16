@@ -33,15 +33,15 @@
 | :-- | :-- | :-- | :-- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `inventoryMappings` | [`Inventory Mapping`](#inventory-mapping) collection | required | Defines all rate plan - space type mapping relations. |
+| `inventoryMappings` | [`Inventory Mappings`](configuration.md#inventory-mappings) collection | required | Defines all rate plan - space type mapping relations. |
 
 ### Response
 
-[Simple response](../general/README.md#simple-response) is expected.
+[Simple response](../guidelines/responses.md#simple-response) is expected.
 
 ## Request ARI Update
 
-\[`async`\] This method allows channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the next [delta](channel-manager-api.md#delta-inventory-update-mode) update. The requested data will be sent by Mews asynchronously via push operations of channel manager API in the next delta update.
+\[`async`\] This method allows channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the next [delta](../channel-manager-operations/README.md#delta-inventory-update-mode) update. The requested data will be sent by Mews asynchronously via push operations of channel manager API in the next delta update.
 
 ### Request
 
@@ -88,4 +88,4 @@
 
 ### Response
 
-[Simple](../general/README.md#simple-response) will determine whether the ARI update was accepted for processing or not.
+[Simple response](../guidelines/responses.md#simple-response) will determine whether the ARI update was accepted for processing or not.

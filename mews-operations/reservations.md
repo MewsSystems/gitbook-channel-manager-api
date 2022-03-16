@@ -2,16 +2,21 @@
 
 ## Process Group
 
-\[`async`\] This operation allows the channel manager to push a reservation group \(i.e. _booking_\) to Mews. This option allows creations, modifications, and partial or complete cancellations. Mews will process and confirm the booking asynchronously.
+\[`async`\] This operation allows the channel manager to push a group of reservations (bookings) to Mews.
+This option allows creations, modifications, and partial or complete cancellations. Mews will process and confirm the booking asynchronously.
 
 ### Request 
 
 * **Demo Environment:** `https://sandbox.pci-proxy.com/v1/push/0426f19b66715a93`
 * **Production Environment:** `https://api.pci-proxy.com/v1/push/b2721c9a0351d553`
 
-The example shows a valid group definition with 2 space reservations + cancellation of the 3rd space reservation. First `reservation` definition shows all details, second `reservation` definition shows the minimal required details for creation / modification of a `reservation`. The 3rd `reservation` definition shows the partial cancellation - cancelling the 3rd space reservation.
+The example shows a valid group definition with two space reservations plus cancellation of the third space reservation.
+First `reservation` definition shows all details, second `reservation` definition shows the minimal required details for creation / modification of a `reservation`.
+The third `reservation` definition shows the partial cancellation - cancelling the third space reservation.
 
-> __There are certain rules that need to be followed in order for Mews to process the group correctly:__
+> ### Rules to follow
+>
+> There are certain rules that need to be followed in order for Mews to process the group correctly:
 >
 > * It is required to send multiple related reservations in one group as part of one message.
 >   * The whole group is uniquely identified by `channelManagerId` in Mews and in the channel manager extranet.
@@ -22,10 +27,10 @@ The example shows a valid group definition with 2 space reservations + cancellat
 >   * Reservation `group` amounts should be either `gross` or `net`. Either both `gross` and `net` amounts, or one of them should be sent.
 > * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent \(i.e. Mews doesn't process diffs\).
 > * When **cancelling** a reservation from a multi-reservation group, all remaining reservations need to be present in the group definition as well.
->   * There are 2 ways to cancel a reservation from a multi-reservation group.
->     * A. If the `reservation.state` is set to [Reservation States](#reservation-states).`Cancelled`.
->     * B. If the reservation is not included in the group definiton message.
-> * When **cancelling** a whole group, the `reservations` collection can be empty of all reservations provided as cancelled \(as per case A above\).
+>   * There are two ways to cancel a reservation from a multi-reservation group:
+>     1. If the `reservation.state` is set to [Reservation States](#reservation-states).`Cancelled`.
+>     2. If the reservation is not included in the group definiton message.
+> * When **cancelling** a whole group, the `reservations` collection can be empty of all reservations provided as cancelled \(as per case 1 above\).
 
 ```javascript
 {
@@ -195,7 +200,7 @@ The example shows a valid group definition with 2 space reservations + cancellat
 | `channelManagerId` | `string` | required \(always\) | Unique identification of the booking in the channel manager. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
-| `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](#payment-types) code - determines whether the booking is prepaid or not. |
+| `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
 | `channel` | [`Channel`](#channel) object | optional | Represents the channel \(i.e. Travel Agency\). |
@@ -213,7 +218,7 @@ The example shows a valid group definition with 2 space reservations + cancellat
 | `loyaltyCode` | `string` | optional | Loyalty code of the customer. |
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code or [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) - three letter country code. |
 | `languageCode` | `string` | optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
-| `address` | [`Address`](#address) object | optional | Represents address. |
+| `address` | [`Address`](configuration.md#address) object | optional | Represents address. |
 
 #### Company
 
@@ -230,7 +235,7 @@ The example shows a valid group definition with 2 space reservations + cancellat
 | :-- | :-- | :-- | :-- |
 | `email` | `string` | _recommended_ | Contact email address. |
 | `telephone` | `string` | optional | Contaact telephone number. |
-| `address` | [`Address`](#address) object | optional | Contact address. |
+| `address` | [`Address`](configuration.md#address) object | optional | Contact address. |
 
 #### Payment card
 
@@ -328,4 +333,4 @@ _¹ It is required that the code remains the same within each booking modificati
 
 ### Response
 
-[Simple response](../general/README.md#simple-response) will determine whether the booking was accepted for processing or not.
+[Simple response](../guidelines/responses.md#simple-response) will determine whether the booking was accepted for processing or not.

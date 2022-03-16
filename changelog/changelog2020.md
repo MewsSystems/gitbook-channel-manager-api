@@ -14,7 +14,7 @@
 
 ## 20th October 2020 12:00 UTC
 
-* [Error codes](../general/README.md#error) list extended. New error codes are from 9 to 14.
+* [Error codes](../guidelines/responses.md#error) list extended. New error codes are from 9 to 14.
 * [Customer](../mews-operations/reservations.md#customer) extended with loyalty code.
 
 ## 20th August 2020 12:00 UTC
@@ -38,3 +38,6 @@
 
 * [Amount](../mews-operations/reservations.md#amount) extended in [Process Group](../mews-operations/reservations.md#process-group) and [Price](../channel-manager-operations/operations.md#price) extended in [Update Prices](../channel-manager-operations/operations.md#update-prices). Net pricing is now supported for inventory upload and reservation delivery.
 
+| Next |
+| :-- |
+| [Changelog 2019](changelog2019.md) |
