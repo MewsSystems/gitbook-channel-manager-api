@@ -33,7 +33,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `23` | Bedandbreakfast |
 | `24` | BedBooker |
 | `25` | Best Hotel Online |
-| `26` | Bongo |
+| `26` | ~~Bongo~~ SmartBOX |
 | `27` | Book Easy |
 | `28` | Book It With |
 | `29` | Book Today |
@@ -132,7 +132,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `140` | Hotel.de |
 | `145` | HotelBook.pro |
 | `146` | HotelClub |
-| `147` | Hoteldeal |
+| `147` | ~~Hoteldeal~~ Bookunited |
 | `148` | Hotelerum |
 | `149` | Hoteliers.com |
 | `150` | Hotel-Inn.ru |
@@ -375,7 +375,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `427` | GHIX Spider |
 | `428` | STC |
 | `429` | Hotel Spider |
-| `430` | Seekda |
+| `430` | ~~Seekda~~ Kognitiv |
 | `431` | Caesars Data |
 | `432` | VIOMA |
 | `433` | Viato XML |
@@ -731,7 +731,7 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `787` | Ital Camel |
 | `788` | ItalyHotels | 
 | `789` | JDB |
-| `790` | LoyaltyBuild |
+| `790` | ~~LoyaltyBuild~~ Digibreaks |
 | `791` | Malapronta |
 | `792` | MyBookings |
 | `793` | Netmedia |
@@ -819,3 +819,5 @@ _Note that the _`Code`_ line is not a continuous sequence of numbers, there are 
 | `875` | Vrbo |
 | `876` | hoo |
 | `877` | Powernapp |
+| `878` | Windingtree |
+| `879` | Jazztour |
