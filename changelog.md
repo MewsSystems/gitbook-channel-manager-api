@@ -1,5 +1,9 @@
 # Changelog
 
+## 16 March 2022 22:00 UTC
+
+* [Channel](channels.md#channels) list extended. The latest Channel added has code `879`. Some channels were renamed, because the company rebranded. All renamed channels are ~~crossed~~ and the proper name is mentioned.
+
 ## 11 MArch 2022 12:00 UTC
 
 * [Channel](channels.md#channels) list extended. The latest Channel added has code `877`.
