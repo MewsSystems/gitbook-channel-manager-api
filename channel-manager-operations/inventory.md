@@ -200,10 +200,9 @@ This method is used when Mews updates restrictions.
 
 ### Restriction Examples
 
-#### Open (No Restrictions)
+#### No Restriction (Open)
 
-When all restrictions are removed, state `1` is sent and Length-Of-Stay properties are set to `null`.
-New restrictions always override old restrictions. State `1` is _not_ sent to remove old restrictions, if they were modified.
+When all restrictions are removed, state `1` is sent. New restrictions always override old restrictions. State `1` is _not_ sent to remove old restrictions, if they were modified.
  
 ```javascript
 {
@@ -238,9 +237,9 @@ State `2` is sent in combination with state `8`.
 }
 ```
 
-#### Open with LOS Restrictions
+#### Closed to Stay with minLos and maxLos
 
-State `1` is sent but with specified minLos and/or maxLos. If `minLos` or `maxLos` is not met, then the restriction should be treated as Closed to stay.
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as Closed to stay.
 
 ```javascript
 {
@@ -275,18 +274,16 @@ State `2` is sent in combination with state `6`.
 }
 ```
 
-#### Closed to Arrival with LOS Restrictions
+#### Closed to Arrival with minLos and maxLos
 
-State `2` is sent in combination with state `6`, with specified minLos and/or maxLos.
-If `minLos` or `maxLos` is not met, then the restriction should be treated as Closed to stay.
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as Closed to arrival.
 
 ```javascript
 {
     "ratePlanCode": "FF",
     "spaceTypeCode": "JST",
     "state": [
-        2,
-        6
+        1
     ],
     "minLos": 2,
     "maxLos": 10,
@@ -314,18 +311,16 @@ State `2` is sent in combination with state `7`.
 }
 ```
 
-#### Closed to Departure with LOS Restrictions 
+#### Closed to Departure with minLos and maxLos 
 
-State `2` is sent in combination with state `7`, with specified minLos and/or maxLos.
-If `minLos` or `maxLos` is not met, then the restriction should be treated as Closed to stay.
+State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as Closed to departure.
 
 ```javascript
 {
     "ratePlanCode": "FF",
     "spaceTypeCode": "JST",
     "state": [
-        2,
-        7
+        1
     ],
     "minLos": 2,
     "maxLos": 10,
@@ -336,7 +331,7 @@ If `minLos` or `maxLos` is not met, then the restriction should be treated as Cl
 
 #### Closed to Stay and Closed to Arrival 
 
-Both restriction states are in effect, which is equivalent to Closed to stay.
+Both states should be applied.
 
 ```javascript
 {
@@ -354,9 +349,48 @@ Both restriction states are in effect, which is equivalent to Closed to stay.
 }
 ```
 
-#### Closed to Stay with LOS restrictions
+#### Closed to Stay and Closed to Departure
 
-Regardless of LOS restrictions, this is equivalent to Closed to stay.
+This combination should be treated as Closed to stay.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        8,
+        7
+    ],
+    "minLos": null,
+    "maxLos": null,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
+#### Closed to Stay with minLos/maxLos and Closed to Arrival
+
+This should be applied as no arrivals are possible and reservation minLos is 3 nights and maxLos is 7 nights.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "DEL",
+    "state": [
+        2,
+        6
+    ],
+    "minLos": 3,
+    "maxLos": 7,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
+#### Closed to Stay and Closed to Arrival with minLos/maxLos
+
+This combination should be treated as Closed to stay.
 
 ```javascript
 {
@@ -372,9 +406,10 @@ Regardless of LOS restrictions, this is equivalent to Closed to stay.
     "to": "2020-10-06"
 }
 ```
-#### Closed to Arrival and Closed to Departure
 
-Both restriction states are in effect, so no reservations can start or end during this period.
+#### Closed to Departure and Closed to Arrival with minLos/maxLos
+
+This combination should be treated as Closed to stay.
 
 ```javascript
 {
@@ -382,8 +417,45 @@ Both restriction states are in effect, so no reservations can start or end durin
     "spaceTypeCode": "DEL",
     "state": [
         2,
-        6
         7
+    ],
+    "minLos": 3,
+    "maxLos": 7,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
+#### Closed to Departure and Closed to Stay with minLos/maxLos
+
+This combination should be treated as Closed to departure. Reservations can be made if the length-of-stay requirements are met.
+
+```javascript
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "4BD",
+    "state": [
+        2,
+        7
+    ],
+    "minLos": 2,
+    "maxLos": 6,
+    "from": "2020-09-30",
+    "to": "2020-10-06"
+}
+```
+
+#### No minLos nor maxLos
+
+When `minLos` or `maxLos` is not specified, `null` value is sent.
+
+```javascript        
+{
+    "ratePlanCode": "FF",
+    "spaceTypeCode": "4BD",
+    "state": [
+        2,
+        8
     ],
     "minLos": null,
     "maxLos": null,
