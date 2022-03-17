@@ -1,6 +1,7 @@
 # Channels
 
 This is a list of all Channels \(i.e. OTAs or Online Travel Agents\), together with their mapping codes. Please check this list regularly.
+You can also obtain the list of channels through the API, using [Get Channels](../mews-operations/configuration.md#get-channels).
 
 > Note: `Code` is not a continuous sequence of numbers, there are some gaps.
 > New Channels will be added at the bottom of the list, so you can easily keep track.

@@ -18,6 +18,14 @@ On the Channel Manager side, the `clientToken` can be the same or different, as 
 All operations regarding a specific connection with a specific property require `connectionToken` as well.
 `connectionToken` is unique for each connection.
 
-> ### Channels
-> For the list of supported sales channels, including Online Travel Agents or OTAs, see [Channels](../channels/README.md).
-> If you are connected to a sales channel which is not listed, please contact Mews via partnersuccess@mews.com and we can update the list.
+### Channels
+
+For the list of supported sales channels, including Online Travel Agents or OTAs, see [Channels](../channels/README.md).
+If you are connected to a sales channel which is not listed, please contact Mews via [partnersuccess@mews.com](mailto://partnersuccess@mews.com) and we can update the list.
+
+### PCI Compliance
+
+For information on Mews PCI compliance, including current certification, please follow the links below.
+
+* [Mews PCI compliance](https://mews.force.com/s/article/pci-compliance?language=en_US)
+* [Mews PCI certificate](https://www.mews.com/en/platform-documentation)

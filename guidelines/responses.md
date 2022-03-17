@@ -1,7 +1,7 @@
 # Responses
 
-Each API request is expected to return a response. The **HTTP status code** of the response will be `200` in case the API request processing is successful as well as if the API request processing fails \(e.g. error during reservation processing, validation error of inventory update message, etc.\).
-In case of such failures, the error is provided in the response body.
+Each API request is expected to return a response. The **HTTP status code** of the response will be `200` in case the API request processing is successful as well as if the API request processing fails \(e.g. error during reservation processing, or a validation error of inventory update message\).
+In case of such failures, details about the error are provided in the response body.
 
 ## Simple response
 
@@ -15,7 +15,7 @@ This response object represents the default, simple response.
 
 ## Complex response
 
-In case a more complex response is provided, the response object will extend the simple response object.
+In case a more complex response is needed, the response object will extend the simple response object.
 
 ```javascript
 {

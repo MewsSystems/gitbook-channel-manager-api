@@ -2,7 +2,7 @@
 
 ## Update Prices
 
-\[`sync`\] This method is used when Mews updates prices of rate plans.
+This method is used when Mews updates prices of rate plans.
 Mews always pushes both `gross` and `net` prices, the channel manager chooses which of these to use.
 
 ### Request
@@ -82,7 +82,7 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 
 ## Update Availability
 
-\[`sync`\] This method is used when Mews updates availability of space types.
+This method is used when Mews updates availability of space types.
 
 ### Request
 
@@ -130,7 +130,7 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 
 ## Update Restrictions
 
-\[`sync`\] This method is used when Mews updates restrictions.
+This method is used when Mews updates restrictions.
 
 ### Request
 

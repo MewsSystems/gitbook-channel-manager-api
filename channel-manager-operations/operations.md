@@ -1,4 +1,4 @@
-# API Operations (Channel Manager)
+# API Operations (CHM)
 
 This section describes all operations supported by the Channel Manager side API, organised here by theme.
 

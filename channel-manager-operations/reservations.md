@@ -2,7 +2,7 @@
 
 ## Confirm Booking
 
-\[`sync`\] This method is used when Mews confirms a booking sent via [Process Group](../mews-operations/reservations.md#process-group).
+This method is used when Mews confirms a booking sent via [Process Group](../mews-operations/reservations.md#process-group).
 It is used to send confirmation of success as well as confirmation of failure.
 
 ### Request

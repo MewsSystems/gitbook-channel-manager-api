@@ -334,3 +334,4 @@ _¹ It is required that the code remains the same within each booking modificati
 ### Response
 
 [Simple response](../guidelines/responses.md#simple-response) will determine whether the booking was accepted for processing or not.
+Confirmation of booking will be sent asynchronously using the [Confirm Booking](../channel-manager-operations/reservations.md#confirm-booking) operation.

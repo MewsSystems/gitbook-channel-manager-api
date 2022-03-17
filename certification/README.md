@@ -19,7 +19,7 @@ The process is as follows:
 6. Map all the rate plan and space category combinations in the user interface of the channel manager system using the data received from the [Get Configuration](../mews-operations/configuration.md#get-configuration) request.
 7. Manually map products from the test property in the channel manager using the mapping codes received from marketplace@mewssystems.com. \(optional\)
 
-> **Note:** Multi-property Mews customers (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces of one Mews property
+> Note: Multi-property enterprises (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces belonging to a single Mews property
 > i.e. the 'property' is the Mews enterprise customer and the 'spaces' are the individual rental properties.
 > These spaces (i.e. properties) can be sent to the channel manager as multiple connections, with one `Connection Token` per space (i.e. property), or as a single connection for the entire enterprise.
 

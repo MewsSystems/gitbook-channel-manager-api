@@ -2,7 +2,7 @@
 
 ## Get Properties
 
-\[`sync`\] This operation is used to get the list of available properties and their connection details, based on your `Client Token` and an employee email address.
+This operation is used to get the list of available properties and their connection details, based on your `Client Token` and an employee email address.
 A valid email address must be supplied which corresponds to an employee of the enterprise to which the properties belong.
 The system will verify the email address and return the list of properties and connections (including `Connection Tokens`) for which the owner of the email address has access.
 
@@ -77,7 +77,7 @@ _Sample Hostel_ has two connections to this channel manager, whilst _White House
 
 ## Get Configuration
 
-\[`sync`\] This operation returns the configuration of the given property connection.
+This operation returns the configuration of the given property connection.
 
 ### Request
 
@@ -529,7 +529,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `code` | `string` | required | Mapping code of the product. |
 | `name` | `string` | required | Name of the product. |
 | `description` | `string` | optional | Description of the product. |
-| `unitAmount` | `[`Amount object`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#amount)` | required | A product cost. |
+| `unitAmount` | [`Amount`](reservations.md#amount) object | required | A product cost. |
 | `currencyCode` | `string` | required | 3 letter currency code of the product. |
 | `netValue` | `decimal` | required | Tax exclusive product cost. |
 | `grossValue` | `decimal` | required | Tax inclusive product cost. |
@@ -555,8 +555,8 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `name` | `string` | required | Company name. |
 | `contact` | `string` | optional | Company contact. |
 | `phone` | `string` | optional | Company phone number. |
-| `addresses` | `[`Address`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address) object` | optional | Company address. |
-| `channel` | ` [`Channel`] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#channel)` | optional | Mapping code of the company. |
+| `addresses` | [`Address`](#address) object | optional | Company address. |
+| `channel` | [`Channel`](reservations.md#channel) | optional | Mapping code of the company. |
 
 #### Travel Agencies
 
@@ -567,12 +567,12 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `name` | `string` | required | Travel Agency name. |
 | `contact` | `string` | optional | Travel Agency contact. |
 | `phone` | `string` | optional | Travel Agency phone number. |
-| `addresses` | `[`Address`](https://mews-systems.gitbook.io/channel-manager-api/mews-api#address) object` | optional | Travel Agency address. |
-| `channel` | ` [`Channel`] (https://mews-systems.gitbook.io/channel-manager-api/mews-api#channel)` | optional | Mapping code of the company. |
+| `addresses` | [`Address`](#address) object | optional | Travel Agency address. |
+| `channel` | [`Channel`](reservations.md#channel) | optional | Mapping code of the company. |
 
 ## Get Channels
 
-\[`sync`\] This operation allows the channel manager to obtain all [Channel](channels.md#channels)s with assigned mapping codes.
+This operation allows the channel manager to obtain all [Channels](../channels/README.md#channels) with assigned mapping codes.
 
 ### Request
 
@@ -604,4 +604,4 @@ This is an example of a _successful_ response. In case an error occurred, the re
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `channels` | [`Channel`](mews-api.md#channel) collection | required | All mapped channels. |
+| `channels` | [`Channel`](../channels/README.md#channels) collection | required | All mapped channels. |
