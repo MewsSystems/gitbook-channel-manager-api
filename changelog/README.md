@@ -1,5 +1,12 @@
 # Changelog
 
+## ACTION REQUIRED!
+
+We have changed the URLs for our API. The old URLs with `mews.li` are no longer operational, instead you should be using:
+* `api.mews.com` for the endpoints
+
+For more details, see [Production environment](mews-api.md#production-environment).
+
 ## 21 February 2022 12:00 UTC
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `876`.
