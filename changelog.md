@@ -3,7 +3,14 @@
 ## ACTION REQUIRED!
 
 We have changed the URLs for our API. The old URLs with `mews.li` are no longer operational, instead you should be using:
-* `api.mews.com` for the endpoints
+* `api.mews.com`
+ 
+Affected endpoints: 
+* [Get properties](mews-api.md#get-properties)
+* [Get configuration](mews-api.md#get-configuration)
+* [Set inventory](mews-api.md#set-inventory)
+* [Request ARI update](mews-api.md#request-ari-update)
+* [Get channels](mews-api.md#get-channels)
 
 For more details, see [Production environment](mews-api.md#production-environment).
 
