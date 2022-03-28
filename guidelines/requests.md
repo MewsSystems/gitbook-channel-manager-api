@@ -4,7 +4,7 @@ Both sides of the API accept only `HTTPS POST` requests with Content-Type set to
 
 ## Mews side
 
-All Mews API Operations follow this address pattern:
+All Mews API Operations follow this address pattern, with the exception of [Process Group](../mews-operations/reservations.md#process-group):
 
 ```text
 [PlatformAddress]/api/channelManager/v1/[Operation]
