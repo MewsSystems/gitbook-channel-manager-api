@@ -5,12 +5,12 @@
 1. Obtain **Client Token** from Mews, this will identify the channel manager as a Mews client in requests to the Mews side API.
 The token is the same for all connected properties, but different for each environment.
 
-2. Provide Channel Manager side **Client Token** to Mews, which will identify Mews as a client of the channel manager in requests to the Channel Manager side API.
-It can be the same token as used for the Mews side, or a different one - using the same token is recommended for simplicity.
+2. Set up Channel Manager side endpoints to use the same **Client Token**, this will identify Mews as a client of the channel manager in requests to the Channel Manager side API. The token can be the same as on the Mews side or different, but using the same token is recommended for simplicity.
 
-3. Provide endpoint URLs for supported Channel Manager API operations.
-   * When implementing the Channel Manager side API, you can provide the endpoint URLs one by one.
-   * Production versions of the URLs can be provided after certification is completed, if desired.
+3. Provide Mews with the **endpoint URLs** for supported Channel Manager API operations.
+
+> Note: When implementing the Channel Manager side API, you can provide the endpoint URLs one by one.
+> Production versions of the URLs can be provided after certification is completed, if desired.
 
 ### Connecting a property
 
