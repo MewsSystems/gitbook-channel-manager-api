@@ -5,7 +5,7 @@ In case of such failures, details about the error are provided in the response b
 
 ## Simple response
 
-This response object represents the default, simple response.
+This response object represents the default response, in case of success.
 
 ```javascript
 {
@@ -13,9 +13,9 @@ This response object represents the default, simple response.
 }
 ```
 
-## Complex response
+## Error response
 
-In case a more complex response is needed, the response object will extend the simple response object.
+In case of error, the response object will extend the simple response object with details about the error.
 
 ```javascript
 {
