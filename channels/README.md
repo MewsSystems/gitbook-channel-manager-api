@@ -1,13 +1,17 @@
 # Channels
 
-There is a list of all Channels \(i.e. OTAs\) with their mapping codes. Please check this list regularly.
+This is a list of all Channels \(i.e. OTAs or Online Travel Agents\), together with their mapping codes. Please check this list regularly.
+You can also obtain the list of channels through the API, using [Get Channels](../mews-operations/configuration.md#get-channels).
 
-_Note that the _`Code`_ line is not a continuous sequence of numbers, there are some blank spaces. New Channels will be added at the bottom of the list, so you can easily keep track. Some channels gets merged through the time. All merged channels are ~~crossed~~ and the new code is mentioned._
+> Note: `Code` is not a continuous sequence of numbers, there are some gaps.
+> New Channels will be added at the bottom of the list, so you can easily keep track.
+> Some channels will get merged over time.
+> All merged channels are shown as ~~crossed~~ and the new code is mentioned.
 
 ## Channels
 
 | Code | Description |
-| --- | --- |
+| :-- | :-- |
 | `1` | Booking.com |
 | `2` | Expedia |
 | `3` | HRS |
