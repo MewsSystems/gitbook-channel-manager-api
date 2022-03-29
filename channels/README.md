@@ -822,3 +822,4 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `874` | Hotel Employee Rate |
 | `875` | Vrbo |
 | `876` | hoo |
+| `877` | Powernapp |
