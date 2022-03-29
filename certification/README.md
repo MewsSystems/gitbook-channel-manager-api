@@ -17,7 +17,6 @@ The process is as follows:
 4. Use your test property username and [Get Properties](../mews-operations/configuration.md#get-properties) API operation to fetch the `connectionToken` for the [Test Property](../mews-operations/README.md#test-environment).
 5. Pull property information, space type mapping and rate mapping information using the [Get Configuration](../mews-operations/configuration.md#get-configuration) API operation.
 6. Map all the rate plan and space category combinations in the user interface of the channel manager system using the data received from the [Get Configuration](../mews-operations/configuration.md#get-configuration) request.
-7. Manually map products from the test property in the channel manager using the mapping codes received from marketplace@mewssystems.com. \(optional\)
 
 > Note: Multi-property enterprises (vacation rentals, apartments, villas, etc.) are often set up in Mews as spaces belonging to a single Mews property
 > i.e. the 'property' is the Mews enterprise customer and the 'spaces' are the individual rental properties.
