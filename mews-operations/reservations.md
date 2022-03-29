@@ -216,14 +216,14 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `email` | `string` | _recommended_ | Email. |
 | `lastName` | `string` | required | Last name. |
 | `firstName` | `string` | optional | First name. |
-| `title` | `string` [Title](#customer-title) | optional | Title. |
+| `title` | `string` [Title](#title) | optional | Customer title, e.g. "Mister" |
 | `telephone` | `string` | optional | Telephone. |
 | `loyaltyCode` | `string` | optional | Loyalty code of the customer. |
 | `nationalityCode` | `string` | optional | [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) - two letter country code or [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) - three letter country code. |
 | `languageCode` | `string` | optional | Language [code](https://msdn.microsoft.com/en-us/library/ee825488) of the communication language of the customer. This language will be used as the default for communication with the customer. |
 | `address` | [`Address`](configuration.md#address) object | optional | Represents address. |
 
-#### Customer title
+#### Title
 
 * `Mister`
 * `Misses`
