@@ -363,7 +363,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `ratePlans` | [`RatePlan`](#rate-plan) collection | required | Rate plans of the property. |
 | `spaceCategories` | [`Space Categories`](#space-categories) collection | required | Space categories (space types) of the property. |
 | `inventoryMappings` | [`Inventory Mappings`](#inventory-mappings) collection | required | Defines relations between rate plans and space categories. |
-| `ageCategories` | [`Age categories`](#age-categories) collection | required | Age categories of the property. |
+| `ageCategories` | [`Age categories`](#age-categories) collection | optional | Age categories of the property. |
 
 #### Property
 
