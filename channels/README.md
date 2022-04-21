@@ -823,3 +823,8 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `875` | Vrbo |
 | `876` | hoo |
 | `877` | Powernapp |
+| `878` | Windingtree |
+| `879` | Jazztour |
+| `880` | Tourvest Travel Services |
+| `881` | HotelNetwork |
+
