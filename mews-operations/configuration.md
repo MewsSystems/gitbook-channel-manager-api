@@ -91,7 +91,8 @@ This operation returns the configuration of the given property connection.
         "includeUnsynchronizedRates": true,
         "includeUnsynchronizedCategories": true,
         "includeProducts": true,
-        "includeCompanies": true
+        "includeCompanies": true,
+        "includeAgeCategories": true
     }
 }
 ```
@@ -110,6 +111,7 @@ This operation returns the configuration of the given property connection.
 | `includeProducts` | `bool` | optional | If `true`, products mapped to a channel manager rate plan will be returned. Products mapped to a channel manager rate plan means that Mews sends a total price combining nightly price and product price in [`Update Prices`](../channel-manager-operations/inventory.md#update-prices) requests. |
 | `includeCompanies` | `bool` | optional | If `true`, mapped profiles for companies (e.g. Microsoft) and travel agencies (e.g. Expedia) will be returned. A company profile needs to be mapped with a [`Channel Code`](../channels/README.md). To map a travel agency, follow the guide [Setting up travel agencies](https://help.mews.com/s/article/set-up-travel-agencies?language=en_US). |
 | `includeUnsynchronizedCategories` | `bool` | optional | If `true`, unsynchronized space categories will be returned as well. Unsynchronized space category means that Mews will not push availability for that space category, but when a reservation comes with the space category code, Mews will link the correct space category with the reservation. |
+| `includeAgeCategories` | `bool` | optional | If `true`, age categories mapped to a channel manager integration will be returned. |
 
 ### Response
 
@@ -336,6 +338,20 @@ This is an example of a _successful_ response. In case an error occurred, the re
             }
         }
     ],
+    "ageCategories": [
+        {
+            "code": "10",
+            "name": "Adult",
+            "minimalAge": null,
+            "maximalAge": null
+        },
+        {
+            "code": "8",
+            "name": "Child",
+            "minimalAge": 0,
+            "maximalAge": 18
+        }
+    ],
     "success": true
 }
 ```
@@ -347,6 +363,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `ratePlans` | [`RatePlan`](#rate-plan) collection | required | Rate plans of the property. |
 | `spaceCategories` | [`Space Categories`](#space-categories) collection | required | Space categories (space types) of the property. |
 | `inventoryMappings` | [`Inventory Mappings`](#inventory-mappings) collection | required | Defines relations between rate plans and space categories. |
+| `ageCategories` | [`Age categories`](#age-categories) collection | optional | Age categories of the property. |
 
 #### Property
 
@@ -569,6 +586,15 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `phone` | `string` | optional | Travel Agency phone number. |
 | `addresses` | [`Address`](#address) object | optional | Travel Agency address. |
 | `channel` | [`Channel`](reservations.md#channel) | optional | Mapping code of the company. |
+
+#### Age categories
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `code` | `string` | required | Mapping code of age category.  |
+| `name` | `string` | required | Display name. |
+| `minimalAge` | `int` | optional | Minimal age for the age category. |
+| `maximalAge` | `int` | optional | Maximal age for the age category. |
 
 ## Get Channels
 
