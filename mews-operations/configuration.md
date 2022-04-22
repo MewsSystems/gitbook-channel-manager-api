@@ -509,7 +509,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `9` | Single Room |
 | `10` | Studio |
 | `11` | Suite |
-| ~~`12`~~ | ~~Tent~~ |
+| `12` | Tent |
 | `13` | Triple Room |
 | `14` | Twin Room |
 | `15` | Villa |
@@ -520,6 +520,8 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `20` | ParkingSpot |
 | `21` | Desk |
 | `22` | TeamArea |
+| `24` | CaravanOrRv |
+| `25` | UnequippedCampsite |
 
 #### Bed Types
 
