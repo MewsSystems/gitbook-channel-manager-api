@@ -43,6 +43,22 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
                     "guestCount": 4
                 }
             ],
+            "agePrices": [
+                {
+                    "grossAmount": 100.0,
+                    "netAmount": 100.0,
+                    "currencyCode": "USD",
+                    "guestCount": 1,
+                    "ageCategoryCode": "Adult"
+                },
+                {
+                    "grossAmount": 100.0,
+                    "netAmount": 100.0,
+                    "currencyCode": "USD",
+                    "guestCount": 2,
+                    "ageCategoryCode": "Child"
+                }
+            ],
             "from": "2020-02-05",
             "to": "2020-02-07"
         }
@@ -65,6 +81,7 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 | `from` | `string` | required | Start date of the updated interval in `"yyyy-MM-dd"` format. |
 | `to` | `string` | required | End date \(included\) of the updated interval in `"yyyy-MM-dd"` format. |
 | `prices` | [`Price`](#price) collection | required | Collection of prices for each person count for the specified rate plan - space type - date combination. |
+| `agePrices` | [`Age price`](#age-price) collection | required | Collection of prices for each person count and age category for the specified rate plan - space type - date combination. |
 
 #### Price
 
@@ -75,6 +92,17 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 | `netAmount` | `decimal` | required | Price with taxes excluded. |
 | `currencyCode` | `string` | required | The three-letter code of the rate price currency. |
 | `guestCount` | `int` | required | The person count for the rate price. |
+
+#### Age price
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| ~~`amount`~~ | ~~`decimal`~~ | ~~required~~ | ~~The price amount.~~ Deprecated.|
+| `grossAmount` | `decimal` | required | Price with taxes included. |
+| `netAmount` | `decimal` | required | Price with taxes excluded. |
+| `currencyCode` | `string` | required | The three-letter code of the rate price currency. |
+| `guestCount` | `int` | required | The person count for the rate price. |
+| `ageCategoryCode` | `string` | required | Mapping code of the age category. |
 
 ### Response
 
