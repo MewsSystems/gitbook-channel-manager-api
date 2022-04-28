@@ -15,9 +15,7 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 # Changelog
 
 ## 28 April 2022 12:00 UTC
-* [Age Category](../mews-operations/configuration.md#age-categories) updated 
-  * renamed `minimalAge` -> `minimumAge`
-  * renamed `maximalAge` -> `maximumAge`
+* Extended API operation [`getConfiguration`](../mews-operations/configuration.md#get-configuration) with [age categories](../mews-operations/configuration.md#age-categories).
 
 ## 21 April 2022 12:00 UTC
 
