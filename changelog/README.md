@@ -14,6 +14,9 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 # Changelog
 
+## 28 April 2022 12:00 UTC
+* Extended API operation [`getConfiguration`](../mews-operations/configuration.md#get-configuration) with [age categories](../mews-operations/configuration.md#age-categories).
+
 ## 21 April 2022 12:00 UTC
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `881`.
