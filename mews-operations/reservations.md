@@ -92,8 +92,12 @@ The third `reservation` definition shows the partial cancellation - cancelling t
     "paymentType": 1,
     "reservations": [
         {
-            "adultCount": 1,
-            "childCount": 0,
+            "guestCounts": [
+                {
+                    "code": "Adult",
+                    "count": 1
+                }
+            ],
             "code": "01",
             "extras": [
                 {
@@ -151,7 +155,12 @@ The third `reservation` definition shows the partial cancellation - cancelling t
             }
         },
         {
-            "adultCount": 2,
+            "guestCounts": [
+                {
+                    "code": "Adult",
+                    "count": 2
+                }
+            ],
             "code": "02",
             "from": "2020-05-06",
             "amounts": [
@@ -178,7 +187,12 @@ The third `reservation` definition shows the partial cancellation - cancelling t
             }
         },
         {
-            "adultCount": 2,
+            "guestCounts": [
+                {
+                    "code": "Adult",
+                    "count": 2
+                }
+            ],
             "code": "03",
             "from": "2020-05-06",
             "ratePlanCode": "FF",
@@ -291,14 +305,22 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
-| `adultCount` | `int` | required \(exc. Cancellation\) | Number of adults in the reservation. |
-| `childCount` | `int` | optional \(exc. Cancellation\) | Number of children in the reservation. |
+| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ Deprecated. |
+| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ Deprecated. |
+| `guestCounts` | [`GuestCount`](#guest-count) | required | Counts for different age categories. |
 | `state` | `int` | optional | [Reservation State](#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
 | `amounts` | [`Amount`](#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
 | `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
 
 _¹ It is required that the code remains the same within each booking modification message and partial modification message. If it can't be achieved because Channel doesn't provide it, simple generation of "01", "02", ... codes will suffice as long as those codes are generated in same way for each message regarding that one booking._
+
+#### Guest Count
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `code` | `string` | required | Mapping code of the age category. |
+| `count` | `int` | required | Count of persons for specified age category. |
 
 #### Reservation States
 
