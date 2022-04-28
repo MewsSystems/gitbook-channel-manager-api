@@ -87,7 +87,6 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| ~~`amount`~~ | ~~`decimal`~~ | ~~required~~ | ~~The price amount.~~ Deprecated.|
 | `grossAmount` | `decimal` | required | Price with taxes included. |
 | `netAmount` | `decimal` | required | Price with taxes excluded. |
 | `currencyCode` | `string` | required | The three-letter code of the rate price currency. |
