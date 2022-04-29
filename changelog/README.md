@@ -15,7 +15,9 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 # Changelog
 
 ## 28 April 2022 12:00 UTC
+
 * Extended API operation [`getConfiguration`](../mews-operations/configuration.md#get-configuration) with [age categories](../mews-operations/configuration.md#age-categories).
+* [Inventory price updates](../channel-manager-operations/inventory.md#rate-price) extended. Age-based pricing via `agePrices` is now supported. 
 
 ## 21 April 2022 12:00 UTC
 
