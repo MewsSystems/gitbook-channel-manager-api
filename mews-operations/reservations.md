@@ -320,7 +320,7 @@ _¹ It is required that the code remains the same within each booking modificati
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `code` | `string` | required | Mapping code of the age category. |
-| `count` | `int` | required | Count of persons for specified age category. |
+| `count` | `int` | required | Number of persons for specified age category. |
 
 #### Reservation States
 
