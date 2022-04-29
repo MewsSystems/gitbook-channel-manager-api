@@ -342,14 +342,14 @@ This is an example of a _successful_ response. In case an error occurred, the re
         {
             "code": "10",
             "name": "Adult",
-            "minimalAge": null,
-            "maximalAge": null
+            "minimumAge": null,
+            "maximumAge": null
         },
         {
             "code": "8",
             "name": "Child",
-            "minimalAge": 0,
-            "maximalAge": 18
+            "minimumAge": 0,
+            "maximumAge": 18
         }
     ],
     "success": true
@@ -595,8 +595,8 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | :-- | :-- | :-- | :-- |
 | `code` | `string` | required | Mapping code of age category.  |
 | `name` | `string` | required | Display name. |
-| `minimalAge` | `int` | optional | Minimal age for the age category. |
-| `maximalAge` | `int` | optional | Maximal age for the age category. |
+| `minimumAge` | `int` | optional | Minimal age for the age category. |
+| `maximumAge` | `int` | optional | Maximal age for the age category. |
 
 ## Get Channels
 
