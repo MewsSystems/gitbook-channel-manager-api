@@ -14,6 +14,10 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 # Changelog
 
+## 13 May 2022 12:00 UTC
+
+* [Channel](../channels/README.md) list extended. The latest Channel added has code `896`.
+
 ## 29 April 2022 12:00 UTC
 
 * [Reservation](../mews-operations/reservations.md#reservation) extended in [Process Group](../mews-operations/reservations.md#process-group). The age based pricing via `guestCounts` is now supported. Both `adultCount` and `childCount` are now deprecated.
