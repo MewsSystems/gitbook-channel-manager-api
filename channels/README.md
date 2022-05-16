@@ -827,4 +827,18 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `879` | Jazztour |
 | `880` | Tourvest Travel Services |
 | `881` | HotelNetwork |
-
+| `882` | FeWo-Channelmanager |
+| `883` | Amadeus Linkhotel |
+| `884` | Tramino |
+| `885` | Travelcircus |
+| `886` | Daydreams |
+| `887` | Beauty24 |
+| `888` | Tripmakery |
+| `889` | HotelsinDuitsland |
+| `890` | Check24 |
+| `891` | Spar Mit |
+| `892` | Urlaub ABC |
+| `893` | Opensmjle |
+| `894` | Click-Around |
+| `895` | Lodgea |
+| `896` | D-edge |
