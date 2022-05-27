@@ -842,3 +842,4 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `894` | Click-Around |
 | `895` | Lodgea |
 | `896` | D-edge |
+| `897` | Rentals United |
