@@ -844,3 +844,17 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `896` | D-edge |
 | `897` | Rentals United |
 | `898` | TravelStaytion |
+| `899` | Animod |
+| `900` | Rolfsbuss |
+| `901` | BookBarbados |
+| `902` | Zoweg.nl |
+| `903` | Nice2stay |
+| `904` | House of Hideaways |
+| `905` | Moonback |
+| `906` | Social Deal |
+| `907` | GiftForYou |
+| `908` | ActievandeDag |
+| `909` | Advalley |
+| `910` | VakantieVeilingen |
+| `911` | Goedverblijf.nl |
+| `912` | Marrea |
