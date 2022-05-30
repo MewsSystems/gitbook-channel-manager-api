@@ -843,3 +843,4 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `895` | Lodgea |
 | `896` | D-edge |
 | `897` | Rentals United |
+| `898` | TravelStaytion |
