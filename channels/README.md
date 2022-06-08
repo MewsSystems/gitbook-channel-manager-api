@@ -858,3 +858,4 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `910` | VakantieVeilingen |
 | `911` | Goedverblijf.nl |
 | `912` | Marrea |
+| `913` | NTA-Web Direct |
