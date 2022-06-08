@@ -14,6 +14,10 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 # Changelog
 
+## 8 June 2022 12:00 UTC
+
+* [Channel](../channels/README.md) list extended. The latest Channel added has code `913`.
+
 ## 30 May 2022 12:00 UTC
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `912`.
