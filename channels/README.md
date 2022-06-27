@@ -859,3 +859,12 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `911` | Goedverblijf.nl |
 | `912` | Marrea |
 | `913` | NTA-Web Direct |
+| `914` | Hotel Trader |
+| `915` | Suiteness |
+| `916` | Amadeus |
+| `917` | Galileo |
+| `918` | Sabre |
+| `919` | Worldspan |
+| `920` | Pegasus CRS Booking Engine|
+| `921` | Base |
+| `922` | GoIndonesia |
