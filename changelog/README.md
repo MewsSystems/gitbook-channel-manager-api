@@ -14,60 +14,57 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 # Changelog
 
-## 27 June 2022 12:00 UTC
+## 27th June 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `922`.
 
-## 8 June 2022 12:00 UTC
+## 8th June 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `913`.
 
-## 30 May 2022 12:00 UTC
+## 30th May 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `912`.
-
-## 30 May 2022 12:00 UTC
-
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `898`.
 
-## 27 May 2022 12:00 UTC
+## 27th May 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `897`.
 
-## 13 May 2022 12:00 UTC
+## 13th May 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `896`.
 
-## 29 April 2022 12:00 UTC
+## 29th April 2022
 
 * [Reservation](../mews-operations/reservations.md#reservation) extended in [Process Group](../mews-operations/reservations.md#process-group). The age based pricing via `guestCounts` is now supported. Both `adultCount` and `childCount` are now deprecated.
 
-## 28 April 2022 12:00 UTC
+## 28th April 2022
 
 * Extended API operation [`getConfiguration`](../mews-operations/configuration.md#get-configuration) with [age categories](../mews-operations/configuration.md#age-categories).
 * [Inventory price updates](../channel-manager-operations/inventory.md#rate-price) extended. Age-based pricing via `agePrices` is now supported. 
 
-## 21 April 2022 12:00 UTC
+## 21st April 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `881`.
 
-## 11 March 2022 12:00 UTC
+## 11th March 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `877`.
 
-## 1 March 2022 12:00 UTC
+## 1st March 2022
 
 * [Customer](../mews-operations/reservations.md#customer) extended. `title` is now supported.
 
-## 21 February 2022 12:00 UTC
+## 21st February 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `876`.
 
-## 17 February 2022 12:00 UTC
+## 17th February 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `874`.
 
-## 28 January 2022 12:00 UTC
+## 28th January 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `873`.
 
