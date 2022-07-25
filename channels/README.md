@@ -868,3 +868,4 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `920` | Pegasus CRS Booking Engine|
 | `921` | Base |
 | `922` | GoIndonesia |
+| `923` | AltoVita |
