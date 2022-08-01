@@ -823,3 +823,49 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `875` | Vrbo |
 | `876` | hoo |
 | `877` | Powernapp |
+| `878` | Windingtree |
+| `879` | Jazztour |
+| `880` | Tourvest Travel Services |
+| `881` | HotelNetwork |
+| `882` | FeWo-Channelmanager |
+| `883` | Amadeus Linkhotel |
+| `884` | Tramino |
+| `885` | Travelcircus |
+| `886` | Daydreams |
+| `887` | Beauty24 |
+| `888` | Tripmakery |
+| `889` | HotelsinDuitsland |
+| `890` | Check24 |
+| `891` | Spar Mit |
+| `892` | Urlaub ABC |
+| `893` | Opensmjle |
+| `894` | Click-Around |
+| `895` | Lodgea |
+| `896` | D-edge |
+| `897` | Rentals United |
+| `898` | TravelStaytion |
+| `899` | Animod |
+| `900` | Rolfsbuss |
+| `901` | BookBarbados |
+| `902` | Zoweg.nl |
+| `903` | Nice2stay |
+| `904` | House of Hideaways |
+| `905` | Moonback |
+| `906` | Social Deal |
+| `907` | GiftForYou |
+| `908` | ActievandeDag |
+| `909` | Advalley |
+| `910` | VakantieVeilingen |
+| `911` | Goedverblijf.nl |
+| `912` | Marrea |
+| `913` | NTA-Web Direct |
+| `914` | Hotel Trader |
+| `915` | Suiteness |
+| `916` | Amadeus |
+| `917` | Galileo |
+| `918` | Sabre |
+| `919` | Worldspan |
+| `920` | Pegasus CRS Booking Engine|
+| `921` | Base |
+| `922` | GoIndonesia |
+| `923` | AltoVita |

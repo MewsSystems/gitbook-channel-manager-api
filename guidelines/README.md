@@ -29,3 +29,7 @@ For information on Mews PCI compliance, including current certification, please 
 
 * [Mews PCI compliance](https://mews.force.com/s/article/pci-compliance?language=en_US)
 * [Mews PCI certificate](https://www.mews.com/en/platform-documentation)
+
+### Whitelisting
+
+Whitelisting (also called 'allowlisting') is a common security measure which can be applied to a system to allow only specified external systems to talk to it. This has traditionally been achieved using IP address-based firewall rules. However, this approach does not work with modern cloud based architectures, which use dynamic and shared IP addresses, proxy servers and elastic resources. For this reason, we do not support the use of IP address whitelists for our APIs and we cannot supply a list of IP addresses for our APIs.
