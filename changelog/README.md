@@ -14,6 +14,10 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 # Changelog
 
+## 2nd August 2022
+
+* Detail added to [Responses](../guidelines/responses.md) page to clarify error responses.
+
 ## 19th July 2022
 
 * [Channel](../channels/README.md) list extended. The latest Channel added has code `923`.
