@@ -40,6 +40,19 @@ See the [Error codes](#error-codes) table below for further details about specif
 {
    "success":false,
    "error":{
+      "code":9,
+      "message":"Invalid rate code",
+      "rateCode":"ABC"
+   }
+}
+```
+
+### Example \#3
+
+```javascript
+{
+   "success":false,
+   "error":{
       "code":10,
       "message":"Invalid category code",
       "categoryCode":"XYZ"
@@ -69,8 +82,8 @@ See the [Error codes](#error-codes) table below for further details about specif
 | `1` | **System error**<br>Unspecified system error. Message may be re-sent after an interval of time. |
 | `2` | **Reservation error**<br>Reservation does not exist. When this error code is returned, it should be acknowledged and the reservation should _not_ be re-tried. |
 | `3` | **Property error**<br>Property does not exist. |
-| `4` | **Space error**<br>Space type does not exist. |
-| `5` | **Rate error**<br>Rate plan does not exist. |
+| ~~`4`~~ | ~~**Space error**<br>Space type does not exist.~~ (deprecated - use code 10 instead) |
+| ~~`5`~~ | ~~**Rate error**<br>Rate plan does not exist.~~ (deprecated - use code 9 instead) |
 | `6` | **Validation error**<br>Validation error, e.g. invalid value "XXX" of field "YYY". |
 | `7` | **Processing error**<br>Processing error, e.g. processing of the booking would violate some internal PMS limitation. |
 | `8` | **Invalid authorization** |
