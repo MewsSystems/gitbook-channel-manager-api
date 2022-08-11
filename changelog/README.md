@@ -14,9 +14,10 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 # Changelog
 
-## 4th August 2022
+## 11th August 2022
 
 * Error response codes 4 and 5 deprecated in favor of codes 9 and 10 - see [Responses](../guidelines/responses.md)
+* [Channel](../channels/README.md) list extended. The latest Channel added has code `925`.
 
 ## 2nd August 2022
 
