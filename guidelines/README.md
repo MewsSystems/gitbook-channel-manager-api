@@ -1,7 +1,7 @@
 # Guidelines
 
 Here we provide general guidelines and useful links to help you through the process of integrating with the __Mews Channel Manager API__.
-The process is summarised in [Integration Process](process.md).
+The process is summarised in [Integration Process](process.md). Note that unless specified otherwise, the guidelines in this section apply to both the Mews side of the API and the Channel Manager side of the API.
 
 > ### Terminology
 > We use the term *Property* to describe the hotel, hostel or other enterprise;
