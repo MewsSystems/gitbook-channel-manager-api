@@ -88,7 +88,7 @@ See the [Error codes](#error-codes) table below for further details about specif
 | `7` | **Processing error**<br>Processing error, e.g. processing of the booking would violate some internal PMS limitation. |
 | `8` | **Invalid authorization** |
 | `9` | **Rate error**<br>Rate error, e.g. rate plan XX prices updates cannot be accepted due to the settings in the channel manager extranet. The affected rate code must be supplied in the `rateCode` property. This rate code will then be unsynchronized. |
-| `10` | **Category error**<br>Category error, e.g. space category XX availability updates cannot be accepted due to the settings in the channel manager extranet. The affected category code must be supplied in the `categoryCode` property. This category code will then be unsynchronized. | 
+| `10` | **Category error**<br>Category error, e.g. space category XX availability updates cannot be accepted due to the settings in the channel manager extranet. The affected category code must be supplied in the `categoryCode` property. The category will then be deleted from the rate. | 
 | `11` | **Rate category error**<br>Rate category error, e.g. category was removed from the rate plan in channel manager extranet. The affected rate code and category code must be supplied. The category will be deleted from the rate. |
 | `12` | **Availability error**<br>Availability configuration error, e.g. availability updates blocked from the channel manager extranet. This error automatically disables availability updates. |
 | `13` | **Prices error**<br>Prices configuration error, e.g. price updates blocked from the channel manager extranet. This error automatically disables price updates. |
