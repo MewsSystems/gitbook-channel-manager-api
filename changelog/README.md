@@ -14,6 +14,10 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 # Changelog
 
+## 11th August 2022
+
+* [Channel](../channels/README.md) list extended. The latest Channel added has code `925`.
+
 ## 2nd August 2022
 
 * Detail added to [Responses](../guidelines/responses.md) page to clarify error responses.

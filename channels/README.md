@@ -869,3 +869,5 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `921` | Base |
 | `922` | GoIndonesia |
 | `923` | AltoVita |
+| `924` | WEB |
+| `925` | Young Global Living |
