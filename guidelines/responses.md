@@ -40,6 +40,19 @@ See the [Error codes](#error-codes) table below for further details about specif
 {
    "success":false,
    "error":{
+      "code":9,
+      "message":"Invalid rate code",
+      "rateCode":"ABC"
+   }
+}
+```
+
+### Example \#3
+
+```javascript
+{
+   "success":false,
+   "error":{
       "code":10,
       "message":"Invalid category code",
       "categoryCode":"XYZ"
@@ -69,13 +82,13 @@ See the [Error codes](#error-codes) table below for further details about specif
 | `1` | **System error**<br>Unspecified system error. Message may be re-sent after an interval of time. |
 | `2` | **Reservation error**<br>Reservation does not exist. When this error code is returned, it should be acknowledged and the reservation should _not_ be re-tried. |
 | `3` | **Property error**<br>Property does not exist. |
-| `4` | **Space error**<br>Space type does not exist. |
-| `5` | **Rate error**<br>Rate plan does not exist. |
+| ~~`4`~~ | ~~**Space error**<br>Space type does not exist.~~ (deprecated - use code 10 instead) |
+| ~~`5`~~ | ~~**Rate error**<br>Rate plan does not exist.~~ (deprecated - use code 9 instead) |
 | `6` | **Validation error**<br>Validation error, e.g. invalid value "XXX" of field "YYY". |
 | `7` | **Processing error**<br>Processing error, e.g. processing of the booking would violate some internal PMS limitation. |
 | `8` | **Invalid authorization** |
 | `9` | **Rate error**<br>Rate error, e.g. rate plan XX prices updates cannot be accepted due to the settings in the channel manager extranet. The affected rate code must be supplied in the `rateCode` property. This rate code will then be unsynchronized. |
-| `10` | **Category error**<br>Category error, e.g. space category XX availability updates cannot be accepted due to the settings in the channel manager extranet. The affected category code must be supplied in the `categoryCode` property. This category code will then be unsynchronized. | 
+| `10` | **Category error**<br>Category error, e.g. space category XX availability updates cannot be accepted due to the settings in the channel manager extranet. The affected category code must be supplied in the `categoryCode` property. The category will then be deleted from the rate. | 
 | `11` | **Rate category error**<br>Rate category error, e.g. category was removed from the rate plan in channel manager extranet. The affected rate code and category code must be supplied. The category will be deleted from the rate. |
 | `12` | **Availability error**<br>Availability configuration error, e.g. availability updates blocked from the channel manager extranet. This error automatically disables availability updates. |
 | `13` | **Prices error**<br>Prices configuration error, e.g. price updates blocked from the channel manager extranet. This error automatically disables price updates. |
