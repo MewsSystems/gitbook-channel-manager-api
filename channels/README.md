@@ -825,7 +825,7 @@ You can also obtain the list of channels through the API, using [Get Channels](.
 | `877` | Powernapp |
 | `878` | Windingtree |
 | `879` | Jazztour |
-| `880` | Tourvest Travel Services |
+| `880` | TravelIT |
 | `881` | HotelNetwork |
 | `882` | FeWo-Channelmanager |
 | `883` | Amadeus Linkhotel |
