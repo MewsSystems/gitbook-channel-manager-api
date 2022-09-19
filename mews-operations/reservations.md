@@ -62,10 +62,20 @@ The third `reservation` definition shows the partial cancellation - cancelling t
         "languageCode": "en-US",
         "telephone": "1-3526-88918"
     },
-    "channel": {
-        "code": 1,
-        "name": "Expedia"
-    },
+    "sources": [
+        {
+            "code": 1,
+            "name": "Expedia",
+            "type" : 0,
+            "isPrimary" true
+        },
+        {
+            "code": 2,
+            "name": "ChoiceCRS",
+            "type" : 0,
+            "isPrimary" false
+        },
+    ],
     "company": {
         "id": "MEWS",
         "iata": "65893",
@@ -219,7 +229,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
-| `channel` | [`Channel`](#channel) object | optional | Represents the channel \(i.e. Travel Agency\). |
+| ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ Deprecated. |
+| `sources` | [`Source`](#source) collection | optional | Represents the sources \(i.e. Travel Agency\). |
 | `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
@@ -288,12 +299,29 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `12` | China Unionpay |
 | `13` | Maestro |
 
-#### Channel
+#### Source
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `code` | `int` | required | [Channel](#channels) code. |
-| `name` | `string` | required | Name of the Channel. |
+| `code` | `int` | required | [Source](#source) code. |
+| `name` | `string` | required | Name of the [Source](#source). |
+| `type` | `int` | required | [Source Type](#source-types) code of the [Source](#source) type. |
+| `isPrimary` | `bool` | required | Mark the primary source where the reservation group comes from. |
+
+#### Source Types
+
+| Code | Description |
+| :-- | :-- |
+| `0` | OnlineTravelAgency |
+| `1` | CentralReservationSystem |
+| `2` | GlobalDistributionSystem |
+| `3` | AlternativeDistributionSystem |
+| `4` | SalesAndCateringSystem |
+| `5` | PropertyManagementSystem |
+| `6` | TourOperatorSystem |
+| `7` | OnlineBookingEngine |
+| `8` | Kiosk |
+| `9` | Agent |
 
 #### Reservation
 
