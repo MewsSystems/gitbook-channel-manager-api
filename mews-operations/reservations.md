@@ -303,7 +303,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `code` | `int` | required | [Source](#source) code. |
+| `code` | `int` | required \(exc. new unknown sources\) | [Source](#source) code. |
 | `name` | `string` | required | Name of the [Source](#source). |
 | `type` | `int` | required | [Source Type](#source-types) code of the [Source](#source) type. |
 | `isPrimary` | `bool` | required | Mark the primary source where the reservation group comes from. |
@@ -312,14 +312,14 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Code | Description |
 | :-- | :-- |
-| `0` | OnlineTravelAgency |
-| `1` | CentralReservationSystem |
-| `2` | GlobalDistributionSystem |
-| `3` | AlternativeDistributionSystem |
-| `4` | SalesAndCateringSystem |
-| `5` | PropertyManagementSystem |
-| `6` | TourOperatorSystem |
-| `7` | OnlineBookingEngine |
+| `0` | Online Travel Agency |
+| `1` | Central Reservation System |
+| `2` | Global Distribution System |
+| `3` | Alternative Distribution System |
+| `4` | Sales And Catering System |
+| `5` | Property Management System |
+| `6` | Tour Operator System |
+| `7` | Online Booking Engine |
 | `8` | Kiosk |
 | `9` | Agent |
 
