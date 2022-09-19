@@ -92,6 +92,22 @@ The third `reservation` definition shows the partial cancellation - cancelling t
             }
         }
     },
+    "travelAgency": {
+        "id": "BTA",
+        "iata": "65553",
+        "name": "Best Travel Agency, s.r.i",
+        "contact": {
+            "email": "best@company.com",
+            "phone": "+420 775 775 775",
+            "address": {
+                "zip": "132 45",
+                "addressLine1": "Some other street 123",
+                "addressLine2": "Some other detail",
+                "city": "Some other city",
+                "country": "US",
+            }
+        }
+    },
     "paymentCard": {
         "cvv": "666",
         "expireDate": "1222",
@@ -230,7 +246,9 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
 | ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ Deprecated. |
-| `sources` | [`Source`](#source) collection | optional | Represents the sources \(i.e. Travel Agency\). |
+| `sources` | [`Source`](#source) collection | optional | Represents the sources of the reservation group. |
+| `company` | [`Company`](#company) object | optional | Define the company of the reservations. |
+| `travelAgency` | [`Company`](#company) object | optional | Define the travel agency of the reservation group. |
 | `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
