@@ -246,9 +246,9 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
 | ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ Deprecated. |
-| `sources` | [`Source`](#source) collection | optional | Represents the sources of the reservation group. |
-| `company` | [`Company`](#company) object | optional | Define the company of the reservations. |
-| `travelAgency` | [`Company`](#company) object | optional | Define the travel agency of the reservation group. |
+| `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
+| `company` | [`Company`](#company) object | optional | Represents the company of the booking. |
+| `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency for the booking. |
 | `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
@@ -277,6 +277,13 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | optional | Identifier of company. |
+| `name` | `string` | optional | Name of company or travel agency. |
+| `contact` | [`Contact`](#contact) object | optional | Company or travel agency contact information. |
+
+#### Travel Agency
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
 | `iata` | `string` | optional | IATA number of travel agency. |
 | `name` | `string` | optional | Name of company or travel agency. |
 | `contact` | [`Contact`](#contact) object | optional | Company or travel agency contact information. |
