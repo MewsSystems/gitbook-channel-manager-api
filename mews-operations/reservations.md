@@ -78,7 +78,6 @@ The third `reservation` definition shows the partial cancellation - cancelling t
     ],
     "company": {
         "id": "MEWS",
-        "iata": "65893",
         "name": "Mews Systems, s.r.o.",
         "contact": {
             "email": "mews@mews.li",
@@ -93,7 +92,6 @@ The third `reservation` definition shows the partial cancellation - cancelling t
         }
     },
     "travelAgency": {
-        "id": "BTA",
         "iata": "65553",
         "name": "Best Travel Agency, s.r.i",
         "contact": {
