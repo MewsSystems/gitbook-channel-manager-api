@@ -245,8 +245,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
 | ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ Deprecated. |
 | `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
-| `company` | [`Company`](#company) object | optional | Represents the company of the booking. |
-| `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency for the booking. |
+| `company` | [`Company`](#company) object | optional | Represents the company associated with the booking. |
+| `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency associated with the booking. |
 | `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
@@ -328,7 +328,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | :-- | :-- | :-- | :-- |
 | `code` | `int` | required \(exc. new unknown sources\) | [Source](#source) code. |
 | `name` | `string` | required | Name of the [Source](#source). |
-| `type` | `int` | required | [Source Type](#source-types) code of the [Source](#source) type. |
+| `type` | `int` | required | [Source Type](#source-types) code of the [Source](#source). |
 | `isPrimary` | `bool` | required | Mark the primary source where the reservation group comes from. |
 
 #### Source Types
