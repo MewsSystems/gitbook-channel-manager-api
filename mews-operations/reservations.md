@@ -93,7 +93,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
     },
     "travelAgency": {
         "iata": "65553",
-        "name": "Best Travel Agency, s.r.i",
+        "name": "Best Travel Agency, s.r.o",
         "contact": {
             "email": "best@company.com",
             "phone": "+420 775 775 775",
@@ -102,7 +102,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
                 "addressLine1": "Some other street 123",
                 "addressLine2": "Some other detail",
                 "city": "Some other city",
-                "country": "US",
+                "country": "US"
             }
         }
     },
