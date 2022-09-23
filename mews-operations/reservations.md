@@ -326,10 +326,10 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `code` | `int` | required \(exc. new unknown sources\) | [Source](#source) code. |
-| `name` | `string` | required | Name of the [Source](#source). |
-| `type` | `int` | required | [Source Type](#source-types) code of the [Source](#source). |
-| `isPrimary` | `bool` | required | Mark the primary source where the reservation group comes from. |
+| `code` | `int` | required \(exc. new unknown sources\) | Source code. |
+| `name` | `string` | required | Name of the source or channel. |
+| `type` | `int` | required | [Source Type](#source-types) code. |
+| `isPrimary` | `bool` | required | Indicates which source is the primary source for the booking. |
 
 #### Source Types
 
