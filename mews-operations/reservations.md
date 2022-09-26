@@ -275,16 +275,17 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | optional | Identifier of company. |
-| `name` | `string` | optional | Name of company or travel agency. |
-| `contact` | [`Contact`](#contact) object | optional | Company or travel agency contact information. |
+| `name` | `string` | optional | Name of company. |
+| ~~`iata`~~ | ~~`string`~~ | ~~optional~~ | ~~IATA number of travel agency.~~ Deprecated. |
+| `contact` | [`Contact`](#contact) object | optional | Company contact information. |
 
 #### Travel Agency
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `iata` | `string` | optional | IATA number of travel agency. |
-| `name` | `string` | optional | Name of company or travel agency. |
-| `contact` | [`Contact`](#contact) object | optional | Company or travel agency contact information. |
+| `name` | `string` | optional | Name of travel agency. |
+| `contact` | [`Contact`](#contact) object | optional | Travel agency contact information. |
 
 #### Contact
 
@@ -326,7 +327,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `code` | `int` | required \(exc. new unknown sources\) | Source code. |
+| `code` | `int` | required \(exc. new unknown sources\) | Code number of the source or channel. |
 | `name` | `string` | required | Name of the source or channel. |
 | `type` | `int` | required | [Source Type](#source-types) code. |
 | `isPrimary` | `bool` | required | Indicates which source is the primary source for the booking. |
