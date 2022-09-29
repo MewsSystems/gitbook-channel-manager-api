@@ -2,15 +2,15 @@
 
 ## 1st November 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `872`.
+* Channel list extended. The latest Channel added has code `872`.
 
 ## 20th October 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `871`.
+* Channel list extended. The latest Channel added has code `871`.
 
 ## 12th August 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `870`.
+* Channel list extended. The latest Channel added has code `870`.
 
 ## 30th July 2021
 
@@ -18,23 +18,23 @@
 
 ## 11th May 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `853`.
+* Channel list extended. The latest Channel added has code `853`.
 
 ## 26th April 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `852`.
+* Channel list extended. The latest Channel added has code `852`.
 
 ## 11th April 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `848`.
+* Channel list extended. The latest Channel added has code `848`.
 
 ## 29th March 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `847`.
+* Channel list extended. The latest Channel added has code `847`.
 
 ## 8th February 2021
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `846`.
+* Channel list extended. The latest Channel added has code `846`.
 
 
 ## 25th January 2021

@@ -15,7 +15,6 @@
 	  * [Inventory](channel-manager-operations/inventory.md)
 	  * [Reservations](channel-manager-operations/reservations.md)
 	  * [Notifications](channel-manager-operations/notifications.md)
-* [Channels](channels/README.md)
 * [Certification](certification/README.md)
 * [Changelog](changelog/README.md)
   * [Changelog 2021](changelog/changelog2021.md)

@@ -6,15 +6,15 @@
 
 ## 26th September 2018
 
-* [Channel](../channels/README.md#channels) list extended. The latest Channel added has code `739`.
+* Channel list extended. The latest Channel added has code `739`.
 
 ## 8th August 2018
 
-* New endpoint [Get Channels](../mews-operations/configuration.md#get-channels) added to Mews API side to obtain all [Channels](../channels/README.md#channels).
+* New endpoint [Get Channels](../mews-operations/configuration.md#get-channels) added to Mews API side to obtain all Channels.
 
 ## 11th July 2018
 
-* [Channel](../channels/README.md#channels) list extended. The latest Channel added has code `567`. Some channels were merged, because they were duplicate. All merged channels are ~~crossed~~ and the proper code is mentioned.
+* Channel list extended. The latest Channel added has code `567`. Some channels were merged, because they were duplicate. All merged channels are ~~crossed~~ and the proper code is mentioned.
 
 ## 18th June 2018
 
@@ -22,11 +22,11 @@
 
 ## 31st May 2018
 
-* [Channel](../channels/README.md#channels) list extended. The latest Channel added has code `510`.
+* Channel list extended. The latest Channel added has code `510`.
 
 ## 9th May 2018
 
-* [Channel](../channels/README.md#channels) list extended. The latest Channel added has code `502`.
+* Channel list extended. The latest Channel added has code `502`.
 
 ## 18th April 2018
 
@@ -34,7 +34,7 @@
 
 ## 28th March 2018
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `500`.
+* Channel list extended. The latest Channel added has code `500`.
 
 ## 8th March 2018
 
@@ -47,15 +47,15 @@
 
 ## 1st March 2018
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `500`.
+* Channel list extended. The latest Channel added has code `500`.
 
 ## 7th February 2018
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `443`.
+* Channel list extended. The latest Channel added has code `443`.
 
 ## 18th January 2018
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `441`.
+* Channel list extended. The latest Channel added has code `441`.
 
 ## 10th January 2018
 

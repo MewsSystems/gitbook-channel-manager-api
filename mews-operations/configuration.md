@@ -109,7 +109,7 @@ This operation returns the configuration of the given property connection.
 | :-- | :-- | :-- | :-- |
 | `includeUnsynchronizedRates` | `bool` | optional | If `true`, unsynchronized [`Rate plans`](#rate-plan) will be returned as well. Unsynchronized rate plan means that Mews will not push prices and restrictions for that rate plan, but when a reservation comes with the rate plan code, Mews will link the correct rate plan with the reservation. |
 | `includeProducts` | `bool` | optional | If `true`, products mapped to a channel manager rate plan will be returned. Products mapped to a channel manager rate plan means that Mews sends a total price combining nightly price and product price in [`Update Prices`](../channel-manager-operations/inventory.md#update-prices) requests. |
-| `includeCompanies` | `bool` | optional | If `true`, mapped profiles for companies (e.g. Microsoft) and travel agencies (e.g. Expedia) will be returned. A company profile needs to be mapped with a [`Channel Code`](../channels/README.md). To map a travel agency, follow the guide [Setting up travel agencies](https://help.mews.com/s/article/set-up-travel-agencies?language=en_US). |
+| `includeCompanies` | `bool` | optional | If `true`, mapped profiles for companies (e.g. Microsoft) and travel agencies (e.g. Expedia) will be returned. A company profile needs to be mapped with a [`Channel code`](#channel). To map a travel agency, follow the guide [Setting up travel agencies](https://help.mews.com/s/article/set-up-travel-agencies?language=en_US). |
 | `includeUnsynchronizedCategories` | `bool` | optional | If `true`, unsynchronized space categories will be returned as well. Unsynchronized space category means that Mews will not push availability for that space category, but when a reservation comes with the space category code, Mews will link the correct space category with the reservation. |
 | `includeAgeCategories` | `bool` | optional | If `true`, age categories mapped to a channel manager integration will be returned. |
 
@@ -575,7 +575,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `contact` | `string` | optional | Company contact. |
 | `phone` | `string` | optional | Company phone number. |
 | `addresses` | [`Address`](#address) object | optional | Company address. |
-| `channel` | [`Channel`](reservations.md#channel) | optional | Mapping code of the company. |
+| `channel` | [`Channel`](#channel) | optional | Mapping channel of the company. |
 
 #### Travel Agencies
 
@@ -587,7 +587,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `contact` | `string` | optional | Travel Agency contact. |
 | `phone` | `string` | optional | Travel Agency phone number. |
 | `addresses` | [`Address`](#address) object | optional | Travel Agency address. |
-| `channel` | [`Channel`](reservations.md#channel) | optional | Mapping code of the company. |
+| `channel` | [`Channel`](#channel) | optional | Mapping channel of the company. |
 
 #### Age categories
 
@@ -600,7 +600,12 @@ This is an example of a _successful_ response. In case an error occurred, the re
 
 ## Get Channels
 
-This operation allows the channel manager to obtain all [Channels](../channels/README.md#channels) with assigned mapping codes.
+Get the list of all supported channels \(including OTAs or Online Travel Agents\) plus their assigned mapping codes.
+
+> Note: The mapping code is not a continuous sequence of numbers, there are some gaps.
+> Gaps arise because OTAs get merged over time or otherwise disappear.
+> New Channels will always be added to the bottom of the list, so you can easily keep track.
+> Please check the list periodically to update your channels list.
 
 ### Request
 
@@ -614,7 +619,7 @@ This operation allows the channel manager to obtain all [Channels](../channels/R
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `clientToken` | `string` | required \(always\) | Client token of the channel manager. |
+| `clientToken` | `string` | required | Client token of the channel manager. |
 
 ### Response
 
@@ -625,6 +630,10 @@ This operation allows the channel manager to obtain all [Channels](../channels/R
             "code": 1,
             "name": "Booking.com"
         },
+        {
+            "code": 2,
+            "name": "Expedia"
+        },
         ...
     ]
 }
@@ -632,4 +641,11 @@ This operation allows the channel manager to obtain all [Channels](../channels/R
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `channels` | [`Channel`](../channels/README.md#channels) collection | required | All mapped channels. |
+| `channels` | [`Channel`](#channel) collection | required | All mapped channels. |
+
+#### Channel
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `code` | `int` | required | Mapping code of channel.  |
+| `name` | `string` | required | Name of channel. |

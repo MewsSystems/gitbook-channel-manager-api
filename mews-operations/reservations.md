@@ -247,7 +247,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
 | `company` | [`Company`](#company) object | optional | Represents the company associated with the booking. |
 | `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency associated with the booking. |
-| `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
+| `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be cancelled. |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
 #### Customer
@@ -327,7 +327,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `code` | `int` | required \(exc. new unknown sources\) | Code number of the source or channel. |
+| `code` | `int` | required \(exc. new unknown sources\) | Code number of the source or [channel](configuration.md#channel). |
 | `name` | `string` | required | Name of the source or channel. |
 | `type` | `int` | required | [Source Type](#source-types) code. |
 | `isPrimary` | `bool` | required | Indicates which source is the primary source for the booking. |
@@ -365,7 +365,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
 
-_¹ It is required that the code remains the same within each booking modification message and partial modification message. If it can't be achieved because Channel doesn't provide it, simple generation of "01", "02", ... codes will suffice as long as those codes are generated in same way for each message regarding that one booking._
+> Note: It is required that `code` remains the same within each booking modification message and partial modification message. If this can't be achieved because the channel doesn't provide it, simple generation of codes "01", "02", ... will suffice as long as those codes are generated in the same way for each message regarding that one booking.
 
 #### Guest Count
 
