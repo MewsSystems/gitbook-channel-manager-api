@@ -18,6 +18,11 @@ For more details, see [Environments](../mews-operations/README.md#environments).
 
 * Channels list removed from the documentation. Please use [Get Channels](../mews-operations/configuration.md#get-channels) to get the list of supported channels.
 
+## 26th September 2022
+
+* In [Process Group](../mews-operations/reservations.md#request), channel is deprecated and replaced by sources, which is a collection of new object [Source](../mews-operations/reservations.md#source) and provides additional information about reservation sources or channels.
+* In [Process Group](../mews-operations/reservations.md#request), company is split into separate entities for [Company](../mews-operations/reservations.md#company) and [Travel Agency](../mews-operations/reservations.md#travel-agency). iata is removed from company (deprecated).
+
 ## 11th August 2022
 
 * Error response codes 4 and 5 deprecated in favor of codes 9 and 10 - see [Responses](../guidelines/responses.md)

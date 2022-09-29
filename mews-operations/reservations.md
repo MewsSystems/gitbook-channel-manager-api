@@ -62,13 +62,22 @@ The third `reservation` definition shows the partial cancellation - cancelling t
         "languageCode": "en-US",
         "telephone": "1-3526-88918"
     },
-    "channel": {
-        "code": 1,
-        "name": "Expedia"
-    },
+    "sources": [
+        {
+            "code": 1,
+            "name": "Expedia",
+            "type" : 0,
+            "isPrimary" true
+        },
+        {
+            "code": 2,
+            "name": "ChoiceCRS",
+            "type" : 0,
+            "isPrimary" false
+        },
+    ],
     "company": {
         "id": "MEWS",
-        "iata": "65893",
         "name": "Mews Systems, s.r.o.",
         "contact": {
             "email": "mews@mews.li",
@@ -79,6 +88,21 @@ The third `reservation` definition shows the partial cancellation - cancelling t
                 "country": "Czech Republic",
                 "addressLine1": "586 Ulice Test",
                 "addressLine2": "Patro 2"
+            }
+        }
+    },
+    "travelAgency": {
+        "iata": "65553",
+        "name": "Best Travel Agency, s.r.o",
+        "contact": {
+            "email": "best@company.com",
+            "phone": "+420 775 775 775",
+            "address": {
+                "zip": "132 45",
+                "addressLine1": "Some other street 123",
+                "addressLine2": "Some other detail",
+                "city": "Some other city",
+                "country": "US"
             }
         }
     },
@@ -219,7 +243,10 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
-| `channel` | [`Channel`](configuration.md#channel) object | optional | Represents the channel \(i.e. Travel Agency\). |
+| ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ Deprecated. |
+| `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
+| `company` | [`Company`](#company) object | optional | Represents the company associated with the booking. |
+| `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency associated with the booking. |
 | `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be cancelled. |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
@@ -248,9 +275,17 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | optional | Identifier of company. |
+| `name` | `string` | optional | Name of company. |
+| ~~`iata`~~ | ~~`string`~~ | ~~optional~~ | ~~IATA number of travel agency.~~ Deprecated. |
+| `contact` | [`Contact`](#contact) object | optional | Company contact information. |
+
+#### Travel Agency
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
 | `iata` | `string` | optional | IATA number of travel agency. |
-| `name` | `string` | optional | Name of company or travel agency. |
-| `contact` | [`Contact`](#contact) object | optional | Company or travel agency contact information. |
+| `name` | `string` | optional | Name of travel agency. |
+| `contact` | [`Contact`](#contact) object | optional | Travel agency contact information. |
 
 #### Contact
 
@@ -287,6 +322,30 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `11` | Universal Air Travel |
 | `12` | China Unionpay |
 | `13` | Maestro |
+
+#### Source
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `code` | `int` | required \(exc. new unknown sources\) | Code number of the source or [channel](configuration.md#channel). |
+| `name` | `string` | required | Name of the source or channel. |
+| `type` | `int` | required | [Source Type](#source-types) code. |
+| `isPrimary` | `bool` | required | Indicates which source is the primary source for the booking. |
+
+#### Source Types
+
+| Code | Description |
+| :-- | :-- |
+| `0` | Online Travel Agency |
+| `1` | Central Reservation System |
+| `2` | Global Distribution System |
+| `3` | Alternative Distribution System |
+| `4` | Sales And Catering System |
+| `5` | Property Management System |
+| `6` | Tour Operator System |
+| `7` | Online Booking Engine |
+| `8` | Kiosk |
+| `9` | Agent |
 
 #### Reservation
 
