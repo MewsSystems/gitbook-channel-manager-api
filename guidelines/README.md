@@ -20,7 +20,7 @@ All operations regarding a specific connection with a specific property require 
 
 ### Channels
 
-For the list of supported sales channels, including Online Travel Agents or OTAs, see [Channels](../channels/README.md).
+For the list of supported sales channels, including Online Travel Agents or OTAs, please use the [Get Channels](../mews-operations/configuration.md#get-channels) operation.
 If you are connected to a sales channel which is not listed, please contact Mews via [partnersuccess@mews.com](mailto://partnersuccess@mews.com) and we can update the list.
 
 ### PCI Compliance

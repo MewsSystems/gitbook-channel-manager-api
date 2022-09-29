@@ -2,11 +2,11 @@
 
 ## 13th December 2017
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `425`.
+* Channel list extended. The latest Channel added has code `425`.
 
 ## 30th November 2017
 
-* [Channel](../channels/README.md) list extended. The latest Channel added has code `423`.
+* Channel list extended. The latest Channel added has code `423`.
 
 ## 15th October 2017
 

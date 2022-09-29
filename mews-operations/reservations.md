@@ -219,8 +219,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
-| `channel` | [`Channel`](#channel) object | optional | Represents the channel \(i.e. Travel Agency\). |
-| `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. _Empty \(_`null`_ or _`[]`_\) means whole group will be cancelled._ |
+| `channel` | [`Channel`](configuration.md#channel) object | optional | Represents the channel \(i.e. Travel Agency\). |
+| `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be cancelled. |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
 #### Customer
@@ -288,13 +288,6 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `12` | China Unionpay |
 | `13` | Maestro |
 
-#### Channel
-
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| `code` | `int` | required | [Channel](#channels) code. |
-| `name` | `string` | required | Name of the Channel. |
-
 #### Reservation
 
 | Property | Type | Contract | Description |
@@ -313,7 +306,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
 
-_¹ It is required that the code remains the same within each booking modification message and partial modification message. If it can't be achieved because Channel doesn't provide it, simple generation of "01", "02", ... codes will suffice as long as those codes are generated in same way for each message regarding that one booking._
+> Note: It is required that `code` remains the same within each booking modification message and partial modification message. If this can't be achieved because the channel doesn't provide it, simple generation of codes "01", "02", ... will suffice as long as those codes are generated in the same way for each message regarding that one booking.
 
 #### Guest Count
 
