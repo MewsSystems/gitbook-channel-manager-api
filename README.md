@@ -1,4 +1,4 @@
-# Introduction
+# Mews Channel Manager API
 
 Welcome to the __Mews Channel Manager API__. This is the Mews API for distribution and sales channels, supporting two main use cases:
 distributing availability, rates and inventory data to sales channels; and accepting reservations from sales channels.
