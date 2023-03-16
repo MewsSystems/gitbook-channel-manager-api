@@ -1,6 +1,6 @@
 # Changelog
 
-## 2nd March 2023
+## 16th March 2023
 
 * Added [Deprecations](../deprecations/README.md) page
 * Removed "ACTION REQUIRED!" section from the top of the Changelog page
