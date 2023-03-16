@@ -18,4 +18,5 @@ If you encounter any issues using the API, or you have a question or special req
 
 > ### Changes to this API
 > * For the history of changes to the API, see the [Changelog](changelog/README.md)
+> * For important information on deprecations, see [Deprecations](deprecations/README.md)
 > * To track changes and updates, you can follow the [GitHub repository](https://github.com/MewsSystems/gitbook-channel-manager-api/tree/master)
