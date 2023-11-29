@@ -15,6 +15,7 @@ The example shows a valid availability block definition.
 {
     "connectionToken": "[Token of a concrete connection]",
     "messageId": "66511e1d-2405-4e49-914b-b0c800d802c9",
+    "responseUrl": "https://api.mews-demo.com/api/channelManager/v1/processAvailabilityBlockConfirmation",
     "availabilityBlock": {
         "code": null,
         "confirmationNumber": "2",
