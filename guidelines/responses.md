@@ -6,17 +6,18 @@ In case of such failures, details about the error are provided in the response b
 > **Important:** In the case of errors with rate codes or category codes, details of the affected codes must be returned in the response body.
 > These codes will also be unsynchronized, i.e. disabled.
 
-## Simple response
+## Synchronous simple response
 
 This response object represents the default response, in case of success.
 
 ```javascript
 {
-   "success":true
+   "success":true,
+   "asyncConfirmation", false
 }
 ```
 
-## Error response
+## Synchronous error response
 
 In case of error, the response object will extend the simple response object with details about the error.
 In case of errors with rate codes or category codes, details of the affected codes must also be returned.
@@ -26,7 +27,7 @@ See the [Error codes](#error-codes) table below for further details about specif
 
 ```javascript
 {
-   "success":false,
+   "success": false,
    "error":{
       "code":8,
       "message":"Invalid 'clientToken' or 'connectionToken'."
@@ -63,6 +64,7 @@ See the [Error codes](#error-codes) table below for further details about specif
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `success` | `bool` | required | Determinines the result of the operation. |
+| `asyncConfirmation` | `bool` | optional | Determinines if there will be following asynchronous response. |
 | `errors` | array of [`Error`](#error) | optional | In case of `"success": false`, this property holds information about the errors that occurred. |
 
 ### Error

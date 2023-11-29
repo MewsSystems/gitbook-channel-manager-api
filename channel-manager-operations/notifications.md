@@ -47,4 +47,4 @@ The following changes trigger notification:
 
 ### Response
 
-[Simple response](../guidelines/responses.md#simple-response) is expected to determine whether the update was accepted or not.
+[Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not.
