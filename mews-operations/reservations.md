@@ -416,5 +416,49 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 ### Response
 
-[Simple response](../guidelines/responses.md#simple-response) will determine whether the booking was accepted for processing or not.
+[Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) will determine whether the booking was accepted for processing or not.
 Confirmation of booking will be sent asynchronously using the [Confirm Booking](../channel-manager-operations/reservations.md#confirm-booking) operation.
+
+## Confirm group confirmation
+
+### Request
+
+`[PlatformAddress]/api/channelManager/v1/processGroupConfirmation`
+
+```javascript
+{
+    "clientToken": "[Channel manager client token]",
+    "connectionToken": "[Token of a concrete connection]",
+    "relatedMessageId": "[Id of message which request relates to]",
+    "success": true,
+    "code": 123,
+    "reservations": [
+        {
+            "code": "Ext123",
+            "confirmationNumber": "Mews456"
+        }
+    ]
+}
+```
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `clientToken` | `string` | required | Client token of the channel manager. |
+| `connectionToken` | `string` | required | Token of a concrete connection. |
+| `relatedMessageId` | `string` | required | Id of message which requests relates to. |
+| `success` | `bool` | required | Determinines the result of the operation. |
+| `errors` | array of [`Error`](../guidelines/responses.md#error) | optional | In case of `"success": false`, this property holds information about the errors that occurred. |
+| `code` | `string` | required | Unique reference code from external system for the group. Will be sent with every group changes. |
+| `reservations` | [`Reservation Confirmation`](#reservation-confirmation) collection | optional | Confirmation details for each individual reservation in the group. |
+
+#### Reservation Confirmation
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `code` | `string` | required | Unique reference code for the individual reservation. Will be sent back with group changes. |
+| `confirmationNumber` | `string` | required | Mews confirmation number for the individual reservation. |
+
+
+### Response
+
+[Synchronous simple response](../guidelines/responses.md#Synchronous-simple-response) is expected.

@@ -13,6 +13,8 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
+    "messageId": "66511e1d-2405-4e49-914b-b0c800d802c9",
+    "responseUrl": "https://api.mews-demo.com/api/channelManager/v1/processRateConfirmation",
     "ratePrices": [
         {
             "spaceTypeCode": "D1",
@@ -70,6 +72,8 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 | :-- | :-- | :-- | :-- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Connection token of a property connection. |
+| `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
+| `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
 | `ratePrices` | [`Rate Price`](#rate-price) collection | required | Collection of prices for all combinations of rate plan, space type, date and person count. |
 
 #### Rate Price
@@ -105,8 +109,7 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 
 ### Response
 
-[Simple response](../guidelines/responses.md#simple-response) is expected to determine whether the update was accepted or not.
-
+[Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not and whether will be synchronous or asynchronous.
 ## Update Availability
 
 This method is used when Mews updates availability of space types.
@@ -119,6 +122,8 @@ This method is used when Mews updates availability of space types.
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
+    "messageId": "66511e1d-2405-4e49-914b-b0c800d802c9",
+    "responseUrl": "https://api.mews-demo.com/api/channelManager/v1/processAvailabilityConfirmation",
     "availabilities": [
         {
             "spaceTypeCode": "QD",
@@ -140,6 +145,8 @@ This method is used when Mews updates availability of space types.
 | :-- | :-- | :-- | :-- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Connection token of a property connection. |
+| `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
+| `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
 | `availabilities` | [`Availability`](#availability) collection | required | Collection of availability of space types. |
 
 #### Availability
@@ -153,8 +160,7 @@ This method is used when Mews updates availability of space types.
 
 ### Response
 
-[Simple response](../guidelines/responses.md#simple-response) is expected to determine whether the update was accepted or not.
-
+[Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not and whether will be synchronous or asynchronous.
 ## Update Restrictions
 
 This method is used when Mews updates restrictions.
@@ -167,6 +173,8 @@ This method is used when Mews updates restrictions.
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
+    "messageId": "66511e1d-2405-4e49-914b-b0c800d802c9",
+    "responseUrl": "https://api.mews-demo.com/api/channelManager/v1/processRestrictionConfirmation",
     "restrictions": [
         {
             "spaceTypeCode": "QD",
@@ -196,6 +204,8 @@ This method is used when Mews updates restrictions.
 | :-- | :-- | :-- | :-- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Connection token of a property connection. |
+| `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
+| `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
 | `restrictions` | [`Restriction`](#restriction) collection | required | Collection of restrictions. |
 
 #### Restriction
@@ -493,4 +503,4 @@ When `minLos` or `maxLos` is not specified, `null` value is sent.
 
 ### Response
 
-[Simple response](../guidelines/responses.md#simple-response) is expected to determine whether the update was accepted or not.
+[Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not and whether will be synchronous or asynchronous.
