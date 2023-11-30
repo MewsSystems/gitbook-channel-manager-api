@@ -9,8 +9,8 @@
     - [Confirm availability update](../mews-operations/inventory.md#confirm-availability-update)
     - [Confirm price update](../mews-operations/inventory.md#confirm-price-update)
     - [Confirm restriction update](../mews-operations/inventory.md##confirm-reistriction-update)
-    - [Confirm availability block synchronization](../mews-operations/availabilityBlocks.md.md##confirm-availability-block-synchronization)
-    - [Confirm reservations group synchronization](../mews-operations/reservations.md.md#confirm-group-synchronization)
+    - [Confirm availability block synchronization](../mews-operations/availabilityBlock.md##confirm-availability-block-synchronization)
+    - [Confirm reservations group synchronization](../mews-operations/reservations.md#confirm-group-synchronization)
 
 ## 16th March 2023
 
