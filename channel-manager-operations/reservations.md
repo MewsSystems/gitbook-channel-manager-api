@@ -220,6 +220,7 @@ This option allows creations, modifications, and partial or complete cancellatio
 | `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
 | `channelId` | `string` | required \(always\) | Unique identification of the booking in the channel \(i.e. OTA\). |
 | `channelManagerId` | `string` | required \(always\) | Unique identification of the booking in the channel manager. |
+| `availabilityBlockCode` | `string` | optional | Unique identification of the availability block in the channel manager. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](../mews-operations/reservations.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
@@ -245,6 +246,7 @@ It is used to send confirmation of success as well as confirmation of failure.
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
+    "relatedMessageId": "MyWeddingMessage789456123",
     "channelManagerId": "123456",
     "reservations": [
         {
@@ -261,6 +263,7 @@ It is used to send confirmation of success as well as confirmation of failure.
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
+    "relatedMessageId": "MyWeddingMessage789456123",
     "channelManagerId": "123456",
     "error": {
         "code": 4,
@@ -273,6 +276,7 @@ It is used to send confirmation of success as well as confirmation of failure.
 | :-- | :-- | :-- | :-- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Connection token of a property connection. |
+| `relatedMessageId` | `string` | required | Id of message which requests relates to. |
 | `channelManagerId` | `string` | required | Channel Manager booking reference. |
 | `error` | [`Error`](../guidelines/responses.md#error) | optional | In case of processing failure, this provides a description of the error. |
 | `reservations` | [`Reservation Confirmation`](#reservation-confirmation) collection | optional | Confirmation details for each individual reservation in the group. |

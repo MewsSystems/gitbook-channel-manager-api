@@ -36,8 +36,10 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 {
     "clientToken": "[Channel manager client token]",
     "connectionToken": "[Token of a concrete connection]",
+    "messageId": "MyWeddingMessage789456123",
     "channelId": "EXP-123456",
     "channelManagerId": "123456",
+    "availabilityBlockCode", "Wedding123",
     "comments": [
         "Approximate arrival: 16:30.",
         "Guest request a room with ocean view."
@@ -236,8 +238,10 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | :-- | :-- | :-- | :-- |
 | `clientToken` | `string` | required \(always\) | Client token of the channel manager. |
 | `connectionToken` | `string` | required \(always\) | Token of a concrete connection. |
+| `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
 | `channelId` | `string` | required \(always\) | Unique identification of the booking in the channel \(i.e. OTA\). |
 | `channelManagerId` | `string` | required \(always\) | Unique identification of the booking in the channel manager. |
+| `availabilityBlockCode` | `string` | optional | Unique identification of the availability block in the channel manager. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
