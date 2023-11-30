@@ -9,7 +9,7 @@
 	* [API Operations (Mews)](mews-operations/operations.md)
 	  * [Configuration](mews-operations/configuration.md)
 	  * [AvailabilityBlocks](mews-operations/availabilityBlock.md)
-    * [Inventory](mews-operations/inventory.md)
+	  * [Inventory](mews-operations/inventory.md)
 	  * [Reservations](mews-operations/reservations.md)
 * [Channel Manager side](channel-manager-operations/README.md)
   * [API Operations (CHM)](channel-manager-operations/operations.md)
