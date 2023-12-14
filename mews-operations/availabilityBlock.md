@@ -1,3 +1,5 @@
+# Mews API Operations: Availability blocks
+
 ## Confirm availability block confirmation
 
 ### Request

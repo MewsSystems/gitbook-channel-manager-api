@@ -1,6 +1,6 @@
 # Mews API Operations: Reservations
 
-## Process Group
+## Process group
 
 \[`async`\] This operation allows the channel manager to push a group of reservations (bookings) to Mews.
 This option allows creations, modifications, and partial or complete cancellations. Mews will process and confirm the booking asynchronously.
@@ -421,7 +421,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 ### Response
 
 [Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) will determine whether the booking was accepted for processing or not.
-Confirmation of booking will be sent asynchronously using the [Confirm Booking](../channel-manager-operations/reservations.md#confirm-booking) operation.
+Confirmation of booking will be sent asynchronously using the [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) operation.
 
 ## Confirm group confirmation
 

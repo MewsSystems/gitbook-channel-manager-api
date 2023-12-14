@@ -24,14 +24,14 @@ The table columns have the following meanings:
 
 | Feature | Comments | Deprecated | Discontinued |
 | :-- | :-- | :-- | :-- |
-| `channel` in [Process Group](../mews-operations/reservations.md#process-group) | Replaced by `sources` | 26 Sep 2022 | - |
-| `iata` in [Company](../mews-operations/reservations.md#company) in [Process Group](../mews-operations/reservations.md#process-group) | Replaced by `iata` in the [Travel Agency](../mews-operations/reservations.md#travel-agency) object | 26 Sep 2022 | - |
-| `adultCount` and `childCount` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process Group](../mews-operations/reservations.md#process-group) | Replaced by `guestCounts` | 29 Apr 2022 | - |
-| `code` in [`Payment card`](../mews-operations/reservations.md#payment-card) object in [Process Group](../mews-operations/reservations.md#process-group) | Replaced by `type` | 08 Mar 2018 | End Apr 2018 |
+| `channel` in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `sources` | 26 Sep 2022 | - |
+| `iata` in [Company](../mews-operations/reservations.md#company) in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `iata` in the [Travel Agency](../mews-operations/reservations.md#travel-agency) object | 26 Sep 2022 | - |
+| `adultCount` and `childCount` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `guestCounts` | 29 Apr 2022 | - |
+| `code` in [`Payment card`](../mews-operations/reservations.md#payment-card) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `type` | 08 Mar 2018 | End Apr 2018 |
 | `accessToken` in all API calls on both Mews side and CHM side | Replaced by `clientToken` | 10 Jan 2018 | End Mar 2018 |
 | `connectionCode` in all API calls on both Mews side and CHM side | Replaced by `connectionToken` | 10 Jan 2018 | End Mar 2018 |
-| `code` in [`Connection Info`](../mews-operations/configuration.md#connection-info) object in [Get Properties](../mews-operations/configuration.md#get-properties) | Replaced by `token` | 10 Jan 2018 | End Mar 2018 |
-| `distributor` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process Group](../mews-operations/reservations.md#process-group) | Replaced by `channel` | 10 Jan 2018 | End Mar 2018 |
+| `code` in [`Connection Info`](../mews-operations/configuration.md#connection-info) object in [Get properties](../mews-operations/configuration.md#get-properties) | Replaced by `token` | 10 Jan 2018 | End Mar 2018 |
+| `distributor` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `channel` | 10 Jan 2018 | End Mar 2018 |
 
 ## Deprecated functionality
 

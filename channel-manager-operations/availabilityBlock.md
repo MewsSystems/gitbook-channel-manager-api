@@ -1,6 +1,6 @@
 # Channel Manager API Operations: Availability blocks
 
-## Process Availability Block
+## Process availability block
 
 \[`async`\] This method is used when Mews push availability blocks.
 It is used to send availability blocks changes such as create, modification, cancellation.
