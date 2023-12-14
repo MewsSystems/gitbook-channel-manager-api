@@ -1,5 +1,9 @@
 # Changelog
 
+## 15th December 2023
+
+* Added explanations to [Mews API Operations: Process Group](../mews-operations/reservations.md#process-group) for the consequences of using negative extra product amounts (documentation only)
+
 ## 29th November 2023
 
 * New operation [Process Availability Blocks](../channel-manager-operations/availabilityBlock.md)
