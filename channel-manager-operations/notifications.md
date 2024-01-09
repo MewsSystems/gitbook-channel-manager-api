@@ -1,6 +1,6 @@
 # Channel Manager API Operations: Notifications
 
-## Change Notification
+## Change notification
 
 This operation is used by Mews to notify the channel manager when there is a change in the connection configuration.
 It is optional for the channel manager to implement this endpoint, it is used in case of a fully-automated connection.

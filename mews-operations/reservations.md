@@ -1,6 +1,6 @@
 # Mews API Operations: Reservations
 
-## Process Group
+## Process group
 
 \[`async`\] Use this operation to push a group of reservations or bookings to Mews. The operation is called Process Group because it supports multiple options for processing on multiple groups of reservations. As well as creating new reservations in Mews, you can modify existing reservations and make cancellations, all using the same endpoint. Mews will process the requests and confirm back the reservations asynchronously.
 
@@ -428,7 +428,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 ### Response
 
 [Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) will determine whether the reservations or bookings were accepted for processing or not.
-Confirmation will be sent asynchronously using the [Confirm Booking](../channel-manager-operations/reservations.md#confirm-booking) operation.
+Confirmation will be sent asynchronously using the [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) operation.
 
 ## Confirm group confirmation
 

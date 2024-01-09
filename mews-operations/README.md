@@ -11,7 +11,7 @@ This environment is used during development, testing and certification of client
 Test properties within the environment are based in the Netherlands and accept `EUR` currency.
 
 * **Platform Address** - `https://api.mews-demo.com/`
-* **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](reservations.md#process-group)
+* **Reservation Push Endpoint** - unique to the environment and listed under [Process group](reservations.md#process-group)
 * **Client Token** - will be provided by Mews upon request
 * **Connection Token** - will be provided by Mews upon request
 * **Test Property** - user credentials will be provided by Mews upon request
@@ -33,6 +33,6 @@ The property is configured to accept the following test credit cards:
 ### Production Environment
 
 * **Platform Address** - `https://api.mews.com`
-* **Reservation Push Endpoint** - unique to the environment and listed under [Process Group](reservations.md#process-group)
+* **Reservation Push Endpoint** - unique to the environment and listed under [Process group](reservations.md#process-group)
 * **Client Token** - will be provided to you by Mews following certification in the test environment \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
-* **Connection Token** - will be provided to you by Mews or the property on request, or via [Get Properties](configuration.md#get-properties) API operation \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)
+* **Connection Token** - will be provided to you by Mews or the property on request, or via [Get properties](configuration.md#get-properties) API operation \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)

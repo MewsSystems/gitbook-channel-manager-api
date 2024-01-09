@@ -1,6 +1,6 @@
 # Channel Manager API Operations: Inventory
 
-## Update Prices
+## Update prices
 
 This method is used when Mews updates prices of rate plans.
 Mews always pushes both `gross` and `net` prices, the channel manager chooses which of these to use.
@@ -110,7 +110,8 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 ### Response
 
 [Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not and whether will be synchronous or asynchronous.
-## Update Availability
+
+## Update availability
 
 This method is used when Mews updates availability of space types.
 
@@ -161,7 +162,8 @@ This method is used when Mews updates availability of space types.
 ### Response
 
 [Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not and whether will be synchronous or asynchronous.
-## Update Restrictions
+
+## Update restrictions
 
 This method is used when Mews updates restrictions.
 

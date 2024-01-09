@@ -14,7 +14,7 @@ Mews sends Inventory in two modes, both modes use the same API messages.
 
 ### Full Inventory Update Mode
 
-You can request an Inventory update for some specified time period via API operation [Request ARI Update](../mews-operations/inventory.md#request-ari-update).
+You can request an Inventory update for some specified time period via API operation [Request ARI update](../mews-operations/inventory.md#request-ari-update).
 Alternatively, a property employee can use this mode to push the latest data manually.
 Data sent in this mode is always for **all** connected rate plans and space types combinations.
 

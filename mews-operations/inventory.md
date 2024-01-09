@@ -1,6 +1,6 @@
 # Mews API Operations: Inventory
 
-## Set Inventory
+## Set inventory
 
 This method can be used to **update** the 'rate plan - space type' mapping relations in the connection.
 * All mapping relations need to be sent.
@@ -39,7 +39,7 @@ This method can be used to **update** the 'rate plan - space type' mapping relat
 
 [Synchronous simple response](../guidelines/responses.md#Synchronous-simple-response) is expected.
 
-## Request ARI Update
+## Request ARI update
 
 \[`async`\] This method allows the channel manager to request an ARI data update for certain space types and rate plans in addition to the changes automatically sent in the [Delta](../channel-manager-operations/README.md#delta-inventory-update-mode) update.
 The requested data will be sent by Mews asynchronously via push operations to the channel manager side API in the next [Delta](../channel-manager-operations/README.md#delta-inventory-update-mode) update.

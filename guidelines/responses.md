@@ -12,8 +12,8 @@ This response object represents the default response, in case of success.
 
 ```javascript
 {
-   "success":true,
-   "asyncConfirmation", false
+   "success": true,
+   "asyncConfirmation": false
 }
 ```
 

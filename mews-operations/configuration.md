@@ -1,6 +1,6 @@
 # Mews API Operations: Configuration
 
-## Get Properties
+## Get properties
 
 This operation is used to get the list of available properties and their connection details, based on your `Client Token` and an employee email address.
 A valid email address must be supplied which corresponds to an employee of the enterprise to which the properties belong.
@@ -75,7 +75,7 @@ _Sample Hostel_ has two connections to this channel manager, whilst _White House
 | `token` | `string` | required | Connection Token for the connection. |
 | `name` | `string` | optional | Name of the connection. |
 
-## Get Configuration
+## Get configuration
 
 This operation returns the configuration of the given property connection.
 
@@ -598,7 +598,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `minimumAge` | `int` | optional | Minimal age for the age category. |
 | `maximumAge` | `int` | optional | Maximal age for the age category. |
 
-## Get Channels
+## Get channels
 
 Get the list of all supported channels \(including OTAs or Online Travel Agents\) plus their assigned mapping codes.
 
