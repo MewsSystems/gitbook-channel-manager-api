@@ -380,10 +380,10 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 #### Age Category Code
 
 * `Infant`
-* `Teenager`
-* `Senior citizen`
-* `Adult`
 * `Child`
+* `Teenager`
+* `Adult`
+* `Senior citizen`
 
 #### Reservation States
 
