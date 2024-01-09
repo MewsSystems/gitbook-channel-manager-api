@@ -27,8 +27,8 @@
 
 ## 27th May 2020
 
-* [Get Configuration](../mews-operations/configuration.md#get-configuration) extended with pricing mode, which shows whether a property is built in net or gross pricing environment.
-* [Extra](../mews-operations/reservations.md#extra) extended in [Process Group](../mews-operations/reservations.md#process-group). Consumption date can be posted for each extra sent in a reservation. 
+* [Get configuration](../mews-operations/configuration.md#get-configuration) extended with pricing mode, which shows whether a property is built in net or gross pricing environment.
+* [Extra](../mews-operations/reservations.md#extra) extended in [Process group](../mews-operations/reservations.md#process-group). Consumption date can be posted for each extra sent in a reservation. 
 
 ## 28th April 2020
 
@@ -36,7 +36,7 @@
 
 ## 26th March 2020
 
-* [Amount](../mews-operations/reservations.md#amount) extended in [Process Group](../mews-operations/reservations.md#process-group) and [Price](../channel-manager-operations/operations.md#price) extended in [Update Prices](../channel-manager-operations/operations.md#update-prices). Net pricing is now supported for inventory upload and reservation delivery.
+* [Amount](../mews-operations/reservations.md#amount) extended in [Process group](../mews-operations/reservations.md#process-group) and [Price](../channel-manager-operations/operations.md#price) extended in [Update prices](../channel-manager-operations/operations.md#update-prices). Net pricing is now supported for inventory upload and reservation delivery.
 
 | Next |
 | :-- |

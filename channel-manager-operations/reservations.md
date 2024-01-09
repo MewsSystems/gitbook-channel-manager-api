@@ -1,13 +1,13 @@
 # Channel Manager API Operations: Reservations
 
-## Process Group
+## Process group
 
 \[`async`\] This operation allows the Mews to push a group of reservations (bookings) to channel manager.
 This option allows creations, modifications, and partial or complete cancellations. Confirmation is done asynchronous.
 
 ### Request 
 
-`[ChannelManagerApiAddress]/updatePrices`
+`[ChannelManagerApiAddress]/processGroup`
 
 
 ```javascript
@@ -231,9 +231,9 @@ This option allows creations, modifications, and partial or complete cancellatio
 | `reservations` | [`Reservation`](../mews-operations/reservations.md#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be cancelled. |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
-## Confirm Booking
+## Confirm booking
 
-This method is used when Mews confirms a booking sent via [Process Group](../mews-operations/reservations.md#process-group).
+This method is used when Mews confirms a booking sent via [Process group](../mews-operations/reservations.md#process-group).
 It is used to send confirmation of success as well as confirmation of failure.
 
 ### Request

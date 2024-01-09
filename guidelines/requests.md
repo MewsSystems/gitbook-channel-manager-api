@@ -4,7 +4,7 @@ Both sides of the API accept only `HTTPS POST` requests with Content-Type set to
 
 ## Mews side
 
-All Mews API Operations follow this address pattern, with the exception of [Process Group](../mews-operations/reservations.md#process-group):
+All Mews API Operations follow this address pattern, with the exception of [Process group](../mews-operations/reservations.md#process-group):
 
 ```text
 [PlatformAddress]/api/channelManager/v1/[Operation]
@@ -38,11 +38,11 @@ All Channel Manager API Operations are expected to follow this address pattern:
 
 __Required__:
 
-* [Update Prices](../channel-manager-operations/inventory.md#update-prices)
-* [Update Availability](../channel-manager-operations/inventory.md#update-availability)
-* [Update Restrictions](../channel-manager-operations/inventory.md#update-restrictions)
-* [Confirm Booking](../channel-manager-operations/reservations.md#confirm-booking)
+* [Update prices](../channel-manager-operations/inventory.md#update-prices)
+* [Update availability](../channel-manager-operations/inventory.md#update-availability)
+* [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions)
+* [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking)
 
 __Optional__:
 
-* [Change Notification](../channel-manager-operations/notifications.md#change-notification)
+* [Change notification](../channel-manager-operations/notifications.md#change-notification)

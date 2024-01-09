@@ -2,9 +2,9 @@
 
 ## 29th November 2023
 
-* New operation [Process Availability Blocks](../channel-manager-operations/availabilityBlock.md)
-* [Update Availability](../channel-manager-operations/inventory.md#update-availability), [Update Restrictions](../channel-manager-operations/inventory.md#update-restrictions), [Update Prices](inventory.md#update-prices) can now be configured as synchronous as well as asynchronous by response parameter `asyncConfirmation`.
-* [Process Group](../channel-manager-operations/reservations.md#request) is bi-directional.
+* New operation [Process availability blocks](../channel-manager-operations/availabilityBlock.md)
+* [Update availability](../channel-manager-operations/inventory.md#update-availability), [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions), [Update prices](inventory.md#update-prices) can now be configured as synchronous as well as asynchronous by response parameter `asyncConfirmation`.
+* [Process group](../channel-manager-operations/reservations.md#request) is bi-directional.
 * New operations for asynchronous confirmations
     - [Confirm availability update](../mews-operations/inventory.md#confirm-availability-update)
     - [Confirm price update](../mews-operations/inventory.md#confirm-price-update)

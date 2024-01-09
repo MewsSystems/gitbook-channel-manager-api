@@ -2,12 +2,12 @@
 
 ## 29th September 2022
 
-* Channels list removed from the documentation. Please use [Get Channels](../mews-operations/configuration.md#get-channels) to get the list of supported channels.
+* Channels list removed from the documentation. Please use [Get channels](../mews-operations/configuration.md#get-channels) to get the list of supported channels.
 
 ## 26th September 2022
 
-* In [Process Group](../mews-operations/reservations.md#request), channel is deprecated and replaced by sources, which is a collection of new object [Source](../mews-operations/reservations.md#source) and provides additional information about reservation sources or channels.
-* In [Process Group](../mews-operations/reservations.md#request), company is split into separate entities for [Company](../mews-operations/reservations.md#company) and [Travel Agency](../mews-operations/reservations.md#travel-agency). iata is removed from company (deprecated).
+* In [Process group](../mews-operations/reservations.md#request), channel is deprecated and replaced by sources, which is a collection of new object [Source](../mews-operations/reservations.md#source) and provides additional information about reservation sources or channels.
+* In [Process group](../mews-operations/reservations.md#request), company is split into separate entities for [Company](../mews-operations/reservations.md#company) and [Travel Agency](../mews-operations/reservations.md#travel-agency). iata is removed from company (deprecated).
 
 ## 11th August 2022
 
@@ -45,11 +45,11 @@
 
 ## 29th April 2022
 
-* [Reservation](../mews-operations/reservations.md#reservation) extended in [Process Group](../mews-operations/reservations.md#process-group). The age based pricing via `guestCounts` is now supported. Both `adultCount` and `childCount` are now deprecated.
+* [Reservation](../mews-operations/reservations.md#reservation) extended in [Process group](../mews-operations/reservations.md#process-group). The age based pricing via `guestCounts` is now supported. Both `adultCount` and `childCount` are now deprecated.
 
 ## 28th April 2022
 
-* Extended API operation [`getConfiguration`](../mews-operations/configuration.md#get-configuration) with [age categories](../mews-operations/configuration.md#age-categories).
+* Extended API operation [Get configuration](../mews-operations/configuration.md#get-configuration) with [age categories](../mews-operations/configuration.md#age-categories).
 * [Inventory price updates](../channel-manager-operations/inventory.md#rate-price) extended. Age-based pricing via `agePrices` is now supported. 
 
 ## 21st April 2022
