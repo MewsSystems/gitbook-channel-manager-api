@@ -362,7 +362,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
 | ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **Deprecated!** |
 | ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **Deprecated!** |
-| `guestCounts` | [`GuestCount`](#guest-count) | required | Counts for different age categories. |
+| `guestCounts` | array of [`Guest Count`](#guest-count) | required | Number of guests in the reservation for each age category. |
 | `state` | `int` | optional | [Reservation State](#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
 | `amounts` | [`Amount`](#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
 | `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
@@ -374,8 +374,16 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `code` | `string` | required | Mapping code of the age category. |
+| `code` | `string` | required | [Age category code](#age-category-code). |
 | `count` | `int` | required | Number of persons for specified age category. |
+
+#### Age Category Code
+
+* `Infant`
+* `Teenager`
+* `Senior citizen`
+* `Adult`
+* `Child`
 
 #### Reservation States
 
