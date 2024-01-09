@@ -2,17 +2,7 @@
 
 ## Process group
 
-\[`async`\] This operation allows the channel manager to push a group of reservations (bookings) to Mews.
-This option allows creations, modifications, and partial or complete cancellations. Mews will process and confirm the booking asynchronously.
-
-### Request 
-
-* **Demo Environment:** `https://sandbox.pci-proxy.com/v1/push/0426f19b66715a93`
-* **Production Environment:** `https://api.pci-proxy.com/v1/push/b2721c9a0351d553`
-
-The example shows a valid group definition with two space reservations plus cancellation of the third space reservation.
-First `reservation` definition shows all details, second `reservation` definition shows the minimal required details for creation / modification of a `reservation`.
-The third `reservation` definition shows the partial cancellation - cancelling the third space reservation.
+\[`async`\] Use this operation to push a group of reservations or bookings to Mews. The operation is called Process Group because it supports multiple options for processing on multiple groups of reservations. As well as creating new reservations in Mews, you can modify existing reservations and make cancellations, all using the same endpoint. Mews will process the requests and confirm back the reservations asynchronously.
 
 > ### Rules to follow
 >
@@ -25,12 +15,21 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 > * Group total cost `group.totalAmount` is the sum of all `reservation.totalAmount` objects in the group, which is the sum of all night amounts and total amounts of all `extras` of the `reservation`.
 >   * If for any reason the sum of the `reservation.totalAmount` objects is different, Mews will automatically distribute the missing/additional amount to the nights, so the `group.totalAmount` is achieved.
 >   * Reservation `group` amounts should be either `gross` or `net`. Either both `gross` and `net` amounts, or one of them should be sent.
-> * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent \(i.e. Mews doesn't process diffs\).
+> * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent, i.e. Mews doesn't process diffs.
 > * When **cancelling** a reservation from a multi-reservation group, all remaining reservations need to be present in the group definition as well.
 >   * There are two ways to cancel a reservation from a multi-reservation group:
 >     1. If the `reservation.state` is set to [Reservation States](#reservation-states).`Cancelled`.
->     2. If the reservation is not included in the group definiton message.
+>     2. If the reservation is not included in the group definition message.
 > * When **cancelling** a whole group, the `reservations` collection can be empty of all reservations provided as cancelled \(as per case 1 above\).
+
+### Request 
+
+* **Demo Environment:** `https://sandbox.pci-proxy.com/v1/push/0426f19b66715a93`
+* **Production Environment:** `https://api.pci-proxy.com/v1/push/b2721c9a0351d553`
+
+The example shows a valid group definition with two space reservations plus cancellation of a third space reservation.
+The first `reservation` definition shows all details, the second `reservation` definition shows the minimal required details for creation / modification of a `reservation`.
+The third `reservation` definition shows the partial cancellation - cancelling the third space reservation.
 
 ```javascript
 {
@@ -236,18 +235,18 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `clientToken` | `string` | required \(always\) | Client token of the channel manager. |
-| `connectionToken` | `string` | required \(always\) | Token of a concrete connection. |
+| `clientToken` | `string` | required | Client token of the channel manager. |
+| `connectionToken` | `string` | required | Token of a concrete connection. |
 | `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
-| `channelId` | `string` | required \(always\) | Unique identification of the booking in the channel \(i.e. OTA\). |
-| `channelManagerId` | `string` | required \(always\) | Unique identification of the booking in the channel manager. |
+| `channelId` | `string` | required | Unique identification of the booking in the channel \(i.e. OTA\). |
+| `channelManagerId` | `string` | required | Unique identification of the booking in the channel manager. |
 | `availabilityBlockCode` | `string` | optional | Unique identification of the availability block in the channel manager. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
-| ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ Deprecated. |
+| ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ **Deprecated!** |
 | `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
 | `company` | [`Company`](#company) object | optional | Represents the company associated with the booking. |
 | `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency associated with the booking. |
@@ -280,7 +279,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | optional | Identifier of company. |
 | `name` | `string` | optional | Name of company. |
-| ~~`iata`~~ | ~~`string`~~ | ~~optional~~ | ~~IATA number of travel agency.~~ Deprecated. |
+| ~~`iata`~~ | ~~`string`~~ | ~~optional~~ | ~~IATA number of travel agency.~~ **Deprecated!** |
 | `contact` | [`Contact`](#contact) object | optional | Company contact information. |
 
 #### Travel Agency
@@ -355,21 +354,21 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `code` | `string` | required \(always\) | Unique code of the reservation within the whole booking. Any value but `_` accepted. No characters limit. |
+| `code` | `string` | required | Unique code of the reservation within the whole booking. Any value but `_` accepted. No characters limit. |
 | `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. |
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
-| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ Deprecated. |
-| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ Deprecated. |
+| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **Deprecated!** |
+| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **Deprecated!** |
 | `guestCounts` | [`GuestCount`](#guest-count) | required | Counts for different age categories. |
 | `state` | `int` | optional | [Reservation State](#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
 | `amounts` | [`Amount`](#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
 | `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
 
-> Note: It is required that `code` remains the same within each booking modification message and partial modification message. If this can't be achieved because the channel doesn't provide it, simple generation of codes "01", "02", ... will suffice as long as those codes are generated in the same way for each message regarding that one booking.
+> **Codes:** It is required that `code` remains the same within each booking modification message and partial modification message. If this can't be achieved because the channel doesn't provide it, simple generation of codes "01", "02", ... will suffice as long as those codes are generated in the same way for each message regarding that one booking.
 
 #### Guest Count
 
@@ -388,10 +387,6 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 #### Extra
 
-* Total cost of the extra product should be sent in `net` or `gross` amounts.
-* Either both `gross` and `net` amounts, or one of them should be sent.
-* `from` and `to` dates cannot be the same, but it can be any other interval within the reservation dates. (e.g., reservation is from 2025-10-12 to 2025-10-15, extra `from` and `to` cannot be 2025-10-12 to 2025-10-12).
-
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `code` | `string` | required | Mapping code of the extra product. |
@@ -401,6 +396,18 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `to` | `string` | optional \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"` for New Year's Eve\). |
 | `pricing` | `int` | required | [`Extra pricing Type`](#extra-pricing-types) code of the extra product pricing. |
 
+> ### Extra product cost
+> * The total cost of the extra product should be sent in `amount`.
+> * `amount` can include only `gross`, only `net`, or both `gross` and `net`.
+> * `from` and `to` can define any interval within the reservation dates, but they cannot be the same date. For example, if a reservation is from 2025-10-12 to 2025-10-15, then the extra `from` and `to` cannot be specified as 2025-10-12 to 2025-10-12.
+
+> ### Negative amounts
+> * The cost for an extra product can be negative, i.e. less than zero.
+> * If a reservation night price is negative, the reservation will fail.
+> * If extra product costs are negative, their value will be deducted from the reservation night price.
+> * As long as the resulting reservation price (after deducting the cost of the extra products) is positive, all is well.
+> * If the resulting reservation price (after deducting the cost of the extra products) is negative, the reservation will still pass and be processed, however this can create complications for the property and they may have to re-price it.
+> * It is recommended to send extras per room or space, because it is less likely that the resulting reservation price will fall below zero.
 
 #### Amount
 
@@ -420,8 +427,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 ### Response
 
-[Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) will determine whether the booking was accepted for processing or not.
-Confirmation of booking will be sent asynchronously using the [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) operation.
+[Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) will determine whether the reservations or bookings were accepted for processing or not.
+Confirmation will be sent asynchronously using the [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) operation.
 
 ## Confirm group confirmation
 
