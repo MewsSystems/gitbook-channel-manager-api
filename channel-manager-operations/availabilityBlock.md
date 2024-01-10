@@ -170,3 +170,5 @@ The example shows a valid availability block definition.
 ### Response
 
 [Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not.
+
+[Async availability block confirmation](../mews-operations/availabilityBlock.md#confirm-availability-block-confirmation) is expected to determine whether the update was processed afterwards or not.
