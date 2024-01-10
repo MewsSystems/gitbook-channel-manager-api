@@ -218,9 +218,10 @@ This option allows creations, modifications, and partial or complete cancellatio
 | `connectionToken` | `string` | required \(always\) | Token of a concrete connection. |
 | `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
 | `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
-| `channelId` | `string` | required \(always\) | Unique identification of the booking in the channel \(i.e. OTA\). |
-| `channelManagerId` | `string` | required \(always\) | Unique identification of the booking in the channel manager. |
+| `channelId` | `string` | optional | Unique identification of the booking in the channel \(i.e. OTA\). |
+| `channelManagerId` | `string` | optional | Unique identification of the booking in the channel manager. |
 | `availabilityBlockCode` | `string` | optional | Unique identification of the availability block in the channel manager. |
+| `availabilityBlockConfirmationNumber` | `string` | optional | Unique identification of the availability block in the Mews. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](../mews-operations/reservations.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
