@@ -5,7 +5,7 @@ Such features are normally deprecated because they are superseded by a better al
 The list of deprecations is as follows. Individual items are also highlighted in the [Changelog](../changelog/README.md) when they occur.
 Historic deprecations that have already been discontinued may not be listed. For more information, see our [Deprecations Policy](https://mews-systems.gitbook.io/open-api/staying-up-to-date/deprecations-policy).
 
-> **Important:** We strongly advise you to review this list and if you are using any of the deprecated items in your integration, to update your implementation accordingly.
+> **Important:** We strongly advise you to review this list and if you are using any of the deprecated items in your integration, to update your implementation accordingly and [contact Mews](mailto://partnersuccess@mews.com) for re-certification, if required.
 
 The table columns have the following meanings:
 
@@ -26,7 +26,7 @@ The table columns have the following meanings:
 | :-- | :-- | :-- | :-- |
 | `channel` in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `sources` | 26 Sep 2022 | - |
 | `iata` in [Company](../mews-operations/reservations.md#company) in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `iata` in the [Travel Agency](../mews-operations/reservations.md#travel-agency) object | 26 Sep 2022 | - |
-| `adultCount` and `childCount` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `guestCounts` | 29 Apr 2022 | - |
+| `adultCount` and `childCount` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `guestCounts`; **Requires re-certification** | 29 Apr 2022 | - |
 | `code` in [`Payment card`](../mews-operations/reservations.md#payment-card) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `type` | 08 Mar 2018 | End Apr 2018 |
 | `accessToken` in all API calls on both Mews side and CHM side | Replaced by `clientToken` | 10 Jan 2018 | End Mar 2018 |
 | `connectionCode` in all API calls on both Mews side and CHM side | Replaced by `connectionToken` | 10 Jan 2018 | End Mar 2018 |

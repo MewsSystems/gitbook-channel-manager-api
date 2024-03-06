@@ -1,5 +1,9 @@
 # Changelog
 
+## 7th March 2024
+
+* Minor changes to highlight the need for re-certification when replacing deprecated features, see [Deprecations](../deprecations/README.md) (documentation only)
+
 ## 9th January 2024
 
 * Added [Age Category Code](../mews-operations/reservations.md#age-category-code) in [Mews API Operations: Process Group](../mews-operations/reservations.md#process-group) (documentation only).
