@@ -384,7 +384,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 * `Child`
 * `Teenager`
 * `Adult`
-* `Senior citizen`
+* `SeniorCitizen`
 
 #### Reservation States
 
