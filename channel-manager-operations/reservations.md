@@ -224,7 +224,7 @@ This option allows creations, modifications, and partial or complete cancellatio
 | `availabilityBlockConfirmationNumber` | `string` | optional | Unique identification of the availability block in the Mews. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](../mews-operations/reservations.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
-| `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
+| `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](../mews-operations/configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](../mews-operations/reservations.md#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `sources` | [`Source`](../mews-operations/reservations.md#source) collection | optional | Represents the sources for the booking. |
 | `company` | [`Company`](../mews-operations/reservations.md#company) object | optional | Represents the company associated with the booking. |
