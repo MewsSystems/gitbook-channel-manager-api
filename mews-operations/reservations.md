@@ -38,7 +38,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
     "messageId": "MyWeddingMessage789456123",
     "channelId": "EXP-123456",
     "channelManagerId": "123456",
-    "availabilityBlockCode", "Wedding123",
+    "availabilityBlockCode": "Wedding123",
     "comments": [
         "Approximate arrival: 16:30.",
         "Guest request a room with ocean view."
@@ -68,14 +68,14 @@ The third `reservation` definition shows the partial cancellation - cancelling t
             "code": 1,
             "name": "Expedia",
             "type" : 0,
-            "isPrimary" true
+            "isPrimary": true
         },
         {
             "code": 2,
             "name": "ChoiceCRS",
             "type" : 0,
-            "isPrimary" false
-        },
+            "isPrimary": false
+        }
     ],
     "company": {
         "id": "MEWS",
@@ -168,7 +168,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
                 {
                     "net": 97.2,
                     "gross": 120
-                },
+                }
             ],
             "ratePlanCode": "FF",
             "spaceTypeCode": "SGL",
