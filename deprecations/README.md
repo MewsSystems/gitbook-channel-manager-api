@@ -5,7 +5,7 @@ Such features are normally deprecated because they are superseded by a better al
 The list of deprecations is as follows. Individual items are also highlighted in the [Changelog](../changelog/README.md) when they occur.
 Historic deprecations that have already been discontinued may not be listed. For more information, see our [Deprecations Policy](https://mews-systems.gitbook.io/open-api/staying-up-to-date/deprecations-policy).
 
-> **Important:** We strongly advise you to review this list and if you are using any of the deprecated items in your integration, to update your implementation accordingly and [contact Mews](mailto://partnersuccess@mews.com) for re-certification, if required.
+> **Important:** We strongly advise you to review this list and if you are using any of the deprecated items in your integration, to update your implementation accordingly. If the feature change requires re-certification, please [contact Mews](mailto://partnersuccess@mews.com) before making the change.
 
 The table columns have the following meanings:
 
