@@ -276,7 +276,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `membershipId` | `string` | required | Loyalty memebership identifier of the Customer. |
+| `membershipId` | `string` | required | Loyalty membership identifier of the Customer. |
 | `programCode` | `string` | required | Loyalty program code. |
 
 #### Title
