@@ -1,6 +1,6 @@
 # Changelog
 
-## 7th March 2024
+## 26th March 2024
 
 * Minor changes to highlight the need for re-certification when replacing deprecated features, see [Deprecations](../deprecations/README.md) (documentation only)
 
