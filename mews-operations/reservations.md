@@ -246,7 +246,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
-| ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ **Deprecated!** |
+| ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ **[Deprecated!](../deprecations/README.md)** |
 | `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
 | `company` | [`Company`](#company) object | optional | Represents the company associated with the booking. |
 | `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency associated with the booking. |
@@ -279,7 +279,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | optional | Identifier of company. |
 | `name` | `string` | optional | Name of company. |
-| ~~`iata`~~ | ~~`string`~~ | ~~optional~~ | ~~IATA number of travel agency.~~ **Deprecated!** |
+| ~~`iata`~~ | ~~`string`~~ | ~~optional~~ | ~~IATA number of travel agency.~~ **[Deprecated!](../deprecations/README.md)** |
 | `contact` | [`Contact`](#contact) object | optional | Company contact information. |
 
 #### Travel Agency
@@ -361,8 +361,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
-| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **Deprecated!** |
-| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **Deprecated!** |
+| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
+| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
 | `guestCounts` | array of [`Guest Count`](#guest-count) | required | Number of guests in the reservation for each age category. |
 | `state` | `int` | optional | [Reservation State](#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
 | `amounts` | [`Amount`](#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
