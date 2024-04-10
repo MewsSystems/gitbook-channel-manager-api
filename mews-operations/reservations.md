@@ -159,8 +159,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
                     "telephone": "1-369-81891",
                     "loyaltyCode": "PG60972345",
                     "loyaltyInfo": {
-                        "membershipId": "customer's memebership code",
-                        "programCode": "some loyalty program code"
+                        "membershipId": "PG60972345",
+                        "programCode": "BWR"
                     }
                 }
             ],
