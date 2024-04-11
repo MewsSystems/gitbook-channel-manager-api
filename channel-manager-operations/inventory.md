@@ -49,14 +49,14 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
                 {
                     "grossAmount": 100.0,
                     "netAmount": 100.0,
-                    "currencyCode": "USD",
+                    "currencyCode": "EUR",
                     "guestCount": 1,
                     "ageCategoryCode": "Adult"
                 },
                 {
                     "grossAmount": 100.0,
                     "netAmount": 100.0,
-                    "currencyCode": "USD",
+                    "currencyCode": "EUR",
                     "guestCount": 2,
                     "ageCategoryCode": "Child"
                 }
