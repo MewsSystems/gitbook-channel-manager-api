@@ -1,5 +1,8 @@
 # Changelog
 
+## 11th April 2024
+* Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-blockp).
+  
 ## 9th January 2024
 
 * Added [Age Category Code](../mews-operations/reservations.md#age-category-code) in [Mews API Operations: Process Group](../mews-operations/reservations.md#process-group) (documentation only).
