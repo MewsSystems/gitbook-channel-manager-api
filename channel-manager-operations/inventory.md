@@ -195,7 +195,8 @@ This method is used when Mews updates restrictions.
             "from": "2020-01-01",
             "to": "2020-01-01",
             "state": [
-                2
+                2,
+                8
             ]
         }
     ]

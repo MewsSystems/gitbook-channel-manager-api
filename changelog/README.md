@@ -1,5 +1,8 @@
 # Changelog
 
+## 11th April 2024
+* Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-blockp).
+  
 ## 26th March 2024
 
 * Minor changes to highlight the need for re-certification when replacing deprecated features, see [Deprecations](../deprecations/README.md) (documentation only)
