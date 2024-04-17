@@ -130,36 +130,44 @@ The example shows a valid availability block definition.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\). |
-| `end` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
+| `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\).  |
+| `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). This date can't be booked for stay anymore. This date is like a reservation departure. |
 | `releasedDate` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"`\). |
+
+> __Example__: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
 
 #### Space category allocation
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\). |
-| `end` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
+| `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
 | `spaceTypeCode` | `string` | required | Space type code of the reservation. |
 | `allocatedSpaces` | [`Space count`](#space-count) collection | required | Represents number of spaces **allocated** in time. |
 | `occupiedSpaces` | [`Space count`](#space-count) collection | required | Represents number of **occupied** spaces in time. |
 | `rates` | [`Rates`](#rate) collection | required | Represents prices for current space category. |
+
+> __Example__: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
 
 ### Space count
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\). |
-| `end` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
+| `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
 | `count` | `int` | required | Number of spaces (base of usage either occupied or allocated.)
+
+> __Example__: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
 
 ### Rate 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\). |
-| `end` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
+| `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
 | `currencyCode` | `string` | required | 3 letter code of currency. |
-| `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each person count for the specified rate plan - space type - date combination. |           
+| `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each person count for the specified rate plan - space type - date combination. |        
+
+> __Example__: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).   
 
 #### Status
 

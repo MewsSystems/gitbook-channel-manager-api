@@ -371,7 +371,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. |
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
-| `to` | `string` | required \(exc. Cancellation\) | End date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). |
+| `to` | `string` | required \(exc. Cancellation\) | End date  \(exclusive\) in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). THis is the date of resrvation departure. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
 | ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
 | ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
@@ -382,6 +382,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
 
 > **Codes:** It is required that `code` remains the same within each booking modification message and partial modification message. If this can't be achieved because the channel doesn't provide it, simple generation of codes "01", "02", ... will suffice as long as those codes are generated in the same way for each message regarding that one booking.
+
+> **From/To:** This represents the reservation arrival, `from` is arrival date, `to` is departure date. So reservation for 2 nights (e.g. 2021-12-24/25 and 2021-12-25/26 is represented as `"from": "2021-12-24", "to": "2021-12-26"`).
 
 #### Guest Count
 
