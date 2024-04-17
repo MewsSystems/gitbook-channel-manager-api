@@ -371,7 +371,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `spaceTypeCode` | `string` | required \(exc. Cancellation\) | Space type code of the reservation. |
 | `ratePlanCode` | `string` | required \(exc. Cancellation\) | Rate type code of the reservation. |
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
-| `to` | `string` | required \(exc. Cancellation\) | End date  \(exclusive\) in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). THis is the date of resrvation departure. |
+| `to` | `string` | required \(exc. Cancellation\) | End date  \(exclusive\) in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). This is the date of resrvation departure. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
 | ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
 | ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
