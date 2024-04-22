@@ -1,10 +1,9 @@
 # Responses
 
-Each API request is expected to return a response. The **HTTP status code** of the response is `200` in case the API request processing is successful as well as if the API request processing fails, e.g. if there is an error during reservation processing, or an inventory update message fails validation.
-In case of such failures, details about the error are provided in the response body.
+Every API request is expected to yield a response. The HTTP status code of the response is `200`. This is true regardless of whether the API request processing is successful, or if it fails, e.g. due to errors during reservation processing or validation of an inventory update message. In the event of a failure, the response body contains details about the error. 
 
-> **Important:** In the case of errors with rate codes or category codes, details of the affected codes must be returned in the response body.
-> These codes will also be unsynchronized, i.e. disabled.
+> **Important:** In the event of errors involving rate codes or category codes, details of the affected codes must be returned in the response body.
+> These codes will also be unsynchronized as a result of the error, i.e. disabled.
 
 ## Synchronous simple response
 
@@ -19,8 +18,9 @@ This response object represents the default response, in case of success.
 
 ## Synchronous error response
 
-In case of error, the response object will extend the simple response object with details about the error.
-In case of errors with rate codes or category codes, details of the affected codes must also be returned.
+In case of error, the response object will extend the simple response object with details about the error or errors.
+Use the singular form `error` for a single error, and use the plural form `errors` for multiple errors.
+In case of any errors with rate codes or category codes, details of the affected codes must also be returned.
 See the [Error codes](#error-codes) table below for further details about specific errors, including guidance on system behaviour.
 
 ### Example \#1
@@ -61,11 +61,32 @@ See the [Error codes](#error-codes) table below for further details about specif
 }
 ```
 
+### Example \#4
+
+```javascript
+{
+   "success": false,
+   "errors":[
+      {
+         "code":9,
+         "message":"Invalid rate code",
+         "rateCode":"ABC"
+      },
+      {
+         "code":10,
+         "message":"Invalid category code",
+         "categoryCode":"XYZ"
+      }
+   ]
+}
+```
+
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `success` | `bool` | required | Determinines the result of the operation. |
 | `asyncConfirmation` | `bool` | optional | Determinines if there will be following asynchronous response. |
-| `errors` | array of [`Error`](#error) | optional | In case of `"success": false`, this property holds information about the errors that occurred. |
+| `error` | [`Error`](#error) | optional | In case of `"success": false`, this property holds information about the error that occurred. The singular form `error` should be used for a single error. |
+| `errors` | array of [`Error`](#error) | optional | In case of `"success": false`, this property holds information about the errors that occurred. The plural form `errors` should be used for multiple errors. |
 
 ### Error
 
