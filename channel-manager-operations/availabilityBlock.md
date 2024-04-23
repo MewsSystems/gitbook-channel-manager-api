@@ -2,8 +2,7 @@
 
 ## Process availability block
 
-\[`async`\] This method is used when Mews push availability blocks.
-It is used to send availability blocks changes such as create, modification, cancellation.
+\[`async`\] This operation is used by Mews to push availability blocks to the Channel Manager. It is also used to push availability block modifications and cancellations.
 
 ### Request 
 
