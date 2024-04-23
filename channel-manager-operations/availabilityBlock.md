@@ -130,8 +130,8 @@ The example shows a valid availability block definition.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\).  |
-| `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). This date can't be booked for stay anymore. This date is like a reservation departure. |
+| `start` | `string` | required | Inclusive start date of the block, in format `yyyy-mm-dd`, e.g. `2021-12-24`; this is the first day of the block and so can be booked for stay.  |
+| `end` | `string` | required | Exclusive end date of the block, in format `yyyy-mm-dd`, e.g. `2021-12-31`; this day is _not_ included in the block and so cannot be booked for stay (it is analogous to reservation departure). |
 | `releasedDate` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"`\). |
 
 > **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
