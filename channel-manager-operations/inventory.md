@@ -87,6 +87,8 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 | `prices` | [`Price`](#price) collection | required | Collection of prices for each person count for the specified rate plan - space type - date combination. |
 | `agePrices` | [`Age price`](#age-price) collection | required | Collection of prices for each person count and age category for the specified rate plan - space type - date combination. |
 
+> **Dates**: `from` and `to` represent the first and last date on which the price applies. The prices are the same for each date between `from` and `to`. So `"from": "2021-12-24", "to": "2021-12-25"` means, the price applies on nights 2021-12-24/25 and 2021-12-25/26, but not anymore for night 2021-12-26/27.
+
 #### Price
 
 | Property | Type | Contract | Description |
@@ -159,6 +161,8 @@ This method is used when Mews updates availability of space types.
 | `to` | `string` | required | End date \(included\) of the updated interval in `"yyyy-MM-dd"` format. |
 | `availability` | `int` | required | The availability of the space type in the updated interval. |
 
+> **Dates**: `from` and `to` represent the first and last date on which the availability applies. The availiablity is the same for each date between `from` and `to`. So `"from": "2021-12-24", "to": "2021-12-25"` means, the availability applies on nights 2021-12-24/25 and 2021-12-25/26, but not anymore for night 2021-12-26/27.
+
 ### Response
 
 [Synchronous simple response](../guidelines/responses.md#synchronous-simple-response) is expected to determine whether the update was accepted or not and whether will be synchronous or asynchronous.
@@ -222,6 +226,8 @@ This method is used when Mews updates restrictions.
 | `minLos` | `int` | optional | Minimum Length-Of-Stay applicable during the period. Must be at least `1` if specified. Set to `null` if no minimum applies.
 | `maxLos` | `int` | optional | Maximum Length-Of-Stay applicable during the period. Must be at least equal to `minLos` if specified. Set to `null` if no maximum applies.
 | `state` | `int` collection | required | [Restriction State](#restriction-state). |
+
+> **Dates**: `from` and `to` represent the first and last date on which the restriction applies. The restriction is the same for each date between `from` and `to`. So `"from": "2021-12-24", "to": "2021-12-25"` means, the restriction applies on nights 2021-12-24/25 and 2021-12-25/26, but not anymore for night 2021-12-26/27.
 
 #### Restriction State
 
