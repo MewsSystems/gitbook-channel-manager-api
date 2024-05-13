@@ -423,10 +423,12 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `name` | `string` | required | Name of the rate plan. |
 | `currencyCode` | `string` | required | Three-letter currency code of the rate plan price. |
 | `description` | `string` | optional | Description of the rate plan. |
-| `paymentType` | `int` | required | [`Payment type`](#payment-types) code. |
+| `paymentType` | `int` | required | (**Obsolete**) [`Payment type`](#payment-types) code. |
 | `cancellationPolicies` | [`Cancellation Policy`](#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 | `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices and restrictions for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incoming reservations (as well as sychronized rate plan). |
 | `rateType` | `int` | required | Determines whether rate plan is private (available for channel reservations only) or public (bookable via Mews Distributor as well). |
+
+> **paymentType**: We're introducing enhancements that elevate settlement rules to the enterprise level, allowing them to be assigned either to a rate group or directly to a rate. Due to the complex nature of settlement rules, which can vary within a rate group, the payment type in getConfiguration endpoint is now obsolete as the value may vary during the time, which is not reflected in this field.
 
 #### Payment types
 
