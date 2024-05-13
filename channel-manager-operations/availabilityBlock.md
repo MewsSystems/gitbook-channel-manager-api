@@ -2,14 +2,11 @@
 
 ## Process availability block
 
-\[`async`\] This method is used when Mews push availability blocks.
-It is used to send availability blocks changes such as create, modification, cancellation.
+\[`async`\] This operation is used by Mews to push availability blocks to the Channel Manager. It is also used to push availability block modifications and cancellations.
 
 ### Request 
 
 `[ChannelManagerApiAddress]/processAvailabilityBlock`
-
-The example shows a valid availability block definition.
 
 ```javascript
 {
@@ -109,9 +106,9 @@ The example shows a valid availability block definition.
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `connectionToken` | `string` | required | Token of a concrete connection. |
-| `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
-| `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
-| `availabilityBlock` | [`Availability block`](#availability-block) object | required | Availablity block data |
+| `messageId` | `string` | required | Unique identification of the message. This is used for asynchronous confirmations. |
+| `responseUrl` | `string` | required \(always\) | URL which should be used for asynchronous confirmation. |
+| `availabilityBlock` | [`Availability block`](#availability-block) object | required | Availablity block data. |
 
 #### Availability block
 
@@ -119,19 +116,19 @@ The example shows a valid availability block definition.
 | :-- | :-- | :-- | :-- |
 | `code` | `string` | optional | Unique reference code from external system for the block. Will be returned after confirmation containing this code. |
 | `confirmationNumber` | `string` | required | Mews confirmation number for the block. |
-| `status` | [`Status`](#status) object | required | Represents state of block. |
-| `name` | `string` | required | Name of block. |
-| `dates` | [`Dates`](#dates) object | required | Represents dates of block. |
-| `spaceCategories` | [`Space category allocation`](#space-category-allocation) collection | required | Represents allocated categories of block. |
-| `booker` | [`Customer`](../mews-operations/reservations.md#customer) object | required | Represents the main booker. Does not mean that the person arrives to the property. |
-| `company` | [`Company`](../channel-manager-operations/reservations.md#company) object | optional | Represents the company associated with the block. |
+| `status` | [`Status`](#status) object | required | State of the block. |
+| `name` | `string` | required | Name of the block. |
+| `dates` | [`Dates`](#dates) object | required | Dates of the block. |
+| `spaceCategories` | [`Space category allocation`](#space-category-allocation) collection | required | Allocated categories of the block. |
+| `booker` | [`Customer`](../mews-operations/reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
+| `company` | [`Company`](../channel-manager-operations/reservations.md#company) object | optional | The company associated with the block. |
 
 #### Dates
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\).  |
-| `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). This date can't be booked for stay anymore. This date is like a reservation departure. |
+| `start` | `string` | required | Inclusive start date of the block, in format `yyyy-mm-dd`, e.g. `2021-12-24`; this is the first day of the block and so can be booked for stay.  |
+| `end` | `string` | required | Exclusive end date of the block, in format `yyyy-mm-dd`, e.g. `2021-12-31`; this day is _not_ included in the block and so cannot be booked for stay (it is analogous to reservation departure). |
 | `releasedDate` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"`\). |
 
 > **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
@@ -143,9 +140,9 @@ The example shows a valid availability block definition.
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\). |
 | `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
 | `spaceTypeCode` | `string` | required | Space type code of the reservation. |
-| `allocatedSpaces` | [`Space count`](#space-count) collection | required | Represents number of spaces **allocated** in time. |
-| `occupiedSpaces` | [`Space count`](#space-count) collection | required | Represents number of **occupied** spaces in time. |
-| `rates` | [`Rates`](#rate) collection | required | Represents prices for current space category. |
+| `allocatedSpaces` | [`Space count`](#space-count) collection | required | The number of spaces **allocated** in the time interval. |
+| `occupiedSpaces` | [`Space count`](#space-count) collection | required | The number of **occupied** spaces in the time interval. |
+| `rates` | [`Rates`](#rate) collection | required | Prices for the current space category. |
 
 > **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
 
@@ -164,8 +161,8 @@ The example shows a valid availability block definition.
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\). |
 | `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
-| `currencyCode` | `string` | required | 3 letter code of currency. |
-| `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each person count for the specified rate plan - space type - date combination. |        
+| `currencyCode` | `string` | required | Three letter code of the currency. |
+| `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each person count, for the specified rate plan - space type - date combination. |        
 
 > **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).   
 
