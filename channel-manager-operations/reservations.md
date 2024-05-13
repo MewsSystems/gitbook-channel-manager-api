@@ -18,6 +18,8 @@ This option allows creations, modifications, and partial or complete cancellatio
     "responseUrl": "https://api.mews-demo.com/api/channelManager/v1/processGroupConfirmation",
     "channelId": "EXP-123456",
     "channelManagerId": "123456",
+    "availabilityBlockCode": "Channel-manager-Wedding123",
+    "availabilityBlockConfirmationNumber": "Mews-Wedding123",
     "comments": [
         "Approximate arrival: 16:30.",
         "Guest request a room with ocean view."
@@ -40,21 +42,21 @@ This option allows creations, modifications, and partial or complete cancellatio
         "title": "Mister",
         "nationalityCode": "US",
         "languageCode": "en-US",
-        "telephone": "1-3526-88918"
+        "telephone": "1-3526-88918",
+        "loyaltyCode": "PG60972345",
+        "loyaltyInfo": {
+            "membershipId": "PG60972345",
+            "programCode": "BWR",
+            "tierCode": "Gold"
+        }
     },
     "sources": [
         {
-            "code": 1,
-            "name": "Expedia",
-            "type" : 0,
-            "isPrimary" true
-        },
-        {
-            "code": 2,
-            "name": "ChoiceCRS",
-            "type" : 0,
-            "isPrimary" false
-        },
+            "code": 12192,
+            "name": "Mews",
+            "isPrimary": true,
+            "type": 5
+        }
     ],
     "company": {
         "id": "MEWS",
@@ -86,14 +88,6 @@ This option allows creations, modifications, and partial or complete cancellatio
             }
         }
     },
-    "paymentCard": {
-        "cvv": "666",
-        "expireDate": "1222",
-        "holderName": "John Smith",
-        "number": "4111111111111111",
-        "type": 1
-    },
-    "paymentType": 1,
     "reservations": [
         {
             "guestCounts": [
@@ -135,8 +129,7 @@ This option allows creations, modifications, and partial or complete cancellatio
                     "title": "Misses",
                     "nationalityCode": "US",
                     "languageCode": "en-US",
-                    "telephone": "1-369-81891",
-                    "loyaltyCode": "PG60972345"
+                    "telephone": "1-369-81891"
                 }
             ],
             "amounts": [
@@ -184,6 +177,7 @@ This option allows creations, modifications, and partial or complete cancellatio
             "ratePlanCode": "NR",
             "spaceTypeCode": "DBL",
             "state": 2,
+            "timeState": 1,
             "to": "2020-05-09",
             "totalAmount": {
                 "net": 275.4,
@@ -203,6 +197,13 @@ This option allows creations, modifications, and partial or complete cancellatio
             "spaceTypeCode": "DBL",
             "state": 3,
             "to": "2020-05-09"
+        },
+        "paymentCardData": {
+            "identifier": "12345678-1011-1213-1415-161718192021"
+            "expireDate": "1222",
+            "holderName": "John Smith",
+            "obfuscatedNumber": "41111*******1111",
+            "type": 1
         }
     ],
     "totalAmount": {
@@ -224,13 +225,14 @@ This option allows creations, modifications, and partial or complete cancellatio
 | `availabilityBlockConfirmationNumber` | `string` | optional | Unique identification of the availability block in the Mews. |
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](../mews-operations/reservations.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
-| `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](../mews-operations/configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
 | `customer` | [`Customer`](../mews-operations/reservations.md#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `sources` | [`Source`](../mews-operations/reservations.md#source) collection | optional | Represents the sources for the booking. |
 | `company` | [`Company`](../mews-operations/reservations.md#company) object | optional | Represents the company associated with the booking. |
 | `travelAgency` | [`Travel Agency`](../mews-operations/reservations.md#travel-agency) object | optional | Represents the travel agency associated with the booking. |
 | `reservations` | [`Reservation`](../mews-operations/reservations.md#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be cancelled. |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
+
+Note that there are some [additional fields](../mews-operations/reservations.md#synchronization-specific-fields) in [`Reservation`](../mews-operations/reservations.md#reservation) object for this direction. Otherwise the `Reservation` object is the same for both directions.
 
 ## Confirm booking
 

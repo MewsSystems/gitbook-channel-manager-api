@@ -1,10 +1,17 @@
 # Changelog
 
 
-## 19th April 2024
+## 17th May 2024
+
+* Customer [Loyalty info](/mews-operations/reservations.md#loyalty-info) extended with `tierCode` field.
+* [Reservation synchronization](/channel-manager-operations/reservations.md#process-group) operation was extended with [`timeState`](/mews-operations/reservations.md#reservation-time-states) field and [`paymentCardData`](/mews-operations/reservations.md#payment-card-data) object in [`Reservation`](/mews-operations/reservations.md#reservation) object.
+
+## 13th May 2024
+
 * Clarified dates in ARI pushes, Availability blocks and Reservation Push and delivery.
 
 ## 11th April 2024
+
 * Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-block).
   
 ## 26th March 2024

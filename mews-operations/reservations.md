@@ -61,7 +61,13 @@ The third `reservation` definition shows the partial cancellation - cancelling t
         "title": "Mister",
         "nationalityCode": "US",
         "languageCode": "en-US",
-        "telephone": "1-3526-88918"
+        "telephone": "1-3526-88918",
+        "loyaltyCode": "PG60972345",
+        "loyaltyInfo": {
+            "membershipId": "PG60972345",
+            "programCode": "BWR",
+            "tierCode": "Gold"
+        }
     },
     "sources": [
         {
@@ -156,12 +162,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
                     "title": "Misses",
                     "nationalityCode": "US",
                     "languageCode": "en-US",
-                    "telephone": "1-369-81891",
-                    "loyaltyCode": "PG60972345",
-                    "loyaltyInfo": {
-                        "membershipId": "PG60972345",
-                        "programCode": "BWR"
-                    }
+                    "telephone": "1-369-81891"
                 }
             ],
             "amounts": [
@@ -277,7 +278,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `membershipId` | `string` | required | Loyalty membership identifier of the Customer. |
-| `programCode` | `string` | required | Loyalty program code. |
+| `programCode` | `string` | optional | Loyalty program code. |
+| `tierCode` | `string` | optional | Loyalty tier code. |
 
 #### Title
 
@@ -373,8 +375,6 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `from` | `string` | required \(exc. Cancellation\) | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"` for Christmas Eve\). |
 | `to` | `string` | required \(exc. Cancellation\) | End date  \(exclusive\) in format `"yyyy-MM-dd"` \(e.g. `"2021-12-31"` for New Year's Eve\). This is the date of resrvation departure. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the reservation. |
-| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
-| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
 | `guestCounts` | array of [`Guest Count`](#guest-count) | required | Number of guests in the reservation for each age category. |
 | `state` | `int` | optional | [Reservation State](#reservation-states) code of reservation state. _If not provided, Mews will handle the reservation as `Created` or `Modified`._ |
 | `amounts` | [`Amount`](#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
@@ -384,6 +384,32 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 > **Codes:** It is required that `code` remains the same within each booking modification message and partial modification message. If this can't be achieved because the channel doesn't provide it, simple generation of codes "01", "02", ... will suffice as long as those codes are generated in the same way for each message regarding that one booking.
 
 > **From/To:** This represents the reservation arrival, `from` is arrival date, `to` is departure date. So reservation for 2 nights (e.g. 2021-12-24/25 and 2021-12-25/26 is represented as `"from": "2021-12-24", "to": "2021-12-26"`).
+
+##### Delivery specific fields
+
+Following fields are specific to Channel manager -> Mews reservation delivery operation [Process group](#process-group)
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
+| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
+
+##### Synchronization specific fields
+
+Following fields are specific to Mews -> Channel manager resevation synchronization operation [Process group](../channel-manager-operations/reservations.md#process-group).
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `timeState` | `int` | required | [Reservation Time State](#reservation-time-states) code of reservation state. |
+| `paymentCardData` | [`Payment Card Data`](#payment-card-data) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
+
+#### Payment card data
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `type` | `int` | required | [Payment Card Type](#payment-card-types) code. |
+| `obfuscatedNumber` | `string` | required | Obfuscated payment card number. |
+| `expireDate` | `string` | required | Expiration date of card in `"MMyy"` format \(e.g `"0222"` for February 2022 expiration\). |
+| `identifier` | `string` | required | Mews identifier of the payment card.|
+| `holderName` | `string` | optional | Card holder name. |
 
 #### Guest Count
 
@@ -407,6 +433,17 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `1` | Created |
 | `2` | Modified |
 | `3` | Cancelled |
+
+#### Reservation Time states
+
+| Code | Description |
+| :-- | :-- | 
+| `0` | Optional - any tentative reservation that has not been confirmed yet. By default Mews does not synchronize such reservations to Channel managers. |
+| `1` | Confirmed - reservation with arrival date in the future. |
+| `2` | CheckedIn - reservation that is currently checked-in. |
+| `3` | CheckedOut - reservation that is already checked out (i.e. past reservation) |
+| `4` | Cancelled - reservation that is cancelled. |
+| `5` | NoShow - reservation that is cancelled with `NoShow` reason. |
 
 #### Extra
 
