@@ -4,8 +4,11 @@
 * Clarified [Synchronous error response](../guidelines/responses.md#synchronous-error-response)
 * Deprecated `error` (singular) in [Synchronous error response](../guidelines/responses.md#synchronous-error-response), use `errors` (plural, array) instead. See [Deprecations](../deprecations/README.md)
 
+## 19th April 2024
+* Clarified dates in ARI pushes, Availability blocks and Reservation Push and delivery.
+
 ## 11th April 2024
-* Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-blockp).
+* Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-block).
   
 ## 26th March 2024
 
