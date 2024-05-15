@@ -3,6 +3,7 @@
 
 ## 17th May 2024
 
+* [Availability block](/channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
 * Customer [Loyalty info](/mews-operations/reservations.md#loyalty-info) extended with `tierCode` field.
 * [Reservation synchronization](/channel-manager-operations/reservations.md#process-group) operation was extended with [`timeState`](/mews-operations/reservations.md#reservation-time-states) field and [`paymentCardData`](/mews-operations/reservations.md#payment-card-data) object in [`Reservation`](/mews-operations/reservations.md#reservation) object.
 

@@ -98,7 +98,8 @@
             "loyaltyCode": null,
             "address": null
         },
-        "company": null
+        "company": null,
+        "notes": "This is the block for Mews conference."
     }  
 }
 ```
@@ -122,6 +123,7 @@
 | `spaceCategories` | [`Space category allocation`](#space-category-allocation) collection | required | Allocated categories of the block. |
 | `booker` | [`Customer`](../mews-operations/reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
 | `company` | [`Company`](../channel-manager-operations/reservations.md#company) object | optional | The company associated with the block. |
+| `notes` | `string` | optional | Notes for the block. |
 
 #### Dates
 

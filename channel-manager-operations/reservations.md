@@ -52,10 +52,17 @@ This option allows creations, modifications, and partial or complete cancellatio
     },
     "sources": [
         {
-            "code": 12192,
-            "name": "Mews",
-            "isPrimary": true,
-            "type": 5
+            "code": 1,
+            "name": "Expedia",
+            "type" : 0,
+            "isPrimary" true
+        },
+        {
+            "code": 2,
+            "name": "ChoiceCRS",
+            "type" : 0,
+            "isPrimary" false
+        },
         }
     ],
     "company": {
