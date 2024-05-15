@@ -18,20 +18,19 @@ This response object represents the default response, in case of success.
 
 ## Synchronous error response
 
-In case of error, the response object will extend the simple response object with details about the error or errors.
-Use the singular form `error` for a single error, and use the plural form `errors` for multiple errors.
-In case of any errors with rate codes or category codes, details of the affected codes must also be returned.
-See the [Error codes](#error-codes) table below for further details about specific errors, including guidance on system behaviour.
+In case of error, the response object will extend the simple response object with details about the error or errors. In case of any errors with rate codes or category codes, details of the affected codes must also be returned. See the [Error codes](#error-codes) table below for further details about specific errors, including guidance on system behaviour.
 
 ### Example \#1
 
 ```javascript
 {
    "success": false,
-   "error":{
-      "code":8,
-      "message":"Invalid 'clientToken' or 'connectionToken'."
-   }
+   "errors":[
+      {
+         "code":8,
+         "message":"Invalid 'clientToken' or 'connectionToken'."
+      }
+   ]
 }
 ```
 
@@ -39,12 +38,14 @@ See the [Error codes](#error-codes) table below for further details about specif
 
 ```javascript
 {
-   "success":false,
-   "error":{
-      "code":9,
-      "message":"Invalid rate code",
-      "rateCode":"ABC"
-   }
+   "success": false,
+   "errors":[
+      {
+         "code":9,
+         "message":"Invalid rate code",
+         "rateCode":"ABC"
+      }
+   ]
 }
 ```
 
@@ -52,12 +53,14 @@ See the [Error codes](#error-codes) table below for further details about specif
 
 ```javascript
 {
-   "success":false,
-   "error":{
-      "code":10,
-      "message":"Invalid category code",
-      "categoryCode":"XYZ"
-   }
+   "success": false,
+   "errors":[
+      {
+         "code":10,
+         "message":"Invalid category code",
+         "categoryCode":"XYZ"
+      }
+   ]
 }
 ```
 
@@ -85,8 +88,8 @@ See the [Error codes](#error-codes) table below for further details about specif
 | :-- | :-- | :-- | :-- |
 | `success` | `bool` | required | Determinines the result of the operation. |
 | `asyncConfirmation` | `bool` | optional | Determinines if there will be following asynchronous response. |
-| `error` | [`Error`](#error) | optional | In case of `"success": false`, this property holds information about the error that occurred. The singular form `error` should be used for a single error. |
-| `errors` | array of [`Error`](#error) | optional | In case of `"success": false`, this property holds information about the errors that occurred. The plural form `errors` should be used for multiple errors. |
+| ~~`error`~~ | ~~[`Error`](#error)~~ | ~~optional~~ | ~~In case of `"success": false`, this property holds information about the error that occurred.~~ **[Deprecated!](../deprecations/README.md)** |
+| `errors` | array of [`Error`](#error) | optional | In case of `"success": false`, this property holds information about the error or errors that occurred. |
 
 ### Error
 

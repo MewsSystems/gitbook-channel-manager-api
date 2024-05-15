@@ -1,7 +1,8 @@
 # Changelog
 
-## 22nd April 2024
-* Corrected error response descriptions and provided an additional example in [Guidelines > Responses](../guidelines/responses.md).
+## 15th May 2024
+* Clarified [Synchronous error response](../guidelines/responses.md#synchronous-error-response)
+* Deprecated `error` (singular) in [Synchronous error response](../guidelines/responses.md#synchronous-error-response), use `errors` (plural, array) instead. See [Deprecations](../deprecations/README.md)
 
 ## 11th April 2024
 * Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-blockp).

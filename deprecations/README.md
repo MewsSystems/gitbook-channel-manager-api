@@ -24,6 +24,7 @@ The table columns have the following meanings:
 
 | Feature | Comments | Deprecated | Discontinued |
 | :-- | :-- | :-- | :-- |
+| `error` in [Synchronous error response](../guidelines/responses.md#synchronous-error-response) | Replaced by `errors` (plural) | 15 May 2024 | - |
 | `channel` in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `sources` | 26 Sep 2022 | - |
 | `iata` in [Company](../mews-operations/reservations.md#company) in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `iata` in the [Travel Agency](../mews-operations/reservations.md#travel-agency) object | 26 Sep 2022 | - |
 | `adultCount` and `childCount` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `guestCounts`; **Requires re-certification** | 29 Apr 2022 | - |
