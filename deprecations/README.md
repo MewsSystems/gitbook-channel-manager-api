@@ -32,6 +32,9 @@ The table columns have the following meanings:
 | `connectionCode` in all API calls on both Mews side and CHM side | Replaced by `connectionToken` | 10 Jan 2018 | End Mar 2018 |
 | `code` in [`Connection Info`](../mews-operations/configuration.md#connection-info) object in [Get properties](../mews-operations/configuration.md#get-properties) | Replaced by `token` | 10 Jan 2018 | End Mar 2018 |
 | `distributor` in [`Reservation`](../mews-operations/reservations.md#reservation) object in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `channel` | 10 Jan 2018 | End Mar 2018 |
+| `paymentType` in [`RatePlan`](../mews-operations/configuration.md#rate-plan) | May yield incorrect value. More info bellow (1). | 15 May 2024 | - |
+
+> **(1) paymentType**: We're introducing enhancements that elevate settlement rules to the enterprise level, allowing them to be assigned either to a rate group or directly to a rate. Due to the complex nature of settlement rules, which can vary within a rate group, the `paymentType` is now obsolete as the value may vary depending on reservation dates, which can't be reflected in this field.
 
 ## Deprecated functionality
 

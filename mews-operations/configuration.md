@@ -189,7 +189,6 @@ This is an example of a _successful_ response. In case an error occurred, the re
             "name": "Non Refundable",
             "description": "This is our lowest price available. However full payment is required at the time of booking. ",
             "currencyCode": "EUR",
-            "paymentType": 1,
             "isSynchronized": true,
             "rateType": 1,
             "cancellationPolicies": [
@@ -214,7 +213,6 @@ This is an example of a _successful_ response. In case an error occurred, the re
             "name": "Fully Flexible",
             "description": "This rate is the most flexible rate we offer. Bookings can be cancelled up to 48 hours  in advance of your arrival date by 2.30 pm (and 7 days before the arrival dates of the 29th, 30th and 31st of December), without charge. The total price of the reservation will be charged 48 hours before arrival. ",
             "currencyCode": "EUR",
-            "paymentType": 3,
             "isSynchronized": false,
             "rateType": 1,
             "cancellationPolicies": [
@@ -423,12 +421,10 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `name` | `string` | required | Name of the rate plan. |
 | `currencyCode` | `string` | required | Three-letter currency code of the rate plan price. |
 | `description` | `string` | optional | Description of the rate plan. |
-| `paymentType` | `int` | required | (**Obsolete**) [`Payment type`](#payment-types) code. |
+| ~~`paymentType`~~ | ~~`int`~~ | ~~required~~ | ~~[`Payment type`](#payment-types) code.~~ [**Deprecated**](../deprecations/README.md)|
 | `cancellationPolicies` | [`Cancellation Policy`](#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 | `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices and restrictions for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incoming reservations (as well as sychronized rate plan). |
 | `rateType` | `int` | required | Determines whether rate plan is private (available for channel reservations only) or public (bookable via Mews Distributor as well). |
-
-> **paymentType**: We're introducing enhancements that elevate settlement rules to the enterprise level, allowing them to be assigned either to a rate group or directly to a rate. Due to the complex nature of settlement rules, which can vary within a rate group, the payment type in getConfiguration endpoint is now obsolete as the value may vary during the time, which is not reflected in this field.
 
 #### Payment types
 
