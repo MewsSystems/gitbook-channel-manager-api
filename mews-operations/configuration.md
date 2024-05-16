@@ -421,7 +421,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `name` | `string` | required | Name of the rate plan. |
 | `currencyCode` | `string` | required | Three-letter currency code of the rate plan price. |
 | `description` | `string` | optional | Description of the rate plan. |
-| ~~`paymentType`~~ | ~~`int`~~ | ~~required~~ | ~~[`Payment type`](#payment-types) code.~~ [**Deprecated**](../deprecations/README.md)|
+| ~~`paymentType`~~ | ~~`int`~~ | ~~required~~ | ~~[`Payment type`](#payment-types) code.~~ [**Deprecated!**](../deprecations/README.md)|
 | `cancellationPolicies` | [`Cancellation Policy`](#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
 | `isSynchronized` | `bool` | required | Determines whether rate plan is synchronized, i.e. that Mews pushes prices and restrictions for the rate plan. Otherwise, unsynchronized rate plan is used just for mapping correct rate plan for incoming reservations (as well as sychronized rate plan). |
 | `rateType` | `int` | required | Determines whether rate plan is private (available for channel reservations only) or public (bookable via Mews Distributor as well). |
