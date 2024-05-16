@@ -1,10 +1,15 @@
 # Changelog
 
+## 16th May 2024
+
+* Deprecated `paymentType` in [`RatePlan`](../mews-operations/configuration.md#rate-plan), see [Deprecations](../deprecations/README.md).
 
 ## 19th April 2024
+
 * Clarified dates in ARI pushes, Availability blocks and Reservation Push and delivery.
 
 ## 11th April 2024
+
 * Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-block).
   
 ## 26th March 2024
