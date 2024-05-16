@@ -24,6 +24,7 @@ The table columns have the following meanings:
 
 | Feature | Comments | Deprecated | Discontinued |
 | :-- | :-- | :-- | :-- |
+| `error` in [Synchronous error response](../guidelines/responses.md#synchronous-error-response) | Replaced by `errors` (plural and an `array`) | 15 May 2024 | - |
 | `paymentType` in [`RatePlan`](../mews-operations/configuration.md#rate-plan) returned by [Mews: Get configuration](../mews-operations/configuration.md#get-configuration) | May yield incorrect value. More info below (\*1). | 16 May 2024 | - |
 | `channel` in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `sources` | 26 Sep 2022 | - |
 | `iata` in [Company](../mews-operations/reservations.md#company) in [Process group](../mews-operations/reservations.md#process-group) | Replaced by `iata` in the [Travel Agency](../mews-operations/reservations.md#travel-agency) object | 26 Sep 2022 | - |

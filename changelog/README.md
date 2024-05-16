@@ -2,6 +2,8 @@
 
 ## 16th May 2024
 
+* Clarified [Synchronous error response](../guidelines/responses.md#synchronous-error-response)
+* Deprecated `error` (singular) in [Synchronous error response](../guidelines/responses.md#synchronous-error-response), use `errors` (plural, array) instead. See [Deprecations](../deprecations/README.md)
 * Deprecated `paymentType` in [`RatePlan`](../mews-operations/configuration.md#rate-plan), see [Deprecations](../deprecations/README.md).
 
 ## 19th April 2024
