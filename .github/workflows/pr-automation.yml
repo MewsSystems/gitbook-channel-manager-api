@@ -23,7 +23,6 @@ jobs:
       ## Add label
       - name: Assign tech.be project
         uses: srggrs/assign-one-project-github-action@1.3.1
-        if: github.event.action == 'opened'
         with:
           project: 'https://github.com/orgs/MewsSystems/projects/21'
           column_name: 'Review'
