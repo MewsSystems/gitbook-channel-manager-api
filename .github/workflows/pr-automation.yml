@@ -19,6 +19,9 @@ jobs:
       #    github-token: ${{ secrets.GITHUB_TOKEN }}      
 
       ## Add label
-      - uses: christianvuerings/add-labels@v1.1
+      - uses: actions/checkout@v2
+      - uses: tella-adam/add-labels@v1
         with:
           labels: con.distribution documenation-only
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
