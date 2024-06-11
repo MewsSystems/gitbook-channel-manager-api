@@ -1,13 +1,20 @@
 # Changelog
 
 
-## 17th May 2024
+## 12th June 2024
 
 * [Availability block](/channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
 * Customer [Loyalty info](/mews-operations/reservations.md#loyalty-info) extended with `tierCode` field.
 * [Reservation synchronization](/channel-manager-operations/reservations.md#process-group) operation was extended with [`timeState`](/mews-operations/reservations.md#reservation-time-states) field and [`paymentCardData`](/mews-operations/reservations.md#payment-card-data) object in [`Reservation`](/mews-operations/reservations.md#reservation) object.
 
-## 13th May 2024
+
+## 16th May 2024
+
+* Clarified [Synchronous error response](../guidelines/responses.md#synchronous-error-response)
+* Deprecated `error` (singular) in [Synchronous error response](../guidelines/responses.md#synchronous-error-response), use `errors` (plural, array) instead. See [Deprecations](../deprecations/README.md)
+* Deprecated `paymentType` in [`RatePlan`](../mews-operations/configuration.md#rate-plan), see [Deprecations](../deprecations/README.md).
+* 
+## 19th April 2024
 
 * Clarified dates in ARI pushes, Availability blocks and Reservation Push and delivery.
 
