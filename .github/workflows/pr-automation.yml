@@ -1,0 +1,20 @@
+name: Add every PR to a project and apply distribution label
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  add-to-project:
+    name: Add To GitHub projects
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1.0.1
+        with:
+          project-url: https://github.com/orgs/MewsSystems/projects/21
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          labeled: con.distribution documentation-only
+          label-operator: AND
