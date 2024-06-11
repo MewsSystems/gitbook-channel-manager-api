@@ -16,5 +16,7 @@ jobs:
         with:
           project-url: https://github.com/orgs/MewsSystems/projects/21
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          labeled: con.distribution documentation-only
-          label-operator: AND
+          
+      - uses: christianvuerings/add-labels@v1.1
+        with:
+          labels: con.distribution documenation-only
