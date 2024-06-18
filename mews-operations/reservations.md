@@ -395,7 +395,7 @@ Following fields are specific to Channel manager -> Mews reservation delivery op
 
 ##### Synchronization specific fields
 
-Following fields are specific to Mews -> Channel manager resevation synchronization operation [Process group](../channel-manager-operations/reservations.md#process-group).
+Following fields are specific to Mews -> Channel manager reservation synchronization operation [Process group](../channel-manager-operations/reservations.md#process-group).
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `timeState` | `int` | required | [Reservation Time State](#reservation-time-states) code of reservation state. |

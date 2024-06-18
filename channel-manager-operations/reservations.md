@@ -62,7 +62,6 @@ This option allows creations, modifications, and partial or complete cancellatio
             "name": "ChoiceCRS",
             "type" : 0,
             "isPrimary" false
-        },
         }
     ],
     "company": {
