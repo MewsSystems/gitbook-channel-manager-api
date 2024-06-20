@@ -380,26 +380,14 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `amounts` | [`Amount`](#amount) collection | required \(exc. Cancellation\) | Collection of amounts for each night of the reservation. _The count of amounts in this collection has to correspond with number of nights in the reservation._ |
 | `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
+| `timeState` | `int` | required (used only in [CHM: Process group](../channel-manager-operations/reservations.md#process-group) operation) | [Reservation Time State](#reservation-time-states) code of reservation state. |
+| `paymentCardData` | [`Payment Card Data`](#payment-card-data) object | optional (used only in [CHM: Process group](../channel-manager-operations/reservations.md#process-group) operation) | Represents the payment card of the [`Customer`](#customer) to cover for the booking. It doesn't contain the acutal card number. |
+| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
+| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
 
 > **Codes:** It is required that `code` remains the same within each booking modification message and partial modification message. If this can't be achieved because the channel doesn't provide it, simple generation of codes "01", "02", ... will suffice as long as those codes are generated in the same way for each message regarding that one booking.
 
 > **From/To:** This represents the reservation arrival, `from` is arrival date, `to` is departure date. So reservation for 2 nights (e.g. 2021-12-24/25 and 2021-12-25/26 is represented as `"from": "2021-12-24", "to": "2021-12-26"`).
-
-##### Delivery specific fields
-
-Following fields are specific to Channel manager -> Mews reservation delivery operation [Process group](#process-group)
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
-| ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
-
-##### Synchronization specific fields
-
-Following fields are specific to Mews -> Channel manager reservation synchronization operation [Process group](../channel-manager-operations/reservations.md#process-group).
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| `timeState` | `int` | required | [Reservation Time State](#reservation-time-states) code of reservation state. |
-| `paymentCardData` | [`Payment Card Data`](#payment-card-data) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
 
 #### Payment card data
 

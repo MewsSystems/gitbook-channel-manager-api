@@ -238,8 +238,6 @@ This option allows creations, modifications, and partial or complete cancellatio
 | `reservations` | [`Reservation`](../mews-operations/reservations.md#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be cancelled. |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
-Note that there are some [additional fields](../mews-operations/reservations.md#synchronization-specific-fields) in [`Reservation`](../mews-operations/reservations.md#reservation) object for this direction. Otherwise the `Reservation` object is the same for both directions.
-
 ## Confirm booking
 
 This method is used when Mews confirms a booking sent via [Process group](../mews-operations/reservations.md#process-group).
