@@ -1,7 +1,6 @@
 # Changelog
 
-
-## 19th June 2024
+## 21th June 2024
 
 * [Availability block](/channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
 * Customer [Loyalty info](/mews-operations/reservations.md#loyalty-info) extended with `tierCode` field.
