@@ -179,8 +179,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
             "state": 1,
             "to": "2020-05-07",
             "totalAmount": {
-                "gross": 260,
-                "net": 208
+                "gross": 240,
+                "net": 194.4
             }
         },
         {
@@ -231,8 +231,8 @@ The third `reservation` definition shows the partial cancellation - cancelling t
         }
     ],
     "totalAmount": {
-        "net": 486,
-        "gross": 600
+        "net": 469.8,
+        "gross": 580
     }
 }
 ```
