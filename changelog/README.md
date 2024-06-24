@@ -1,5 +1,13 @@
 # Changelog
 
+## 24th June 2024
+
+* [Availability block](/channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
+* [Loyalty info](/mews-operations/reservations.md#loyalty-info) extended with `tierCode` field.
+* [Reservation](/mews-operations/reservations.md#reservation) extended with `timeState` field and [`paymentCardData`](/mews-operations/reservations.md#payment-card-data) object. Note these properties are only used by [CHM: Process group](/channel-manager-operations/reservations.md#process-group), _not_ by [Mews: Process group](/mews-operations/reservations.md#process-group).
+* Correction: Minor corrections to examples in [CHM: Process group](/channel-manager-operations/reservations.md#process-group) and [Mews: Process group](/mews-operations/reservations.md#process-group).
+* Correction: `paymentType` removed from Request in [CHM: Process group](/channel-manager-operations/reservations.md#process-group). This is only used on the Mews side.
+
 ## 16th May 2024
 
 * Clarified [Synchronous error response](../guidelines/responses.md#synchronous-error-response)
