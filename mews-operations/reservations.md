@@ -18,9 +18,9 @@
 > * When **modifying** some reservations from a multi-reservation group, the whole group definition with all other unchanged reservations needs to be sent, i.e. Mews doesn't process diffs.
 > * When **cancelling** a reservation from a multi-reservation group, all remaining reservations need to be present in the group definition as well.
 >   * There are two ways to cancel a reservation from a multi-reservation group:
->     1. If the `reservation.state` is set to [Reservation States](#reservation-states).`Cancelled`.
+>     1. If the `reservation.state` is set to [Reservation State](#reservation-states) 'Canceled'.
 >     2. If the reservation is not included in the group definition message.
-> * When **cancelling** a whole group, the `reservations` collection can be empty of all reservations provided as cancelled \(as per case 1 above\).
+> * When **cancelling** a whole group, the `reservations` collection can be empty of all reservations provided as canceled \(as per case 1 above\).
 
 ### Request 
 
@@ -29,7 +29,7 @@
 
 The example shows a valid group definition with two space reservations plus cancellation of a third space reservation.
 The first `reservation` definition shows all details, the second `reservation` definition shows the minimal required details for creation / modification of a `reservation`.
-The third `reservation` definition shows the partial cancellation - cancelling the third space reservation.
+The third `reservation` definition shows the partial cancellation - canceling the third space reservation.
 
 ```javascript
 {
@@ -255,7 +255,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
 | `company` | [`Company`](#company) object | optional | Represents the company associated with the booking. |
 | `travelAgency` | [`Travel Agency`](#travel-agency) object | optional | Represents the travel agency associated with the booking. |
-| `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be cancelled. |
+| `reservations` | [`Reservation`](#reservation) collection | optional | Each reservation within the booking. If the value is null or an empty collection, this implies that the whole group will be canceled. |
 | `comments` | `string` collection | optional | Represents any comments related to the booking. |
 
 #### Customer
@@ -389,7 +389,7 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 
 > **From/To:** This represents the reservation arrival, `from` is arrival date, `to` is departure date. So reservation for 2 nights (e.g. 2021-12-24/25 and 2021-12-25/26 is represented as `"from": "2021-12-24", "to": "2021-12-26"`).
 
-#### Payment card data
+#### Payment Card Data
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
@@ -420,18 +420,18 @@ The third `reservation` definition shows the partial cancellation - cancelling t
 | :-- | :-- |
 | `1` | Created |
 | `2` | Modified |
-| `3` | Cancelled |
+| `3` | Canceled |
 
-#### Reservation Time states
+#### Reservation Time States
 
 | Code | Description |
 | :-- | :-- | 
-| `0` | Optional - any tentative reservation that has not been confirmed yet. By default Mews does not synchronize such reservations to Channel managers. |
+| `0` | Optional - any tentative reservation that has not been confirmed yet. By default Mews does not synchronize such reservations to Channel Managers. |
 | `1` | Confirmed - reservation with arrival date in the future. |
 | `2` | CheckedIn - reservation that is currently checked-in. |
 | `3` | CheckedOut - reservation that is already checked out (i.e. past reservation) |
-| `4` | Cancelled - reservation that is cancelled. |
-| `5` | NoShow - reservation that is cancelled with `NoShow` reason. |
+| `4` | Canceled - reservation that is canceled. |
+| `5` | NoShow - reservation that is canceled with `NoShow` reason. |
 
 #### Extra
 
