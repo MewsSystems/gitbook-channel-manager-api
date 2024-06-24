@@ -2,8 +2,8 @@
 
 ## Process group
 
-\[`async`\] This operation allows the Mews to push a group of reservations (bookings) to channel manager.
-This option allows creations, modifications, and partial or complete cancellations. Confirmation is done asynchronous.
+\[`async`\] This operation allows Mews to push a group of reservations or bookings to the Channel Manager.
+The operation supports creations, modifications, and partial or complete cancellations. Confirmation is done asynchronously.
 
 ### Request 
 
