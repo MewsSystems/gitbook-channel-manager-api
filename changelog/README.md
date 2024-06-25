@@ -1,5 +1,9 @@
 # Changelog
 
+## 27th June 2024
+
+* Re-worded [error code](../guidelines/responses.md#error-codes) descriptions for improved clarity. Documentation-only.
+
 ## 24th June 2024
 
 * [Availability block](/channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
