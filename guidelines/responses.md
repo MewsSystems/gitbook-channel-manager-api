@@ -97,8 +97,11 @@ In case of error, the response object will extend the simple response object wit
 | :-- | :-- | :-- | :-- |
 | `code` | `int` | required | Determines the type of error \(see [Error codes](#error-codes)\). |
 | `message` | `string` | required | Error message with more details about the error. |
-| `categoryCode` | `string` | optional | Category code which caused the error. This is _required_ for category errors and rate category errors. The category will be automatically unsynchronized in Mews. |
-| `rateCode` | `string`  | optional | Rate code which caused the error. This is _required_ for rate errors and rate category errors. The rate will be automatically unsynchronized in Mews. |
+| `categoryCode` | `string` | optional\* | Category code which caused the error. This is _required_ for category errors and rate category errors. The category will be automatically unsynchronized in Mews. |
+| `rateCode` | `string`  | optional\* | Rate code which caused the error. This is _required_ for rate errors and rate category errors. The rate will be automatically unsynchronized in Mews. |
+
+> **\*Important**: If the error is a category error (code 10) or rate category error (code 11), then `categoryCode` must be specified.
+> If the error is a rate error (code 9) or rate category error (code 11), then `rateCode` must be specified.
 
 ### Error codes
 
