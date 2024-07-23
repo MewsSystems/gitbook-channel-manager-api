@@ -1,5 +1,9 @@
 # Changelog
 
+## 23rd July 2024
+
+* Re-worded [error code](../guidelines/responses.md#error-codes) descriptions for improved clarity, and updated [Certification Error Tests](../certification/README.md#error-tests). Documentation-only.
+
 ## 24th June 2024
 
 * [Availability block](/channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
