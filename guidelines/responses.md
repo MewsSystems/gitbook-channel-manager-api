@@ -109,7 +109,7 @@ In case of error, the response object will extend the simple response object wit
 | :-- | :-- |
 | `1` | **System error**<br>Unspecified system error. Message may be re-sent after an interval of time. |
 | `2` | **Reservation not found**<br>The specified reservation could not be found in the system. When this error code is returned, it should be acknowledged and the reservation should _not_ be re-tried. |
-| `3` | **Property not found**<br>The specified property, hotel or other enterprise could not be found in the system. |
+| `3` | **Connection not found**<br>The specified connection, i.e. property integration, could not be found in the system. |
 | ~~`4`~~ | ~~**Space not found**<br>The specified space type could not be found in the system.~~ (deprecated - use code 10 instead) |
 | ~~`5`~~ | ~~**Rate not found**<br>The specified rate plan could not be found in the system.~~ (deprecated - use code 9 instead) |
 | `6` | **Validation error**<br>The message is incorrectly formed or contains an invalid field, or a field contains an invalid value. |
