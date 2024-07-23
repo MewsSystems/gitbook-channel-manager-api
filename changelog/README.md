@@ -1,6 +1,6 @@
 # Changelog
 
-## 27th June 2024
+## 23rd July 2024
 
 * Re-worded [error code](../guidelines/responses.md#error-codes) descriptions for improved clarity, and updated [Certification Error Tests](../certification/README.md#error-tests). Documentation-only.
 
