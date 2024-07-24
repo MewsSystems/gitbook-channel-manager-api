@@ -97,25 +97,27 @@ In case of error, the response object will extend the simple response object wit
 | :-- | :-- | :-- | :-- |
 | `code` | `int` | required | Determines the type of error \(see [Error codes](#error-codes)\). |
 | `message` | `string` | required | Error message with more details about the error. |
-| `categoryCode` | `string` | optional | Category code which caused the error. This is _required_ for category errors and rate category errors. The category will be automatically unsynchronized in Mews. |
-| `rateCode` | `string`  | optional | Rate code which caused the error. This is _required_ for rate errors and rate category errors. The rate will be automatically unsynchronized in Mews. |
+| `categoryCode` | `string` | optional\* | Category code which caused the error. This is _required_ for category errors and rate category errors. The category will be automatically unsynchronized in Mews. |
+| `rateCode` | `string`  | optional\* | Rate code which caused the error. This is _required_ for rate errors and rate category errors. The rate will be automatically unsynchronized in Mews. |
 
+> **\*Important**: If the error is a category error (code 10) or rate category error (code 11), then `categoryCode` must be specified.
+> If the error is a rate error (code 9) or rate category error (code 11), then `rateCode` must be specified.
 
 ### Error codes
 
 | Code | Description |
 | :-- | :-- |
 | `1` | **System error**<br>Unspecified system error. Message may be re-sent after an interval of time. |
-| `2` | **Reservation error**<br>Reservation does not exist. When this error code is returned, it should be acknowledged and the reservation should _not_ be re-tried. |
-| `3` | **Property error**<br>Property does not exist. |
-| ~~`4`~~ | ~~**Space error**<br>Space type does not exist.~~ (deprecated - use code 10 instead) |
-| ~~`5`~~ | ~~**Rate error**<br>Rate plan does not exist.~~ (deprecated - use code 9 instead) |
-| `6` | **Validation error**<br>Validation error, e.g. invalid value "XXX" of field "YYY". |
-| `7` | **Processing error**<br>Processing error, e.g. processing of the booking would violate some internal PMS limitation. |
-| `8` | **Invalid authorization** |
-| `9` | **Rate error**<br>Rate error, e.g. rate plan XX prices updates cannot be accepted due to the settings in the channel manager extranet. The affected rate code must be supplied in the `rateCode` property. This rate code will then be unsynchronized. |
-| `10` | **Category error**<br>Category error, e.g. space category XX availability updates cannot be accepted due to the settings in the channel manager extranet. The affected category code must be supplied in the `categoryCode` property. The category will then be deleted from the rate. | 
-| `11` | **Rate category error**<br>Rate category error, e.g. category was removed from the rate plan in channel manager extranet. The affected rate code and category code must be supplied. The category will be deleted from the rate. |
-| `12` | **Availability error**<br>Availability configuration error, e.g. availability updates blocked from the channel manager extranet. This error automatically disables availability updates. |
-| `13` | **Prices error**<br>Prices configuration error, e.g. price updates blocked from the channel manager extranet. This error automatically disables price updates. |
-| `14` | **Restrictions error**<br>Restrictions configuration error, e.g. restriction updates blocked from the channel manager extranet. This error automatically disables restrictions updates. |
+| `2` | **Reservation not found**<br>The specified reservation could not be found in the system. When this error code is returned, it should be acknowledged and the reservation should _not_ be re-tried. |
+| `3` | **Connection not found**<br>The specified connection, i.e. property integration, could not be found in the system. |
+| ~~`4`~~ | ~~**Space not found**<br>The specified space type could not be found in the system.~~ (deprecated - use code 10 instead) |
+| ~~`5`~~ | ~~**Rate not found**<br>The specified rate plan could not be found in the system.~~ (deprecated - use code 9 instead) |
+| `6` | **Validation error**<br>The message is incorrectly formed or contains an invalid field, or a field contains an invalid value. |
+| `7` | **Processing error**<br>Business logic error occurred when processing the message, for example the message contains a negative amount that must be positive, or a reservation contains a start date that is later than its end date. The `message` field contains details of the specific processing error.
+| `8` | **Invalid authentication**<br>The request has failed authentication, e.g. an authentication token is invalid or has expired. |
+| `9` | **Rate error** OR **Disabled operation**<br>This error code has a different meaning, depending on which side is sending the error.<br><br>**Rate error** (CHM side): The specified rate code is invalid, or the rate cannot be accepted. The affected rate code must be supplied in the `rateCode` property. This rate code will then be unsynchronized.<br><br>**Disabled operation** (Mews side): This API operation is not enabled for this integration, e.g. the property administrator has disabled the ability to receive reservations via the Channel Manager integration in Mews. |
+| `10` | **Category error**<br>Space category error, e.g. space category XX availability updates cannot be accepted due to the settings in the Channel Manager. The affected category code must be supplied in the `categoryCode` property. The category will then be deleted from the rate. | 
+| `11` | **Rate category error**<br>Rate category error, e.g. the specified space category was removed from the specified rate plan in the Channel Manager. The affected rate code and category code must be supplied. The category will be deleted from the rate. |
+| `12` | **Availability error**<br>Availability configuration error, e.g. availability updates are blocked by the Channel Manager. This error automatically disables availability updates. |
+| `13` | **Prices error**<br>Prices configuration error, e.g. price updates are blocked by the Channel Manager. This error automatically disables price updates. |
+| `14` | **Restrictions error**<br>Restrictions configuration error, e.g. restriction updates are blocked by the Channel Manager. This error automatically disables restrictions updates. |
