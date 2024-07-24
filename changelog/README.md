@@ -1,12 +1,17 @@
 # Changelog
 
+## 25th July 2024
+
+* Moved integration process documentation into new section [Your integration journey](../your-journey/README.md). Documentation-only.
+* Added [Re-certification](../your-journey/certification.md#re-certification) to the [Certification](../your-journey/certification.md) page. Documentation-only.
+
 ## 24th June 2024
 
-* [Availability block](/channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
-* [Loyalty info](/mews-operations/reservations.md#loyalty-info) extended with `tierCode` field.
-* [Reservation](/mews-operations/reservations.md#reservation) extended with `timeState` field and [`paymentCardData`](/mews-operations/reservations.md#payment-card-data) object. Note these properties are only used by [CHM: Process group](/channel-manager-operations/reservations.md#process-group), _not_ by [Mews: Process group](/mews-operations/reservations.md#process-group).
-* Correction: Minor corrections to examples in [CHM: Process group](/channel-manager-operations/reservations.md#process-group) and [Mews: Process group](/mews-operations/reservations.md#process-group).
-* Correction: `paymentType` removed from Request in [CHM: Process group](/channel-manager-operations/reservations.md#process-group). This is only used on the Mews side.
+* [Availability block](../channel-manager-operations/availabilityBlock.md#availability-block) extended with `notes` field.
+* [Loyalty info](../mews-operations/reservations.md#loyalty-info) extended with `tierCode` field.
+* [Reservation](../mews-operations/reservations.md#reservation) extended with `timeState` field and [`paymentCardData`](../mews-operations/reservations.md#payment-card-data) object. Note these properties are only used by [CHM: Process group](../channel-manager-operations/reservations.md#process-group), _not_ by [Mews: Process group](../mews-operations/reservations.md#process-group).
+* Correction: Minor corrections to examples in [CHM: Process group](../channel-manager-operations/reservations.md#process-group) and [Mews: Process group](../mews-operations/reservations.md#process-group).
+* Correction: `paymentType` removed from Request in [CHM: Process group](../channel-manager-operations/reservations.md#process-group). This is only used on the Mews side.
 
 ## 16th May 2024
 
