@@ -1,5 +1,9 @@
 # Changelog
 
+## 1st Aug 2024
+
+* [Restrictions](../concepts/restrictions.md) explanations re-written and moved to new section [Concepts](../concepts/README.md).
+
 ## 23rd July 2024
 
 * Re-worded [error code](../guidelines/responses.md#error-codes) descriptions for improved clarity, and updated [Certification Error Tests](../certification/README.md#error-tests). Documentation-only.

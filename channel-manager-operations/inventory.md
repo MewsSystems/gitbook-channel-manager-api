@@ -169,7 +169,14 @@ This method is used when Mews updates availability of space types.
 
 ## Update restrictions
 
-This method is used when Mews updates restrictions.
+This method is used by Mews to push restrictions updates to the channel manager.
+Note there is no operation to add or delete restrictions, everything is done through Update restrictions.
+Thus any existing restrictions with the same scope and time period are overridden by the updated restrictions.
+
+> ### Restrictions
+> Restrictions can be a little complicated, and for historical reasons they work differently in the API than they do in **Mews Operations**.
+> For this reason, care is advised. For a full explanation of restrictions and the issues around them, as well as extended examples using the API, see [Concepts > Restrictions](../concepts/restrictions.md).
+> This is recommended reading if you implement this API operation.
 
 ### Request
 
@@ -221,294 +228,24 @@ This method is used when Mews updates restrictions.
 | :-- | :-- | :-- | :-- |
 | `spaceTypeCode` | `string` | required | Mapping code of the space type. |
 | `ratePlanCode` | `string` | required | Mapping code of the rate plan. |
-| `from` | `string` | required | Start date of the restriction period in `"yyyy-MM-dd"` format. |
-| `to` | `string` | required | End date \(inclusive\) of the restriction period in `"yyyy-MM-dd"` format. |
-| `minLos` | `int` | optional | Minimum Length-Of-Stay applicable during the period. Must be at least `1` if specified. Set to `null` if no minimum applies.
-| `maxLos` | `int` | optional | Maximum Length-Of-Stay applicable during the period. Must be at least equal to `minLos` if specified. Set to `null` if no maximum applies.
+| `from` | `string` | required | Inclusive start date of the restriction period in `"yyyy-MM-dd"` format. |
+| `to` | `string` | required | Inclusive end date of the restriction period in `"yyyy-MM-dd"` format. |
+| `minLos` | `int` | optional | Minimum length of stay applicable during the period. Must be at least `1` if specified. Set to `null` if no minimum applies. |
+| `maxLos` | `int` | optional | Maximum length of stay applicable during the period. Must be at least equal to `minLos` if specified. Set to `null` if no maximum applies. |
 | `state` | `int` collection | required | [Restriction State](#restriction-state). |
 
-> **Dates**: `from` and `to` represent the first and last date on which the restriction applies. The restriction is the same for each date between `from` and `to`. So `"from": "2021-12-24", "to": "2021-12-25"` means, the restriction applies on nights 2021-12-24/25 and 2021-12-25/26, but not anymore for night 2021-12-26/27.
+> **Dates**: `from` and `to` represent the first and last date on which the restriction applies. The restriction is the same for each date between `from` and `to`. So `"from": "2021-12-24", "to": "2021-12-25"` means the restriction applies on nights Dec 24/25 and Dec 25/26, but not any more for night Dec 26/27.
 
 #### Restriction State
 
 | Code | Description |
 | :-- | :-- |
 | `1` | Open |
-| `2` | Closed (used in conjunction with 6, 7 and 8) |
-| `3` | ~~Open to arrival~~ _Not supported._ |
-| `4` | ~~Open to departure~~ _Not supported._ |
-| `5` | ~~Open to stay~~ _Not supported._ |
+| `2` | Closed (sent in combination with 6, 7 and 8) |
+| `3` to `5` | _Not supported_ |
 | `6` | Closed to arrival |
 | `7` | Closed to departure |
 | `8` | Closed to stay |
-
-> Note: State `2` is always sent in combination with states `6`, `7` and/or `8`.
-
-### Restriction Examples
-
-#### No Restriction (Open)
-
-When all restrictions are removed, state `1` is sent. New restrictions always override old restrictions. State `1` is _not_ sent to remove old restrictions, if they were modified.
- 
-```javascript
-{
-    "ratePlanCode": "NR",
-    "spaceTypeCode": "JST",
-    "state": [
-        1
-    ],
-    "minLos": null,
-    "maxLos": null,
-    "from": "2020-09-24",
-    "to": "2020-10-31"
-}
-```
-
-#### Closed to Stay
-
-State `2` is sent in combination with state `8`.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "4BD",
-    "state": [
-        2,
-        8
-    ],
-    "minLos": null,
-    "maxLos": null,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Stay with minLos and maxLos
-
-State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as Closed to stay.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "JST",
-    "state": [
-        1
-    ],
-    "minLos": 2,
-    "maxLos": 10,
-    "from": "2020-10-01",
-    "to": "2020-10-14"
-}
-```
-
-#### Closed to Arrival
-
-State `2` is sent in combination with state `6`.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "STA",
-    "state": [
-        2,
-        6
-    ],
-    "minLos": null,
-    "maxLos": null,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Arrival with minLos and maxLos
-
-State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as Closed to arrival.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "JST",
-    "state": [
-        1
-    ],
-    "minLos": 2,
-    "maxLos": 10,
-    "from": "2019-10-01",
-    "to": "2019-10-04"
-}
-```
-
-#### Closed to Departure
-
-State `2` is sent in combination with state `7`.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "DEL",
-    "state": [
-        2,
-        7
-    ],
-    "minLos": null,
-    "maxLos": null,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Departure with minLos and maxLos 
-
-State `1` is sent with specified minLos and/or maxLos. If `minLos` and/or `maxLos` is not met, then the restriction should be treated as Closed to departure.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "JST",
-    "state": [
-        1
-    ],
-    "minLos": 2,
-    "maxLos": 10,
-    "from": "2019-10-01",
-    "to": "2019-10-04"
-}
-```
-
-#### Closed to Stay and Closed to Arrival 
-
-Both states should be applied.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "DEL",
-    "state": [
-        2,
-        8,
-        6
-    ],
-    "minLos": null,
-    "maxLos": null,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Stay and Closed to Departure
-
-This combination should be treated as Closed to stay.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "DEL",
-    "state": [
-        2,
-        8,
-        7
-    ],
-    "minLos": null,
-    "maxLos": null,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Stay with minLos/maxLos and Closed to Arrival
-
-This should be applied as no arrivals are possible and reservation minLos is 3 nights and maxLos is 7 nights.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "DEL",
-    "state": [
-        2,
-        6
-    ],
-    "minLos": 3,
-    "maxLos": 7,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Stay and Closed to Arrival with minLos/maxLos
-
-This combination should be treated as Closed to stay.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "DEL",
-    "state": [
-        2,
-        8
-    ],
-    "minLos": 3,
-    "maxLos": 7,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Departure and Closed to Arrival with minLos/maxLos
-
-This combination should be treated as Closed to stay.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "DEL",
-    "state": [
-        2,
-        7
-    ],
-    "minLos": 3,
-    "maxLos": 7,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### Closed to Departure and Closed to Stay with minLos/maxLos
-
-This combination should be treated as Closed to departure. Reservations can be made if the length-of-stay requirements are met.
-
-```javascript
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "4BD",
-    "state": [
-        2,
-        7
-    ],
-    "minLos": 2,
-    "maxLos": 6,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
-
-#### No minLos nor maxLos
-
-When `minLos` or `maxLos` is not specified, `null` value is sent.
-
-```javascript        
-{
-    "ratePlanCode": "FF",
-    "spaceTypeCode": "4BD",
-    "state": [
-        2,
-        8
-    ],
-    "minLos": null,
-    "maxLos": null,
-    "from": "2020-09-30",
-    "to": "2020-10-06"
-}
-```
 
 ### Response
 
