@@ -5,6 +5,8 @@
   * [Requests](guidelines/requests.md)
   * [Responses](guidelines/responses.md)
   * [Integration process](guidelines/process.md)
+* [Concepts](concepts/README.md)
+  * [Restrictions](concepts/restrictions.md)
 * [Mews side](mews-operations/README.md)
 	* [API Operations (Mews)](mews-operations/operations.md)
 	  * [Configuration](mews-operations/configuration.md)
