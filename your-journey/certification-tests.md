@@ -1,32 +1,12 @@
-# Certification
+# Certification tests
 
-Here you can find information about the certification process for new partners using the __Mews Channel Manager API__, including the list of standard tests.
+## Contents
 
-## Pre-Certification
+* [Inventory Push Tests](#inventory-push-tests)
+* [Reservation Tests](#reservation-tests)
+* [Error Tests](#error-tests)
 
-The process is as follows:
-
-1. Email partnersuccess@mews.com to request a `Client Token` and for a test property to be created in the Mews [Test Environment](../mews-operations/README.md#test-environment).
-2. Create the following HTTPS endpoint URLs on the Channel Manager side [Test Environment](../channel-manager-operations/README.md#environments):
-    * [Update availability](../channel-manager-operations/inventory.md#update-availability) 
-    * [Update prices](../channel-manager-operations/inventory.md#update-prices)
-    * [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions)
-    * [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) 
-    * [Change notification](../channel-manager-operations/notifications.md#change-notification) \(optional\)
-3. Email the endpoint details to partnersuccess@mews.com.
-4. Use your test property username and [Get properties](../mews-operations/configuration.md#get-properties) API operation to fetch the `connectionToken` for the [Test Property](../mews-operations/README.md#test-environment).
-5. Pull property information, space type mapping and rate mapping information using the [Get configuration](../mews-operations/configuration.md#get-configuration) API operation.
-6. Map all the rate plan and space category combinations in the user interface of the channel manager system using the data received from the [Get configuration](../mews-operations/configuration.md#get-configuration) request.
-
-> **Multi-property enterprises**: Multi-property enterprises such as vacation rentals, apartments, villas, etc. are often set up in Mews as spaces belonging to a single Mews property,
-> i.e. the 'property' is the Mews enterprise customer and the 'spaces' are the individual rental properties.
-> These spaces (i.e. properties) can be sent to the channel manager as multiple connections, with one `Connection Token` per space (i.e. property), or as a single connection for the entire enterprise.
-
-## Certification Tests
-
-These tests will be conducted during a 90-minute call between the Mews Marketplace team and a representative of the channel manager.  
-
-### Inventory Push Tests
+## Inventory Push Tests
 
 | Test | Requirement | Scenario | Expected Result | Notes |
 | :-- | :-- | :-- | :-- | :-- |
@@ -37,7 +17,7 @@ These tests will be conducted during a 90-minute call between the Mews Marketpla
 | **Receive product (package) rates** | Required | Package Rate and Breakfast product are manually mapped in the test property. Then, a rate push with a package Rate plan code is sent to the [Update prices](../channel-manager-operations/inventory.md#update-prices) endpoint. | The channel manager returns ```{ "success": true}``` and data is updated in the channel manager extranet. | The per night or per person per night price of the product is added to the `grossAmount`or `netAmount` of each `ratePrice` collection in the push. Product prices are not itemized separately. |
 | **Receive a full inventory push from Mews** | Required | The connection is enabled and Mews sends the maximum update to the [Update availability](../channel-manager-operations/inventory.md#update-availability), [Update prices](../channel-manager-operations/inventory.md#update-prices) and [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions) endpoints. A minimum full inventory push is 365 days. | The channel manager returns ```{ "success": true}``` and data is updated in the channel manager extranet. | Being able to accept this data is required but push size or frequency can be decreased if necessary. |
 
-### Reservation Tests
+## Reservation Tests
 
 | Test | Requirement | Scenario | Expected Result | Notes |
 | :-- | :-- | :-- | :-- | :-- |
@@ -55,9 +35,9 @@ These tests will be conducted during a 90-minute call between the Mews Marketpla
 | **Cancel the multi-room net priced reservation** | Required | An cancellation push with the same `channelManagerId` as the original reservation and no additional data is sent to the [Process group](../mews-operations/reservations.md#process-group) endpoint. | The channel manager receives a ```{ "clientToken":"[Mews Client Token]", "connectionToken":"[Token of a concrete connection]", "channelManagerId":"[Same id as the original push]", "reservations":[ {"code":"[Same code as the original push]", "confirmationNumber":"[Same confirmation number as the original push]"}]}``` push to the [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) endpoint. |    |
 | **Send a reservation with a product attached** | Optional | A reservation push with a least 1 mapped product in the [`Extra` collection](../mews-operations/reservations.md#extra) is sent to the [Process group](../mews-operations/reservations.md#process-group) endpoint. | The channel manager receives a ```{ "clientToken":"[Mews Client Token]", "connectionToken":"[Token of a concrete connection]", "channelManagerId":"[Id sent in the reservation push]", "reservations":[ {"code":"[Code sent in the reservation push]", "confirmationNumber":"[Mews confirmation number]"}]}``` push to the [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) endpoint. | These products must be manually mapped before certification. This test can be combined with the single reservation test. If supported, needs to be tested with gross and net prices. |
 
-### Error Tests
+## Error Tests
 
-All error messages from the channel manager to Mews must use the error codes listed in the Channel Manager API documentation in the [synchronous simple response](../guidelines/responses.md#synchronous-simple-response) section and clearly state in the error `message` what the issue is. Ideally, advice on how to solve the error will also be included as these messages are forwarded to the property via email.
+All error messages from the channel manager to Mews must use the error codes listed in [Synchronous error response](../guidelines/responses.md#synchronous-error-response) and clearly state in the error `message` field a full description of the error. Ideally, advice on how to solve the error should also be included, because these messages are forwarded directly to the property via email.
 
 | Test | Requirement | Scenario | Expected Result | Notes |
 | --- | --- | --- | --- | --- |
@@ -67,13 +47,3 @@ All error messages from the channel manager to Mews must use the error codes lis
 | **Unmapped Rate code error** | Required | A rate push with an unmapped Rate plan code is sent from the test hotel to the [Update prices](../channel-manager-operations/inventory.md#update-prices) endpoint. | The channel manager returns ```{ "success": false, "errors":[{ "code": 9, "message": "e.g. Unknown rate code.", "rateCode": "ABC" }]}``` as per [synchronous simple response](../guidelines/responses.md#simple-response) | The response must have the unmapped Rate code and comply with the [synchronous simple response](../guidelines/responses.md#synchronous-simple-response) requirements including the correct error `code` and a clear error `message`. |
 | **Connection inactive or not set up error** | Required | The channel manager integration for this property is deactivated on the channel manager side and then a full inventory push is sent from the test property to the channel manager's endpoints. | The channel manager returns ```{ "success": false, "errors":[{ "code": 3, "message": "e.g. The property connection is missing or inactive." }]}``` | These must comply with the [synchronous simple response](../guidelines/responses.md#synchronous-simple-response) requirements including the correct error `code`, either 3 or 8, and a clear error `message`. |
 | **Invalid reservations** | Required | The channel manager sends an invalid reservation, e.g. one that fails basic business rules such as having a start date later than the end date. | Mews returns an appropriate processing error (error code 7), which explains why the reservation cannot be created in Mews. | The channel manager logs the error and does not re-send the invalid reservation. If possible, the channel manager fixes the error on its own and re-sends a valid reservation.
-
-## Evaluation
-
-If the required tests cannot be completed successfully, Mews will not allow the channel manager to advance to the production environment.
-Once any issues are resolved, certification will start over.
-
-If there are no critical issues discovered during certification, the channel manager will be advanced to the production environment.
-  * Mews will require unique HTTPS production endpoint URLs for the Channel Manager side
-  * Mews will issue a new `Client Token` for the channel manager to use in the live environment
-  * The channel manager will issue documentation of their set-up process for approval
