@@ -5,6 +5,10 @@
 * Moved integration process documentation into new section [Your integration journey](../your-journey/README.md). Documentation-only.
 * Added [Re-certification](../your-journey/certification.md#re-certification) to the [Certification](../your-journey/certification.md) page. Documentation-only.
 
+## 1st Aug 2024
+
+* [Restrictions](../concepts/restrictions.md) explanations re-written and moved to new section [Concepts](../concepts/README.md).
+
 ## 23rd July 2024
 
 * Re-worded [error code](../guidelines/responses.md#error-codes) descriptions for improved clarity, and updated [Certification Error Tests](../your-journey/certification-tests.md#error-tests). Documentation-only.
