@@ -4,7 +4,6 @@
 * [Guidelines](guidelines/README.md)
   * [Requests](guidelines/requests.md)
   * [Responses](guidelines/responses.md)
-  * [Integration process](guidelines/process.md)
 * [Concepts](concepts/README.md)
   * [Restrictions](concepts/restrictions.md)
 * [Mews side](mews-operations/README.md)
