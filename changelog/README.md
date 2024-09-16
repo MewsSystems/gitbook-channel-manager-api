@@ -1,5 +1,9 @@
 # Changelog
 
+## 18th Sep 2024
+
+* Updated [Guidelines](../guidelines/README.md#channels) to advise how to add new sales channels or sources through the API. Documentation-only.
+
 ## 25th July 2024
 
 * Moved integration process documentation into new section [Your integration journey](../your-journey/README.md). Documentation-only.
