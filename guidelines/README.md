@@ -20,7 +20,8 @@ For the list of supported sales channels or sources, including Online Travel Age
 
 ### Sales channel not listed
 
-If you are connected to a sales channel which is not listed, and you are certified to use Sources, then you can add the new channel source through the API. Simply send the reservation with the named sales channel or source, using [Mews: Process group](../mews-operations/reservations.md#process-group) and the `sources` array, but leave the new source `code` value as `null`. Mews will add the new channel to the database and auto-generate a new code. To verify the new channel has been added, and to fetch the new code, use [Get channels](../mews-operations/configuration.md#get-channels). You can then use that code for future reservations as normal.
+If you are connected to a sales channel which is not listed, and you are certified to use Sources, then you can add the new channel source through the API. Simply send the reservation using [Mews: Process group](../mews-operations/reservations.md#process-group) and use the `sources` array, but when specifying the unlisted source, leave the `code` value as `null`. Take care to specify the correct `name` and `type` for the source. Mews will add the new channel to the database and auto-generate a new code for it.
+To verify the new channel has been added, and to fetch the new code, use [Get channels](../mews-operations/configuration.md#get-channels). You can then use that code for future reservations as normal.
 
 For example:
 
@@ -29,7 +30,7 @@ For example:
   {
     "code": null,
     "name": "my new source",
-    "type" : 0,
+    "type" : 6,
     "isPrimary": true
   }
 ]
