@@ -9,7 +9,7 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 
 `[ChannelManagerApiAddress]/updatePrices`
 
-```javascript
+```json
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
@@ -64,17 +64,49 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
             "from": "2020-02-05",
             "to": "2020-02-07"
         }
+    ],
+    "dependentRates": [
+        {
+            "rateCode": "123456",
+            "baseRateCode": "789",
+            "adjustments": [
+                {
+                    "startDate": "2020-02-05",
+                    "endDate": "2020-02-07",
+                    "relativeValue": 10.0,
+                    "absoluteValue": 10
+                }
+            ]
+        }
     ]
 }
 ```
 
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| `clientToken` | `string` | required | Client token of the channel manager. |
-| `connectionToken` | `string` | required | Connection token of a property connection. |
-| `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
-| `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
-| `ratePrices` | [`Rate Price`](#rate-price) collection | required | Collection of prices for all combinations of rate plan, space type, date and person count. |
+| Property | Type                                           | Contract | Description                                                                                |
+| :-- |:-----------------------------------------------| :-- |:-------------------------------------------------------------------------------------------|
+| `clientToken` | `string`                                       | required | Client token of the channel manager.                                                       |
+| `connectionToken` | `string`                                       | required | Connection token of a property connection.                                                 |
+| `messageId` | `string`                                       | required | Unique identification of the message. Used for asynchronous confirmations                  |
+| `responseUrl` | `string`                                       | required \(always\) | Url which should be used for asynchronous confirmation.                                    |
+| `ratePrices` | [`Rate Price`](#rate-price) collection         | required | Collection of prices for all combinations of rate plan, space type, date and person count. |
+| `dependentRates` | [`Dependant Rate`](#Dependant-Rate) collection | required | Collection of dependant rates                                                              |
+
+#### Dependant Rate
+
+| Property         | Type                                   | Contract | Description                            |
+|:-----------------|:---------------------------------------| :-- |:---------------------------------------|
+| `rateCode`       | `string`                               | required | Dependant rate code.                   |
+| `baseRateCode`   | `string`                               | required | Base rate code of Dependant rate code. |
+| `adjustments`    | [`Adjustment`](#adjustment) collection | required | Collection of Adjustments              |
+
+#### Adjustment
+
+| Property         | Type       | Contract | Description                                                     |
+|:-----------------|:-----------|:---------|:----------------------------------------------------------------|
+| `startDate`      | `string`   | optional | Start date of the adjustment interval in `"yyyy-MM-dd"` format. |
+| `endDate`        | `string`   | optional | End date of the adjustment interval in `"yyyy-MM-dd"` format.   |
+| `relativeValue`  | `decimal`  | required | Relative value of the adjustment.                               |
+| `absoluteValue`  | `decimal`  | required | Absolute value of the adjustment.                               |
 
 #### Rate Price
 
@@ -121,7 +153,7 @@ This method is used when Mews updates availability of space types.
 
 `[ChannelManagerApiAddress]/updateAvailability`
 
-```javascript
+```json
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
@@ -182,7 +214,7 @@ Thus any existing restrictions with the same scope and time period are overridde
 
 `[ChannelManagerApiAddress]/updateRestrictions`
 
-```javascript
+```json
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
