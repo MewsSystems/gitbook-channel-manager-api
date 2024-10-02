@@ -1,17 +1,17 @@
 # Changelog
 
-## 18th Sep 2024
+## 2nd Oct 2024
 
 * Updated [Guidelines](../guidelines/README.md#channels) to advise how to add new sales channels or sources through the API. Documentation-only.
+
+## 11th September 2024
+
+* [Restrictions](../concepts/restrictions.md) explanations re-written and moved to new section [Concepts](../concepts/README.md).
 
 ## 25th July 2024
 
 * Moved integration process documentation into new section [Your integration journey](../your-journey/README.md). Documentation-only.
 * Added [Re-certification](../your-journey/certification.md#re-certification) to the [Certification](../your-journey/certification.md) page. Documentation-only.
-
-## 1st Aug 2024
-
-* [Restrictions](../concepts/restrictions.md) explanations re-written and moved to new section [Concepts](../concepts/README.md).
 
 ## 23rd July 2024
 
