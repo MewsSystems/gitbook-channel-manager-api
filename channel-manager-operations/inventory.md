@@ -82,31 +82,31 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 }
 ```
 
-| Property | Type                                           | Contract | Description                                                                                |
-| :-- |:-----------------------------------------------| :-- |:-------------------------------------------------------------------------------------------|
-| `clientToken` | `string`                                       | required | Client token of the channel manager.                                                       |
-| `connectionToken` | `string`                                       | required | Connection token of a property connection.                                                 |
-| `messageId` | `string`                                       | required | Unique identification of the message. Used for asynchronous confirmations                  |
-| `responseUrl` | `string`                                       | required \(always\) | Url which should be used for asynchronous confirmation.                                    |
-| `ratePrices` | [`Rate Price`](#rate-price) collection         | required | Collection of prices for all combinations of rate plan, space type, date and person count. |
-| `dependentRates` | [`Dependant Rate`](#Dependant-Rate) collection | required | Collection of dependant rates                                                              |
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `clientToken` | `string` | required | Client token of the channel manager. |
+| `connectionToken` | `string` | required | Connection token of a property connection. |
+| `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
+| `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
+| `ratePrices` | [`Rate Price`](#rate-price) collection | required | Collection of prices for all combinations of rate plan, space type, date and person count. |
+| `dependentRates` | [`Dependent Rate`](#Dependent-Rate) collection | required | Collection of dependent rates                                                              |
 
-#### Dependant Rate
+#### Dependent Rate
 
-| Property         | Type                                   | Contract | Description                            |
-|:-----------------|:---------------------------------------| :-- |:---------------------------------------|
-| `rateCode`       | `string`                               | required | Dependant rate code.                   |
-| `baseRateCode`   | `string`                               | required | Base rate code of Dependant rate code. |
-| `adjustments`    | [`Adjustment`](#adjustment) collection | required | Collection of Adjustments              |
+| Property | Type | Contract | Description |
+|:--|:--| :-- |:--|
+| `rateCode`     | `string` | required | Dependent rate code.                   |
+| `baseRateCode` | `string` | required | Base rate code of Dependent rate code. |
+| `adjustments`  | [`Adjustment`](#adjustment) collection | required | Collection of Adjustments |
 
 #### Adjustment
 
-| Property         | Type       | Contract | Description                                                     |
-|:-----------------|:-----------|:---------|:----------------------------------------------------------------|
-| `startDate`      | `string`   | optional | Start date of the adjustment interval in `"yyyy-MM-dd"` format. |
-| `endDate`        | `string`   | optional | End date of the adjustment interval in `"yyyy-MM-dd"` format.   |
-| `relativeValue`  | `decimal`  | required | Relative value of the adjustment.                               |
-| `absoluteValue`  | `decimal`  | required | Absolute value of the adjustment.                               |
+| Property | Type | Contract | Description |
+|:--|:--|:--|:--|
+| `startDate` | `string` | optional | Start date of the adjustment interval in `"yyyy-MM-dd"` format. |
+| `endDate` | `string` | optional | End date of the adjustment interval in `"yyyy-MM-dd"` format.   |
+| `relativeValue` | `decimal` | required | Relative value of the adjustment. |
+| `absoluteValue` | `decimal` | required | Absolute value of the adjustment. |
 
 #### Rate Price
 

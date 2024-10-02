@@ -1,5 +1,9 @@
 # Changelog
 
+## 2nd October 2024
+
+* [Inventory Update prices](/channel-manager-operations/inventory.md) extended with `dependent rates`.
+
 ## 11th September 2024
 
 * [Restrictions](../concepts/restrictions.md) explanations re-written and moved to new section [Concepts](../concepts/README.md).
