@@ -82,22 +82,22 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 }
 ```
 
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
+| Property | Type | Contract            | Description |
+| :-- | :-- |:--| :-- |
 | `clientToken` | `string` | required | Client token of the channel manager. |
 | `connectionToken` | `string` | required | Connection token of a property connection. |
 | `messageId` | `string` | required | Unique identification of the message. Used for asynchronous confirmations |
 | `responseUrl` | `string` | required \(always\) | Url which should be used for asynchronous confirmation. |
-| `ratePrices` | [`Rate Price`](#rate-price) collection | required | Collection of prices for all combinations of rate plan, space type, date and person count. |
-| `dependentRates` | [`Dependent Rate`](#Dependent-Rate) collection | required | Collection of dependent rates                                                              |
+| `ratePrices` | [`Rate Price`](#rate-price) collection | optional | Collection of prices for all combinations of rate plan, space type, date and person count. |
+| `dependentRates` | [`Dependent Rate`](#Dependent-Rate) collection | optional | Collection of dependent rates |
 
 #### Dependent Rate
 
-| Property | Type | Contract | Description |
-|:--|:--| :-- |:--|
-| `rateCode`     | `string` | required | Dependent rate code.                   |
-| `baseRateCode` | `string` | required | Base rate code of Dependent rate code. |
-| `adjustments`  | [`Adjustment`](#adjustment) collection | required | Collection of Adjustments |
+| Property | Type | Contract  | Description |
+|:--|:--|:--|:--|
+| `rateCode` | `string` | required | Dependent rate code. |
+| `baseRateCode` | `string` | optional | Base rate code of Dependent rate code. |
+| `adjustments`  | [`Adjustment`](#adjustment) collection | required  | Collection of Adjustments |
 
 #### Adjustment
 
