@@ -8,7 +8,7 @@
 
 `[ChannelManagerApiAddress]/processAvailabilityBlock`
 
-```javascript
+```json
 {
     "connectionToken": "[Token of a concrete connection]",
     "messageId": "66511e1d-2405-4e49-914b-b0c800d802c9",
@@ -99,7 +99,8 @@
             "address": null
         },
         "company": null,
-        "notes": "This is the block for Mews conference."
+        "notes": "This is the block for Mews conference.",
+        "pickupType": "AllInOneGroup"
     }  
 }
 ```
@@ -113,17 +114,18 @@
 
 #### Availability block
 
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| `code` | `string` | optional | Unique reference code from external system for the block. Will be returned after confirmation containing this code. |
-| `confirmationNumber` | `string` | required | Mews confirmation number for the block. |
-| `status` | [`Status`](#status) object | required | State of the block. |
-| `name` | `string` | required | Name of the block. |
-| `dates` | [`Dates`](#dates) object | required | Dates of the block. |
-| `spaceCategories` | [`Space category allocation`](#space-category-allocation) collection | required | Allocated categories of the block. |
-| `booker` | [`Customer`](../mews-operations/reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
-| `company` | [`Company`](../channel-manager-operations/reservations.md#company) object | optional | The company associated with the block. |
-| `notes` | `string` | optional | Notes for the block. |
+| Property             | Type                                                                      | Contract | Description                                                                                                         |
+|:---------------------|:--------------------------------------------------------------------------| :-- |:--------------------------------------------------------------------------------------------------------------------|
+| `code`               | `string`                                                                  | optional | Unique reference code from external system for the block. Will be returned after confirmation containing this code. |
+| `confirmationNumber` | `string`                                                                  | required | Mews confirmation number for the block.                                                                             |
+| `status`             | [`Status`](#status) object                                                | required | State of the block.                                                                                                 |
+| `name`               | `string`                                                                  | required | Name of the block.                                                                                                  |
+| `dates`              | [`Dates`](#dates) object                                                  | required | Dates of the block.                                                                                                 |
+| `spaceCategories`    | [`Space category allocation`](#space-category-allocation) collection      | required | Allocated categories of the block.                                                                                  |
+| `booker`             | [`Customer`](../mews-operations/reservations.md#customer) object          | required | The main booker. This does not mean that the person has arrived at the property.                                    |
+| `company`            | [`Company`](../channel-manager-operations/reservations.md#company) object | optional | The company associated with the block.                                                                              |
+| `notes`              | `string`                                                                  | optional | Notes for the block.                                                                                                |
+| `pickupType`         | [`PickupType`](#pickupType) object                                        | required | PickupType of the block.                                                                                            |
 
 #### Dates
 
