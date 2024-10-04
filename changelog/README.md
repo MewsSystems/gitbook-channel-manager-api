@@ -5,6 +5,10 @@
 * Added [Mews API Operations: Process availability block](../mews-operations/availabilityBlockProcessor.md).
 
 
+## 2nd Oct 2024
+
+* Updated [Guidelines](../guidelines/README.md#channels) to advise how to add new sales channels or sources through the API. Documentation-only.
+
 ## 11th September 2024
 
 * [Restrictions](../concepts/restrictions.md) explanations re-written and moved to new section [Concepts](../concepts/README.md).
