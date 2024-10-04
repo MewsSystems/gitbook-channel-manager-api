@@ -2,7 +2,7 @@
 
 ## 4th October 2024
 
-* Added [Mews API Operations: Process availability block](../mews-operations/availabilityBlockProcessor.md).
+* New operation [Mews API Operations: Process availability block](../mews-operations/availabilityBlockProcessor.md).
 
 
 ## 2nd Oct 2024
