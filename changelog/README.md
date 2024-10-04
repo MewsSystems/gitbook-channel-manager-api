@@ -1,5 +1,10 @@
 # Changelog
 
+## 4th October 2024
+
+* Added [Mews API Operations: Process availability block](../mews-operations/availabilityBlockProcessor.md).
+
+
 ## 11th September 2024
 
 * [Restrictions](../concepts/restrictions.md) explanations re-written and moved to new section [Concepts](../concepts/README.md).

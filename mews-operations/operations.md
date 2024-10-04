@@ -12,15 +12,15 @@ This section describes all operations supported by the Mews side API, organised 
 
 ## Inventory
 
-| <div style="width:200px">Operation</div>                                                                    | Description                                                                                                                |
-|:------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------|
-| [Set inventory](inventory.md#set-inventory)                                                                 | Update the 'rate plan - space type' inventory mapping                                                                      |
-| [Request ARI update](inventory.md#request-ari-update)                                                       | \[`async`\] Request an ARI data update for certain space types and rate plans (ARI is `Availability, Rates and Inventory`) |
-| [Confirm availability update](inventory.md#confirm-availability-update)                                     | Confirms availability update was processed succesfully or with errors.                                                     |
-| [Confirm price update](inventory.md#confirm-price-update)                                                   | Confirms price update was processed succesfully or with errors.                                                            |
-| [Confirm restriction update](inventory.md##confirm-reistriction-update)                                     | Confirms restriction update was processed succesfully or with errors.                                                      |
-| [Confirm availability block synchronization](availabilityBlock.md##confirm-availability-block-confirmation) | Confirms availability block synchronization was processed succesfully or with errors.                                      |
-| [Process availability block](availabilityBlockProcessor.md#process-availability-block)         | Process availability block that can be add, updat or cancel.                                                               |
+| <div style="width:200px">Operation</div>| Description |
+| :-- | :-- |
+| [Set inventory](inventory.md#set-inventory) | Update the 'rate plan - space type' inventory mapping |
+| [Request ARI update](inventory.md#request-ari-update) | \[`async`\] Request an ARI data update for certain space types and rate plans (ARI is `Availability, Rates and Inventory`) |
+| [Confirm availability update](inventory.md#confirm-availability-update) | Confirms availability update was processed succesfully or with errors. |
+| [Confirm price update](inventory.md#confirm-price-update) | Confirms price update was processed succesfully or with errors. |
+| [Confirm restriction update](inventory.md##confirm-reistriction-update) | Confirms restriction update was processed succesfully or with errors. |
+| [Confirm availability block synchronization](availabilityBlock.md##confirm-availability-block-confirmation) | Confirms availability block synchronization was processed succesfully or with errors. |
+| [Process availability block](availabilityBlockProcessor.md#process-availability-block) | Process availability block that can be add, updat or cancel. |
 
 ## Reservations
 
