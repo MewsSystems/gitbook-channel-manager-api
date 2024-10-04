@@ -12,7 +12,7 @@ This section describes all operations supported by the Mews side API, organised 
 
 ## Inventory
 
-| <div style="width:200px">Operation</div>| Description |
+| <div style="width:200px">Operation</div> | Description |
 | :-- | :-- |
 | [Set inventory](inventory.md#set-inventory) | Update the 'rate plan - space type' inventory mapping |
 | [Request ARI update](inventory.md#request-ari-update) | \[`async`\] Request an ARI data update for certain space types and rate plans (ARI is `Availability, Rates and Inventory`) |
