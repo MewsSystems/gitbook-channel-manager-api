@@ -14,7 +14,7 @@
     "connectionToken": "[Token of a concrete connection]",
     "messageId": "[Id of message which request relates to]",    
     "availabilityBlock": {
-        "code": "code",
+        "code": "33",
         "confirmationNumber": "2",
         "status": "Created",
         "name": "SampleBlock",
@@ -45,12 +45,12 @@
                 "rates": [
                     {
                         "start": "2024-12-05",
-                        "end": "2024-12-08",
+                        "end": "2024-12-07",
                         "grossAmount": 100.00,
                     },
                     {
                         "start": "2024-12-08",
-                        "end": "2024-12-12",
+                        "end": "2024-12-11",
                         "grossAmount": 50.00,
                     }
                 ]
@@ -109,7 +109,7 @@
 #### Release strategy
 | Property | Type | Contract | Description                                                                                  |
 | :-- | :-- | :-- |:---------------------------------------------------------------------------------------------|
-| `type` | `string` | required | release strategy for the availability block, in the first version just support "fixed" value |
+| `type` | `string` | required | release strategy for the availability block, in the first version only support "fixed" |
 | `fixedDate` | `string` | required | release date in format `"yyyy-MM-dd"` \(e.g., `"2024-12-08"`\).                              |
 
 
@@ -156,11 +156,11 @@
 {
     "clientToken": "[Mews Client token]",
     "connectionToken": "[Token of a concrete connection]",
-    "messageId": "66511e1d-2405-4e49-914b-b0c800d802c9",
+    "messageId": "23423",
     "code": "code",
-    "confirmationNumber": "55"
+    "confirmationNumber": "55",
     "sucess": "true",
-    "errors": ""    
+    "errors": null    
 }
 ```
 
