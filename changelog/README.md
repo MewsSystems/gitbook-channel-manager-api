@@ -1,5 +1,9 @@
 # Changelog
 
+## 4th October 2024
+
+* [CHM: Update prices](/channel-manager-operations/inventory.md) extended with `dependent rates`.
+
 ## 2nd Oct 2024
 
 * Updated [Guidelines](../guidelines/README.md#channels) to advise how to add new sales channels or sources through the API. Documentation-only.
