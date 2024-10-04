@@ -1,6 +1,6 @@
 # Changelog
 
-## 3rd October 2024
+## 4th October 2024
 
 * [CHM: Update prices](/channel-manager-operations/inventory.md) extended with `dependent rates`.
 
