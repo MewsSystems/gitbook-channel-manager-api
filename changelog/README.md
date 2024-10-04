@@ -2,7 +2,7 @@
 
 ## 3rd October 2024
 
-* [Inventory Update prices](/channel-manager-operations/inventory.md) extended with `dependent rates`.
+* [CHM: Update prices](/channel-manager-operations/inventory.md) extended with `dependent rates`.
 
 ## 2nd Oct 2024
 
