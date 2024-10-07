@@ -85,7 +85,7 @@
 | Property | Type | Contract| Description |
 | :-- | :-- | :-- | :-- |
 | `code`| `string`| required | Unique reference code from external system for the availability block. Will be returned after confirmation containing this code. |
-| `confirmationNumber` | `string` | required(exc. create) | Mews confirmation number for the block. |
+| `confirmationNumber` | `string` | optional | Mews confirmation number for the block. If updating or deleting an existing block, this property is required. |
 | `status` | [`Status`](#status) object| required | State of the availability block. |
 | `name` | `string` | required | Name of the availability block. |
 | `dates` | [`Dates`](#dates) object | required| Dates of the availability block. |
