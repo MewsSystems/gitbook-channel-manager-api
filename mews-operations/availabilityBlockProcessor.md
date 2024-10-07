@@ -2,7 +2,7 @@
 
 ## Process availability block
 
-[`async`] Use this operation to push availability blocks to Mews. The operation is used for add/update/cancel availability block.
+[`async`] Use this operation to push availability blocks to Mews. The same operation is used for adding, updating and canceling availability blocks.
 
 ### Request
 
