@@ -100,7 +100,7 @@
 #### Dates
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `start` | `string` | required | Start date in format `yyyy-mm-dd`, e.g. `2024-12-05`; this is the first day of the block and so can be booked for stay. |
+| `start` | `string` | required | Start date in format `yyyy-mm-dd`, e.g. `2024-12-05`, this is the first day of the block and so can be booked for stay. |
 | `end` | `string` | required | End date in format `yyyy-mm-dd`, e.g. `2024-12-08`; this day is _not_ included in the block and so cannot be booked for stay (it is analogous to reservation departure). |
 
 
