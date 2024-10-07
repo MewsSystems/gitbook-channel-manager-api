@@ -94,7 +94,7 @@
 | `spaceCategories` | [`Space category allocation`](#space-category-allocation) collection | required | Allocated categories of the availability block. |
 | `booker` | [`Customer`](./reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
 | `company` | [`Company`](./reservations.md#company) object | optional | The company associated with the availability block. |
-| `notes` | `string` | optional | It's a notes. |
+| `notes` | `string` | optional | Notes related to the availability block. |
 
 
 #### Dates
