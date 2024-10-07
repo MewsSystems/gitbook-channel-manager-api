@@ -6,7 +6,7 @@
 
 ### Request
 
-[PlatformAddress]/api/channelManager/v1/processAvailabilityBlocks
+[PlatformAddress]/api/channelManager/v1/processAvailabilityBlock
 
 ```json
 {
