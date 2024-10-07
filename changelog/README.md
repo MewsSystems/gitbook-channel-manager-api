@@ -1,9 +1,11 @@
 # Changelog
 
+## 7th October 2024
+* New operation [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block).
+
 ## 4th October 2024
 
 * [CHM: Update prices](/channel-manager-operations/inventory.md) extended with `dependent rates`.
-* New operation [Mews: Process availability block](../mews-operations/availabilityBlockProcessor.md#process-availability-block).
 
 ## 2nd Oct 2024
 

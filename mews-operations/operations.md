@@ -20,7 +20,7 @@ This section describes all operations supported by the Mews side API, organised 
 | [Confirm price update](inventory.md#confirm-price-update) | Confirms price update was processed succesfully or with errors. |
 | [Confirm restriction update](inventory.md##confirm-reistriction-update) | Confirms restriction update was processed succesfully or with errors. |
 | [Confirm availability block synchronization](availabilityBlock.md##confirm-availability-block-confirmation) | Confirms availability block synchronization was processed succesfully or with errors. |
-| [Process availability block](availabilityBlockProcessor.md#process-availability-block) | Add, update or cancel an availability block. |
+| [Process availability block](availabilityBlock.md#process-availability-block) | Add, update or cancel an availability block. |
 
 ## Reservations
 
