@@ -1,8 +1,12 @@
 # Changelog
 
-## 3rd October 2024
+## 7th October 2024
 
 * [Availability block](../channel-manager-operations/availabilityBlock.md#availability-block) extended with `pickupType` field.
+
+## 4th October 2024
+
+* [CHM: Update prices](/channel-manager-operations/inventory.md) extended with `dependent rates`.
 
 ## 2nd Oct 2024
 
