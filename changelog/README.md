@@ -1,6 +1,6 @@
 # Changelog
 
-## 7th October 2024
+## 8th October 2024
 
 * [Availability block](../channel-manager-operations/availabilityBlock.md#availability-block) extended with `pickupType` field.
 
