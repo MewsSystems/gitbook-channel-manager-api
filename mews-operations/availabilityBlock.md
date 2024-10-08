@@ -142,7 +142,7 @@
 #### Release strategy
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `type` | `string` | [`Release strategy type`](#release-strategy-type) required | release strategy for the availability block. |
+| `type` | `string` [Release strategy type](#release-strategy-type)  | required | release strategy for the availability block. |
 | `fixedDate` | `string` | required | release date in format YYYY-MM-DD, for example "2024-12-08". |
 
 
