@@ -143,7 +143,7 @@
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `type` | `string` | [`Release strategy type`](#release-strategy-type) required | release strategy for the availability block. |
-| `fixedDate` | `string` | required | release date in format `"yyyy-MM-dd"` \(e.g., `"2024-12-08"`\). |
+| `fixedDate` | `string` | required | release date in format YYYY-MM-DD, for example "2024-12-08". |
 
 
 #### Space category allocation
