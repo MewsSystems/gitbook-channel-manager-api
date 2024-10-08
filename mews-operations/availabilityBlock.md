@@ -179,6 +179,7 @@
 #### Release strategy type
 
 * `Fixed`
+* ...
 
 ### Response
 
