@@ -133,7 +133,7 @@
 | `end` | `string` | required | Exclusive end date of the block, in format `yyyy-mm-dd`, e.g. `2021-12-31`; this day is _not_ included in the block and so cannot be booked for stay (it is analogous to reservation departure). |
 | `releasedDate` | `string` | required | End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"`\). |
 
-> **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
+> **Dates**: Interval for e.g. 1 night for 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`.
 
 #### Space category allocation
 
@@ -146,7 +146,7 @@
 | `occupiedSpaces` | [`Space count`](#space-count) collection | required | The number of **occupied** spaces in the time interval. |
 | `rates` | [`Rates`](#rate) collection | required | Prices for the current space category. |
 
-> **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
+> **Dates**: Interval for e.g. 1 night for 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`.
 
 ### Space count
 
@@ -156,7 +156,7 @@
 | `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
 | `count` | `int` | required | Number of spaces (base of usage either occupied or allocated.)
 
-> **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).
+> **Dates**: Interval for e.g. 1 night for 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`.
 
 ### Rate 
 | Property | Type | Contract | Description |
