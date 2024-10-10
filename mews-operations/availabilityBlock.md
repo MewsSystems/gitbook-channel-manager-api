@@ -178,6 +178,7 @@
 * `Canceled`
 
 #### PickupType
+
 * `AllInOneGroup`
 * `IndividualGroups`
 
