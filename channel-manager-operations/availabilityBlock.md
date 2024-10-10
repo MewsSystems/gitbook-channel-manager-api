@@ -99,7 +99,8 @@
             "address": null
         },
         "company": null,
-        "notes": "This is the block for Mews conference."
+        "notes": "This is the block for Mews conference.",
+        "pickupType": "AllInOneGroup"
     }  
 }
 ```
@@ -124,6 +125,7 @@
 | `booker` | [`Customer`](../mews-operations/reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
 | `company` | [`Company`](../channel-manager-operations/reservations.md#company) object | optional | The company associated with the block. |
 | `notes` | `string` | optional | Notes for the block. |
+| `pickupType`| [`PickupType`](#pickupType) object | required | PickupType of the block. |
 | `releasedStrategy` | [`Release strategy`](../mews-operations/availabilityBlock.md#release-strategy) object | required | Release strategy of the availability block. |
 
 #### Dates
@@ -174,6 +176,10 @@
 * `Create`
 * `Update`
 * `Cancel`
+
+#### PickupType
+* `AllInOneGroup`
+* `IndividualGroups`
 
 ### Response
 
