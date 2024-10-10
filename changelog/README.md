@@ -1,5 +1,12 @@
 # Changelog
 
+## 11th October 2024
+* Add `rolling` to [release strategy type](../mews-operations/availabilityBlock.md#release-strategy-type).
+* Add `offset` to [release strategy](../mews-operations/availabilityBlock.md#release-strategy).
+* update Contract and Description for `fixedDate` in [release strategy](../mews-operations/availabilityBlock.md#release-strategy).
+* Extend [availability block](../channel-manager-operations/availabilityBlock.md#availability-block) by [`releaseStrategy`](../mews-operations/availabilityBlock.md#release-strategy). 
+* Deprecated `releasedDate` in [Dates](../channel-manager-operations/availabilityBlock.md#dates), see [Deprecations](../deprecations/README.md).
+
 ## 10th October 2024
 
 * [Availability block](../channel-manager-operations/availabilityBlock.md#availability-block) extended with `pickupType` field.
