@@ -3,6 +3,9 @@
 ## 10th October 2024
 
 * [Availability block](../channel-manager-operations/availabilityBlock.md#availability-block) extended with `pickupType` field.
+
+## 8th October 2024
+
 * New operation [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block).
 
 ## 4th October 2024
