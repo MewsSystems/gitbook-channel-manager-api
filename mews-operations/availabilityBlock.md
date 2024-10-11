@@ -142,8 +142,9 @@
 #### Release strategy
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `type` | `string` [Release strategy type](#release-strategy-type)  | required | release strategy for the availability block. |
-| `fixedDate` | `string` | required | release date in format YYYY-MM-DD, for example "2024-12-08". |
+| `type` | `string` [Release strategy type](#release-strategy-type)  | required | release strategy for the availability block.|
+| `fixedDate` | `string` | optional | release date in format YYYY-MM-DD, for example "2024-12-08". Required if `type` is `Fixed`. |
+| `offset` | `string` | optional | Offset duration from the start date before the block is released, if following the rolling release strategy. The format follows [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) for _duration_, i.e. "P[days]DT". Required if `type` is `Rolling`. |
 
 
 #### Space category allocation
@@ -179,7 +180,7 @@
 #### Release strategy type
 
 * `Fixed`
-* ...
+* `Rolling`
 
 ### Response
 
