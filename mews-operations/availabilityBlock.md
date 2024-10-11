@@ -103,7 +103,8 @@
             "address": null
         },
         "company": null,
-        "notes": "This is a note."
+        "notes": "This is a note.",
+        "pickupType": "AllInOneGroup"
     }  
 }
 ```
@@ -130,7 +131,7 @@
 | `booker` | [`Customer`](./reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
 | `company` | [`Company`](./reservations.md#company) object | optional | The company associated with the availability block. |
 | `notes` | `string` | optional | Notes related to the availability block. |
-
+| `pickupType`| [`PickupType`](#pickupType) object | required | Specifies how new reservations in block should be picked up. |
 
 #### Dates
 | Property | Type | Contract | Description |
@@ -176,6 +177,11 @@
 * `Created`
 * `Updated`
 * `Canceled`
+
+#### PickupType
+
+* `AllInOneGroup`
+* `IndividualGroups`
 
 #### Release strategy type
 
