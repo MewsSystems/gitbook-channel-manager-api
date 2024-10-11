@@ -1,11 +1,10 @@
 # Changelog
 
 ## 11th October 2024
-* Add `rolling` to [release strategy type](../mews-operations/availabilityBlock.md#release-strategy-type).
-* Add `offset` to [release strategy](../mews-operations/availabilityBlock.md#release-strategy).
-* update Contract and Description for `fixedDate` in [release strategy](../mews-operations/availabilityBlock.md#release-strategy).
-* Extend [availability block](../channel-manager-operations/availabilityBlock.md#availability-block) by [`releaseStrategy`](../mews-operations/availabilityBlock.md#release-strategy). 
-* Deprecated `releasedDate` in [Dates](../channel-manager-operations/availabilityBlock.md#dates), see [Deprecations](../deprecations/README.md).
+* Add `rolling` to [release strategy type](../mews-operations/availabilityBlock.md#release-strategy-type) and `offset` to [release strategy](../mews-operations/availabilityBlock.md#release-strategy) to support _rolling release strategy_.
+* Update _contract_ and _description_ for `fixedDate` in [release strategy](../mews-operations/availabilityBlock.md#release-strategy). It's mandatory just for `fixed` [release strategy type](../mews-operations/availabilityBlock.md#release-strategy-type).
+* Extend [CHM: availability block](../channel-manager-operations/availabilityBlock.md#availability-block) by [`releaseStrategy`](../mews-operations/availabilityBlock.md#release-strategy) to support `rolling` [release strategy type](../mews-operations/availabilityBlock.md#release-strategy-type). 
+* Deprecated `releasedDate` in [CHM: Dates](../channel-manager-operations/availabilityBlock.md#dates) and replaced by `fixedDate` of [release strategy](../mews-operations/availabilityBlock.md#release-strategy). see [Deprecations](../deprecations/README.md#deprecated-properties).
 
 ## 10th October 2024
 

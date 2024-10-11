@@ -126,7 +126,7 @@
 | `company` | [`Company`](../channel-manager-operations/reservations.md#company) object | optional | The company associated with the block. |
 | `notes` | `string` | optional | Notes for the block. |
 | `pickupType`| [`PickupType`](#pickupType) object | required | PickupType of the block. |
-| `releasedStrategy` | [`Release strategy`](../mews-operations/availabilityBlock.md#release-strategy) object | required | Release strategy of the availability block. |
+| `releaseStrategy` | [`Release strategy`](../mews-operations/availabilityBlock.md#release-strategy) object | required | Release strategy of the availability block. |
 
 #### Dates
 
