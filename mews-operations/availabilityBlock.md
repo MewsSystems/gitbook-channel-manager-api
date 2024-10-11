@@ -144,7 +144,7 @@
 | :-- | :-- | :-- | :-- |
 | `type` | `string` [Release strategy type](#release-strategy-type)  | required | release strategy for the availability block.|
 | `fixedDate` | `string` | optional | release date in format YYYY-MM-DD, for example "2024-12-08". Required if `type` is `Fixed`. |
-| `offset` | `string` | optional | `offset` specifying a "shift" from the start to release it. Format is _duration_ of [ISO 8601 for durations](https://en.wikipedia.org/wiki/ISO_8601) (started with `P`), like "P[days]DT". If `type` equals `Rolling`, it will be manadatory. |
+| `offset` | `string` | optional | Offset duration from the start date before the block is released, if following the rolling release strategy. The format follows [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) for _duration_, i.e. "P[days]DT". Required if `type` is `Rolling`. |
 
 
 #### Space category allocation
