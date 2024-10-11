@@ -134,7 +134,7 @@
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Inclusive start date of the block, in format `yyyy-mm-dd`, e.g. `2021-12-24`; this is the first day of the block and so can be booked for stay.  |
 | `end` | `string` | required | Exclusive end date of the block, in format `yyyy-mm-dd`, e.g. `2021-12-31`; this day is _not_ included in the block and so cannot be booked for stay (it is analogous to reservation departure). |
-| ~~`releasedDate`~~ | ~~`string`~~ | ~~required~~ | ~~End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"`\).~~  |
+| ~~`releasedDate`~~ | ~~`string`~~ | ~~required~~ | ~~End date in format `"yyyy-MM-dd"` \(e.g., `"2021-12-24"`\).~~ **Deprecated!** |
 
 > **Dates**: Interval for e.g. 1 night for 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`.
 
