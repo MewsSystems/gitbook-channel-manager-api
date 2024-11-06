@@ -1,9 +1,15 @@
 # Changelog
 
+## 7th November 2024
+
+* [Mews: Process group](../mews-operations/reservations.md#process-group) – added recommended limit of 100 reservations per group. Documentation-only.
+
 ## 4th November 2024
+
 * Deprecated `loyaltyCode` in [Mews: Process group](../mews-operations/reservations.md#process-group). This is replaced by `loyaltyInfo`.
 
 ## 11th October 2024
+
 * [Mews: Process availability block](../mews-operations/availabilityBlock.md) – Added `Rolling` to release strategy type; added `offset` property to release strategy object, and updated contract and description for `fixedDate` property (NOT a breaking change)
 * [CHM: Process availability block](../channel-manager-operations/availabilityBlock.md) – Added `releasedStrategy` property to availability block object and deprecated `releasedDate` property – see [Deprecations](../deprecations/README.md).
 
