@@ -127,7 +127,7 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 | :-- | :-- | :-- | :-- |
 | `grossAmount` | `decimal` | required | Price with taxes included. |
 | `netAmount` | `decimal` | required | Price with taxes excluded. |
-| `currencyCode` | `string` | required | The three-letter code of the rate price currency. |
+| `currencyCode` | `string` | required | [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) three-letter currency code of the price. |
 | `guestCount` | `int` | required | The person count for the rate price. |
 
 #### Age price
@@ -137,7 +137,7 @@ Mews always pushes both `gross` and `net` prices, the channel manager chooses wh
 | ~~`amount`~~ | ~~`decimal`~~ | ~~required~~ | ~~The price amount.~~ **[Deprecated!](../deprecations/README.md)** |
 | `grossAmount` | `decimal` | required | Price with taxes included. |
 | `netAmount` | `decimal` | required | Price with taxes excluded. |
-| `currencyCode` | `string` | required | The three-letter code of the rate price currency. |
+| `currencyCode` | `string` | required | [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) three-letter currency code of the age price. |
 | `guestCount` | `int` | required | The person count for the rate price. |
 | `ageCategoryCode` | `string` | required | Mapping code of the age category. |
 
