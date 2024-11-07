@@ -419,7 +419,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | :-- | :-- | :-- | :-- |
 | `code` | `string` | required | Mapping code of the rate plan. |
 | `name` | `string` | required | Name of the rate plan. |
-| `currencyCode` | `string` | required | Three-letter currency code of the rate plan price. |
+| `currencyCode` | `string` | required | [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) three-letter currency code of the rate plan price. |
 | `description` | `string` | optional | Description of the rate plan. |
 | ~~`paymentType`~~ | ~~`int`~~ | ~~required~~ | ~~[`Payment type`](#payment-types) code.~~ [**Deprecated!**](../deprecations/README.md)|
 | `cancellationPolicies` | [`Cancellation Policy`](#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |
@@ -469,7 +469,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `amount` | `decimal` | required | Defines the amount of the absolute fee. Sent in `gross`. |
-| `currencyCode` | `string` | required | 3 letter currency code of the absolute fee. |
+| `currencyCode` | `string` | required | [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) three-letter currency code of the absolute fee. |
 
 #### Relative Cancellation Penalty
 
@@ -547,7 +547,7 @@ This is an example of a _successful_ response. In case an error occurred, the re
 | `name` | `string` | required | Name of the product. |
 | `description` | `string` | optional | Description of the product. |
 | `unitAmount` | [`Amount`](reservations.md#amount) object | required | A product cost. |
-| `currencyCode` | `string` | required | 3 letter currency code of the product. |
+| `currencyCode` | `string` | required | [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) three-letter currency code of the product. |
 | `netValue` | `decimal` | required | Tax exclusive product cost. |
 | `grossValue` | `decimal` | required | Tax inclusive product cost. |
 | `cancellationPolicies` | [`Cancellation Policy`](#cancellation-policy) collection | optional | Cancellation policies of the rate plan. |

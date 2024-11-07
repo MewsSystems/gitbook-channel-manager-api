@@ -166,7 +166,7 @@
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2021-12-24"`\). |
 | `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2021-12-31"`\). |
-| `currencyCode` | `string` | required | Three letter code of the currency. |
+| `currencyCode` | `string` | required | [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) three-letter currency code of the rate prices. |
 | `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each person count, for the specified rate plan - space type - date combination. |        
 
 > **Dates**: Interval for 1 night (e.g. is represented 2021-12-24/25 is represented as `"start": "2021-12-24", "end": "2021-12-24"`).   

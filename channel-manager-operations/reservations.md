@@ -229,7 +229,7 @@ The operation supports creations, modifications, and partial or complete cancell
 | `channelManagerId` | `string` | optional | Unique identification of the booking in the channel manager. Sent always once provided by channel manager. |
 | `availabilityBlockCode` | `string` | optional | Unique identification of the availability block in the channel manager. |
 | `availabilityBlockConfirmationNumber` | `string` | optional | Unique identification of the availability block in the Mews. |
-| `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
+| `currencyCode` | `string` | required \(exc. Cancellation\) | [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) three-letter currency code of all prices within the booking. |
 | `totalAmount` | [`Amount`](../mews-operations/reservations.md#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `customer` | [`Customer`](../mews-operations/reservations.md#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `sources` | [`Source`](../mews-operations/reservations.md#source) collection | optional | Represents the sources for the booking. |
