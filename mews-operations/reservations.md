@@ -2,7 +2,7 @@
 
 ## Process group
 
-\[`async`\] Use this operation to push a group of reservations or bookings to Mews. The operation is called Process Group because it supports multiple options for processing on multiple groups of reservations. As well as creating new reservations in Mews, you can modify existing reservations and make cancellations, all using the same endpoint. Mews will process the requests and confirm back the reservations asynchronously.
+\[`async`\] Use this operation to push a group of reservations or bookings to Mews. The operation is called Process Group because as well as creating new reservations, you can also modify existing reservations and make cancellations, all using the same endpoint. We recommend a maximum of 100 reservations per group. Mews will process the reservation requests and confirm back the reservations asynchronously.
 
 > ### Rules to follow
 >
