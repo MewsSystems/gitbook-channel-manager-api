@@ -316,7 +316,7 @@ The third `reservation` definition shows the partial cancellation - canceling th
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `type` | `int` | required | [Payment Card Type](#payment-card-types) code. |
+| `type` | `int` | required | [Payment Card Type](#payment-card-types) code. **Important**: Only permitted values must be used, we recommend that if you do not know the correct value then use `1` as a fallback. |
 | `number` | `string` | required | Payment card number. _Only numbers allowed._ |
 | `expireDate` | `string` | required | Expiration date of card in `"MMyy"` format \(e.g `"0222"` for February 2022 expiration\). |
 | `cvv` | `string` | optional | Card CVV code. The value cannot be ```000```.|
@@ -381,7 +381,7 @@ The third `reservation` definition shows the partial cancellation - canceling th
 | `extras` | [`Extra`](#extra) collection | optional | Collection of extra ordered products for the reservation \(e.g. Breakfast\). _Their total amount is included in the _`totalAmount`_ of the reservation._ |
 | `guests` | [`Customer`](#customer) collection | optional | Collection of guests that will arrive to the property. |
 | `timeState` | `int` | required (used only in [CHM: Process group](../channel-manager-operations/reservations.md#process-group) operation) | [Reservation Time State](#reservation-time-states) code of reservation state. |
-| `paymentCardData` | [`Payment Card Data`](#payment-card-data) object | optional (used only in [CHM: Process group](../channel-manager-operations/reservations.md#process-group) operation) | Represents the payment card of the [`Customer`](#customer) to cover for the booking. It doesn't contain the acutal card number. |
+| `paymentCardData` | [`Payment Card Data`](#payment-card-data) object | optional (used only in [CHM: Process group](../channel-manager-operations/reservations.md#process-group) operation) | Represents the payment card of the [`Customer`](#customer) to cover for the booking. It doesn't contain the actual card number. |
 | ~~`adultCount`~~ | ~~`int`~~ | ~~required \(exc. Cancellation\)~~ | ~~Number of adults in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
 | ~~`childCount`~~ | ~~`int`~~ | ~~optional \(exc. Cancellation\)~~ | ~~Number of children in the reservation.~~ **[Deprecated!](../deprecations/README.md)** |
 
