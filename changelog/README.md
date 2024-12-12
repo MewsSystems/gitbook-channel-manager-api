@@ -1,5 +1,9 @@
 # Changelog
 
+## 13th December 2024
+
+* Refresh of entire site. Documentation-only, no changes to API.
+
 ## 7th November 2024
 
 * [Mews: Process group](../mews-operations/reservations.md#process-group) – added recommended limit of 100 reservations per group. Documentation-only.
@@ -28,7 +32,7 @@
 
 ## 2nd Oct 2024
 
-* Updated [Guidelines](../guidelines/README.md#channels) to advise how to add new sales channels or sources through the API. Documentation-only.
+* Updated [Usage guidelines](../guidelines/README.md#channels) to advise how to add new sales channels or sources through the API. Documentation-only.
 
 ## 11th September 2024
 
@@ -63,7 +67,7 @@
 
 ## 11th April 2024
 
-* Added loyalty info to Request in [Channel manager API Operations: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-block).
+* Added loyalty info to Request in [CHM: Process Availability block](../channel-manager-operations/availabilityBlock.md#availability-block).
   
 ## 26th March 2024
 
@@ -71,8 +75,8 @@
 
 ## 9th January 2024
 
-* Added [Age Category Code](../mews-operations/reservations.md#age-category-code) in [Mews API Operations: Process Group](../mews-operations/reservations.md#process-group) (documentation only).
-* Added explanations to [Mews API Operations: Process Group](../mews-operations/reservations.md#process-group) for the consequences of using negative extra product amounts (documentation only).
+* Added [Age Category Code](../mews-operations/reservations.md#age-category-code) in [Mews: Process Group](../mews-operations/reservations.md#process-group) (documentation only).
+* Added explanations to [Mews: Process Group](../mews-operations/reservations.md#process-group) for the consequences of using negative extra product amounts (documentation only).
 
 | Changelog by year |
 | :-- |

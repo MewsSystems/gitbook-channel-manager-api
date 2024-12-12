@@ -31,7 +31,7 @@ Follow these steps:
 
 4. Configure the connection on the channel manager system.
 
-> **Test environment configurations**: In the case of the [Test Environment](../mews-operations/README.md#test-environment), Mews integration specialists will take care of these requests.
+> **Test environment configurations**: In the case of the [Test environment](../guidelines/environments.md), Mews integration specialists will take care of these requests.
 
 ## Getting certified
 

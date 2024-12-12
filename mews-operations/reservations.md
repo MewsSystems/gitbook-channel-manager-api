@@ -24,8 +24,8 @@
 
 ### Request 
 
-* **Demo Environment:** `https://sandbox.pci-proxy.com/v1/push/0426f19b66715a93`
-* **Production Environment:** `https://api.pci-proxy.com/v1/push/b2721c9a0351d553`
+* **Test environment:** `https://sandbox.pci-proxy.com/v1/push/0426f19b66715a93`
+* **Production environment:** `https://api.pci-proxy.com/v1/push/b2721c9a0351d553`
 
 The example shows a valid group definition with two space reservations plus cancellation of a third space reservation.
 The first `reservation` definition shows all details, the second `reservation` definition shows the minimal required details for creation / modification of a `reservation`.

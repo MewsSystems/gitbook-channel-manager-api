@@ -33,7 +33,7 @@ Restrictions in the Mews application have a number of parameters:
 
 ## Restrictions in the API
 
-In the **Mews Channel Manager API**, the channel manager side must support an endpoint for Mews to push restrictions to the channel manager, this is [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions). Note there is no operation to add or delete restrictions, everything is done through Update restrictions. Thus any existing restrictions with the same scope and time period are overridden by the updated restrictions.
+In the **Mews Channel Manager API**, the channel manager side must support an endpoint for Mews to push restrictions to the channel manager, this is [CHM: Update restrictions](../channel-manager-operations/inventory.md#update-restrictions). Note there is no operation to add or delete restrictions, everything is done through Update restrictions. Thus any existing restrictions with the same scope and time period are overridden by the updated restrictions.
 
 | <div style="width:350px">'How to' use case</div> | API Operations |
 | :-- | :-- |
