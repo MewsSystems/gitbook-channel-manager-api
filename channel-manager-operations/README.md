@@ -1,25 +1,29 @@
-# Channel Manager side
+# API Operations (CHM)
 
-This section describes the Channel Manager side of the Channel Manager API, i.e. API Operations hosted by the Channel Manager.
-The Channel Manager side receives requests from Mews, including inventory updates \(prices, availability and restrictions\) and booking confirmations.
+This section describes the Channel Manager side of the __Mews Channel Manager API__, i.e. API Operations hosted by the Channel Manager. The Channel Manager side receives requests from Mews, including inventory updates \(prices, availability and restrictions\) and booking confirmations. The list of supported operations is as follows, organised here by theme.
+ 
+> ### Inventory update modes
+> Mews pushes inventory to the Channel Manager side in one of two modes, both using the same API Operations, either **Full Inventory Update Mode** or **Delta Inventory Update Mode**.
+> For more information, see [Use cases > Inventory updates](../use-cases/inventory-updates.md).
 
-## Environments
+## Inventory
 
-Similarly to the Mews side, there should be two environments with different `clientTokens`.
-The test/development environment will be used to verify the connection by Mews before connecting to the live/production environment.
+| <div style="width:200px">Operation</div> | Description |
+| :-- | :-- |
+| [Update prices](inventory.md#update-prices) | This method is used when Mews updates prices of rate plans |
+| [Update availability](inventory.md#update-availability) | This method is used when Mews updates availability of space types |
+| [Update restrictions](inventory.md#update-restrictions) | This method is used when Mews updates restrictions |
+| [Process availability block](availabilityBlock.md) | This method is used when Mews sends availability blocks |
 
-## Inventory Update Modes
+## Reservations
 
-Mews sends Inventory in two modes, both modes use the same API messages.
+| <div style="width:200px">Operation</div> | Description |
+| :-- | :-- |
+| [Process group](reservations.md#process-group) | \[`async`\] Process a group of reservations, which can be new bookings, modifications or cancellations. |
+| [Confirm booking](reservations.md#confirm-booking) | This method is used when Mews confirms a booking sent via [Process group](../mews-operations/reservations.md#process-group) |
 
-### Full Inventory Update Mode
+## Notifications
 
-You can request an Inventory update for some specified time period via API operation [Request ARI update](../mews-operations/inventory.md#request-ari-update).
-Alternatively, a property employee can use this mode to push the latest data manually.
-Data sent in this mode is always for **all** connected rate plans and space types combinations.
-
-### Delta Inventory Update Mode
-
-Mews automatically sends changes in Inventory \(once connection is set up\). Data sent in this mode is just the changed data from the last update.
-This is a completely automated process and there is no way to trigger just the delta update to be sent.
-Delta inventory updates are sent repeatedly until they are successfully accepted by the channel manager.
+| <div style="width:200px">Operation</div> | Description |
+| :-- | :-- |
+| [Change notification](notifications.md#change-notification) | This operation is used by Mews to notify the channel manager when there is a change in the connection configuration |

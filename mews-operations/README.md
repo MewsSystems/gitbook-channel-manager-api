@@ -1,38 +1,32 @@
-# Mews side
+# API Operations (Mews)
 
-This section describes the Mews side of the Channel Manager API, i.e. API Operations hosted by Mews.
-The Mews side receives requests from external Channel Managers, including requests to process reservations (new, updated and cancelled).
+This section describes the Mews side of the __Mews Channel Manager API__, i.e. API Operations hosted by Mews. The Mews side receives requests from external Channel Managers, including requests to process reservations (new, updated and cancelled). The list of supported operations is as follows, organised here by theme.
 
-## Environments
+## Configuration
 
-### Test Environment
+| <div style="width:200px">Operation</div> | Description |
+| :-- | :-- |
+| [Get properties](configuration.md#get-properties) | Get the list of available properties and their connection details |
+| [Get configuration](configuration.md#get-configuration) | Get the configuration of the given property connection |
+| [Get channels](configuration.md#get-channels) | Get the list of all channels with assigned mapping codes |
 
-This environment is used during development, testing and certification of client applications.
-Test properties within the environment are based in the Netherlands and accept `EUR` currency.
+## Inventory
 
-* **Platform Address** - `https://api.mews-demo.com/`
-* **Reservation Push Endpoint** - unique to the environment and listed under [Process group](reservations.md#process-group)
-* **Client Token** - will be provided by Mews upon request
-* **Connection Token** - will be provided by Mews upon request
-* **Test Property** - user credentials will be provided by Mews upon request
+| <div style="width:200px">Operation</div> | Description |
+| :-- | :-- |
+| [Set inventory](inventory.md#set-inventory) | Update the 'rate plan - space type' inventory mapping |
+| [Request ARI update](inventory.md#request-ari-update) | \[`async`\] Request an ARI data update for certain space types and rate plans (ARI is `Availability, Rates and Inventory`) |
+| [Confirm availability update](inventory.md#confirm-availability-update) | Confirms availability update was processed succesfully or with errors. |
+| [Confirm price update](inventory.md#confirm-price-update) | Confirms price update was processed succesfully or with errors. |
+| [Confirm restriction update](inventory.md##confirm-reistriction-update) | Confirms restriction update was processed succesfully or with errors. |
+| [Confirm availability block synchronization](availabilityBlock.md##confirm-availability-block-confirmation) | Confirms availability block synchronization was processed succesfully or with errors. |
+| [Process availability block](availabilityBlock.md#process-availability-block) | Add, update or cancel an availability block. |
 
-The property is configured to accept the following test credit cards:
+## Reservations
 
-#### Test Credit Cards
+| <div style="width:200px">Operation</div> | Description |
+| :-- | :-- |
+| [Process group](reservations.md#process-group) | \[`async`\] Process a group of reservations, which can be new bookings, modifications or cancellations. |
+| [Confirm reservations group synchronization](reservations.md#confirm-group-confirmation) | Confirms reservations group synchronization was processed succesfully or with errors. |
 
-* Expiration date: _08/2021_ or _10/2022_
-* Card holder name: any value is accepted
-* CVV: any value except for ```000``` is accepted
-* Types and Numbers:
-  * Visa: 4111111111111111
-  * MasterCard: 5555444433331111
-  * Amex: 370000000000002
-  * Diners: 36006666333344
-  * Discover: 6445644564456445
 
-### Production Environment
-
-* **Platform Address** - `https://api.mews.com`
-* **Reservation Push Endpoint** - unique to the environment and listed under [Process group](reservations.md#process-group)
-* **Client Token** - will be provided to you by Mews following certification in the test environment \(e.g. `C66EF7B239D24632943D115EDE9CB810-JJ549OU4JF94692C940F6B5A8F9453D`\)
-* **Connection Token** - will be provided to you by Mews or the property on request, or via [Get properties](configuration.md#get-properties) API operation \(e.g. `NF9R27B239D24632943D115EDE9CFH3-EA00F8FD8294692C940F6B5A8F9453D`\)

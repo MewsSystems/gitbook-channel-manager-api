@@ -1,0 +1,5 @@
+root: ./
+
+redirects:
+  mews-operations/operations: mews-operations/README.md
+  channel-manager-operations/operations: channel-manager-operations/README.md

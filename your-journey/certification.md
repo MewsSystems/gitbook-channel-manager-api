@@ -6,15 +6,15 @@ Once you have finished development against the API, Mews needs to confirm that t
 
 Follow these steps to prepare for certification:
 
-1. Email partnersuccess@mews.com to request a `Client Token` and for a test property to be created in the Mews [Test Environment](../mews-operations/README.md#test-environment).
-2. Create the following HTTPS endpoint URLs on the Channel Manager side [Test Environment](../channel-manager-operations/README.md#environments):
+1. Email partnersuccess@mews.com to request a `Client Token` and for a test property to be created in the Mews [Test environment](../guidelines/environments.md).
+2. Create the following HTTPS endpoint URLs on the Channel Manager side [Test environment](../guidelines/environments.md):
     * [Update availability](../channel-manager-operations/inventory.md#update-availability) 
     * [Update prices](../channel-manager-operations/inventory.md#update-prices)
     * [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions)
     * [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) 
     * [Change notification](../channel-manager-operations/notifications.md#change-notification) \(optional\)
 3. Email the endpoint details to partnersuccess@mews.com.
-4. Use your test property username and [Get properties](../mews-operations/configuration.md#get-properties) API operation to fetch the `connectionToken` for the [Test Property](../mews-operations/README.md#test-environment).
+4. Use your test property username and [Get properties](../mews-operations/configuration.md#get-properties) API operation to fetch the `connectionToken` for the [Test property](../guidelines/environments.md).
 5. Pull property information, space type mapping and rate mapping information using the [Get configuration](../mews-operations/configuration.md#get-configuration) API operation.
 6. Map all the rate plan and space category combinations in the user interface of the channel manager system using the data received from the [Get configuration](../mews-operations/configuration.md#get-configuration) request.
 

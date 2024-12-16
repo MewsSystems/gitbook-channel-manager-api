@@ -1,19 +1,18 @@
 # Mews Channel Manager API
 
-Welcome to the __Mews Channel Manager API__. This is the Mews API for distribution and sales channels, supporting two main use cases: distributing availability, rates and inventory data to sales channels; and accepting reservations from sales channels. Typically, the users of this API are Channel Managers, which act as hubs for managing the various sales channels that a property may be connected to. The API connects these Channel Managers with __Mews Operations__.
+Welcome to the __Mews Channel Manager API__. This is the Mews API for distribution and sales channels, supporting two main use cases: distributing availability, rates and inventory data to sales channels, and accepting reservations from sales channels.
+To fully implement the API, you need to both make requests to Mews and also create your own endpoints to accept data from Mews.
 
-The integration functionality is two-way, so the API is implemented in two parts:
+> ### Two-way functionality
+> * The [Mews side](mews-operations/README.md) handles requests from Channel Managers, including new reservations.
+> * The [Channel Manager side](channel-manager-operations/README.md) handles requests from Mews, including availability updates.
 
-* The [Mews side](mews-operations/README.md) receives requests from external Channel Managers, including new reservations
-* The [Channel Manager side](channel-manager-operations/README.md) receives requests from Mews, including availability updates
+For detailed information on connecting, authentication tokens, error codes, and more, see our [Usage guidelines](guidelines/README.md).
+To gain deeper insights into Mews concepts, see [Concepts](concepts/README.md). For specific scenarios, see [Use cases](use-cases/README.md).
 
-To fully implement the functionality of the API, you will need to not only make requests to Mews through defined endpoints on the Mews side, but also create your own endpoints to accept data from Mews on the Channel Manager side.
-
-For a full guide on how to connect, what authentication tokens you need, the meaning of error codes and much more, see our [Guidelines](guidelines/README.md). For a deeper understanding of **Mews** concepts, see [Concepts](concepts/README.md). 
-
-If you encounter any issues using the API, or you have any questions, please get in touch via [partnersuccess@mews.com](mailto:partnersuccess@mews.com).
+If you have any questions or encounter issues, reach out to us at [partnersuccess@mews.com](mailto:partnersuccess@mews.com).
 
 > ### Changes to this API
-> * For the history of changes to the API, see the [Changelog](changelog/README.md)
-> * For important information on deprecations, see [Deprecations](deprecations/README.md)
-> * To track changes and updates, you can follow the [GitHub repository](https://github.com/MewsSystems/gitbook-channel-manager-api/tree/master)
+> * For the history of changes, see the [Changelog](changelog/README.md).
+> * For important information on deprecations, see [Deprecations](deprecations/README.md).
+> * To track changes and updates, follow the [GitHub repository](https://github.com/MewsSystems/gitbook-channel-manager-api/tree/master).
