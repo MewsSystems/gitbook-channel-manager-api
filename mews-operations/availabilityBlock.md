@@ -212,7 +212,6 @@
 
 
 ### Rate
-
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2024-12-05"`\). |
