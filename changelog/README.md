@@ -1,10 +1,10 @@
 # Changelog
 
-## 5th March 2024
+## 6th March 2024
 
-* [Mews: Process availability block](../mews-operations/availabilityBlock.md) 
+* [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block) 
   * Added `paymentCard` to availability block message (NOT a breaking change).
-  * Added `prices` to availability block message to specify occupancy based prices, replaces `grossAmount` (breaking change = start using the new collection instead of `grossAmount`).
+  * Added `prices` to availability block message, into the [Rate](../mews-operations/availabilityBlock.md#rate) object to specify occupancy based prices, replaces `grossAmount` (breaking change = start using the new collection instead of `grossAmount`).
   * Endpoint changed to be sent via PCI proxy (breaking change = **url needs to be changed**).
 
 ## 13th December 2024
@@ -21,7 +21,7 @@
 
 ## 11th October 2024
 
-* [Mews: Process availability block](../mews-operations/availabilityBlock.md) – Added `Rolling` to release strategy type; added `offset` property to release strategy object, and updated contract and description for `fixedDate` property (NOT a breaking change)
+* [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block) – Added `Rolling` to release strategy type; added `offset` property to release strategy object, and updated contract and description for `fixedDate` property (NOT a breaking change)
 * [CHM: Process availability block](../channel-manager-operations/availabilityBlock.md) – Added `releasedStrategy` property to availability block object and deprecated `releasedDate` property – see [Deprecations](../deprecations/README.md).
 
 ## 10th October 2024

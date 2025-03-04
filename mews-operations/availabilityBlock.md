@@ -85,7 +85,7 @@
                         "prices": [
                           {
                               "grossAmount": 80.00,
-                              "netAmount": 70.00,
+                              "netAmount": 70.50,
                               "currencyCode": "EUR",
                               "guestCount": 1
                           },
@@ -109,7 +109,7 @@
                         "prices": [
                             {
                               "grossAmount": 50.00,
-                              "netAmount": 40.00,
+                              "netAmount": 40.50,
                               "currencyCode": "EUR",
                               "guestCount": 1
                             },
@@ -212,12 +212,12 @@
 
 
 ### Rate
-| Property          | Type         | Contract   | Description                                                              |
-|:------------------|:-------------|:-----------|:-------------------------------------------------------------------------|
-| `start`           | `string`     | required   | Start date in format `"yyyy-MM-dd"` \(e.g. `"2024-12-05"`\).             |
-| `end`             | `string`     | required   | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2024-12-31"`\). |
-| ~~`grossAmount`~~ | ~~`string`~~ | Deprecated | ~~Price with taxes included.~~ Use                                       | 
+| Property          | Type         | Contract   | Description                                                                                              |
+|:------------------|:-------------|:-----------|:---------------------------------------------------------------------------------------------------------|
+| `start`           | `string`     | required   | Start date in format `"yyyy-MM-dd"` \(e.g. `"2024-12-05"`\).                                             |
+| `end`             | `string`     | required   | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2024-12-31"`\).                                 |
 | `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each person count, for the specified rate plan - space type - date combination. |        
+| ~~`grossAmount`~~ | ~~`string`~~ | Deprecated | ~~Price with taxes included.~~ Use `prices`                                                              | 
 
 #### Status
 
