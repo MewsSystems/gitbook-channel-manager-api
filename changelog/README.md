@@ -1,5 +1,12 @@
 # Changelog
 
+## 5th March 2024
+
+* [Mews: Process availability block](../mews-operations/availabilityBlock.md) 
+  * Added `paymentCard` to availability block message (NOT a breaking change).
+  * Added `prices` to availability block message to specify occupancy based prices, replaces `grossAmount` (breaking change = start using the new collection instead of `grossAmount`).
+  * Endpoint changed to be sent via PCI proxy (breaking change = **url needs to be changed**).
+
 ## 13th December 2024
 
 * Refresh of entire site. Documentation-only, no changes to API.

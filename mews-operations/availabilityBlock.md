@@ -41,7 +41,8 @@
 
 ### Request
 
-[PlatformAddress]/api/channelManager/v1/processAvailabilityBlock
+* **Test environment:** `TODO`
+* **Production environment:** `TODO`
 
 ```json
 {
@@ -52,7 +53,7 @@
         "code": "33",
         "confirmationNumber": "2",
         "status": "Created",
-        "name": "SampleBlock",
+        "name": "Smith wedding",
         "dates": {
             "start": "2024-12-05",
             "end": "2024-12-11"
@@ -64,7 +65,7 @@
         "originalRateCode": "FF",
         "spaceCategories": [
             {
-                "spaceTypeCode": "D",
+                "spaceTypeCode": "Double",
                 "allocatedSpaces": [
                     {
                         "start": "2024-12-05",
@@ -81,12 +82,50 @@
                     {
                         "start": "2024-12-05",
                         "end": "2024-12-07",
-                        "grossAmount": 100.00
+                        "prices": [
+                          {
+                              "grossAmount": 80.00,
+                              "netAmount": 70.00,
+                              "currencyCode": "EUR",
+                              "guestCount": 1
+                          },
+                          {
+                              "grossAmount": 100.00,
+                              "netAmount": 90.00,
+                              "currencyCode": "EUR",
+                              "guestCount": 2
+                          },
+                          {
+                              "grossAmount": 105.00,
+                              "netAmount": 91.00,
+                              "currencyCode": "EUR",
+                              "guestCount": 3
+                          }
+                      ]
                     },
                     {
                         "start": "2024-12-08",
                         "end": "2024-12-11",
-                        "grossAmount": 50.00
+                        "prices": [
+                            {
+                              "grossAmount": 50.00,
+                              "netAmount": 40.00,
+                              "currencyCode": "EUR",
+                              "guestCount": 1
+                            },
+                            {
+                              "grossAmount": 60.00,
+                              "netAmount": 50.00,
+                              "currencyCode": "EUR",
+                              "guestCount": 2
+                            },
+                            {
+                              "grossAmount": 66.00,
+                              "netAmount": 55.00,
+                              "currencyCode": "EUR",
+                              "guestCount": 3
+                            }
+                        ]
                     }
                 ]
             }
@@ -101,6 +140,13 @@
             "languageCode": null,
             "loyaltyCode": null,
             "address": null
+        },
+        "paymentCard": {
+            "cvv": "666",
+            "expireDate": "1222",
+            "holderName": "John Smith",
+            "number": "4111111111111111",
+            "type": 1
         },
         "company": null,
         "notes": "This is a note.",
@@ -129,6 +175,7 @@
 | `originalRateCode` | `string` | required | Original rated code of the availability block. |
 | `spaceCategories` | [`Space category allocation`](#space-category-allocation) collection | required | Allocated categories of the availability block. |
 | `booker` | [`Customer`](./reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
+| `paymentCard` | [`Payment Card`](./reservations.md#payment-card) object | optional | Represents the payment card of the [`Customer`](./reservations.md#customer) . |
 | `company` | [`Company`](./reservations.md#company) object | optional | The company associated with the availability block. |
 | `notes` | `string` | optional | Notes related to the availability block. |
 | `pickupType`| [`PickupType`](#pickupType) object | required | Specifies how new reservations in block should be picked up. |
@@ -165,12 +212,12 @@
 
 
 ### Rate
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2024-12-05"`\). |
-| `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2024-12-31"`\). |
-| `grossAmount` | `string` | required | Price with taxes included. | 
-
+| Property          | Type         | Contract   | Description                                                              |
+|:------------------|:-------------|:-----------|:-------------------------------------------------------------------------|
+| `start`           | `string`     | required   | Start date in format `"yyyy-MM-dd"` \(e.g. `"2024-12-05"`\).             |
+| `end`             | `string`     | required   | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2024-12-31"`\). |
+| ~~`grossAmount`~~ | ~~`string`~~ | Deprecated | ~~Price with taxes included.~~ Use                                       | 
+| `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each person count, for the specified rate plan - space type - date combination. |        
 
 #### Status
 
