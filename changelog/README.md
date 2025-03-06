@@ -2,10 +2,11 @@
 
 ## 6th March 2024
 
-* [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block) 
-  * Added `paymentCard` to availability block message (NOT a breaking change).
-  * Added `prices` to availability block message, into the [Rate](../mews-operations/availabilityBlock.md#rate) object to specify occupancy based prices, replaces `grossAmount` (breaking change = start using the new collection instead of `grossAmount`).
-  * Endpoint changed to be sent via PCI proxy (breaking change = **url needs to be changed**).
+* [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block):
+  * Extended request object with `paymentCard` property.
+  * Extended [Rate](../mews-operations/availabilityBlock.md#rate) object with `prices` property to specify occupancy-based prices.
+  * **Deprecated** `grossAmount` property in the [Rate](../mews-operations/availabilityBlock.md#rate) object. Use `prices` instead.
+  * **Breaking!** Endpoint URL changed to be sent via PCI proxy. **You must update the URL used for this operation**.
 
 ## 13th December 2024
 

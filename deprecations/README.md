@@ -24,7 +24,7 @@ The table columns have the following meanings:
 
 | Feature | Comments | Deprecated | Discontinued |
 | :-- | :-- | :-- | :-- |
-| `grossAmount` in [Rate](../mews-operations/availabilityBlock.md#rate) object in [Mews: Availability block](../mews-operations/availabilityBlock.md#process-availability-block) | Replaced by `prices` collection of [`Price`](../channel-manager-operations/inventory.md#price) | 6 March 2025 | - |
+| `grossAmount` in [Rate](../mews-operations/availabilityBlock.md#rate) object in [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block) | Replaced by `prices` collection of [`Price`](../channel-manager-operations/inventory.md#price) | 6 March 2025 | - |
 | `loyaltyCode` in [Customer](../mews-operations/reservations.md#customer) object in [Mews: Process group](../mews-operations/reservations.md#process-group) | Replaced by `loyaltyInfo` | 4 Nov 2024 | - |
 | `releasedDate` in [Dates](../channel-manager-operations/availabilityBlock.md#dates) object in [CHM: Availability block](../channel-manager-operations/availabilityBlock.md#availability-block) | Replaced by `fixedDate` in [`Release strategy`](../mews-operations/availabilityBlock.md#release-strategy) of  [`Availability block`](../channel-manager-operations/availabilityBlock.md#availability-block) | 11 Oct 2024 | - |
 | `error` in [Synchronous error response](../guidelines/responses.md#synchronous-error-response) | Replaced by `errors` (plural and an `array`) | 15 May 2024 | - |
