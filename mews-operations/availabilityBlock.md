@@ -41,8 +41,8 @@
 
 ### Request
 
-* **Test environment:** `TODO`
-* **Production environment:** `TODO`
+* **Test environment:** sandbox.pci-proxy.com/v1/push/4ef00bba562b5622
+* **Production environment:** api.pci-proxy.com/v1/push/9eaa344245feed7f
 
 ```json
 {
