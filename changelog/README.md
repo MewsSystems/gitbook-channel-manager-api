@@ -1,6 +1,6 @@
 # Changelog
 
-## 6th March 2024
+## 12th March 2024
 
 * [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block):
   * Extended request object with `paymentCard` property.
