@@ -1,5 +1,8 @@
 # Changelog
 
+## 17th March 2025
+* [Reservation](../mews-operations/reservations.md) extended with `booker` property (NOT a breaking change). 
+
 ## 12th March 2024
 
 * [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block):
