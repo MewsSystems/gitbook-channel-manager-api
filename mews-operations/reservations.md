@@ -31,7 +31,7 @@ The example shows a valid group definition with two space reservations plus canc
 The first `reservation` definition shows all details, the second `reservation` definition shows the minimal required details for creation / modification of a `reservation`.
 The third `reservation` definition shows the partial cancellation - canceling the third space reservation.
 
-```javascript
+```json
 {
     "clientToken": "[Channel manager client token]",
     "connectionToken": "[Token of a concrete connection]",
@@ -67,6 +67,31 @@ The third `reservation` definition shows the partial cancellation - canceling th
             "membershipId": "PG60972345",
             "programCode": "BWR",
             "tierCode": "Gold"
+        }
+    },
+    "booker": {
+        "address": {
+            "addressLine1": "line 1",
+            "addressLine2": "line 2",
+            "city": "city2",
+            "country": "US",
+            "latitude": 40,
+            "longitude": 30,
+            "region": "region2",
+            "zip": "123 45"
+        },
+        "email": "adam@smith.com",
+            "firstName": "adam",
+            "lastName": "Arnold",
+            "title": "Mister",
+            "nationalityCode": "US",
+            "languageCode": "en-US",
+            "telephone": "1-5526-88918",
+            "loyaltyCode": "PG60982345",
+            "loyaltyInfo": {
+            "membershipId": "PG60972345",
+                "programCode": "BWR",
+                "tierCode": "Gold"
         }
     },
     "sources": [
@@ -249,6 +274,7 @@ The third `reservation` definition shows the partial cancellation - canceling th
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
+| `booker` | [`Customer`](#customer) object | optional | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
 | ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ **[Deprecated!](../deprecations/README.md)** |
@@ -484,7 +510,7 @@ Confirmation will be sent asynchronously using the [Confirm booking](../channel-
 
 `[PlatformAddress]/api/channelManager/v1/processGroupConfirmation`
 
-```javascript
+```json
 {
     "clientToken": "[Channel manager client token]",
     "connectionToken": "[Token of a concrete connection]",
