@@ -4,6 +4,14 @@
 
 * Improvements to [Your integration journey](../your-journey/README.md) and [Certification](../your-journey/certification.md) pages. Documentation-only, no changes to API.
 
+## 12th March 2024
+
+* [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block):
+  * Extended request object with `paymentCard` property.
+  * Extended [Rate](../mews-operations/availabilityBlock.md#rate) object with `prices` property to specify occupancy-based prices.
+  * **Deprecated** `grossAmount` property in the [Rate](../mews-operations/availabilityBlock.md#rate) object. Use `prices` instead.
+  * **Breaking!** Endpoint URL changed to be sent via PCI proxy. **You must update the URL used for this operation**.
+
 ## 13th December 2024
 
 * Refresh of entire site. Documentation-only, no changes to API.
@@ -18,7 +26,7 @@
 
 ## 11th October 2024
 
-* [Mews: Process availability block](../mews-operations/availabilityBlock.md) – Added `Rolling` to release strategy type; added `offset` property to release strategy object, and updated contract and description for `fixedDate` property (NOT a breaking change)
+* [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block) – Added `Rolling` to release strategy type; added `offset` property to release strategy object, and updated contract and description for `fixedDate` property (NOT a breaking change)
 * [CHM: Process availability block](../channel-manager-operations/availabilityBlock.md) – Added `releasedStrategy` property to availability block object and deprecated `releasedDate` property – see [Deprecations](../deprecations/README.md).
 
 ## 10th October 2024
