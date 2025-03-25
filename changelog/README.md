@@ -1,7 +1,8 @@
 # Changelog
 
 ## 17th March 2025
-* [Reservation](../mews-operations/reservations.md) extended with `booker` property (NOT a breaking change). 
+* [Mews: Process group](../mews-operations/reservations.md#process-group):
+  * Extended request object with new `booker` property.
 
 ## 12th March 2024
 
