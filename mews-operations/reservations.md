@@ -274,8 +274,8 @@ The third `reservation` definition shows the partial cancellation - canceling th
 | `currencyCode` | `string` | required \(exc. Cancellation\) | 3 letter code of currency of all prices within the booking. |
 | `totalAmount` | [`Amount`](#amount) object | required \(exc. Cancellation\) | Total amount of the whole booking. |
 | `paymentType` | `int` | required \(exc. Cancellation\) | [Payment Type](configuration.md#payment-types) code - determines whether the booking is prepaid or not. |
-| `booker` | [`Customer`](#customer) object | optional | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
-| `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | Represents the main booker. Does not necessarily mean that the person arrives to the property. |
+| `booker` | [`Customer`](#customer) object | optional | The person who booked the reservation, in case this is different to the main Customer. |
+| `customer` | [`Customer`](#customer) object | required \(exc. Cancellation\) | The customer who owns the reservation, i.e. the main guest linked to the reservation. |
 | `paymentCard` | [`Payment Card`](#payment-card) object | optional | Represents the payment card of the [`Customer`](#customer) to cover for the booking. |
 | ~~`channel`~~ | ~~[`Channel`](#channel) object~~ | ~~optional~~ | ~~Represents the channel \(i.e. Travel Agency\).~~ **[Deprecated!](../deprecations/README.md)** |
 | `sources` | [`Source`](#source) collection | optional | Represents the sources for the booking. |
