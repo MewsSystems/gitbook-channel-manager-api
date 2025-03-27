@@ -1,6 +1,11 @@
 # Changelog
 
+## 27th March 2025
+
+* Improvements to [Your integration journey](../your-journey/README.md) and [Certification](../your-journey/certification.md) pages. Documentation-only, no changes to API.
+
 ## 17th March 2025
+
 * [Mews: Process group](../mews-operations/reservations.md#process-group):
   * Extended request object with new `booker` property.
 
