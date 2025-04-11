@@ -83,25 +83,35 @@
                         "start": "2024-12-05",
                         "end": "2024-12-07",
                         "prices": [
-                          {
-                              "grossAmount": 80.00,
-                              "netAmount": 70.50,
-                              "currencyCode": "EUR",
-                              "guestCount": 1
-                          },
-                          {
-                              "grossAmount": 100.00,
-                              "netAmount": 90.00,
-                              "currencyCode": "EUR",
-                              "guestCount": 2
-                          },
-                          {
-                              "grossAmount": 105.00,
-                              "netAmount": 91.00,
-                              "currencyCode": "EUR",
-                              "guestCount": 3
-                          }
-                      ]
+                            {
+                                "grossAmount": 80.00,
+                                "netAmount": 70.50,
+                                "currencyCode": "EUR",
+                                "guestCount": 1
+                            },
+                            {
+                                "grossAmount": 100.00,
+                                "netAmount": 90.00,
+                                "currencyCode": "EUR",
+                                "guestCount": 2
+                            },
+                            {
+                                "grossAmount": 105.00,
+                                "netAmount": 91.00,
+                                "currencyCode": "EUR",
+                                "guestCount": 3
+                            }
+                        ],
+                        "occupancyAdjustments": [
+                            {
+                                "value": 15,
+                                "ageCategoryCode": "Adult"       
+                            },
+                            {
+                                "value": 5,
+                                "ageCategoryCode": "Child"       
+                            }
+                        ]
                     },
                     {
                         "start": "2024-12-08",
