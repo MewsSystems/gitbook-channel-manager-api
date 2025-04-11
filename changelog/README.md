@@ -1,5 +1,10 @@
 # Changelog
 
+## 14th April 2025
+* [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block):
+  * Extended [Rate](../mews-operations/availabilityBlock.md#rate) object with `occupancyAdjustments` property to specify extra occupancy adjustments for various age categories.
+
+
 ## 17th March 2025
 * [Mews: Process group](../mews-operations/reservations.md#process-group):
   * Extended request object with new `booker` property.

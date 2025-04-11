@@ -217,7 +217,14 @@
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2024-12-05"`\). |
 | `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2024-12-31"`\). |
 | `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each guest count. |
+| `occupancyAdjustments` | [`OccupancyAdjustment`](#occupancy-adjustment) collection | optional | Collection of extra occupancy adjustments for various age categories. |
 | ~~`grossAmount`~~ | ~~`string`~~ | ~~required~~ | ~~Price with taxes included.~~ **[Deprecated!](../deprecations/README.md)** Use `prices` instead. |
+
+#### Occupancy Adjustment
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `value` | `decimal` | required | Adjustment value added for each extra person on top of a capacity of a space. |
+| `ageCategoryCode` | `string` | required | Code of age category |
 
 #### Status
 
