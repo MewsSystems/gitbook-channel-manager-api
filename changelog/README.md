@@ -1,6 +1,6 @@
 # Changelog
 
-## 27th March 2025
+## 15th April 2025
 
 * Improvements to [Your integration journey](../your-journey/README.md) and [Certification](../your-journey/certification.md) pages. Documentation-only, no changes to API.
 
