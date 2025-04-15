@@ -1,11 +1,13 @@
 # Changelog
 
-## 14th April 2025
+## 15th April 2025
+
 * [Mews: Process availability block](../mews-operations/availabilityBlock.md#process-availability-block):
   * Extended [Rate](../mews-operations/availabilityBlock.md#rate) object with `occupancyAdjustments` property to specify extra occupancy adjustments for various age categories.
-
+* Improvements to [Your integration journey](../your-journey/README.md) and [Certification](../your-journey/certification.md) pages. Documentation-only, no changes to API.
 
 ## 17th March 2025
+
 * [Mews: Process group](../mews-operations/reservations.md#process-group):
   * Extended request object with new `booker` property.
 
