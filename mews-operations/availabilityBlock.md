@@ -83,25 +83,35 @@
                         "start": "2024-12-05",
                         "end": "2024-12-07",
                         "prices": [
-                          {
-                              "grossAmount": 80.00,
-                              "netAmount": 70.50,
-                              "currencyCode": "EUR",
-                              "guestCount": 1
-                          },
-                          {
-                              "grossAmount": 100.00,
-                              "netAmount": 90.00,
-                              "currencyCode": "EUR",
-                              "guestCount": 2
-                          },
-                          {
-                              "grossAmount": 105.00,
-                              "netAmount": 91.00,
-                              "currencyCode": "EUR",
-                              "guestCount": 3
-                          }
-                      ]
+                            {
+                                "grossAmount": 80.00,
+                                "netAmount": 70.50,
+                                "currencyCode": "EUR",
+                                "guestCount": 1
+                            },
+                            {
+                                "grossAmount": 100.00,
+                                "netAmount": 90.00,
+                                "currencyCode": "EUR",
+                                "guestCount": 2
+                            },
+                            {
+                                "grossAmount": 105.00,
+                                "netAmount": 91.00,
+                                "currencyCode": "EUR",
+                                "guestCount": 3
+                            }
+                        ],
+                        "occupancyAdjustments": [
+                            {
+                                "value": 15,
+                                "ageCategoryCode": "Adult"       
+                            },
+                            {
+                                "value": 5,
+                                "ageCategoryCode": "Child"       
+                            }
+                        ]
                     },
                     {
                         "start": "2024-12-08",
@@ -173,7 +183,7 @@
 | `dates` | [`Dates`](#dates) object | required| Dates of the availability block. |
 | `releaseStrategy` | [`Release strategy`](#release-strategy) object | required | Release strategy of the availability block. |
 | `originalRateCode` | `string` | required | Original rated code of the availability block. |
-| `spaceCategories` | [`Space category allocation`](#space-category-allocation) collection | required | Allocated categories of the availability block. |
+| `spaceCategories` | array of [`Space category allocation`](#space-category-allocation) | required | Allocated categories of the availability block. |
 | `booker` | [`Customer`](./reservations.md#customer) object | required | The main booker. This does not mean that the person has arrived at the property. |
 | `paymentCard` | [`Payment Card`](./reservations.md#payment-card) object | optional | Represents the payment card of the [`Customer`](./reservations.md#customer) . |
 | `company` | [`Company`](./reservations.md#company) object | optional | The company associated with the availability block. |
@@ -199,8 +209,8 @@
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `spaceTypeCode` | `string` | required | Space type code of the block. |
-| `allocatedSpaces` | [`Space count`](#space-count) collection | required | The number of spaces **allocated** in the time interval. |
-| `rates` | [`Rates`](#rate) collection | optional | Prices for the space category. |
+| `allocatedSpaces` | array of [`Space count`](#space-count) | required | The number of spaces **allocated** in the time interval. |
+| `rates` | array of [`Rates`](#rate) | optional | Prices for the space category. |
 
 
 ### Space count
@@ -216,8 +226,15 @@
 | :-- | :-- | :-- | :-- |
 | `start` | `string` | required | Start date in format `"yyyy-MM-dd"` \(e.g. `"2024-12-05"`\). |
 | `end` | `string` | required | End date \(excluded\) in format `"yyyy-MM-dd"` \(e.g., `"2024-12-31"`\). |
-| `prices` | [`Price`](../channel-manager-operations/inventory.md#price) collection | required | Collection of prices for each guest count. |
+| `prices` | array of [`Price`](../channel-manager-operations/inventory.md#price) | required | Collection of prices for each guest count. |
+| `occupancyAdjustments` | array of [`OccupancyAdjustment`](#occupancy-adjustment) | optional | Collection of extra occupancy adjustments for various age categories. |
 | ~~`grossAmount`~~ | ~~`string`~~ | ~~required~~ | ~~Price with taxes included.~~ **[Deprecated!](../deprecations/README.md)** Use `prices` instead. |
+
+#### Occupancy Adjustment
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `value` | `decimal` | required | Adjustment value added for each extra person on top of a capacity of a space. |
+| `ageCategoryCode` | `string` | required | Code of age category |
 
 #### Status
 
