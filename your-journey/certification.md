@@ -2,28 +2,35 @@
 
 Before moving your integration to the Production environment, Mews must verify that it meets all technical specifications. This is the purpose of the certification process. During certification, Mews will conduct a series of standard tests to ensure your integration functions correctly.
 
+> ### Communication with Mews
+> While we currently communicate certification details primarily via email, Mews will transition to using the __Mews Partner Portal__ for certification workflows in 2025. This portal will replace email-based interactions for most certification activities.
+> Until the Partner Portal is launched, please continue to contact us at partnersuccess@mews.com.
+
 ## Preparing for certification
 
 Follow these steps to prepare for certification:
 
-1. **Request a test environment setup**: Email partnersuccess@mews.com to request a `Client Token` and for a test property to be created in the Mews [Test environment](../guidelines/environments.md).
+1. **Initiate certification request**: Contact Mews with:
+    * The technical details of your planned integration.
+    * The name of the Pilot property you'll be using.
+    * A request to create a test property in the Mews side [test environment](../guidelines/environments.md) and to issue a `Client Token` for authentication.
 
-2. **Set up Channel Manager endpoints**: Create the following HTTPS endpoints on the Channel Manager side [Test environment](../guidelines/environments.md):
+2. **Set up Channel Manager endpoints**: Create the following HTTPS endpoints on the Channel Manager side [test environment](../guidelines/environments.md):
     * [Update availability](../channel-manager-operations/inventory.md#update-availability) 
     * [Update prices](../channel-manager-operations/inventory.md#update-prices)
     * [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions)
     * [Confirm booking](../channel-manager-operations/reservations.md#confirm-booking) 
     * [Change notification](../channel-manager-operations/notifications.md#change-notification) \(optional\)
-    
-3. **Share endpoint details**: Send the endpoint details to partnersuccess@mews.com.
 
-4. **Retrieve the Connection Token**: Use your test property credentials with the [Get properties](../mews-operations/configuration.md#get-properties) API operation to retrieve the `Connection Token` for the [Test property](../guidelines/environments.md).
+3. **Share Channel Manager endpoints**: Once ready, share your endpoint details with Mews.
 
-5. **Fetch configuration data**: Pull property, space type mapping and rate mapping information using the [Get configuration](../mews-operations/configuration.md#get-configuration) API operation.
+4. **Retrieve the Connection Token**: Use your test property credentials with the [Get properties](../mews-operations/configuration.md#get-properties) API operation to retrieve the `Connection Token` for the test property.
+
+5. **Fetch configuration data**: Use the [Get configuration](../mews-operations/configuration.md#get-configuration) API operation to pull property, space type mapping and rate mapping information.
 
 6. **Map rates and spaces**: Use the data from the [Get configuration](../mews-operations/configuration.md#get-configuration) response to map all rate plan and space category combinations in your channel manager system.
 
-7. **Perform ARI and reservation tests**: Conduct all ARI (Availability, Rates & Inventory) and reservation tests, according to the scenarios outlined in [Certification tests](certification-tests.md).
+7. **Run certification tests**: Conduct all Inventory Push Tests and Reservation Tests, according to the scenarios outlined in [Certification tests](certification-tests.md).
 
 8. **Complete the certification file**: Inform your Mews Technical Partner Success Manager once you’ve completed the tests. They will provide you with a certification file. Complete the file following the provided instructions, and return the completed file via email.
 
@@ -51,7 +58,6 @@ If the required tests cannot be completed successfully, Mews will not allow the 
 If there are no critical issues discovered during certification, the channel manager will be advanced to the Production environment.
   * Mews will require unique HTTPS production endpoint URLs for the Channel Manager side.
   * Mews will issue a new `Client Token` for the channel manager to use in the Production environment.
-  * Your team will need to provide documentation of the setup process for final approval.
 
 ## Re-certification
 
