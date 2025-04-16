@@ -16,17 +16,17 @@ To get started, follow these steps:
 
 To connect a property, follow these steps:
 
-1. **Create the connection in Mews**: A connection must first be established in Mews Operations. This can be done either by the property or by Mews Support.
+1. **Create the connection in Mews**: A connection must first be established in Mews Operations. This can be done by the property.
     * When created, all spaces and rates are assigned default mapping codes automatically.
-    * If your system requires specific mapping codes, provide them during this step, as Mews default codes can be modified by the property or Mews Support.
+    * If your system requires specific mapping codes, provide them during this step, as Mews default codes can be modified by the property.
    
 2. **Obtain the Connection Token**: The Connection Token identifies the specific link between the property and your system. You can get it in two ways:
     * Use the [Get properties](../mews-operations/configuration.md#get-properties) API operation to retrieve all connections and identify new ones.
-    * Request the token directly from the property or Mews Support.
+    * Request the token directly from the property.
 
 3. **Retreive the connection configuration**: Fetch the connection’s configuration to complete the setup:
     * Use the [Get configuration](../mews-operations/configuration.md#get-configuration) API operation.
-    * Alternatively, request the configuration details from the property or Mews Support.
+    * Alternatively, request the configuration details from the property.
 
 4. **Configure the connection**: Configure the connection on your channel manager system to finalize the integration.
 
