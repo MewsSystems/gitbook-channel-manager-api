@@ -3,8 +3,7 @@
 Before moving your integration to the Production environment, Mews must verify that it meets all technical specifications. This is the purpose of the certification process. During certification, Mews will conduct a series of standard tests to ensure your integration functions correctly.
 
 > ### Communication with Mews
-> While we currently communicate certification details primarily via email, Mews will transition to using the __Mews Partner Portal__ for certification workflows in 2025. This portal will replace email-based interactions for most certification activities.
-> Until the Partner Portal is launched, please continue to contact us at partnersuccess@mews.com.
+> While we currently communicate certification details primarily via email, Mews will transition to using the __Mews Partner Portal__ for certification workflows in 2025. This portal will replace email-based interactions for most certification activities. Until the Partner Portal is launched, please continue to contact us at [partnersuccess@mews.com](mailto:partnersuccess@mews.com).
 
 ## Preparing for certification
 
