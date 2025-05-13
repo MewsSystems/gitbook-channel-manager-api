@@ -35,8 +35,7 @@ Follow these steps to prepare for certification:
 
 9. **Schedule the certification call**: After submitting the certification file, you’ll receive a link to book a 90-minute certification call with Mews. Reserve a time slot that suits you.
 
-> **Multi-property enterprises**: Multi-property enterprises such as vacation rentals, apartments, villas, etc. are often set up in Mews as a single property with multiple individual spaces representing the individual rental properties.
-> You can send these spaces to the Channel Manager as multiple connections, with one Connection Token per space (property), or as a single connection for the entire enterprise.
+> **Multi-property enterprises**: Multi-property enterprises such as vacation rentals, apartments, villas, etc. are often set up in Mews as a single property with multiple individual spaces representing the individual rental properties. You can send these spaces to the Channel Manager as multiple connections, with one Connection Token per space (property), or as a single connection for the entire enterprise.
 
 ## Certification tests
 
