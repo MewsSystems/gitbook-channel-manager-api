@@ -1,5 +1,9 @@
 # Changelog
 
+## 29th May 2025
+
+* Further refinements to the partner journey, including [Your integration journey](../your-journey/README.md) and [Environments](../guidelines/environments.md). Documentation-only, no change to API.
+
 ## 16th April 2025
 
 * Minor refinements to [Your integration journey](../your-journey/README.md) and [Certification](../your-journey/certification.md) pages. Documentation-only, no changes to API.

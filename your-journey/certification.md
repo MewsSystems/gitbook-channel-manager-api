@@ -12,9 +12,9 @@ Follow these steps to prepare for certification:
 1. **Initiate certification request**: Contact Mews with:
     * The technical details of your planned integration.
     * The name of the Pilot property you'll be using.
-    * A request to create a test property in the Mews side [test environment](../guidelines/environments.md) and to issue a `Client Token` for authentication.
+    * A request to create a test property in the Mews side [Demo environment](../guidelines/environments.md) and to issue a `Client Token` for authentication.
 
-2. **Set up Channel Manager endpoints**: Create the following HTTPS endpoints on the Channel Manager side [test environment](../guidelines/environments.md):
+2. **Set up Channel Manager endpoints**: Create the following HTTPS endpoints on the Channel Manager side [Test/Demo environment](../guidelines/environments.md):
     * [Update availability](../channel-manager-operations/inventory.md#update-availability) 
     * [Update prices](../channel-manager-operations/inventory.md#update-prices)
     * [Update restrictions](../channel-manager-operations/inventory.md#update-restrictions)
