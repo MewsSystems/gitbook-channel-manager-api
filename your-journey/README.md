@@ -1,45 +1,77 @@
 # Your integration journey
 
-For a general overview and step-by-step guide to the integration process for all **Mews Open API** integrations, see [Your journey with Mews](https://mews-systems.gitbook.io/open-api/your-journey). This page focuses specifically on developing an integration with the **Mews Channel Manager API**.
+For a general overview and step-by-step guide to the integration process for all **Mews Open API** integrations, see [Your journey with Mews](https://mews-systems.gitbook.io/open-api/your-journey). This page provides guidance specific to integrating with the **Mews Channel Manager API**.
 
-## Setting up the integration
+## Step 1: Exploration
 
-To get started, follow these steps:
+Before you begin, review the documentation to understand the available API Operations and their uses:
 
-1. **Obtain your Client Token**: Request your Client Token from Mews. This token identifies you as a Mews client when making requests to the Mews Channel Manager API. Note: The Client Token is consistent across all connected properties, but differs between environments (e.g. Test and Production).
+* [API Operations (Mews)](../mews-operations/README.md)
+* [API Operations (CHM)](../channel-manager-operations/README.md)
 
-2. **Set up Channel Manager side endpoints**: Set up your channel manager side API endpoints to accept requests from Mews, using the same Client Token provided for Mews-side authentication. While you can use a different token, we recommend using the same one for simplicity.
+## Step 2: Registration
 
-3. **Share endpoint URLs with Mews**: Provide Mews with the endpoint URLs for supported Channel Manager API operations. Tip: You can submit these URLs gradually, especially during development. Production URLs can be shared after certification if preferred.
+To register your integration, follow the process outlined in the main onboarding guide [Your journey with Mews](https://mews-systems.gitbook.io/open-api/your-journey).
+
+**Obtain your Client Token**: Once approved, you will receive a `Client Token` that uniquely identifies your application. This token remains the same across all properties but differs by environment (i.e. Demo vs. Production).
+
+## Step 3: Development
+
+### Channel Manager system setup
+
+1. **Set up inbound endpoints**  
+  Prepare your Channel Manager-side API endpoints to accept requests from Mews, using the same `Client Token` provided for Mews-side authentication.
+  > While you can use a different token, we recommend using the same one for simplicity.
+
+2. **Share your endpoints with Mews**  
+  Send Mews the endpoint URLs for each supported Channel Manager API Operation.
+  > You can submit the URLs incrementally during development. Production URLs can be shared later if preferred.
+
+### Property connection for testing
+
+For testing in the [Demo environment](../guidelines/environments.md), Mews integration specialists will handle the connection setup to a test property. To understand how property connections work in general, see [Connecting a property](#connecting-a-property).
+
+## Step 4: Certification
+
+Before going live in Production, your integration must be certified by Mews. The process depends on your registration pathway:
+
+* **Partner Portal:** Log in and go to **Integrations** → **Certify Existing Applications**.
+* **No Partner Portal access:** Complete the [Certification Form](https://mews.typeform.com/to/ehTUz7).
+
+Learn more:
+
+* [Certification](certification.md)
+* [Certification tests](certification-tests.md)
+* [Channel API Certification: What to expect](https://help.mews.com/s/article/channel-api-certification-what-to-expect?language=en_US)
+
+## Step 5: Go live
+
+After successful certification:
+
+* You will receive a `Client Token` for the Production environment.
+* Mews will activate the connection at the agreed pilot property.
+* Your integration will be monitored for a short period (typically 4 weeks).
+
+Following a successful pilot, your integration can be published to other properties or listed on the [Mews Marketplace](https://www.mews.com/en/products/marketplace) (if public).
+
+For general support, visit the [Mews Help Center](https://help.mews.com).
 
 ## Connecting a property
 
-To connect a property, follow these steps:
+To connect an individual property to your system, follow these steps:
 
 1. **Create the connection in Mews**: A connection must first be established in Mews Operations. This can be done by the property.
-    * When created, all spaces and rates are assigned default mapping codes automatically.
-    * If your system requires specific mapping codes, provide them during this step, as Mews default codes can be modified by the property.
+    * All spaces and rates are automatically assigned default mapping codes.
+    * If your system requires specific mapping codes, communicate them in advance so the property can adjust accordingly.
    
 2. **Obtain the Connection Token**: The Connection Token identifies the specific link between the property and your system. You can get it in two ways:
     * Use the [Get properties](../mews-operations/configuration.md#get-properties) API operation to retrieve all connections and identify new ones.
-    * Request the token directly from the property.
+    * Or request the token directly from the property.
 
 3. **Retreive the connection configuration**: Fetch the connection’s configuration to complete the setup:
     * Use the [Get configuration](../mews-operations/configuration.md#get-configuration) API operation.
-    * Alternatively, request the configuration details from the property.
+    * Or request configuration details manually from the property.
 
 4. **Configure the connection**: Configure the connection on your channel manager system to finalize the integration.
 
-> **Test environment support**: For integrations in the [Test environment](../guidelines/environments.md), Mews integration specialists will handle connection requests.
-
-## Getting certified
-
-Before moving your integration to the Production environment, you’ll need to complete the Mews certification process:
-
-* Submit the [certification form](https://mews.typeform.com/to/ehTUz7) to begin.
-* Learn more:
-  * [Certification](certification.md)
-  * [Certification tests](certification-tests.md)
-  * [Channel API Certification: What to expect](https://help.mews.com/s/article/channel-api-certification-what-to-expect?language=en_US)
-
-For additional support, visit the [Mews Help Center](https://help.mews.com).
+> **Demo environment**: For integrations in the [Demo environment](../guidelines/environments.md), Mews integration specialists handle all connection requests.

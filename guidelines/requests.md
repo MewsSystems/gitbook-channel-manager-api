@@ -10,10 +10,10 @@ All Mews API operations follow this address pattern, with the exception of [Mews
 [PlatformAddress]/api/channelManager/v1/[Operation]
 ```
 
-* **PlatformAddress** - the base address of the Mews platform, which depends on the environment \(e.g. test, demo, production\)
+* **PlatformAddress** - the base address of the Mews platform, which depends on the environment \(e.g. demo, production\)
 * **Operation** - the name of the API operation
 
-For each environment, the `clientToken` will be provided to you by Mews. For development purposes, use the [Test environment](environments.md#test-environment).
+For each environment, the `clientToken` will be provided to you by Mews. For development purposes, use the [Demo environment](environments.md#demo-environment).
 
 > **Transport Layer Security:**
 > For security reasons, Mews API endpoints support TLS security protocol version 1.2 or higher.
@@ -31,7 +31,7 @@ All Channel Manager API operations are expected to follow this address pattern:
 
 ### Providing endpoints to Mews
 
-Please provide Mews with endpoint URLs for the following API operations once they are deployed. Mews needs them for both the Test environment and the Production environment to be able to send data.
+Please provide Mews with endpoint URLs for the following API operations once they are deployed. Mews needs them for both the Demo environment and the Production environment to be able to send data.
 Mews doesn't require all endpoint URLs to be provided at once. We recommend having a different `[PlatformAddress]` for each environment to prevent test data and live data from getting mixed up.
 For the same reason, `clientToken` should differ between each environment.
 
